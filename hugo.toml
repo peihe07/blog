@@ -1,0 +1,73 @@
+baseURL = "https://peihe07.uno/"
+languageCode = "en"
+title = "Peihe's blog"
+theme = "archie"
+copyright = "Peihe"
+paginate = 5
+
+# 日期格式
+[params]
+  subtitle = "Welcome to my personal site."
+  mode = "toggle"
+  math = true
+  useCDN = true
+  showReadTime = true
+
+  # 自訂 CSS（需要自己額外新增 /static/css/custom.css）
+  customcss = ["css/custom.css"]
+
+# 社群連結
+[[params.social]]
+  name = "github"
+  icon = "github"
+  url = "https://github.com/peihe07"
+
+[[params.social]]
+  name = "email"
+  icon = "mail"
+  url = "mailto:y450376@gmail.com"
+
+# 分類與標籤
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+# 主選單（archie 主題會根據 content 資料夾自動產生，但你可以手動指定）
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "Writings"
+  url = "/writings"
+  weight = 2
+
+[[menu.main]]
+  name = "Projects"
+  url = "/projects"
+  weight = 3
+
+[[menu.main]]
+  name = "Notes"
+  url = "/notes"
+  weight = 4
+
+[[menu.main]]
+  name = "About"
+  url = "/about"
+  weight = 5
+
+# 語法高亮
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = false
+    lineNos = true
+    lineNumbersInTable = true
+    noClasses = true
+    style = "monokai"
+    tabWidth = 4
+
+# 避免 HTML 警告
+ignoreErrors = ["error-remote-getjson", "warning-goldmark-raw-html"]
