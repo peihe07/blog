@@ -3,7 +3,9 @@ languageCode = "en"
 title = "Peihe's blog"
 theme = "archie"
 copyright = "Peihe"
-paginate = 5
+
+[pagination]
+  pagerSize = 3
 
 # 日期格式
 [params]
@@ -13,8 +15,8 @@ paginate = 5
   useCDN = true
   showReadTime = true
 
-  # 自訂 CSS（需要自己額外新增 /static/css/custom.css）
-  customcss = ["css/custom.css"]
+  
+  customcss = ["css/light.css"]
 
 # 社群連結
 [[params.social]]
@@ -68,6 +70,8 @@ paginate = 5
     noClasses = true
     style = "monokai"
     tabWidth = 4
+   [markup.goldmark.renderer]
+    unsafe = true
 
 # 避免 HTML 警告
 ignoreErrors = ["error-remote-getjson", "warning-goldmark-raw-html"]

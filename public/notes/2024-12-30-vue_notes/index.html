@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Vue.js - Peihe&#39;s blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Vue.js 專案結構與檔案詳細說明
+以下解析一個使用 Vue CLI 建立的典型前端 Vue.js 專案結構，並說明各個檔案與資料夾的作用與必要性。
+目錄
+
+1. 專案根目錄檔案
+2. public 資料夾
+3. src 資料夾
+4. 其他環境設定檔
+
+
+1. 專案根目錄檔案
+package.json
+
+功能說明：
+記錄專案的元資料、依賴套件、開發與生產環境的指令（例如 serve、build、test）等設定。
+為什麼需要：
+統一管理專案的相依套件與腳本，方便團隊成員建立與執行開發環境。
+
+package-lock.json / yarn.lock
+
+功能說明：
+鎖定專案所使用的套件版本，確保在不同環境中安裝的版本一致。
+為什麼需要：
+避免因版本不一致而導致錯誤，保持團隊開發的一致性。
+
+README.md
+
+功能說明：
+提供專案簡介、安裝步驟、使用說明以及其他相關資訊。
+為什麼需要：
+讓新進成員或使用者能夠快速了解並上手專案。
+
+vue.config.js (可選)
+
+功能說明：
+用於覆寫 Vue CLI 預設的 Webpack 配置，例如設定代理、路徑別名、資源目錄等。
+為什麼需要：
+提供彈性，讓你能根據專案需求調整建置流程與設定。
+
+
+2. public 資料夾
+index.html
+
+功能說明：
+專案的主要 HTML 模板，Vue.js 應用會注入到此文件中預先定義好的掛載點（通常是 &lt;div id=&quot;app&quot;&gt;&lt;/div&gt;）。
+為什麼需要：
+作為單頁應用（SPA）的入口點，決定初始 HTML 結構與靜態內容。
+
+其他靜態資源
+
+功能說明：
+放置不需要經過 Webpack 處理的靜態檔案，如 favicon、外部庫文件或其他第三方資源。
+為什麼需要：
+確保這些檔案在最終建置時能夠原封不動地複製到輸出目錄，並正確載入。
+
+
+3. src 資料夾
+main.js
+
+功能說明：
+專案的主要進入點，初始化 Vue 實例，整合路由（Vue Router）、狀態管理（Vuex）等，並將根元件掛載到 DOM 中。
+為什麼需要：
+建立與啟動整個 Vue 應用，是專案運行的核心。
+
+App.vue
+
+功能說明：
+根元件，作為應用的主要容器，通常包含全局佈局與樣式，並嵌入其他子元件。
+為什麼需要：
+統一管理應用結構與佈局，作為其他元件的父容器。
+
+assets 資料夾
+
+功能說明：
+存放圖片、字體、CSS 檔案或其他需要經過 Webpack 處理的靜態資源。
+為什麼需要：
+讓這些資源能夠在編譯時進行優化、壓縮與管理，提升效能與可維護性。
+
+components 資料夾
+
+功能說明：
+存放可重用的 Vue 元件，每個元件通常是一個 .vue 檔案，包含模板、邏輯與樣式。
+為什麼需要：
+模組化應用開發，將 UI 與功能拆分成獨立且可重用的元件，增強維護性與開發效率。
+
+views (或 pages) 資料夾
+
+功能說明：
+當應用較大時，可以將不同的頁面（視圖）存放在此處，通常與路由配置相對應。
+為什麼需要：
+區分單頁應用（SPA）中的不同路由頁面，保持結構清晰。
+
+router 資料夾
+
+功能說明：
+存放路由設定文件（通常是 index.js），定義各個 URL 路徑與對應的元件。
+為什麼需要：
+管理前端路由，讓應用能夠根據 URL 變化載入不同頁面與元件。
+
+store 資料夾
+
+功能說明：
+若使用 Vuex 管理應用狀態，則在此資料夾中定義 state、mutations、actions 與 getters 等。
+為什麼需要：
+集中管理應用狀態，方便元件之間的資料共享與同步。
+
+utils 或 services 資料夾 (可選)
+
+功能說明：
+存放工具函數、API 請求封裝、數據處理邏輯等常用功能模組。
+為什麼需要：
+將常用功能模組化，減少重複程式碼，提升專案可維護性與擴展性。
+
+
+4. 其他環境設定檔
+.env、.env.development、.env.production 等
+
+功能說明：
+定義不同環境下的環境變數，例如 API 基本路徑、除錯模式等設定。
+為什麼需要：
+讓專案能夠根據部署環境輕鬆調整配置，而無需修改程式碼。
+
+
+Vue.js 進階應用與生態系統補充說明
+除了基礎的專案結構與檔案說明，Vue.js 生態系統提供了許多進階工具與最佳實踐，能協助你建立更高效、彈性及易於維護的前端應用。以下補充一些常見的延伸主題與應用情境：" />
+	<meta property="og:image" content="https://hqasco.deta.dev/img?url=http://localhost:1313/notes/2024-12-30-vue_notes/"/>
+	<meta property="twitter:image" content="https://hqasco.deta.dev/img?url=http://localhost:1313/notes/2024-12-30-vue_notes/"/>
+	<meta property="twitter:card" content="summary_large_image"/>
+	<meta property="og:url" content="http://localhost:1313/notes/2024-12-30-vue_notes/">
+  <meta property="og:site_name" content="Peihe&#39;s blog">
+  <meta property="og:title" content="Vue.js">
+  <meta property="og:description" content="Vue.js 專案結構與檔案詳細說明 以下解析一個使用 Vue CLI 建立的典型前端 Vue.js 專案結構，並說明各個檔案與資料夾的作用與必要性。
+目錄 1. 專案根目錄檔案 2. public 資料夾 3. src 資料夾 4. 其他環境設定檔 1. 專案根目錄檔案 package.json 功能說明：
+記錄專案的元資料、依賴套件、開發與生產環境的指令（例如 serve、build、test）等設定。 為什麼需要：
+統一管理專案的相依套件與腳本，方便團隊成員建立與執行開發環境。 package-lock.json / yarn.lock 功能說明：
+鎖定專案所使用的套件版本，確保在不同環境中安裝的版本一致。 為什麼需要：
+避免因版本不一致而導致錯誤，保持團隊開發的一致性。 README.md 功能說明：
+提供專案簡介、安裝步驟、使用說明以及其他相關資訊。 為什麼需要：
+讓新進成員或使用者能夠快速了解並上手專案。 vue.config.js (可選) 功能說明：
+用於覆寫 Vue CLI 預設的 Webpack 配置，例如設定代理、路徑別名、資源目錄等。 為什麼需要：
+提供彈性，讓你能根據專案需求調整建置流程與設定。 2. public 資料夾 index.html 功能說明：
+專案的主要 HTML 模板，Vue.js 應用會注入到此文件中預先定義好的掛載點（通常是 &lt;div id=&#34;app&#34;&gt;&lt;/div&gt;）。 為什麼需要：
+作為單頁應用（SPA）的入口點，決定初始 HTML 結構與靜態內容。 其他靜態資源 功能說明：
+放置不需要經過 Webpack 處理的靜態檔案，如 favicon、外部庫文件或其他第三方資源。 為什麼需要：
+確保這些檔案在最終建置時能夠原封不動地複製到輸出目錄，並正確載入。 3. src 資料夾 main.js 功能說明：
+專案的主要進入點，初始化 Vue 實例，整合路由（Vue Router）、狀態管理（Vuex）等，並將根元件掛載到 DOM 中。 為什麼需要：
+建立與啟動整個 Vue 應用，是專案運行的核心。 App.vue 功能說明：
+根元件，作為應用的主要容器，通常包含全局佈局與樣式，並嵌入其他子元件。 為什麼需要：
+統一管理應用結構與佈局，作為其他元件的父容器。 assets 資料夾 功能說明：
+存放圖片、字體、CSS 檔案或其他需要經過 Webpack 處理的靜態資源。 為什麼需要：
+讓這些資源能夠在編譯時進行優化、壓縮與管理，提升效能與可維護性。 components 資料夾 功能說明：
+存放可重用的 Vue 元件，每個元件通常是一個 .vue 檔案，包含模板、邏輯與樣式。 為什麼需要：
+模組化應用開發，將 UI 與功能拆分成獨立且可重用的元件，增強維護性與開發效率。 views (或 pages) 資料夾 功能說明：
+當應用較大時，可以將不同的頁面（視圖）存放在此處，通常與路由配置相對應。 為什麼需要：
+區分單頁應用（SPA）中的不同路由頁面，保持結構清晰。 router 資料夾 功能說明：
+存放路由設定文件（通常是 index.js），定義各個 URL 路徑與對應的元件。 為什麼需要：
+管理前端路由，讓應用能夠根據 URL 變化載入不同頁面與元件。 store 資料夾 功能說明：
+若使用 Vuex 管理應用狀態，則在此資料夾中定義 state、mutations、actions 與 getters 等。 為什麼需要：
+集中管理應用狀態，方便元件之間的資料共享與同步。 utils 或 services 資料夾 (可選) 功能說明：
+存放工具函數、API 請求封裝、數據處理邏輯等常用功能模組。 為什麼需要：
+將常用功能模組化，減少重複程式碼，提升專案可維護性與擴展性。 4. 其他環境設定檔 .env、.env.development、.env.production 等 功能說明：
+定義不同環境下的環境變數，例如 API 基本路徑、除錯模式等設定。 為什麼需要：
+讓專案能夠根據部署環境輕鬆調整配置，而無需修改程式碼。 Vue.js 進階應用與生態系統補充說明 除了基礎的專案結構與檔案說明，Vue.js 生態系統提供了許多進階工具與最佳實踐，能協助你建立更高效、彈性及易於維護的前端應用。以下補充一些常見的延伸主題與應用情境：">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="notes">
+    <meta property="article:published_time" content="2024-12-30T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-12-30T00:00:00+00:00">
+    <meta property="article:tag" content="Python">
+    <meta property="article:tag" content="Vue.js">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Vue.js">
+  <meta name="twitter:description" content="Vue.js 專案結構與檔案詳細說明 以下解析一個使用 Vue CLI 建立的典型前端 Vue.js 專案結構，並說明各個檔案與資料夾的作用與必要性。
+目錄 1. 專案根目錄檔案 2. public 資料夾 3. src 資料夾 4. 其他環境設定檔 1. 專案根目錄檔案 package.json 功能說明：
+記錄專案的元資料、依賴套件、開發與生產環境的指令（例如 serve、build、test）等設定。 為什麼需要：
+統一管理專案的相依套件與腳本，方便團隊成員建立與執行開發環境。 package-lock.json / yarn.lock 功能說明：
+鎖定專案所使用的套件版本，確保在不同環境中安裝的版本一致。 為什麼需要：
+避免因版本不一致而導致錯誤，保持團隊開發的一致性。 README.md 功能說明：
+提供專案簡介、安裝步驟、使用說明以及其他相關資訊。 為什麼需要：
+讓新進成員或使用者能夠快速了解並上手專案。 vue.config.js (可選) 功能說明：
+用於覆寫 Vue CLI 預設的 Webpack 配置，例如設定代理、路徑別名、資源目錄等。 為什麼需要：
+提供彈性，讓你能根據專案需求調整建置流程與設定。 2. public 資料夾 index.html 功能說明：
+專案的主要 HTML 模板，Vue.js 應用會注入到此文件中預先定義好的掛載點（通常是 &lt;div id=&#34;app&#34;&gt;&lt;/div&gt;）。 為什麼需要：
+作為單頁應用（SPA）的入口點，決定初始 HTML 結構與靜態內容。 其他靜態資源 功能說明：
+放置不需要經過 Webpack 處理的靜態檔案，如 favicon、外部庫文件或其他第三方資源。 為什麼需要：
+確保這些檔案在最終建置時能夠原封不動地複製到輸出目錄，並正確載入。 3. src 資料夾 main.js 功能說明：
+專案的主要進入點，初始化 Vue 實例，整合路由（Vue Router）、狀態管理（Vuex）等，並將根元件掛載到 DOM 中。 為什麼需要：
+建立與啟動整個 Vue 應用，是專案運行的核心。 App.vue 功能說明：
+根元件，作為應用的主要容器，通常包含全局佈局與樣式，並嵌入其他子元件。 為什麼需要：
+統一管理應用結構與佈局，作為其他元件的父容器。 assets 資料夾 功能說明：
+存放圖片、字體、CSS 檔案或其他需要經過 Webpack 處理的靜態資源。 為什麼需要：
+讓這些資源能夠在編譯時進行優化、壓縮與管理，提升效能與可維護性。 components 資料夾 功能說明：
+存放可重用的 Vue 元件，每個元件通常是一個 .vue 檔案，包含模板、邏輯與樣式。 為什麼需要：
+模組化應用開發，將 UI 與功能拆分成獨立且可重用的元件，增強維護性與開發效率。 views (或 pages) 資料夾 功能說明：
+當應用較大時，可以將不同的頁面（視圖）存放在此處，通常與路由配置相對應。 為什麼需要：
+區分單頁應用（SPA）中的不同路由頁面，保持結構清晰。 router 資料夾 功能說明：
+存放路由設定文件（通常是 index.js），定義各個 URL 路徑與對應的元件。 為什麼需要：
+管理前端路由，讓應用能夠根據 URL 變化載入不同頁面與元件。 store 資料夾 功能說明：
+若使用 Vuex 管理應用狀態，則在此資料夾中定義 state、mutations、actions 與 getters 等。 為什麼需要：
+集中管理應用狀態，方便元件之間的資料共享與同步。 utils 或 services 資料夾 (可選) 功能說明：
+存放工具函數、API 請求封裝、數據處理邏輯等常用功能模組。 為什麼需要：
+將常用功能模組化，減少重複程式碼，提升專案可維護性與擴展性。 4. 其他環境設定檔 .env、.env.development、.env.production 等 功能說明：
+定義不同環境下的環境變數，例如 API 基本路徑、除錯模式等設定。 為什麼需要：
+讓專案能夠根據部署環境輕鬆調整配置，而無需修改程式碼。 Vue.js 進階應用與生態系統補充說明 除了基礎的專案結構與檔案說明，Vue.js 生態系統提供了許多進階工具與最佳實踐，能協助你建立更高效、彈性及易於維護的前端應用。以下補充一些常見的延伸主題與應用情境：">
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="http://localhost:1313/css/main.a51af1d04314d0068008aacde148e8991557549983f00d096ecd3417a77a1481.min.css" />
+	
+	
+		
+		
+		<link rel="stylesheet" type="text/css" href="http://localhost:1313/css/light.d163c5c26a5750d4f8b57b4ecc04340421b1f0d25212c42196d9b7b75002399c.css">
+		
+	<script src="//instant.page/5.1.0" type="module" integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
+</head><body>
+        <div class="content"> 
+<h1 class="page-title">All articles</h1>
+
+
+<ul class="posts"></ul>
+<hr />
+<footer>
+  <div class="footer_nav">
+    <nav style="float: right">
+       
+        <a href="/">Home</a> | 
+      
+        <a href="/writings">Writings</a> | 
+      
+        <a href="/projects">Projects</a> | 
+      
+        <a href="/notes">Notes</a> | 
+      
+        <a href="/about">About</a>
+      
+    </nav>
+  </div>
+
+  
+  
+    
+      <a class="soc" href="https://github.com/peihe07" title="github">
+        <i data-feather="github"></i>
+      </a> | 
+    
+      <a class="soc" href="mailto:y450376@gmail.com" title="email">
+        <i data-feather="mail"></i>
+      </a>
+    
+  
+
+  ⚡️ 2025
+   Peihe | 
+  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+
+
+  <script>
+    feather.replace();
+  </script>
+</div>
+    </body>
+</html>

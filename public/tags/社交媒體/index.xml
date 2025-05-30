@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>社交媒體 on My New Hugo Site</title>
+    <title>社交媒體 on Peihe&#39;s blog</title>
     <link>http://localhost:1313/tags/%E7%A4%BE%E4%BA%A4%E5%AA%92%E9%AB%94/</link>
-    <description>Recent content in 社交媒體 on My New Hugo Site</description>
+    <description>Recent content in 社交媒體 on Peihe&#39;s blog</description>
     <generator>Hugo</generator>
-    <language>en-us</language>
+    <language>en</language>
+    <copyright>Peihe</copyright>
     <lastBuildDate>Thu, 02 May 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/%E7%A4%BE%E4%BA%A4%E5%AA%92%E9%AB%94/index.xml" rel="self" type="application/rss+xml" />
     <item>
