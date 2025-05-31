@@ -1,6 +1,6 @@
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   margin: 2rem 0;
 }
@@ -12,6 +12,8 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card:hover {
@@ -29,6 +31,7 @@
 .project-header h3 {
   margin: 0;
   font-size: 1.25rem;
+  flex: 1;
 }
 
 .project-header h3 a {
@@ -39,6 +42,7 @@
 .project-links {
   display: flex;
   gap: 0.75rem;
+  margin-left: 1rem;
 }
 
 .project-links a {
@@ -53,12 +57,14 @@
 
 .project-content {
   margin-bottom: 1.5rem;
+  flex: 1;
 }
 
 .project-description {
   color: var(--text);
   margin-bottom: 1rem;
   line-height: 1.6;
+  font-size: 0.95rem;
 }
 
 .project-tech {
@@ -79,7 +85,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 1rem;
+  margin-top: auto;
   padding-top: 1rem;
   border-top: 1px solid var(--border);
 }
@@ -106,4 +112,16 @@
 .read-more svg {
   width: 16px;
   height: 16px;
+}
+
+@media (max-width: 1024px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
 } 

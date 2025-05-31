@@ -42,13 +42,6 @@
                   {{ if .Params.description }}{{ .Params.description }}
                   {{ else }}{{ .Summary }}{{ end }}
                 </p>
-                {{ if .Params.technologies }}
-                <div class="project-tech">
-                  {{ range .Params.technologies }}
-                  <span class="tech-tag">{{ . }}</span>
-                  {{ end }}
-                </div>
-                {{ end }}
               </div>
               <div class="project-footer">
                 <span class="project-date">{{ .Date.Format "2006-01-02" }}</span>
