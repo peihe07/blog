@@ -1,20 +1,58 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>軸體 on Peihe&#39;s blog</title>
-    <link>https://www.peihe07.uno/tags/%E8%BB%B8%E9%AB%94/</link>
-    <description>Recent content in 軸體 on Peihe&#39;s blog</description>
-    <generator>Hugo</generator>
-    <language>en</language>
-    <copyright>Peihe</copyright>
-    <lastBuildDate>Thu, 24 Aug 2023 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.peihe07.uno/tags/%E8%BB%B8%E9%AB%94/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>從我的七把鍵盤來淺談機械式鍵盤</title>
-      <link>https://www.peihe07.uno/writings/2023-08-24-3b6980729642/</link>
-      <pubDate>Thu, 24 Aug 2023 00:00:00 +0000</pubDate>
-      <guid>https://www.peihe07.uno/writings/2023-08-24-3b6980729642/</guid>
-      <description>&lt;p&gt;入鍵圈兩年多要來介紹機械式鍵盤，我還算是太淺了，所以我決定從我與我的七把鍵盤入手當作主軸來一一切入各種我想要聊的題目。&lt;/p&gt;&#xA;&lt;p&gt;以前買電腦附的鍵盤多為薄膜式鍵盤，而知名水果電腦的筆電鍵盤則為剪刀腳鍵盤，那何謂機械式鍵盤？機械式鍵盤就是每個按鍵都是獨立的軸體，可以拆卸替換，部分為焊接或是熱插拔(無須焊接換軸)的形式固定在電路板上。&lt;/p&gt;&#xA;&lt;p&gt;先來講一個關於我怎麼知道機械式鍵盤的小故事，那是在某天滑推特(現在叫X)的時候，正好看到推友碰氣大欸貼了一個ducky的鍵盤猶豫著要不要買，推文下方有喜歡的作家推友說ducky好用，又看到其他推友的各種推坑，我就好奇開始查了這個牌子，那時候連什麼軸都分不出來，只是用外表判斷，看到海灘假期的那刻，我就知道我戀愛了，怎麼會有這麼好看的鍵盤!&lt;/p&gt;&#xA;&lt;p&gt;猶豫了好久最後在PCParty買下了我人生中的第一把機械式鍵盤。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;1ducky-one-2-海灘假期-青軸-2990元&#34;&gt;1.Ducky One 2 海灘假期 青軸 2990元&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://cdn-images-1.medium.com/max/800/1*oKRsD6FpeJpdxJLPavaprQ.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;第一把當然就是要買最吵的青軸，當時想著我都在家裡使用，很吵也沒關係吧，而且鍵盤就是要這麼吵阿喀搭喀搭的。&lt;/p&gt;&#xA;&lt;p&gt;這把鍵盤是Cherry的MX軸的青軸，至於什麼事青軸呢？&lt;/p&gt;&#xA;&lt;p&gt;第一個來談的就是&lt;strong&gt;軸體&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;一般來說要入手最基本的機械式鍵盤軸體通常用打感和聲音來分&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;1️⃣&lt;/em&gt;&#xA;&lt;em&gt;&lt;strong&gt;打感&lt;/strong&gt;&lt;/em&gt;*:通常分為&lt;strong&gt;&lt;strong&gt;線性軸&lt;/strong&gt;&lt;/strong&gt;和&lt;strong&gt;&lt;strong&gt;段落軸&lt;/strong&gt;&lt;/strong&gt;，線性有紅軸、銀軸更重的還有黑軸，而段落通常是青軸以及茶軸。何謂段落感?就是你壓下按鍵的時候，會感受到一段一段的感覺，很像是按下原子筆喀喀的感覺，配合下方的圖應該可以很明顯看出來，青軸在下壓過程多了一個咖搭下壓的感覺。*&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;以下摘錄自&lt;/em&gt;&#xA;&lt;a href=&#34;https://www.keyboardco.com/blog/index.php/2012/12/an-introduction-to-cherry-mx-mechanical-switches/&#34;&gt;&lt;em&gt;https://www.keyboardco.com/blog/index.php/2012/12/an-introduction-to-cherry-mx-mechanical-switches/&lt;/em&gt;&lt;/a&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://cdn-images-1.medium.com/max/600/0*qozR8ri5oI_CMDMx.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://cdn-images-1.medium.com/max/600/0*JgLEVkathvoicCiY.gif&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;figcaption&gt;左:青軸(段落) 右:紅軸(線性)&lt;/figcaption&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;2️⃣&lt;/em&gt;&lt;em&gt;&lt;strong&gt;敲擊聲&lt;/strong&gt;&lt;/em&gt;*:敲擊聲通常就分為清脆和沒那麼清脆，有的人形容說是安靜，但我覺得什麼軸都有人覺得吵，應該沒有安靜的軸體。從下壓的的畫面應該可以猜出哪個軸體比較容易有聲音吧，當然是會咖搭下壓的青軸，青軸的觸發克數約為50g，算是中等，在觸發點的時候有明確的段落感，就像是傳統打字機發出來的聲音，按壓回饋感以及聲音很明確，受到文字工作者的愛好。我覺得他很像鍵盤軸裡的青少年，吵死了可是打起來好爽，使用青軸鍵盤通常會成為辦公室的討厭對象。*&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;再來稍微小聲一點，是擁有輕盈段落感的茶軸，下手時不會感到負擔，又可以得到回饋，是機械式鍵盤裡最熱門的軸體。想體驗機械式鍵盤的打感，又不想要太招搖，但我還是讓你知道一下我在用機械式鍵盤捏，選茶軸就對了，是最中規中矩的選擇。&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;接下來是紅軸，紅軸的觸發克數非常輕，打起來相對安靜，觸發的也很快，快速擊發的遊戲玩家應該都會選擇紅軸，紅軸比較像是低調有錢人的款式，我很有錢喔但我都安靜默默花錢。&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;黑軸以及綠軸還有聽起來更高級感的銀軸以及改良版的紅軸靜音紅，我比較少接觸到，這裡我們先不談。&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;這把鍵盤使用的是Cherry&#xA;MX軸系列的青軸，MX是Cherry這間德國公司設計，在1894年推出來的一種系列軸，也就是在軸心上方有十字的凸起，現今各家的軸體也多為MX的設計。&lt;/p&gt;&#xA;&lt;p&gt;在這時候我對鍵盤的了解也大概就停在知道軸體的部分，多數人了解機械式鍵盤也都差不多碰到這塊就停止了。這把青軸鍵盤的確也是吵也很爽，但久了也不覺得有什麼特別的，逐漸的在家裡聽到敲擊聲已經沒辦法滿足我，開始動了歪腦筋到辦公室的鍵盤上。&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;2-irocks-k61m-rgb-背光-紅軸-1699元&#34;&gt;2. &lt;strong&gt;irocks K61M&lt;/strong&gt; RGB 背光 紅軸 1699元&lt;/h3&gt;&#xA;&lt;p&gt;如果要入手機械式鍵盤，又還不想花超過兩千以上購買，那我會推薦irocks的鍵盤。這把相對比較便宜大概是因為軸體的關係，我是選中國牌子的軸體佳達隆，很多人在多數的生活用品使用上會排斥中國品牌的產品，認為比較不耐用或不好用，甚至到盡量避免中國製，但在鍵圈裡，由於中國鍵圈發展的十分蓬勃，各種軸體鍵帽鍵盤不斷推陳出新，多數人都會願意嘗試較低價且新穎的中國的軸體或鍵帽，能夠花最少的錢體驗到新東西很難拒絕吧。&lt;/p&gt;&#xA;&lt;p&gt;佳達隆的紅軸我打過之後很滿意，由於上一把是青軸，這把使用起來完全是不同的體驗，他輕巧順暢好打又算安靜，唯一唯一不是很滿意的地方是RGB(對我來說)，我在辦公室用RGB燈光幹嘛呢www&lt;/p&gt;&#xA;&lt;p&gt;這把鍵盤給我用著實很浪費，因為RGB才是他的主打，使用懸浮式的設計窄邊框，環繞燈光背光特效還有單色恆亮，可以光跡追蹤，就是你可以想像到的最炫的鍵盤了，如果沒預算買到羅技或是海盜船那種炫泡的RGB鍵盤，那這個K61M很適合。後來這把就給男友用，還幫他換了很油的鍵帽，因為沒有特別幫他留念，所以給大家看一下鍵帽。這把K61M還有附手托，實在太香了啦，和明日香一樣&amp;gt;&amp;lt;。&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://cdn-images-1.medium.com/max/800/1*f-F1mv8lMqmAwKeRfc3ccw.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;3-filco-ninja-majestouch-2-忍者tkl-茶軸-3680元&#34;&gt;3. Filco NINJA Majestouch 2 忍者TKL 茶軸 3680元&lt;/h3&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;鍵圈有句話:「你遲早都要入教的，何不直上LF？」&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://cdn-images-1.medium.com/max/800/1*8g-mdzulHHWQOYksAWRqag.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;沒錯，真的是遲早都要入教的，大F和大L在量產的機械式鍵盤裡是有名的信仰，F是Filco，L是Leopold。&lt;/p&gt;&#xA;&lt;p&gt;在兩把鍵盤已經沒辦法滿足我了(?)的狀況下，開始偷偷看起了大F，入門前很糾結在價格，Filco對新手來說真的是很貴，加上沒有信仰，所以還是從ducky入手了，不過ducky也不算便宜&amp;gt;&amp;lt;。但在已經有兩把鍵盤的前提下當時對我來說，是好想知道到底有多好打而不是收集鍵盤，就是鍵盤而已同樣是Cherry軸還能夠有多好打，哼買來打打看阿。&lt;/p&gt;&#xA;&lt;p&gt;這把購買的是Cherry茶軸，還真的是很好打，好打極了。大F通常大家推薦的就是忍者系列的茶軸，而大L則是紅軸，由於大L系列的紅軸我沒有試過，這裡就先不討論。而後面會再提我之後有再購買了一把ducky的茶軸，相較之下，平平是Cherry茶軸，大F就是好打，真的沒話說。為什麼會這樣呢?&lt;/p&gt;&#xA;&lt;p&gt;差別就在於&lt;strong&gt;鍵帽&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;常見的鍵帽分成兩種材質:&lt;strong&gt;&lt;strong&gt;ABS&lt;/strong&gt;&lt;/strong&gt;和&lt;/em&gt;&lt;em&gt;&lt;strong&gt;PBT&lt;/strong&gt;&lt;/em&gt;*，第三種為比較不常見的POM。*&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;&lt;strong&gt;ABS&lt;/strong&gt;&lt;/em&gt;&lt;em&gt;是易加工易成型的材料，通常是最多鍵盤商會選擇採納的材質，表面滑順摩擦力小，容易做成透光鍵帽，顏色呈現上較漂亮，但不耐熱，ABS最容易遇到的就是打油，應該很常看到鍵帽上的字不見了，然後鍵帽表面光滑亮亮的鍵盤吧，那就是打油。&lt;strong&gt;&lt;strong&gt;PBT&lt;/strong&gt;&lt;/strong&gt;是相對下較耐用的材質，抗油能力強，成形之後比較脆更為安定，因為他能承受的溫度比較高，通常都使用熱昇華印上去，會有一層細膩的磨砂感。&lt;/em&gt;&lt;/p&gt;&lt;/blockquote&gt;&#xA;&lt;p&gt;ABS鍵帽打起來真的有比較軟感覺很神奇，你知道他們都是塑形後的固體，可是觸碰下去就是可以感受到其中的差異，正所謂硬中帶軟。大F是使用ABS鍵帽，Ducky通常是使用PBT鍵帽，ABS鍵帽中的滑順感以及做工的差異影響了打起來的手感，才會有這麼大的差異。&lt;/p&gt;&#xA;&lt;p&gt;像是鍵帽品牌GMK大部分還是都使用ABS來製作鍵帽，因為呈色方面ABS著實比PBT更好看更細膩，這方面沒有優劣，只有各有所好。手邊有的ABS都是客製化的鍵帽，太貴了不忍用，常常是拍完照就被我換下來了XD。&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://cdn-images-1.medium.com/max/800/1*HlJMAWVDRV4vxUto7wcy6A.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;&#xA;&lt;figcaption&gt;鍵帽是Milkyway 流行色&lt;/figcaption&gt;&#xA;&lt;hr&gt;&#xA;&lt;h3 id=&#34;4ducky-x-sousou-one-2-聯名無rgb-2890元&#34;&gt;4.Ducky X SOU．SOU One 2 聯名無RGB 2890元&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://cdn-images-1.medium.com/max/1200/1*6rUxG6ukhTc5chHRvAOBmg.jpeg&#34; alt=&#34;&#34;&gt;&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>軸體 on Peihe's blog</title><link>www.peihe07.uno/tags/%E8%BB%B8%E9%AB%94/</link><description>Recent content in 軸體 on Peihe's blog</description><generator>Hugo</generator><language>en</language><copyright>Peihe</copyright><lastBuildDate>Thu, 24 Aug 2023 00:00:00 +0000</lastBuildDate><atom:link href="www.peihe07.uno/tags/%E8%BB%B8%E9%AB%94/index.xml" rel="self" type="application/rss+xml"/><item><title>從我的七把鍵盤來淺談機械式鍵盤</title><link>www.peihe07.uno/writings/2023-08-24-3b6980729642/</link><pubDate>Thu, 24 Aug 2023 00:00:00 +0000</pubDate><guid>www.peihe07.uno/writings/2023-08-24-3b6980729642/</guid><description>&lt;p>入鍵圈兩年多要來介紹機械式鍵盤，我還算是太淺了，所以我決定從我與我的七把鍵盤入手當作主軸來一一切入各種我想要聊的題目。&lt;/p>
+&lt;p>以前買電腦附的鍵盤多為薄膜式鍵盤，而知名水果電腦的筆電鍵盤則為剪刀腳鍵盤，那何謂機械式鍵盤？機械式鍵盤就是每個按鍵都是獨立的軸體，可以拆卸替換，部分為焊接或是熱插拔(無須焊接換軸)的形式固定在電路板上。&lt;/p>
+&lt;p>先來講一個關於我怎麼知道機械式鍵盤的小故事，那是在某天滑推特(現在叫X)的時候，正好看到推友碰氣大欸貼了一個ducky的鍵盤猶豫著要不要買，推文下方有喜歡的作家推友說ducky好用，又看到其他推友的各種推坑，我就好奇開始查了這個牌子，那時候連什麼軸都分不出來，只是用外表判斷，看到海灘假期的那刻，我就知道我戀愛了，怎麼會有這麼好看的鍵盤!&lt;/p>
+&lt;p>猶豫了好久最後在PCParty買下了我人生中的第一把機械式鍵盤。&lt;/p>
+&lt;hr>
+&lt;h3 id="1ducky-one-2-海灘假期-青軸-2990元">1.Ducky One 2 海灘假期 青軸 2990元&lt;/h3>
+&lt;p>&lt;img src="https://cdn-images-1.medium.com/max/800/1*oKRsD6FpeJpdxJLPavaprQ.jpeg" alt="">&lt;/p>
+&lt;p>第一把當然就是要買最吵的青軸，當時想著我都在家裡使用，很吵也沒關係吧，而且鍵盤就是要這麼吵阿喀搭喀搭的。&lt;/p>
+&lt;p>這把鍵盤是Cherry的MX軸的青軸，至於什麼事青軸呢？&lt;/p>
+&lt;p>第一個來談的就是&lt;strong>軸體&lt;/strong>&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;em>一般來說要入手最基本的機械式鍵盤軸體通常用打感和聲音來分&lt;/em>&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>&lt;em>1️⃣&lt;/em>
+&lt;em>&lt;strong>打感&lt;/strong>&lt;/em>*:通常分為&lt;strong>&lt;strong>線性軸&lt;/strong>&lt;/strong>和&lt;strong>&lt;strong>段落軸&lt;/strong>&lt;/strong>，線性有紅軸、銀軸更重的還有黑軸，而段落通常是青軸以及茶軸。何謂段落感?就是你壓下按鍵的時候，會感受到一段一段的感覺，很像是按下原子筆喀喀的感覺，配合下方的圖應該可以很明顯看出來，青軸在下壓過程多了一個咖搭下壓的感覺。*&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>&lt;em>以下摘錄自&lt;/em>
+&lt;a href="https://www.keyboardco.com/blog/index.php/2012/12/an-introduction-to-cherry-mx-mechanical-switches/">&lt;em>https://www.keyboardco.com/blog/index.php/2012/12/an-introduction-to-cherry-mx-mechanical-switches/&lt;/em>&lt;/a>&lt;/p>&lt;/blockquote>
+&lt;p>&lt;img src="https://cdn-images-1.medium.com/max/600/0*qozR8ri5oI_CMDMx.gif" alt="">&lt;/p>
+&lt;p>&lt;img src="https://cdn-images-1.medium.com/max/600/0*JgLEVkathvoicCiY.gif" alt="">&lt;/p>
+&lt;figcaption>左:青軸(段落) 右:紅軸(線性)&lt;/figcaption>
+&lt;blockquote>
+&lt;p>&lt;em>2️⃣&lt;/em>&lt;em>&lt;strong>敲擊聲&lt;/strong>&lt;/em>*:敲擊聲通常就分為清脆和沒那麼清脆，有的人形容說是安靜，但我覺得什麼軸都有人覺得吵，應該沒有安靜的軸體。從下壓的的畫面應該可以猜出哪個軸體比較容易有聲音吧，當然是會咖搭下壓的青軸，青軸的觸發克數約為50g，算是中等，在觸發點的時候有明確的段落感，就像是傳統打字機發出來的聲音，按壓回饋感以及聲音很明確，受到文字工作者的愛好。我覺得他很像鍵盤軸裡的青少年，吵死了可是打起來好爽，使用青軸鍵盤通常會成為辦公室的討厭對象。*&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>&lt;em>再來稍微小聲一點，是擁有輕盈段落感的茶軸，下手時不會感到負擔，又可以得到回饋，是機械式鍵盤裡最熱門的軸體。想體驗機械式鍵盤的打感，又不想要太招搖，但我還是讓你知道一下我在用機械式鍵盤捏，選茶軸就對了，是最中規中矩的選擇。&lt;/em>&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>&lt;em>接下來是紅軸，紅軸的觸發克數非常輕，打起來相對安靜，觸發的也很快，快速擊發的遊戲玩家應該都會選擇紅軸，紅軸比較像是低調有錢人的款式，我很有錢喔但我都安靜默默花錢。&lt;/em>&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>&lt;em>黑軸以及綠軸還有聽起來更高級感的銀軸以及改良版的紅軸靜音紅，我比較少接觸到，這裡我們先不談。&lt;/em>&lt;/p>&lt;/blockquote>
+&lt;p>這把鍵盤使用的是Cherry
+MX軸系列的青軸，MX是Cherry這間德國公司設計，在1894年推出來的一種系列軸，也就是在軸心上方有十字的凸起，現今各家的軸體也多為MX的設計。&lt;/p>
+&lt;p>在這時候我對鍵盤的了解也大概就停在知道軸體的部分，多數人了解機械式鍵盤也都差不多碰到這塊就停止了。這把青軸鍵盤的確也是吵也很爽，但久了也不覺得有什麼特別的，逐漸的在家裡聽到敲擊聲已經沒辦法滿足我，開始動了歪腦筋到辦公室的鍵盤上。&lt;/p>
+&lt;hr>
+&lt;h3 id="2-irocks-k61m-rgb-背光-紅軸-1699元">2. &lt;strong>irocks K61M&lt;/strong> RGB 背光 紅軸 1699元&lt;/h3>
+&lt;p>如果要入手機械式鍵盤，又還不想花超過兩千以上購買，那我會推薦irocks的鍵盤。這把相對比較便宜大概是因為軸體的關係，我是選中國牌子的軸體佳達隆，很多人在多數的生活用品使用上會排斥中國品牌的產品，認為比較不耐用或不好用，甚至到盡量避免中國製，但在鍵圈裡，由於中國鍵圈發展的十分蓬勃，各種軸體鍵帽鍵盤不斷推陳出新，多數人都會願意嘗試較低價且新穎的中國的軸體或鍵帽，能夠花最少的錢體驗到新東西很難拒絕吧。&lt;/p>
+&lt;p>佳達隆的紅軸我打過之後很滿意，由於上一把是青軸，這把使用起來完全是不同的體驗，他輕巧順暢好打又算安靜，唯一唯一不是很滿意的地方是RGB(對我來說)，我在辦公室用RGB燈光幹嘛呢www&lt;/p>
+&lt;p>這把鍵盤給我用著實很浪費，因為RGB才是他的主打，使用懸浮式的設計窄邊框，環繞燈光背光特效還有單色恆亮，可以光跡追蹤，就是你可以想像到的最炫的鍵盤了，如果沒預算買到羅技或是海盜船那種炫泡的RGB鍵盤，那這個K61M很適合。後來這把就給男友用，還幫他換了很油的鍵帽，因為沒有特別幫他留念，所以給大家看一下鍵帽。這把K61M還有附手托，實在太香了啦，和明日香一樣&amp;gt;&amp;lt;。&lt;/p>
+&lt;p>&lt;img src="https://cdn-images-1.medium.com/max/800/1*f-F1mv8lMqmAwKeRfc3ccw.jpeg" alt="">&lt;/p>
+&lt;hr>
+&lt;h3 id="3-filco-ninja-majestouch-2-忍者tkl-茶軸-3680元">3. Filco NINJA Majestouch 2 忍者TKL 茶軸 3680元&lt;/h3>
+&lt;blockquote>
+&lt;p>&lt;em>鍵圈有句話:「你遲早都要入教的，何不直上LF？」&lt;/em>&lt;/p>&lt;/blockquote>
+&lt;p>&lt;img src="https://cdn-images-1.medium.com/max/800/1*8g-mdzulHHWQOYksAWRqag.jpeg" alt="">&lt;/p>
+&lt;p>沒錯，真的是遲早都要入教的，大F和大L在量產的機械式鍵盤裡是有名的信仰，F是Filco，L是Leopold。&lt;/p>
+&lt;p>在兩把鍵盤已經沒辦法滿足我了(?)的狀況下，開始偷偷看起了大F，入門前很糾結在價格，Filco對新手來說真的是很貴，加上沒有信仰，所以還是從ducky入手了，不過ducky也不算便宜&amp;gt;&amp;lt;。但在已經有兩把鍵盤的前提下當時對我來說，是好想知道到底有多好打而不是收集鍵盤，就是鍵盤而已同樣是Cherry軸還能夠有多好打，哼買來打打看阿。&lt;/p>
+&lt;p>這把購買的是Cherry茶軸，還真的是很好打，好打極了。大F通常大家推薦的就是忍者系列的茶軸，而大L則是紅軸，由於大L系列的紅軸我沒有試過，這裡就先不討論。而後面會再提我之後有再購買了一把ducky的茶軸，相較之下，平平是Cherry茶軸，大F就是好打，真的沒話說。為什麼會這樣呢?&lt;/p>
+&lt;p>差別就在於&lt;strong>鍵帽&lt;/strong>&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;em>常見的鍵帽分成兩種材質:&lt;strong>&lt;strong>ABS&lt;/strong>&lt;/strong>和&lt;/em>&lt;em>&lt;strong>PBT&lt;/strong>&lt;/em>*，第三種為比較不常見的POM。*&lt;/p>&lt;/blockquote>
+&lt;blockquote>
+&lt;p>&lt;em>&lt;strong>ABS&lt;/strong>&lt;/em>&lt;em>是易加工易成型的材料，通常是最多鍵盤商會選擇採納的材質，表面滑順摩擦力小，容易做成透光鍵帽，顏色呈現上較漂亮，但不耐熱，ABS最容易遇到的就是打油，應該很常看到鍵帽上的字不見了，然後鍵帽表面光滑亮亮的鍵盤吧，那就是打油。&lt;strong>&lt;strong>PBT&lt;/strong>&lt;/strong>是相對下較耐用的材質，抗油能力強，成形之後比較脆更為安定，因為他能承受的溫度比較高，通常都使用熱昇華印上去，會有一層細膩的磨砂感。&lt;/em>&lt;/p>&lt;/blockquote>
+&lt;p>ABS鍵帽打起來真的有比較軟感覺很神奇，你知道他們都是塑形後的固體，可是觸碰下去就是可以感受到其中的差異，正所謂硬中帶軟。大F是使用ABS鍵帽，Ducky通常是使用PBT鍵帽，ABS鍵帽中的滑順感以及做工的差異影響了打起來的手感，才會有這麼大的差異。&lt;/p>
+&lt;p>像是鍵帽品牌GMK大部分還是都使用ABS來製作鍵帽，因為呈色方面ABS著實比PBT更好看更細膩，這方面沒有優劣，只有各有所好。手邊有的ABS都是客製化的鍵帽，太貴了不忍用，常常是拍完照就被我換下來了XD。&lt;/p>
+&lt;p>&lt;img src="https://cdn-images-1.medium.com/max/800/1*HlJMAWVDRV4vxUto7wcy6A.jpeg" alt="">&lt;/p>
+&lt;figcaption>鍵帽是Milkyway 流行色&lt;/figcaption>
+&lt;hr>
+&lt;h3 id="4ducky-x-sousou-one-2-聯名無rgb-2890元">4.Ducky X SOU．SOU One 2 聯名無RGB 2890元&lt;/h3>
+&lt;p>&lt;img src="https://cdn-images-1.medium.com/max/1200/1*6rUxG6ukhTc5chHRvAOBmg.jpeg" alt="">&lt;/p></description></item></channel></rss>

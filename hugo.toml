@@ -1,4 +1,4 @@
-baseURL = "www.peihe07.uno"
+baseURL = "https://www.peihe07.uno/"
 languageCode = "en"
 title = "Peihe's blog"
 theme = "archie"
