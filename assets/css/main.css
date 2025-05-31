@@ -367,11 +367,6 @@
   background: royalblue;
   color: whitesmoke ;
   }
-  .highlight pre code[class*='language-ts']::before{
-    content: 'TS';
-    background: #3178C6;
-    color: #fff;
-  }
   
   /* table */
   table {
@@ -399,3 +394,4 @@
     stroke-linejoin: round;
     fill: none;
   }
+  
