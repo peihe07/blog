@@ -1,21 +1,14 @@
 ---
 title: "About Me"
-date: 2024-12-01
+date: 2025-05-30
 ---
 
-歡迎來到我的個人網站！我是 Peihe，這裡分享我的技術學習、專案開發和生活感悟。
+Hi, I’m Pei! I graduated with a degree in Chemistry and have spent nearly 8 years working in chemical R&D. Somewhere along the way, I stumbled into the world of programming — and it was love at first bug fix.
 
-**我感興趣的領域：**
-- 網頁開發
-- 開源專案
-- 技術寫作
-- 程式設計
+Over the past year, I’ve been diving deep into code during my free time, fascinated by the satisfaction of solving problems, building things from scratch, and discovering tools that make development smoother (and more fun).
 
----
+Now, whether it’s tinkering with backend APIs, playing with frontend frameworks, or deploying projects just to see them live — I’m probably doing it with a cup of coffee and a big smile.
 
-### 聯絡方式 / Contact
-
-- **GitHub**: [peihe07](https://github.com/peihe07)
-- **Email**: y450376@gmail.com
+From beakers to bugs — turns out, I just really love experimenting.
 
 Thank you for visiting!
