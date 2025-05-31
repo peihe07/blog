@@ -1,5 +1,5 @@
 ---
-title: "ProperScript（中規中矩體）"
+title: "ProperScript"
 date: 2025-05-24
 tags: ["Font", "python", "handwriting", "專案"]
 draft: false
