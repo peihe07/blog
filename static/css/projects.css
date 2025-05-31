@@ -1,9 +1,10 @@
 .project-grid {
+  width: 100%;
+  max-width: 100%;
   display: grid;
   grid-template-columns: repeat(3, minmax(300px, 1fr));
   gap: 1.2rem;
-  margin: 2rem auto;
-  max-width: 980px;
+  margin: 2rem 0;
 }
 
 .project-card {

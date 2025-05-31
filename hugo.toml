@@ -30,7 +30,7 @@ copyright = "Peihe"
 
 [[params.social]]
   name = "medium"
-  icon = "medium"
+  icon = "book-open"
   url = "https://medium.com/@peihe07"
 
 # 分類與標籤
