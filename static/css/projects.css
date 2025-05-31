@@ -1,9 +1,9 @@
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(340px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(3, minmax(300px, 1fr));
+  gap: 1.2rem;
   margin: 2rem auto;
-  max-width: 1100px;
+  max-width: 980px;
 }
 
 .project-card {
@@ -116,10 +116,10 @@
   height: 16px;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1000px) {
   .project-grid {
-    grid-template-columns: repeat(2, minmax(320px, 1fr));
-    max-width: 720px;
+    grid-template-columns: repeat(2, minmax(260px, 1fr));
+    max-width: 600px;
   }
 }
 
