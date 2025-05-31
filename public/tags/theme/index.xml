@@ -2,18 +2,18 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Theme on Peihe&#39;s blog</title>
-    <link>https://peihe07.uno/tags/theme/</link>
+    <link>https://www.peihe07.uno/tags/theme/</link>
     <description>Recent content in Theme on Peihe&#39;s blog</description>
     <generator>Hugo</generator>
     <language>en</language>
     <copyright>Peihe</copyright>
     <lastBuildDate>Sun, 01 Dec 2024 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://peihe07.uno/tags/theme/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://www.peihe07.uno/tags/theme/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Hugo Cactus主題配置</title>
-      <link>https://peihe07.uno/projects/2024-12-01-hugo-cactus-setup/</link>
+      <link>https://www.peihe07.uno/projects/2024-12-01-hugo-cactus-setup/</link>
       <pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate>
-      <guid>https://peihe07.uno/projects/2024-12-01-hugo-cactus-setup/</guid>
+      <guid>https://www.peihe07.uno/projects/2024-12-01-hugo-cactus-setup/</guid>
       <description>&lt;h2 id=&#34;專案描述--project-description&#34;&gt;專案描述 / Project Description&lt;/h2&gt;&#xA;&lt;p&gt;&lt;strong&gt;中文&lt;/strong&gt;: 這是一個 Hugo Cactus 主題的完整配置專案，包含多語言支援和自訂樣式。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;English&lt;/strong&gt;: A complete Hugo Cactus theme configuration project with multilingual support and custom styling.&lt;/p&gt;&#xA;&lt;h2 id=&#34;功能特色--features&#34;&gt;功能特色 / Features&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;✅ &lt;strong&gt;混合語言支援&lt;/strong&gt; / Mixed language support&lt;/li&gt;&#xA;&lt;li&gt;✅ &lt;strong&gt;響應式設計&lt;/strong&gt; / Responsive design&lt;/li&gt;&#xA;&lt;li&gt;✅ &lt;strong&gt;語法高亮&lt;/strong&gt; / Syntax highlighting&lt;/li&gt;&#xA;&lt;li&gt;✅ &lt;strong&gt;社交媒體整合&lt;/strong&gt; / Social media integration&lt;/li&gt;&#xA;&lt;li&gt;✅ &lt;strong&gt;SEO 優化&lt;/strong&gt; / SEO optimized&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;技術棧--tech-stack&#34;&gt;技術棧 / Tech Stack&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Hugo&lt;/strong&gt; - 靜態網站生成器 / Static site generator&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Cactus Theme&lt;/strong&gt; - 簡潔優雅的主題 / Clean and elegant theme&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Markdown&lt;/strong&gt; - 內容撰寫 / Content writing&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Git&lt;/strong&gt; - 版本控制 / Version control&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;線上展示--live-demo&#34;&gt;線上展示 / Live Demo&lt;/h2&gt;&#xA;&lt;p&gt;🌐 &lt;strong&gt;網站&lt;/strong&gt;: &lt;a href=&#34;https://www.peihe07.uno&#34;&gt;www.peihe07.uno&lt;/a&gt;&lt;br&gt;&#xA;📱 &lt;strong&gt;GitHub&lt;/strong&gt;: &lt;a href=&#34;https://github.com/peihe07&#34;&gt;Repository&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>

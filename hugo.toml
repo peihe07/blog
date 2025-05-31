@@ -15,7 +15,7 @@ copyright = "Peihe"
   useCDN = true
   showReadTime = true
   mainSections = ["writings", "projects", "notes"]
-  customcss = ["css/light.css", "css/font.css", "css/main.css", "css/syntax.css"]
+  customcss = ["/css/light.css", "/css/font.css", "/css/main.css", "/css/syntax.css"]
 
 # 社群連結
 [[params.social]]
