@@ -1,8 +1,11 @@
 ---
 title: "SonicVision"
 date: 2025-03-17
-tags: ["Python", "django", "專案"]
+tags: ["Music", "Visualization", "專案"]
 draft: false
+description: "一個音樂視覺化工具，將音樂轉換為視覺效果。"
+github: "https://github.com/peihe07/SonicVision"
+technologies: ["Python", "OpenGL", "Audio Processing"]
 ---
 
 # SonicVision 專案介紹

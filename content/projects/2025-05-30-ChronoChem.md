@@ -1,8 +1,11 @@
 ---
-title: "ChronoChem - 化學時空之旅"
+title: "ChronoChem"
 date: 2025-05-30
-tags: ["教育", "AI", "專案"]
+tags: ["Chemistry", "Education", "專案"]
 draft: false
+description: "一個化學元素週期表的互動式學習工具。"
+github: "https://github.com/peihe07/chrono-chem"
+technologies: ["React", "TypeScript", "CSS"]
 ---
 
 # ChronoChem - 化學時空之旅 🌟

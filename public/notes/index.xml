@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Notes on Peihe's blog</title><link>www.peihe07.uno/notes/</link><description>Recent content in Notes on Peihe's blog</description><generator>Hugo</generator><language>en</language><copyright>Peihe</copyright><lastBuildDate>Fri, 24 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="www.peihe07.uno/notes/index.xml" rel="self" type="application/rss+xml"/><item><title>Django筆記</title><link>www.peihe07.uno/notes/2025-01-24-django_notes_outline/</link><pubDate>Fri, 24 Jan 2025 00:00:00 +0000</pubDate><guid>www.peihe07.uno/notes/2025-01-24-django_notes_outline/</guid><description>&lt;h1 id="django-學習筆記">Django 學習筆記&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Notes on Peihe's blog</title><link>https://www.peihe07.uno/notes/</link><description>Recent content in Notes on Peihe's blog</description><generator>Hugo</generator><language>en</language><copyright>Peihe</copyright><lastBuildDate>Fri, 24 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.peihe07.uno/notes/index.xml" rel="self" type="application/rss+xml"/><item><title>Django筆記</title><link>https://www.peihe07.uno/notes/2025-01-24-django_notes_outline/</link><pubDate>Fri, 24 Jan 2025 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/notes/2025-01-24-django_notes_outline/</guid><description>&lt;h1 id="django-學習筆記">Django 學習筆記&lt;/h1>
 &lt;h2 id="1-django-基礎概念">1. Django 基礎概念&lt;/h2>
 &lt;h3 id="11-什麼是-django">1.1 什麼是 Django&lt;/h3>
 &lt;p>&lt;strong>Web 框架簡介&lt;/strong>
@@ -66,7 +66,7 @@ Django 是一個高階的 Python Web 框架，鼓勵快速開發和乾淨、實�
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>deactivate
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>&lt;strong>Django 安裝&lt;/strong>&lt;/p></description></item><item><title>Vue.js</title><link>www.peihe07.uno/notes/2024-12-30-vue_notes/</link><pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate><guid>www.peihe07.uno/notes/2024-12-30-vue_notes/</guid><description>&lt;h1 id="vuejs-專案結構與檔案詳細說明">Vue.js 專案結構與檔案詳細說明&lt;/h1>
+&lt;/div>&lt;p>&lt;strong>Django 安裝&lt;/strong>&lt;/p></description></item><item><title>Vue.js</title><link>https://www.peihe07.uno/notes/2024-12-30-vue_notes/</link><pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/notes/2024-12-30-vue_notes/</guid><description>&lt;h1 id="vuejs-專案結構與檔案詳細說明">Vue.js 專案結構與檔案詳細說明&lt;/h1>
 &lt;p>以下解析一個使用 Vue CLI 建立的典型前端 Vue.js 專案結構，並說明各個檔案與資料夾的作用與必要性。&lt;/p>
 &lt;h2 id="目錄">目錄&lt;/h2>
 &lt;ul>

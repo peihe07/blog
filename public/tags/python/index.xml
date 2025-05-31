@@ -1,4 +1,83 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on Peihe's blog</title><link>www.peihe07.uno/tags/python/</link><description>Recent content in Python on Peihe's blog</description><generator>Hugo</generator><language>en</language><copyright>Peihe</copyright><lastBuildDate>Fri, 24 Jan 2025 00:00:00 +0000</lastBuildDate><atom:link href="www.peihe07.uno/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>Django筆記</title><link>www.peihe07.uno/notes/2025-01-24-django_notes_outline/</link><pubDate>Fri, 24 Jan 2025 00:00:00 +0000</pubDate><guid>www.peihe07.uno/notes/2025-01-24-django_notes_outline/</guid><description>&lt;h1 id="django-學習筆記">Django 學習筆記&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on Peihe's blog</title><link>https://www.peihe07.uno/tags/python/</link><description>Recent content in Python on Peihe's blog</description><generator>Hugo</generator><language>en</language><copyright>Peihe</copyright><lastBuildDate>Sat, 24 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.peihe07.uno/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>ProperScript（中規中矩體）</title><link>https://www.peihe07.uno/projects/2025-05-24-properscript/</link><pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/projects/2025-05-24-properscript/</guid><description>&lt;h1 id="properscript中規中矩體">ProperScript（中規中矩體）&lt;/h1>
+&lt;p>&lt;img src="https://github.com/user-attachments/assets/6ff75585-7356-426b-bbef-402a21f7dd99" alt="中規中矩體">&lt;/p>
+&lt;p>✍️ 一套自己製作的手寫字體。&lt;/p>
+&lt;h2 id="關於字體">關於字體&lt;/h2>
+&lt;p>我喜歡寫字，想了好幾年終於動手自己做。&lt;/p>
+&lt;p>會叫「中規中矩體」是因為我認為自己的字跡在沒有很好看也沒有很難看的範圍內，我想就真的是中規中矩吧。&lt;/p>
+&lt;p>第一次嘗試自己做字體，自己寫自己學會修字及如何利用工具處理大量的字體，還是有很多不太滿意的字，以及想要調整的地方，後續會慢慢調整更新，我相信會繼續更新版本吧XD。&lt;/p>
+&lt;h2 id="-下載--最新版本v1020250524-發布">📦 下載- 最新版本：v1.0（2025/05/24 發布）&lt;/h2>
+&lt;ul>
+&lt;li>字體檔案：&lt;a href="https://github.com/peihe07/ProperScript/blob/main/ProperScript-Regular.ttf">ProperScript-Regular.ttf&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="-製作輔助工具">🛠️ 製作輔助工具&lt;/h2>
+&lt;p>為了有效製作這套字體，我開發了一系列前端工具與腳本來進行字符排版與預覽，協助字型切割與字符對位。&lt;/p>
+&lt;h3 id="字集模板生成器通用分頁-html">字集模板生成器（通用分頁 HTML）&lt;/h3>
+&lt;ul>
+&lt;li>功能：將字集文字檔自動排版成 A4 字網格模板，可選擇每頁字數、分割檔案、位置樣式（左上 / 居中）&lt;/li>
+&lt;li>技術：JavaScript + HTML5 前端工具&lt;/li>
+&lt;li>特色程式碼：&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">getUnicodeFromName&lt;/span>(&lt;span style="color:#a6e22e">name&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#a6e22e">name&lt;/span>.&lt;span style="color:#a6e22e">startsWith&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;uni&amp;#39;&lt;/span>)) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">hex&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">name&lt;/span>.&lt;span style="color:#a6e22e">substring&lt;/span>(&lt;span style="color:#ae81ff">3&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> String.&lt;span style="color:#a6e22e">fromCodePoint&lt;/span>(parseInt(&lt;span style="color:#a6e22e">hex&lt;/span>, &lt;span style="color:#ae81ff">16&lt;/span>));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// ...
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="特殊符號模板生成器">特殊符號模板生成器&lt;/h3>
+&lt;ul>
+&lt;li>功能：支援手動輸入 U+XXXX 編碼或上傳 txt，快速生成特殊符號網格&lt;/li>
+&lt;li>用途：測試標點與符號集的對齊情形&lt;/li>
+&lt;/ul>
+&lt;h3 id="台語拼音模板生成器">台語拼音模板生成器&lt;/h3>
+&lt;ul>
+&lt;li>功能：針對台羅拼音常用字元提供快速預覽與排版下載功能&lt;/li>
+&lt;li>使用場景：台語拼音支援測試&lt;/li>
+&lt;/ul>
+&lt;h3 id="日文垂直變體模板生成器">日文垂直變體模板生成器&lt;/h3>
+&lt;ul>
+&lt;li>功能：比較日文字元在水平與垂直模式下的顯示差異，支援垂直模式切換&lt;/li>
+&lt;li>程式碼片段：&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>.&lt;span style="color:#a6e22e">writing&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#a6e22e">mode&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">vertical&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#a6e22e">rl&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>.&lt;span style="color:#a6e22e">text&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#a6e22e">orientation&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">upright&lt;/span>;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="python-切割字符腳本">Python 切割字符腳本&lt;/h3>
+&lt;ul>
+&lt;li>功能：將命名後的 .png 字符圖自動對應為 Unicode 檔名&lt;/li>
+&lt;li>檔案：&lt;code>切割字符.py&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> fontTools.pens.boundsPen &lt;span style="color:#f92672">import&lt;/span> ControlBoundsPen
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pen &lt;span style="color:#f92672">=&lt;/span> ControlBoundsPen(font&lt;span style="color:#f92672">.&lt;/span>getGlyphSet())
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>這些工具讓我能更有效率地規劃、臨摹與切割超過 7000 個字元，實現個人字體專案的自動化與結構化。&lt;/p></description></item><item><title>Django筆記</title><link>https://www.peihe07.uno/notes/2025-01-24-django_notes_outline/</link><pubDate>Fri, 24 Jan 2025 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/notes/2025-01-24-django_notes_outline/</guid><description>&lt;h1 id="django-學習筆記">Django 學習筆記&lt;/h1>
 &lt;h2 id="1-django-基礎概念">1. Django 基礎概念&lt;/h2>
 &lt;h3 id="11-什麼是-django">1.1 什麼是 Django&lt;/h3>
 &lt;p>&lt;strong>Web 框架簡介&lt;/strong>
@@ -66,7 +145,7 @@ Django 是一個高階的 Python Web 框架，鼓勵快速開發和乾淨、實�
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>deactivate
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>&lt;strong>Django 安裝&lt;/strong>&lt;/p></description></item><item><title>Vue.js</title><link>www.peihe07.uno/notes/2024-12-30-vue_notes/</link><pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate><guid>www.peihe07.uno/notes/2024-12-30-vue_notes/</guid><description>&lt;h1 id="vuejs-專案結構與檔案詳細說明">Vue.js 專案結構與檔案詳細說明&lt;/h1>
+&lt;/div>&lt;p>&lt;strong>Django 安裝&lt;/strong>&lt;/p></description></item><item><title>Vue.js</title><link>https://www.peihe07.uno/notes/2024-12-30-vue_notes/</link><pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/notes/2024-12-30-vue_notes/</guid><description>&lt;h1 id="vuejs-專案結構與檔案詳細說明">Vue.js 專案結構與檔案詳細說明&lt;/h1>
 &lt;p>以下解析一個使用 Vue CLI 建立的典型前端 Vue.js 專案結構，並說明各個檔案與資料夾的作用與必要性。&lt;/p>
 &lt;h2 id="目錄">目錄&lt;/h2>
 &lt;ul>

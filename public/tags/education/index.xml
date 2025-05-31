@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Education on Peihe's blog</title><link>https://www.peihe07.uno/tags/education/</link><description>Recent content in Education on Peihe's blog</description><generator>Hugo</generator><language>en</language><copyright>Peihe</copyright><lastBuildDate>Fri, 30 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.peihe07.uno/tags/education/index.xml" rel="self" type="application/rss+xml"/><item><title>ChronoChem</title><link>https://www.peihe07.uno/projects/2025-05-30-chronochem/</link><pubDate>Fri, 30 May 2025 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/projects/2025-05-30-chronochem/</guid><description>&lt;h1 id="chronochem---化學時空之旅-">ChronoChem - 化學時空之旅 🌟&lt;/h1>
+&lt;p>&lt;img src="https://www.peihe07.uno/images/Chronochem/ChronoChem.jpg" alt="">&lt;/p>
+&lt;p>ChronoChem 是一個創新的教育平台，讓使用者能夠穿越時空，與歷史上著名的化學家進行互動對話，探索化學發展的精彩歷程。&lt;/p>
+&lt;h2 id="-主要功能">✨ 主要功能&lt;/h2>
+&lt;ul>
+&lt;li>🧪 3D 互動場景：探索不同時期的化學實驗室&lt;/li>
+&lt;li>👨‍🔬 化學家對話：與歷史上的化學家進行 AI 驅動的對話&lt;/li>
+&lt;li>📚 歷史事件：了解重要的化學發現和突破&lt;/li>
+&lt;li>🌍 時空旅行：體驗不同時期的化學發展&lt;/li>
+&lt;/ul>
+&lt;h2 id="-快速開始">🚀 快速開始&lt;/h2>
+&lt;h3 id="系統需求">系統需求&lt;/h3>
+&lt;ul>
+&lt;li>Node.js 18+&lt;/li>
+&lt;li>Python 3.8+&lt;/li>
+&lt;li>PostgreSQL 13+&lt;/li>
+&lt;li>Docker &amp;amp; Docker Compose (可選)&lt;/li>
+&lt;/ul>
+&lt;h3 id="使用-docker-運行推薦">使用 Docker 運行（推薦）&lt;/h3>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 克隆專案&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git clone https://github.com/peihe07/chrono-chem.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd chrono-chem
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 使用 Docker Compose 啟動&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker-compose up -d
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="手動安裝">手動安裝&lt;/h3>
+&lt;ol>
+&lt;li>後端設置：&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>cd backend
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python -m venv .venv
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>source .venv/bin/activate &lt;span style="color:#75715e"># Windows: .venv\Scripts\activate&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pip install -r requirements.txt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python manage.py migrate
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python manage.py runserver
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="2">
+&lt;li>前端設置：&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>cd frontend
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npm install
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npm run dev
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="-技術棧">📚 技術棧&lt;/h2>
+&lt;h3 id="前端">前端&lt;/h3>
+&lt;ul>
+&lt;li>Vue 3&lt;/li>
+&lt;li>Three.js&lt;/li>
+&lt;li>TypeScript&lt;/li>
+&lt;li>Vite&lt;/li>
+&lt;li>Pinia&lt;/li>
+&lt;/ul>
+&lt;h3 id="後端">後端&lt;/h3>
+&lt;ul>
+&lt;li>Django&lt;/li>
+&lt;li>Django REST Framework&lt;/li>
+&lt;li>PostgreSQL&lt;/li>
+&lt;li>OpenAI API&lt;/li>
+&lt;/ul>
+&lt;h2 id="-開發指南">🔧 開發指南&lt;/h2>
+&lt;h3 id="目錄結構">目錄結構&lt;/h3>
+&lt;pre tabindex="0">&lt;code>chrono-chem/
+├── frontend/ # Vue 3 前端
+├── backend/ # Django 後端
+├── docs/ # 文檔
+└── docker/ # Docker 配置
+&lt;/code>&lt;/pre>&lt;h3 id="環境變數">環境變數&lt;/h3>
+&lt;p>複製 &lt;code>.env.example&lt;/code> 到 &lt;code>.env&lt;/code> 並設置必要的環境變數：&lt;/p></description></item></channel></rss>

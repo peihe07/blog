@@ -18,22 +18,41 @@
         <!-- 📦 Projects 區塊 -->
         <section>
           <h2>📦 Projects</h2>
-          <div class="project-social-grid">
-            {{ $projects := first 6 (where .Site.RegularPages "Type" "projects") }}
+          <div class="project-grid">
+            {{ $projects := first 3 (where .Site.RegularPages "Type" "projects") }}
             {{ range $projects }}
-            <div class="social-card">
-              <div class="social-card-left">
+            <div class="project-card">
+              <div class="project-header">
                 <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-                <p class="social-summary">
+                <div class="project-links">
+                  {{ if .Params.github }}
+                  <a href="{{ .Params.github }}" target="_blank" rel="noopener" class="github-link">
+                    <i data-feather="github"></i>
+                  </a>
+                  {{ end }}
+                  {{ if .Params.demo }}
+                  <a href="{{ .Params.demo }}" target="_blank" rel="noopener" class="demo-link">
+                    <i data-feather="external-link"></i>
+                  </a>
+                  {{ end }}
+                </div>
+              </div>
+              <div class="project-content">
+                <p class="project-description">
                   {{ if .Params.description }}{{ .Params.description }}
                   {{ else }}{{ .Summary }}{{ end }}
                 </p>
-                <div class="social-meta">
-                  {{ .Date.Format "2006-01-02" }}
+                {{ if .Params.technologies }}
+                <div class="project-tech">
+                  {{ range .Params.technologies }}
+                  <span class="tech-tag">{{ . }}</span>
+                  {{ end }}
                 </div>
+                {{ end }}
               </div>
-              <div class="social-card-right">
-                <img src="/images/github-icon.svg" alt="GitHub" />
+              <div class="project-footer">
+                <span class="project-date">{{ .Date.Format "2006-01-02" }}</span>
+                <a href="{{ .RelPermalink }}" class="read-more">查看詳情 <i data-feather="arrow-right"></i></a>
               </div>
             </div>
             {{ end }}

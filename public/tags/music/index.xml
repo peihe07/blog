@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Music on Peihe's blog</title><link>https://www.peihe07.uno/tags/music/</link><description>Recent content in Music on Peihe's blog</description><generator>Hugo</generator><language>en</language><copyright>Peihe</copyright><lastBuildDate>Mon, 17 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.peihe07.uno/tags/music/index.xml" rel="self" type="application/rss+xml"/><item><title>SonicVision</title><link>https://www.peihe07.uno/projects/2025-03-17-sonicvision/</link><pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/projects/2025-03-17-sonicvision/</guid><description>&lt;h1 id="sonicvision-專案介紹">SonicVision 專案介紹&lt;/h1>
+&lt;h2 id="專案概述">專案概述&lt;/h2>
+&lt;p>&lt;img src="https://www.peihe07.uno/images/SonicVision/SonicVision.jpg" alt="">&lt;/p>
+&lt;p>SonicVision 是一個創新的多媒體整合平台，將音樂和電影體驗完美結合。這個平台利用現代化的技術棧，為用戶提供一個無縫的娛樂體驗，讓用戶可以輕鬆探索、分享和享受音樂與電影內容。&lt;/p>
+&lt;h2 id="核心特色">核心特色&lt;/h2>
+&lt;h3 id="-音樂體驗">🎵 音樂體驗&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Spotify 整合&lt;/strong>：直接訪問數百萬首歌曲&lt;/li>
+&lt;li>&lt;strong>智能播放列表&lt;/strong>：根據用戶喜好自動生成個性化播放列表&lt;/li>
+&lt;li>&lt;strong>音樂社交&lt;/strong>：與好友分享音樂品味和發現&lt;/li>
+&lt;li>&lt;strong>即時音樂預覽&lt;/strong>：無需離開平台即可試聽歌曲&lt;/li>
+&lt;/ul>
+&lt;h3 id="-電影體驗">🎬 電影體驗&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>TMDB 整合&lt;/strong>：訪問全球最大的電影數據庫&lt;/li>
+&lt;li>&lt;strong>智能推薦&lt;/strong>：基於用戶觀影歷史的個性化推薦&lt;/li>
+&lt;li>&lt;strong>觀看清單&lt;/strong>：輕鬆管理想看的電影&lt;/li>
+&lt;li>&lt;strong>社群互動&lt;/strong>：分享觀影心得和評分&lt;/li>
+&lt;/ul>
+&lt;h3 id="-社交功能">🤝 社交功能&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>用戶檔案&lt;/strong>：展示個人音樂和電影品味&lt;/li>
+&lt;li>&lt;strong>好友系統&lt;/strong>：連接志同道合的用戶&lt;/li>
+&lt;li>&lt;strong>即時通知&lt;/strong>：獲取好友動態和系統更新&lt;/li>
+&lt;li>&lt;strong>社群互動&lt;/strong>：評論、點讚和分享內容&lt;/li>
+&lt;/ul>
+&lt;h2 id="技術架構">技術架構&lt;/h2>
+&lt;h3 id="後端技術">後端技術&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>框架&lt;/strong>：Django 4.2 + Django REST Framework&lt;/li>
+&lt;li>&lt;strong>數據庫&lt;/strong>：PostgreSQL&lt;/li>
+&lt;li>&lt;strong>認證&lt;/strong>：JWT + Google OAuth2&lt;/li>
+&lt;li>&lt;strong>API 整合&lt;/strong>：
+&lt;ul>
+&lt;li>Spotify API&lt;/li>
+&lt;li>TMDB API&lt;/li>
+&lt;li>YouTube API&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>實時通訊&lt;/strong>：WebSocket&lt;/li>
+&lt;/ul>
+&lt;h3 id="前端技術">前端技術&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>框架&lt;/strong>：Vue.js 3 + TypeScript&lt;/li>
+&lt;li>&lt;strong>狀態管理&lt;/strong>：Pinia&lt;/li>
+&lt;li>&lt;strong>UI 框架&lt;/strong>：Vuetify 3&lt;/li>
+&lt;li>&lt;strong>樣式&lt;/strong>：TailwindCSS&lt;/li>
+&lt;li>&lt;strong>HTTP 客戶端&lt;/strong>：Axios&lt;/li>
+&lt;li>&lt;strong>路由&lt;/strong>：Vue Router&lt;/li>
+&lt;/ul>
+&lt;h3 id="開發工具">開發工具&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>容器化&lt;/strong>：Docker + Docker Compose&lt;/li>
+&lt;li>&lt;strong>代碼質量&lt;/strong>：
+&lt;ul>
+&lt;li>Python：Black, Flake8, isort&lt;/li>
+&lt;li>TypeScript：ESLint, TypeScript ESLint&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>版本控制&lt;/strong>：Git&lt;/li>
+&lt;li>&lt;strong>包管理&lt;/strong>：
+&lt;ul>
+&lt;li>後端：pip&lt;/li>
+&lt;li>前端：npm&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="系統架構">系統架構&lt;/h2>
+&lt;pre tabindex="0">&lt;code>SonicVision
+├── 前端 (Vue.js)
+│ ├── 用戶界面
+│ ├── 狀態管理
+│ └── API 整合
+├── 後端 (Django)
+│ ├── REST API
+│ ├── 數據庫
+│ └── 外部服務整合
+└── 基礎設施
+ ├── Docker 容器
+ ├── Nginx 反向代理
+ └── PostgreSQL 數據庫
+&lt;/code>&lt;/pre>&lt;h2 id="開發流程">開發流程&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>環境設置&lt;/strong>&lt;/p></description></item></channel></rss>

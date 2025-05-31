@@ -1,4 +1,182 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Peihe's blog</title><link>www.peihe07.uno/</link><description>Recent content on Peihe's blog</description><generator>Hugo</generator><language>en</language><copyright>Peihe</copyright><lastBuildDate>Mon, 21 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="www.peihe07.uno/index.xml" rel="self" type="application/rss+xml"/><item><title>MakeAFont 上篇-從手寫到字體</title><link>www.peihe07.uno/projects/2025-04-21-makeafont-1/</link><pubDate>Mon, 21 Apr 2025 00:00:00 +0000</pubDate><guid>www.peihe07.uno/projects/2025-04-21-makeafont-1/</guid><description>&lt;h1 id="makeafont-上篇-從手寫到字體">MakeAFont 上篇-從手寫到字體&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Peihe's blog</title><link>https://www.peihe07.uno/</link><description>Recent content on Peihe's blog</description><generator>Hugo</generator><language>en</language><copyright>Peihe</copyright><lastBuildDate>Fri, 30 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.peihe07.uno/index.xml" rel="self" type="application/rss+xml"/><item><title>About Me</title><link>https://www.peihe07.uno/about/</link><pubDate>Fri, 30 May 2025 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/about/</guid><description>&lt;p>Hi, I’m Pei! I graduated with a degree in Chemistry and have spent nearly 8 years working in chemical R&amp;amp;D. Somewhere along the way, I stumbled into the world of programming — and it was love at first bug fix.&lt;/p>
+&lt;p>Over the past year, I’ve been diving deep into code during my free time, fascinated by the satisfaction of solving problems, building things from scratch, and discovering tools that make development smoother (and more fun).&lt;/p></description></item><item><title>ChronoChem</title><link>https://www.peihe07.uno/projects/2025-05-30-chronochem/</link><pubDate>Fri, 30 May 2025 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/projects/2025-05-30-chronochem/</guid><description>&lt;h1 id="chronochem---化學時空之旅-">ChronoChem - 化學時空之旅 🌟&lt;/h1>
+&lt;p>&lt;img src="https://www.peihe07.uno/images/Chronochem/ChronoChem.jpg" alt="">&lt;/p>
+&lt;p>ChronoChem 是一個創新的教育平台，讓使用者能夠穿越時空，與歷史上著名的化學家進行互動對話，探索化學發展的精彩歷程。&lt;/p>
+&lt;h2 id="-主要功能">✨ 主要功能&lt;/h2>
+&lt;ul>
+&lt;li>🧪 3D 互動場景：探索不同時期的化學實驗室&lt;/li>
+&lt;li>👨‍🔬 化學家對話：與歷史上的化學家進行 AI 驅動的對話&lt;/li>
+&lt;li>📚 歷史事件：了解重要的化學發現和突破&lt;/li>
+&lt;li>🌍 時空旅行：體驗不同時期的化學發展&lt;/li>
+&lt;/ul>
+&lt;h2 id="-快速開始">🚀 快速開始&lt;/h2>
+&lt;h3 id="系統需求">系統需求&lt;/h3>
+&lt;ul>
+&lt;li>Node.js 18+&lt;/li>
+&lt;li>Python 3.8+&lt;/li>
+&lt;li>PostgreSQL 13+&lt;/li>
+&lt;li>Docker &amp;amp; Docker Compose (可選)&lt;/li>
+&lt;/ul>
+&lt;h3 id="使用-docker-運行推薦">使用 Docker 運行（推薦）&lt;/h3>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 克隆專案&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git clone https://github.com/peihe07/chrono-chem.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd chrono-chem
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 使用 Docker Compose 啟動&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker-compose up -d
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="手動安裝">手動安裝&lt;/h3>
+&lt;ol>
+&lt;li>後端設置：&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>cd backend
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python -m venv .venv
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>source .venv/bin/activate &lt;span style="color:#75715e"># Windows: .venv\Scripts\activate&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pip install -r requirements.txt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python manage.py migrate
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python manage.py runserver
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="2">
+&lt;li>前端設置：&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>cd frontend
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npm install
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npm run dev
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="-技術棧">📚 技術棧&lt;/h2>
+&lt;h3 id="前端">前端&lt;/h3>
+&lt;ul>
+&lt;li>Vue 3&lt;/li>
+&lt;li>Three.js&lt;/li>
+&lt;li>TypeScript&lt;/li>
+&lt;li>Vite&lt;/li>
+&lt;li>Pinia&lt;/li>
+&lt;/ul>
+&lt;h3 id="後端">後端&lt;/h3>
+&lt;ul>
+&lt;li>Django&lt;/li>
+&lt;li>Django REST Framework&lt;/li>
+&lt;li>PostgreSQL&lt;/li>
+&lt;li>OpenAI API&lt;/li>
+&lt;/ul>
+&lt;h2 id="-開發指南">🔧 開發指南&lt;/h2>
+&lt;h3 id="目錄結構">目錄結構&lt;/h3>
+&lt;pre tabindex="0">&lt;code>chrono-chem/
+├── frontend/ # Vue 3 前端
+├── backend/ # Django 後端
+├── docs/ # 文檔
+└── docker/ # Docker 配置
+&lt;/code>&lt;/pre>&lt;h3 id="環境變數">環境變數&lt;/h3>
+&lt;p>複製 &lt;code>.env.example&lt;/code> 到 &lt;code>.env&lt;/code> 並設置必要的環境變數：&lt;/p></description></item><item><title>ProperScript（中規中矩體）</title><link>https://www.peihe07.uno/projects/2025-05-24-properscript/</link><pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/projects/2025-05-24-properscript/</guid><description>&lt;h1 id="properscript中規中矩體">ProperScript（中規中矩體）&lt;/h1>
+&lt;p>&lt;img src="https://github.com/user-attachments/assets/6ff75585-7356-426b-bbef-402a21f7dd99" alt="中規中矩體">&lt;/p>
+&lt;p>✍️ 一套自己製作的手寫字體。&lt;/p>
+&lt;h2 id="關於字體">關於字體&lt;/h2>
+&lt;p>我喜歡寫字，想了好幾年終於動手自己做。&lt;/p>
+&lt;p>會叫「中規中矩體」是因為我認為自己的字跡在沒有很好看也沒有很難看的範圍內，我想就真的是中規中矩吧。&lt;/p>
+&lt;p>第一次嘗試自己做字體，自己寫自己學會修字及如何利用工具處理大量的字體，還是有很多不太滿意的字，以及想要調整的地方，後續會慢慢調整更新，我相信會繼續更新版本吧XD。&lt;/p>
+&lt;h2 id="-下載--最新版本v1020250524-發布">📦 下載- 最新版本：v1.0（2025/05/24 發布）&lt;/h2>
+&lt;ul>
+&lt;li>字體檔案：&lt;a href="https://github.com/peihe07/ProperScript/blob/main/ProperScript-Regular.ttf">ProperScript-Regular.ttf&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="-製作輔助工具">🛠️ 製作輔助工具&lt;/h2>
+&lt;p>為了有效製作這套字體，我開發了一系列前端工具與腳本來進行字符排版與預覽，協助字型切割與字符對位。&lt;/p>
+&lt;h3 id="字集模板生成器通用分頁-html">字集模板生成器（通用分頁 HTML）&lt;/h3>
+&lt;ul>
+&lt;li>功能：將字集文字檔自動排版成 A4 字網格模板，可選擇每頁字數、分割檔案、位置樣式（左上 / 居中）&lt;/li>
+&lt;li>技術：JavaScript + HTML5 前端工具&lt;/li>
+&lt;li>特色程式碼：&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">getUnicodeFromName&lt;/span>(&lt;span style="color:#a6e22e">name&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#a6e22e">name&lt;/span>.&lt;span style="color:#a6e22e">startsWith&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;uni&amp;#39;&lt;/span>)) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">hex&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">name&lt;/span>.&lt;span style="color:#a6e22e">substring&lt;/span>(&lt;span style="color:#ae81ff">3&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> String.&lt;span style="color:#a6e22e">fromCodePoint&lt;/span>(parseInt(&lt;span style="color:#a6e22e">hex&lt;/span>, &lt;span style="color:#ae81ff">16&lt;/span>));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// ...
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="特殊符號模板生成器">特殊符號模板生成器&lt;/h3>
+&lt;ul>
+&lt;li>功能：支援手動輸入 U+XXXX 編碼或上傳 txt，快速生成特殊符號網格&lt;/li>
+&lt;li>用途：測試標點與符號集的對齊情形&lt;/li>
+&lt;/ul>
+&lt;h3 id="台語拼音模板生成器">台語拼音模板生成器&lt;/h3>
+&lt;ul>
+&lt;li>功能：針對台羅拼音常用字元提供快速預覽與排版下載功能&lt;/li>
+&lt;li>使用場景：台語拼音支援測試&lt;/li>
+&lt;/ul>
+&lt;h3 id="日文垂直變體模板生成器">日文垂直變體模板生成器&lt;/h3>
+&lt;ul>
+&lt;li>功能：比較日文字元在水平與垂直模式下的顯示差異，支援垂直模式切換&lt;/li>
+&lt;li>程式碼片段：&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>.&lt;span style="color:#a6e22e">writing&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#a6e22e">mode&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">vertical&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#a6e22e">rl&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>.&lt;span style="color:#a6e22e">text&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#a6e22e">orientation&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">upright&lt;/span>;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="python-切割字符腳本">Python 切割字符腳本&lt;/h3>
+&lt;ul>
+&lt;li>功能：將命名後的 .png 字符圖自動對應為 Unicode 檔名&lt;/li>
+&lt;li>檔案：&lt;code>切割字符.py&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> fontTools.pens.boundsPen &lt;span style="color:#f92672">import&lt;/span> ControlBoundsPen
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pen &lt;span style="color:#f92672">=&lt;/span> ControlBoundsPen(font&lt;span style="color:#f92672">.&lt;/span>getGlyphSet())
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>這些工具讓我能更有效率地規劃、臨摹與切割超過 7000 個字元，實現個人字體專案的自動化與結構化。&lt;/p></description></item><item><title>MakeAFont</title><link>https://www.peihe07.uno/projects/2025-04-21-makeafont-1/</link><pubDate>Mon, 21 Apr 2025 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/projects/2025-04-21-makeafont-1/</guid><description>&lt;h1 id="makeafont-上篇-從手寫到字體">MakeAFont 上篇-從手寫到字體&lt;/h1>
 &lt;p>本系列紀錄我開發一套完整中文字體的過程，從手寫到完成字型包。&lt;/p>
 &lt;p>分為上下兩篇：&lt;/p>
 &lt;p>上篇：字集規劃、模板設計、iPad 手寫流程、圖片裁切、向量化&lt;/p>
@@ -29,31 +207,115 @@
 &lt;/ul>
 &lt;p>一開始可是發起了豪情壯志想要寫繁體中文社群裡最大的BIG5字集的13060個漢字，但真的寫過之後才發現，喔~還好我沒有這樣做耶。&lt;/p>
 &lt;h1 id="製作手寫模板pdf">&lt;strong>製作手寫模板（PDF）&lt;/strong>&lt;/h1>
-&lt;p>&lt;img src="www.peihe07.uno/images/MakeAFont/1_XJHw208as8E5l8fU0OFRJw.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://www.peihe07.uno/images/MakeAFont/1_XJHw208as8E5l8fU0OFRJw.png" alt="">&lt;/p>
 &lt;p>製做手寫模板這裡我大概花了一天半的時間，模板就丟給AI去幫我生成html檔，他設計了一個 5×7 的格線模板，每頁 35 字，格線中含有：&lt;/p>
 &lt;ul>
 &lt;li>中心點（便於對齊筆劃）&lt;/li>
 &lt;li>邊界線（控制字寬與留白）&lt;/li>
 &lt;li>灰色提示字（對照填寫內容）&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="www.peihe07.uno/images/MakeAFont/1_yho2990E-lbkYWrXi_-IAw.png" alt="">
+&lt;p>&lt;img src="https://www.peihe07.uno/images/MakeAFont/1_yho2990E-lbkYWrXi_-IAw.png" alt="">
 左邊是第一版（範例字置中）&lt;/p>
-&lt;p>&lt;img src="www.peihe07.uno/images/MakeAFont/1_KXXjfKIDeP4Bc72exGDFvw.png" alt="">
+&lt;p>&lt;img src="https://www.peihe07.uno/images/MakeAFont/1_KXXjfKIDeP4Bc72exGDFvw.png" alt="">
 右邊是第二版（範例字放在左上角）&lt;/p>
 &lt;p>其中我將基礎字切成7份，繁體字部分一份共1063個字體，符號的方面則獨立切出一份。&lt;/p>
 &lt;p>一開始我是請AI產出字集裡Unicode對應的字並顯示在格子正中央，大概寫了1000字之後發現一個問題，當開始大量書寫之後，會開始照著範例去描，而不是寫出自己的字形。因為整理的時候會覺得是有點像我的字，但寫的有點太好看又不像，應該要將範例字放在角落，遂又生成了第二個版本。&lt;/p>
 &lt;blockquote>
 &lt;p>🌐 Unicode 是什麼？&lt;/p>
 &lt;p>&lt;em>&lt;strong>Unicode&lt;/strong> 是一個國際字元編碼標準，目標是為全世界所有文字、符號與表情符號提供&lt;/em>&lt;em>唯一且一致的編碼&lt;/em>*。它用來解決「不同語言、系統間無法正確顯示文字」的問題。*&lt;/p>&lt;/blockquote>
-&lt;p>&lt;img src="www.peihe07.uno/images/MakeAFont/1_7VFS5Qfa1VTlJ0hh7MHlkw.png" alt="">&lt;/p>
-&lt;p>&lt;img src="www.peihe07.uno/images/MakeAFont/1_ZwBSIVs3nP02VYdayTJC_w.png" alt="">
+&lt;p>&lt;img src="https://www.peihe07.uno/images/MakeAFont/1_7VFS5Qfa1VTlJ0hh7MHlkw.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://www.peihe07.uno/images/MakeAFont/1_ZwBSIVs3nP02VYdayTJC_w.png" alt="">
 然後發現自己寫字真的是歪wwwww&lt;/p>
 &lt;p>然後若是符號和日文字，我還是採取範例字置中，才不會寫的真的很醜。&lt;/p>
-&lt;p>&lt;img src="www.peihe07.uno/images/MakeAFont/1_xjA4oTdQikEd3PgX6uJDpg.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://www.peihe07.uno/images/MakeAFont/1_xjA4oTdQikEd3PgX6uJDpg.png" alt="">&lt;/p>
 &lt;p>模版的部分除了繁體字有明確的Unicode生成範例字就沒什麼太大問題，麻煩的是擴充符號包那些，需要先請AI將該名稱找到Unicode生成對應，再去產出所以光是日文字、台語羅馬拼音、符號都需要各自生成對應的模版生成器，後續可能會在開源檔案裡提供。&lt;/p>
 &lt;h1 id="-step-2手寫輸入">&lt;strong>✏️ Step 2：手寫輸入&lt;/strong>&lt;/h1>
 &lt;h1 id="我是使用-ipad--goodnotes">&lt;strong>我是使用 iPad + GoodNotes&lt;/strong>&lt;/h1>
-&lt;p>原因是我都剛好有，也有購買GoodNotes，Goodnotes好處是可直接套用 PDF 模板，格線不會移位，之後輸出可以去掉背景方便後續切割，只輸出筆跡的部分，可以多頁匯出也可以單頁匯出。&lt;/p></description></item><item><title>Django筆記</title><link>www.peihe07.uno/notes/2025-01-24-django_notes_outline/</link><pubDate>Fri, 24 Jan 2025 00:00:00 +0000</pubDate><guid>www.peihe07.uno/notes/2025-01-24-django_notes_outline/</guid><description>&lt;h1 id="django-學習筆記">Django 學習筆記&lt;/h1>
+&lt;p>原因是我都剛好有，也有購買GoodNotes，Goodnotes好處是可直接套用 PDF 模板，格線不會移位，之後輸出可以去掉背景方便後續切割，只輸出筆跡的部分，可以多頁匯出也可以單頁匯出。&lt;/p></description></item><item><title>SonicVision</title><link>https://www.peihe07.uno/projects/2025-03-17-sonicvision/</link><pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/projects/2025-03-17-sonicvision/</guid><description>&lt;h1 id="sonicvision-專案介紹">SonicVision 專案介紹&lt;/h1>
+&lt;h2 id="專案概述">專案概述&lt;/h2>
+&lt;p>&lt;img src="https://www.peihe07.uno/images/SonicVision/SonicVision.jpg" alt="">&lt;/p>
+&lt;p>SonicVision 是一個創新的多媒體整合平台，將音樂和電影體驗完美結合。這個平台利用現代化的技術棧，為用戶提供一個無縫的娛樂體驗，讓用戶可以輕鬆探索、分享和享受音樂與電影內容。&lt;/p>
+&lt;h2 id="核心特色">核心特色&lt;/h2>
+&lt;h3 id="-音樂體驗">🎵 音樂體驗&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Spotify 整合&lt;/strong>：直接訪問數百萬首歌曲&lt;/li>
+&lt;li>&lt;strong>智能播放列表&lt;/strong>：根據用戶喜好自動生成個性化播放列表&lt;/li>
+&lt;li>&lt;strong>音樂社交&lt;/strong>：與好友分享音樂品味和發現&lt;/li>
+&lt;li>&lt;strong>即時音樂預覽&lt;/strong>：無需離開平台即可試聽歌曲&lt;/li>
+&lt;/ul>
+&lt;h3 id="-電影體驗">🎬 電影體驗&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>TMDB 整合&lt;/strong>：訪問全球最大的電影數據庫&lt;/li>
+&lt;li>&lt;strong>智能推薦&lt;/strong>：基於用戶觀影歷史的個性化推薦&lt;/li>
+&lt;li>&lt;strong>觀看清單&lt;/strong>：輕鬆管理想看的電影&lt;/li>
+&lt;li>&lt;strong>社群互動&lt;/strong>：分享觀影心得和評分&lt;/li>
+&lt;/ul>
+&lt;h3 id="-社交功能">🤝 社交功能&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>用戶檔案&lt;/strong>：展示個人音樂和電影品味&lt;/li>
+&lt;li>&lt;strong>好友系統&lt;/strong>：連接志同道合的用戶&lt;/li>
+&lt;li>&lt;strong>即時通知&lt;/strong>：獲取好友動態和系統更新&lt;/li>
+&lt;li>&lt;strong>社群互動&lt;/strong>：評論、點讚和分享內容&lt;/li>
+&lt;/ul>
+&lt;h2 id="技術架構">技術架構&lt;/h2>
+&lt;h3 id="後端技術">後端技術&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>框架&lt;/strong>：Django 4.2 + Django REST Framework&lt;/li>
+&lt;li>&lt;strong>數據庫&lt;/strong>：PostgreSQL&lt;/li>
+&lt;li>&lt;strong>認證&lt;/strong>：JWT + Google OAuth2&lt;/li>
+&lt;li>&lt;strong>API 整合&lt;/strong>：
+&lt;ul>
+&lt;li>Spotify API&lt;/li>
+&lt;li>TMDB API&lt;/li>
+&lt;li>YouTube API&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>實時通訊&lt;/strong>：WebSocket&lt;/li>
+&lt;/ul>
+&lt;h3 id="前端技術">前端技術&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>框架&lt;/strong>：Vue.js 3 + TypeScript&lt;/li>
+&lt;li>&lt;strong>狀態管理&lt;/strong>：Pinia&lt;/li>
+&lt;li>&lt;strong>UI 框架&lt;/strong>：Vuetify 3&lt;/li>
+&lt;li>&lt;strong>樣式&lt;/strong>：TailwindCSS&lt;/li>
+&lt;li>&lt;strong>HTTP 客戶端&lt;/strong>：Axios&lt;/li>
+&lt;li>&lt;strong>路由&lt;/strong>：Vue Router&lt;/li>
+&lt;/ul>
+&lt;h3 id="開發工具">開發工具&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>容器化&lt;/strong>：Docker + Docker Compose&lt;/li>
+&lt;li>&lt;strong>代碼質量&lt;/strong>：
+&lt;ul>
+&lt;li>Python：Black, Flake8, isort&lt;/li>
+&lt;li>TypeScript：ESLint, TypeScript ESLint&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>版本控制&lt;/strong>：Git&lt;/li>
+&lt;li>&lt;strong>包管理&lt;/strong>：
+&lt;ul>
+&lt;li>後端：pip&lt;/li>
+&lt;li>前端：npm&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="系統架構">系統架構&lt;/h2>
+&lt;pre tabindex="0">&lt;code>SonicVision
+├── 前端 (Vue.js)
+│ ├── 用戶界面
+│ ├── 狀態管理
+│ └── API 整合
+├── 後端 (Django)
+│ ├── REST API
+│ ├── 數據庫
+│ └── 外部服務整合
+└── 基礎設施
+ ├── Docker 容器
+ ├── Nginx 反向代理
+ └── PostgreSQL 數據庫
+&lt;/code>&lt;/pre>&lt;h2 id="開發流程">開發流程&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>環境設置&lt;/strong>&lt;/p></description></item><item><title>Django筆記</title><link>https://www.peihe07.uno/notes/2025-01-24-django_notes_outline/</link><pubDate>Fri, 24 Jan 2025 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/notes/2025-01-24-django_notes_outline/</guid><description>&lt;h1 id="django-學習筆記">Django 學習筆記&lt;/h1>
 &lt;h2 id="1-django-基礎概念">1. Django 基礎概念&lt;/h2>
 &lt;h3 id="11-什麼是-django">1.1 什麼是 Django&lt;/h3>
 &lt;p>&lt;strong>Web 框架簡介&lt;/strong>
@@ -121,7 +383,7 @@ Django 是一個高階的 Python Web 框架，鼓勵快速開發和乾淨、實�
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>deactivate
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>&lt;strong>Django 安裝&lt;/strong>&lt;/p></description></item><item><title>Vue.js</title><link>www.peihe07.uno/notes/2024-12-30-vue_notes/</link><pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate><guid>www.peihe07.uno/notes/2024-12-30-vue_notes/</guid><description>&lt;h1 id="vuejs-專案結構與檔案詳細說明">Vue.js 專案結構與檔案詳細說明&lt;/h1>
+&lt;/div>&lt;p>&lt;strong>Django 安裝&lt;/strong>&lt;/p></description></item><item><title>Vue.js</title><link>https://www.peihe07.uno/notes/2024-12-30-vue_notes/</link><pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/notes/2024-12-30-vue_notes/</guid><description>&lt;h1 id="vuejs-專案結構與檔案詳細說明">Vue.js 專案結構與檔案詳細說明&lt;/h1>
 &lt;p>以下解析一個使用 Vue CLI 建立的典型前端 Vue.js 專案結構，並說明各個檔案與資料夾的作用與必要性。&lt;/p>
 &lt;h2 id="目錄">目錄&lt;/h2>
 &lt;ul>
@@ -245,23 +507,8 @@ Django 是一個高階的 Python Web 框架，鼓勵快速開發和乾淨、實�
 &lt;/ul>
 &lt;hr>
 &lt;h1 id="vuejs-進階應用與生態系統補充說明">Vue.js 進階應用與生態系統補充說明&lt;/h1>
-&lt;p>除了基礎的專案結構與檔案說明，Vue.js 生態系統提供了許多進階工具與最佳實踐，能協助你建立更高效、彈性及易於維護的前端應用。以下補充一些常見的延伸主題與應用情境：&lt;/p></description></item><item><title>About Me</title><link>www.peihe07.uno/about/</link><pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate><guid>www.peihe07.uno/about/</guid><description>&lt;p>歡迎來到我的個人網站！我是 Peihe，這裡分享我的技術學習、專案開發和生活感悟。&lt;/p>
-&lt;p>&lt;strong>我感興趣的領域：&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>網頁開發&lt;/li>
-&lt;li>開源專案&lt;/li>
-&lt;li>技術寫作&lt;/li>
-&lt;li>程式設計&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h3 id="聯絡方式--contact">聯絡方式 / Contact&lt;/h3>
-&lt;ul>
-&lt;li>&lt;strong>GitHub&lt;/strong>: &lt;a href="https://github.com/peihe07">peihe07&lt;/a>&lt;/li>
-&lt;li>&lt;strong>Email&lt;/strong>: &lt;a href="mailto:y450376@gmail.com">y450376@gmail.com&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;p>Thank you for visiting!&lt;/p></description></item><item><title>Hugo Cactus主題配置</title><link>www.peihe07.uno/projects/2024-12-01-hugo-cactus-setup/</link><pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate><guid>www.peihe07.uno/projects/2024-12-01-hugo-cactus-setup/</guid><description>&lt;h2 id="專案描述--project-description">專案描述 / Project Description&lt;/h2>
-&lt;p>&lt;strong>中文&lt;/strong>: 這是一個 Hugo Cactus 主題的完整配置專案，包含多語言支援和自訂樣式。&lt;/p>
-&lt;p>&lt;strong>English&lt;/strong>: A complete Hugo Cactus theme configuration project with multilingual support and custom styling.&lt;/p>
+&lt;p>除了基礎的專案結構與檔案說明，Vue.js 生態系統提供了許多進階工具與最佳實踐，能協助你建立更高效、彈性及易於維護的前端應用。以下補充一些常見的延伸主題與應用情境：&lt;/p></description></item><item><title>Hugo Cactus 主題設置</title><link>https://www.peihe07.uno/projects/2024-12-01-hugo-cactus-setup/</link><pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/projects/2024-12-01-hugo-cactus-setup/</guid><description>&lt;h2 id="專案描述--project-description">專案描述 / Project Description&lt;/h2>
+&lt;p>這是一個 Hugo Cactus 主題的完整配置專案，包含多語言支援和自訂樣式。&lt;/p>
 &lt;h2 id="功能特色--features">功能特色 / Features&lt;/h2>
 &lt;ul>
 &lt;li>✅ &lt;strong>混合語言支援&lt;/strong> / Mixed language support&lt;/li>
@@ -279,7 +526,7 @@ Django 是一個高階的 Python Web 框架，鼓勵快速開發和乾淨、實�
 &lt;/ul>
 &lt;h2 id="線上展示--live-demo">線上展示 / Live Demo&lt;/h2>
 &lt;p>🌐 &lt;strong>網站&lt;/strong>: &lt;a href="https://www.peihe07.uno">www.peihe07.uno&lt;/a>&lt;br>
-📱 &lt;strong>GitHub&lt;/strong>: &lt;a href="https://github.com/peihe07">Repository&lt;/a>&lt;/p></description></item><item><title>做料理給心愛的人吃，是一件很快樂的事</title><link>www.peihe07.uno/writings/2024-10-14-8b82ea24f8c0/</link><pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate><guid>www.peihe07.uno/writings/2024-10-14-8b82ea24f8c0/</guid><description>&lt;p>&lt;img src="https://cdn-images-1.medium.com/max/800/1*an8GCduj0VTxTJNy9nmAsg.jpeg" alt="">&lt;/p>
+📱 &lt;strong>GitHub&lt;/strong>: &lt;a href="https://github.com/peihe07">Repository&lt;/a>&lt;/p></description></item><item><title>做料理給心愛的人吃，是一件很快樂的事</title><link>https://www.peihe07.uno/writings/2024-10-14-8b82ea24f8c0/</link><pubDate>Mon, 14 Oct 2024 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/writings/2024-10-14-8b82ea24f8c0/</guid><description>&lt;p>&lt;img src="https://cdn-images-1.medium.com/max/800/1*an8GCduj0VTxTJNy9nmAsg.jpeg" alt="">&lt;/p>
 &lt;figcaption>巴斯不願意承認是他&lt;/figcaption>
 &lt;p>其實我並不是特別喜歡做料理，只有在一時興起才會想做料理，一定要說的話我反而更喜歡處理食材和收拾善後洗東西，很怪吧XD。&lt;/p>
 &lt;hr>
@@ -353,7 +600,7 @@ Django 是一個高階的 Python Web 框架，鼓勵快速開發和乾淨、實�
 &lt;blockquote>
 &lt;p>巴斯克蛋糕&lt;/p>&lt;/blockquote>
 &lt;p>&lt;img src="https://cdn-images-1.medium.com/max/800/1*8DmMtDdRTwdAClout8inDw.jpeg" alt="">&lt;/p>
-&lt;p>養了巴斯之後我就很喜歡巴斯克蛋糕(毫無關聯)，巴斯克的濃郁和香氣我一直都很喜歡。&lt;/p></description></item><item><title>這是一篇讀了也不會得到什麼的文章</title><link>www.peihe07.uno/writings/2024-05-02-018ea710c544/</link><pubDate>Thu, 02 May 2024 00:00:00 +0000</pubDate><guid>www.peihe07.uno/writings/2024-05-02-018ea710c544/</guid><description>&lt;p>這是一篇看似有內容，但實際上不是的文章&lt;/p>
+&lt;p>養了巴斯之後我就很喜歡巴斯克蛋糕(毫無關聯)，巴斯克的濃郁和香氣我一直都很喜歡。&lt;/p></description></item><item><title>這是一篇讀了也不會得到什麼的文章</title><link>https://www.peihe07.uno/writings/2024-05-02-018ea710c544/</link><pubDate>Thu, 02 May 2024 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/writings/2024-05-02-018ea710c544/</guid><description>&lt;p>這是一篇看似有內容，但實際上不是的文章&lt;/p>
 &lt;hr>
 &lt;p>最近把推特關掉之後，無聊的時候就是看看IG上的ちい活和各種做料理的影片，多半是甜點和麵包的影片，以下是一些小疑問和觀察：&lt;/p>
 &lt;ol>
@@ -391,7 +638,7 @@ Django 是一個高階的 Python Web 框架，鼓勵快速開發和乾淨、實�
 &lt;p>&lt;img src="https://cdn-images-1.medium.com/max/400/1*OIIyySB_JM5OPBZb8qCFEw.jpeg" alt="">&lt;/p>
 &lt;hr>
 &lt;p>&lt;img src="https://cdn-images-1.medium.com/max/800/1*qp-ucR6HrKGssYDaUPJMqQ.jpeg" alt="">&lt;/p>
-&lt;p>那我們下次見，掰掰。&lt;/p></description></item><item><title>我依然是個性情大便的人但我不結婚了-30歲過後的整理٩(๑´0\`๑)۶</title><link>www.peihe07.uno/writings/2023-12-18-28cc4a5d2939/</link><pubDate>Mon, 18 Dec 2023 00:00:00 +0000</pubDate><guid>www.peihe07.uno/writings/2023-12-18-28cc4a5d2939/</guid><description>&lt;p>嗨，如果有看過&lt;a href="https://medium.com/@peihe07/%E6%88%91%E6%98%AF%E5%80%8B%E6%80%A7%E6%83%85%E5%A4%A7%E4%BE%BF%E7%9A%84%E4%BA%BA-%E0%B8%81%E0%B9%87%CA%95-%CD%A1%E1%B4%A5-%CA%94-%E0%B8%81%E0%B9%89-30%E6%AD%B2%E5%89%8D%E7%9A%84%E6%95%B4%E7%90%86-b2089779aecf">前篇&lt;/a>
+&lt;p>那我們下次見，掰掰。&lt;/p></description></item><item><title>我依然是個性情大便的人但我不結婚了-30歲過後的整理٩(๑´0\`๑)۶</title><link>https://www.peihe07.uno/writings/2023-12-18-28cc4a5d2939/</link><pubDate>Mon, 18 Dec 2023 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/writings/2023-12-18-28cc4a5d2939/</guid><description>&lt;p>嗨，如果有看過&lt;a href="https://medium.com/@peihe07/%E6%88%91%E6%98%AF%E5%80%8B%E6%80%A7%E6%83%85%E5%A4%A7%E4%BE%BF%E7%9A%84%E4%BA%BA-%E0%B8%81%E0%B9%87%CA%95-%CD%A1%E1%B4%A5-%CA%94-%E0%B8%81%E0%B9%89-30%E6%AD%B2%E5%89%8D%E7%9A%84%E6%95%B4%E7%90%86-b2089779aecf">前篇&lt;/a>
 的話，就知道我30歲了，沒看也不影響XD，總之再來試著說說我這半年來的整理。&lt;/p>
 &lt;hr>
 &lt;p>先來列一下今年大概完成了哪些事&lt;/p>
@@ -440,7 +687,7 @@ Django 是一個高階的 Python Web 框架，鼓勵快速開發和乾淨、實�
 &lt;p>「這本書獻給所有經歷過生命中意想不到變動的人。」這是張惠菁在《給冥王星》中後記的獻詞。&lt;/p>
 &lt;p>我也想將這篇文章&lt;/p>
 &lt;p>&lt;strong>獻給剛經歷過生命中意想不到變動的人。&lt;/strong>&lt;/p>
-&lt;p>那麼我們下次見囉。&lt;/p></description></item><item><title>HITORI 的福岡周末快閃</title><link>www.peihe07.uno/writings/2023-11-07-38292dbccf03/</link><pubDate>Tue, 07 Nov 2023 00:00:00 +0000</pubDate><guid>www.peihe07.uno/writings/2023-11-07-38292dbccf03/</guid><description>&lt;p>&lt;img src="https://cdn-images-1.medium.com/max/800/1*Uc1d-6vm1OXbez0JWqGrrA.jpeg" alt="">&lt;/p>
+&lt;p>那麼我們下次見囉。&lt;/p></description></item><item><title>HITORI 的福岡周末快閃</title><link>https://www.peihe07.uno/writings/2023-11-07-38292dbccf03/</link><pubDate>Tue, 07 Nov 2023 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/writings/2023-11-07-38292dbccf03/</guid><description>&lt;p>&lt;img src="https://cdn-images-1.medium.com/max/800/1*Uc1d-6vm1OXbez0JWqGrrA.jpeg" alt="">&lt;/p>
 &lt;figcaption>不是巴斯&lt;/figcaption>
 &lt;p>嗨大家好我是HITORI x&lt;/p>
 &lt;p>事出突然，整個十月都瀰漫著一股暴戾之氣，有很多東西影響，選戰接近、戰爭又起、未來的討論及決定全都累積在了十月。&lt;/p>
@@ -507,7 +754,7 @@ Fukuoka，我掙扎了很久第二天要不要就住在同一個地方就好，�
 &lt;p>&lt;img src="https://cdn-images-1.medium.com/max/800/0*NIVyE5m7amysFAVW.jpg" alt="">&lt;/p>
 &lt;p>&lt;img src="https://cdn-images-1.medium.com/max/600/0*08dNOh1n3G3N5aVn.jpg" alt="">&lt;/p>
 &lt;p>商店街路上還有非常多好吃的名店，像是有明太子冰淇淋、現烤仙貝、明太子法國麵包、，其中最想吃的是天山的甘王草莓大福最中，不過因為我到的時候尚未是草莓的產季QQ，據說11月下旬就會開始了（為此想再飛一次）。還有てのごい家的紗布巾，以及どんぐりの森裡面有滿滿的宮崎駿動畫商品。&lt;/p>
-&lt;p>接著就到了我的午餐一蘭～&lt;/p></description></item><item><title>如果有一個永無島，你去不去?</title><link>www.peihe07.uno/writings/2023-09-08-d037a345806f/</link><pubDate>Fri, 08 Sep 2023 00:00:00 +0000</pubDate><guid>www.peihe07.uno/writings/2023-09-08-d037a345806f/</guid><description>&lt;hr>
+&lt;p>接著就到了我的午餐一蘭～&lt;/p></description></item><item><title>如果有一個永無島，你去不去?</title><link>https://www.peihe07.uno/writings/2023-09-08-d037a345806f/</link><pubDate>Fri, 08 Sep 2023 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/writings/2023-09-08-d037a345806f/</guid><description>&lt;hr>
 &lt;p>這是一篇回朔到五年前的遊記，近期因為當時的旅伴，最近又要再次前往，回憶照片的頻率更高了，覺得不記下來有點可惜，因為當時真的拍了很多好看的照片，而且現在去那裡的機票又變貴了，所以更珍貴了。&lt;/p>
 &lt;p>我認為是個沒去過會後悔的地方，是哪裡呢?&lt;/p>
 &lt;h3 id="紐西蘭的南島">紐西蘭的南島&lt;/h3>
@@ -569,7 +816,7 @@ Pukaki，當下真的是太震撼，這湖美到我想要死在這裡啊，去�
 &lt;p>&lt;img src="https://cdn-images-1.medium.com/max/600/1*xfKe3DYUT3F_OC1Rwrsp8g.jpeg" alt="">&lt;/p>
 &lt;p>&lt;img src="https://cdn-images-1.medium.com/max/600/1*s9JPhVYHjGkdiFZC45EiVA.jpeg" alt="">&lt;/p>
 &lt;p>&lt;img src="https://cdn-images-1.medium.com/max/600/1*ywvCwZEY4Octd7fD-qT46A.jpeg" alt="">&lt;/p>
-&lt;p>接著往南就會到達皇后鎮啦，由於跨年是旺季，當時皇后鎮的住宿都被訂光了，只剩下超級無敵貴的美景villa，窮人我住到離皇后鎮開車要四十分鐘的金斯頓的一個露營區www，真的很可憐吧，本來還想說晚上再開車去皇后鎮上跨年的，但路上要走的那段路沒路燈，很怕開車開一開就掉下去Lake Wakatipu裡面了，就算了，待在營區跨年就好。&lt;/p></description></item><item><title>從我的七把鍵盤來淺談機械式鍵盤</title><link>www.peihe07.uno/writings/2023-08-24-3b6980729642/</link><pubDate>Thu, 24 Aug 2023 00:00:00 +0000</pubDate><guid>www.peihe07.uno/writings/2023-08-24-3b6980729642/</guid><description>&lt;p>入鍵圈兩年多要來介紹機械式鍵盤，我還算是太淺了，所以我決定從我與我的七把鍵盤入手當作主軸來一一切入各種我想要聊的題目。&lt;/p>
+&lt;p>接著往南就會到達皇后鎮啦，由於跨年是旺季，當時皇后鎮的住宿都被訂光了，只剩下超級無敵貴的美景villa，窮人我住到離皇后鎮開車要四十分鐘的金斯頓的一個露營區www，真的很可憐吧，本來還想說晚上再開車去皇后鎮上跨年的，但路上要走的那段路沒路燈，很怕開車開一開就掉下去Lake Wakatipu裡面了，就算了，待在營區跨年就好。&lt;/p></description></item><item><title>從我的七把鍵盤來淺談機械式鍵盤</title><link>https://www.peihe07.uno/writings/2023-08-24-3b6980729642/</link><pubDate>Thu, 24 Aug 2023 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/writings/2023-08-24-3b6980729642/</guid><description>&lt;p>入鍵圈兩年多要來介紹機械式鍵盤，我還算是太淺了，所以我決定從我與我的七把鍵盤入手當作主軸來一一切入各種我想要聊的題目。&lt;/p>
 &lt;p>以前買電腦附的鍵盤多為薄膜式鍵盤，而知名水果電腦的筆電鍵盤則為剪刀腳鍵盤，那何謂機械式鍵盤？機械式鍵盤就是每個按鍵都是獨立的軸體，可以拆卸替換，部分為焊接或是熱插拔(無須焊接換軸)的形式固定在電路板上。&lt;/p>
 &lt;p>先來講一個關於我怎麼知道機械式鍵盤的小故事，那是在某天滑推特(現在叫X)的時候，正好看到推友碰氣大欸貼了一個ducky的鍵盤猶豫著要不要買，推文下方有喜歡的作家推友說ducky好用，又看到其他推友的各種推坑，我就好奇開始查了這個牌子，那時候連什麼軸都分不出來，只是用外表判斷，看到海灘假期的那刻，我就知道我戀愛了，怎麼會有這麼好看的鍵盤!&lt;/p>
 &lt;p>猶豫了好久最後在PCParty買下了我人生中的第一把機械式鍵盤。&lt;/p>
@@ -626,7 +873,7 @@ MX軸系列的青軸，MX是Cherry這間德國公司設計，在1894年推出來
 &lt;figcaption>鍵帽是Milkyway 流行色&lt;/figcaption>
 &lt;hr>
 &lt;h3 id="4ducky-x-sousou-one-2-聯名無rgb-2890元">4.Ducky X SOU．SOU One 2 聯名無RGB 2890元&lt;/h3>
-&lt;p>&lt;img src="https://cdn-images-1.medium.com/max/1200/1*6rUxG6ukhTc5chHRvAOBmg.jpeg" alt="">&lt;/p></description></item><item><title>美西公路旅行(六)-大谷翔平見面會</title><link>www.peihe07.uno/writings/2023-08-10-425193d2f5f4/</link><pubDate>Thu, 10 Aug 2023 00:00:00 +0000</pubDate><guid>www.peihe07.uno/writings/2023-08-10-425193d2f5f4/</guid><description>&lt;hr>
+&lt;p>&lt;img src="https://cdn-images-1.medium.com/max/1200/1*6rUxG6ukhTc5chHRvAOBmg.jpeg" alt="">&lt;/p></description></item><item><title>美西公路旅行(六)-大谷翔平見面會</title><link>https://www.peihe07.uno/writings/2023-08-10-425193d2f5f4/</link><pubDate>Thu, 10 Aug 2023 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/writings/2023-08-10-425193d2f5f4/</guid><description>&lt;hr>
 &lt;blockquote>
 &lt;p>&lt;a href="https://medium.com/@peihe07/%E9%95%B7%E9%80%94%E5%8F%B8%E6%A9%9F%E7%9A%84%E7%BE%8E%E8%A5%BF%E5%85%AC%E8%B7%AF%E6%97%85%E8%A1%8C-%E8%A8%88%E7%95%AB%E8%B6%95%E4%B8%8D%E4%B8%8A%E8%AE%8A%E5%8C%96-d33ca82f278f">貨車司機的美西公路旅行(一)-沒有什麼是不會變的&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;blockquote>
@@ -668,7 +915,7 @@ Jolla cove海邊看海豹和海獅~&lt;/p>
 &lt;p>&lt;img src="https://cdn-images-1.medium.com/max/800/1*djKsPUH4Bpgxa9CHCgGgRA.jpeg" alt="">&lt;/p>
 &lt;p>&lt;img src="https://cdn-images-1.medium.com/max/600/1*yW2sDhOgkboH-cSbzmmgVQ.jpeg" alt="">&lt;/p>
 &lt;figcaption>La Jolla cove&lt;/figcaption>
-&lt;p>這裡的海邊真的很美很舒服，雖然有太陽但因為乾燥又有風，是很舒適的天氣，難怪海豹海獅們都一團的躺在那裡，真的可以看著他們一下午好療癒。&lt;/p></description></item><item><title>貨車司機的美西公路旅行(五)-全都是沙漠</title><link>www.peihe07.uno/writings/2023-08-09-4bdac63dbb61/</link><pubDate>Wed, 09 Aug 2023 00:00:00 +0000</pubDate><guid>www.peihe07.uno/writings/2023-08-09-4bdac63dbb61/</guid><description>&lt;hr>
+&lt;p>這裡的海邊真的很美很舒服，雖然有太陽但因為乾燥又有風，是很舒適的天氣，難怪海豹海獅們都一團的躺在那裡，真的可以看著他們一下午好療癒。&lt;/p></description></item><item><title>貨車司機的美西公路旅行(五)-全都是沙漠</title><link>https://www.peihe07.uno/writings/2023-08-09-4bdac63dbb61/</link><pubDate>Wed, 09 Aug 2023 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/writings/2023-08-09-4bdac63dbb61/</guid><description>&lt;hr>
 &lt;blockquote>
 &lt;p>&lt;a href="https://medium.com/@peihe07/%E9%95%B7%E9%80%94%E5%8F%B8%E6%A9%9F%E7%9A%84%E7%BE%8E%E8%A5%BF%E5%85%AC%E8%B7%AF%E6%97%85%E8%A1%8C-%E8%A8%88%E7%95%AB%E8%B6%95%E4%B8%8D%E4%B8%8A%E8%AE%8A%E5%8C%96-d33ca82f278f">貨車司機的美西公路旅行(一)-沒有什麼是不會變的&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;blockquote>
@@ -710,7 +957,7 @@ city後就比較有來到大城市的感覺，也不是說Seattle不夠城市，
 &lt;h3 id="day674">Day6(7/4)&lt;/h3>
 &lt;p>昨天跨了3個州，今天要橫跨4個然後開到本次旅行最後的目的地California，本來是想要LA進LA出的我，就這樣莫名其妙的從北跑到南了。這天沒規劃什麼就是開車，沿路會經過幾個國家公園，我打算看時間再做打算，有時間再加行程進去。這一天往南的路程就很無聊只有開車，不過我已經掌握了長途開車的小訣竅，想睡覺就吃東西或喝飲料，然後看到休息站或加油站就停下來買東西吃或上廁所，徹底地變成貨車司機了，也因為大部分越往人多的州，7-11越多所以很容易買到思樂冰，喝得非常開心。&lt;/p>
 &lt;p>&lt;img src="https://cdn-images-1.medium.com/max/800/1*3gzA3BUFsx0TiAsA-7pAGw.jpeg" alt="">&lt;/p>
-&lt;p>過了Utah之後會進入一小段的Arizona，Arizona有很漂亮的峽谷，有一小段的公路會穿梭在其中，非常宏偉且震撼，這裡有很多有名的國家公園，但時間安排上的關係，只能擺在下次的計畫裡。&lt;/p></description></item><item><title>貨車司機的美西公路旅行(四)-黃石國家公園</title><link>www.peihe07.uno/writings/2023-07-23-b07be87c07d4/</link><pubDate>Sun, 23 Jul 2023 00:00:00 +0000</pubDate><guid>www.peihe07.uno/writings/2023-07-23-b07be87c07d4/</guid><description>&lt;hr>
+&lt;p>過了Utah之後會進入一小段的Arizona，Arizona有很漂亮的峽谷，有一小段的公路會穿梭在其中，非常宏偉且震撼，這裡有很多有名的國家公園，但時間安排上的關係，只能擺在下次的計畫裡。&lt;/p></description></item><item><title>貨車司機的美西公路旅行(四)-黃石國家公園</title><link>https://www.peihe07.uno/writings/2023-07-23-b07be87c07d4/</link><pubDate>Sun, 23 Jul 2023 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/writings/2023-07-23-b07be87c07d4/</guid><description>&lt;hr>
 &lt;blockquote>
 &lt;p>&lt;a href="https://medium.com/@peihe07/%E9%95%B7%E9%80%94%E5%8F%B8%E6%A9%9F%E7%9A%84%E7%BE%8E%E8%A5%BF%E5%85%AC%E8%B7%AF%E6%97%85%E8%A1%8C-%E8%A8%88%E7%95%AB%E8%B6%95%E4%B8%8D%E4%B8%8A%E8%AE%8A%E5%8C%96-d33ca82f278f">貨車司機的美西公路旅行(一)-沒有什麼是不會變的&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;blockquote>
@@ -775,7 +1022,7 @@ Terraces，主要都是在一兩個小時內結束，都很適合去走走，不
 &lt;figcaption>第二次遇到獨自覓食的熊&lt;/figcaption>
 &lt;p>&lt;img src="https://cdn-images-1.medium.com/max/800/1*ezbpCFLC_40pN94zO1m_NA.jpeg" alt="">&lt;/p>
 &lt;figcaption>這是一隻熊媽媽，和兩隻寶寶熊&lt;/figcaption>
-&lt;p>據說加拿大的國家公園會有更多熊且不太怕人（摩拳擦掌）。&lt;/p></description></item><item><title>貨車司機的美西公路旅行(三)-媽我在美國國家公園露營啦</title><link>www.peihe07.uno/writings/2023-07-19-f8f5b99c0fbf/</link><pubDate>Wed, 19 Jul 2023 00:00:00 +0000</pubDate><guid>www.peihe07.uno/writings/2023-07-19-f8f5b99c0fbf/</guid><description>&lt;hr>
+&lt;p>據說加拿大的國家公園會有更多熊且不太怕人（摩拳擦掌）。&lt;/p></description></item><item><title>貨車司機的美西公路旅行(三)-媽我在美國國家公園露營啦</title><link>https://www.peihe07.uno/writings/2023-07-19-f8f5b99c0fbf/</link><pubDate>Wed, 19 Jul 2023 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/writings/2023-07-19-f8f5b99c0fbf/</guid><description>&lt;hr>
 &lt;blockquote>
 &lt;p>&lt;a href="https://medium.com/@peihe07/%E9%95%B7%E9%80%94%E5%8F%B8%E6%A9%9F%E7%9A%84%E7%BE%8E%E8%A5%BF%E5%85%AC%E8%B7%AF%E6%97%85%E8%A1%8C-%E8%A8%88%E7%95%AB%E8%B6%95%E4%B8%8D%E4%B8%8A%E8%AE%8A%E5%8C%96-d33ca82f278f">貨車司機的美西公路旅行(一)-沒有什麼是不會變的&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;blockquote>
@@ -822,7 +1069,7 @@ Terraces，主要都是在一兩個小時內結束，都很適合去走走，不
 &lt;p>這天就是天還亮著就搭帳篷相對輕鬆，我就先去洗澡然後再回來煮飯，回來的時候發現我的位置旁邊有一家子的Elks在吃草，想說是鹿應該沒這麼危險吧，但想想我剛剛看到的警告&lt;/p>
 &lt;p>&lt;img src="https://cdn-images-1.medium.com/max/800/1*9hUZ7WHbmJO4m8cK3NJx4w.jpeg" alt="">&lt;/p>
 &lt;p>我還是很小心的不敢接近，附近帳篷的人也跑來看覺得很有趣，但天真的越來越黑，小鹿還趴下來休息了，我就只好裝作沒看到他們默默的走去煮我的晚餐，選了一個離他們最遠的位置XD，那晚直到我進帳篷前，拿手電筒往遠處照，還是有看到幾隻眼睛在看我，就跟我一起睡吧，不是熊就好了，帶著這個念頭睡著了。&lt;/p>
-&lt;p>這就是初獨露之心得，真的不難吧，為了省錢什麼都可以做到的，相信自己。獨露不可怕，第一次露營的建議是選擇一些人多的營地，注意保暖，也不用擔心自己露營會很無聊沒事做，自己去露營什麼都要自己來，通常進帳篷就累到睡著了。這兩個營地都是有手機訊號但沒辦法上網，所以要記得告知親朋好友，避免大家擔心啦。黃石公園的介紹就在下一篇吧！&lt;/p></description></item><item><title>貨車司機的美西公路旅行(二)-砥礪心志的開車之旅</title><link>www.peihe07.uno/writings/2023-07-13-fda9b7820c45b/</link><pubDate>Thu, 13 Jul 2023 00:00:00 +0000</pubDate><guid>www.peihe07.uno/writings/2023-07-13-fda9b7820c45b/</guid><description>&lt;hr>
+&lt;p>這就是初獨露之心得，真的不難吧，為了省錢什麼都可以做到的，相信自己。獨露不可怕，第一次露營的建議是選擇一些人多的營地，注意保暖，也不用擔心自己露營會很無聊沒事做，自己去露營什麼都要自己來，通常進帳篷就累到睡著了。這兩個營地都是有手機訊號但沒辦法上網，所以要記得告知親朋好友，避免大家擔心啦。黃石公園的介紹就在下一篇吧！&lt;/p></description></item><item><title>貨車司機的美西公路旅行(二)-砥礪心志的開車之旅</title><link>https://www.peihe07.uno/writings/2023-07-13-fda9b7820c45b/</link><pubDate>Thu, 13 Jul 2023 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/writings/2023-07-13-fda9b7820c45b/</guid><description>&lt;hr>
 &lt;blockquote>
 &lt;p>&lt;a href="https://medium.com/@peihe07/%E9%95%B7%E9%80%94%E5%8F%B8%E6%A9%9F%E7%9A%84%E7%BE%8E%E8%A5%BF%E5%85%AC%E8%B7%AF%E6%97%85%E8%A1%8C-%E8%A8%88%E7%95%AB%E8%B6%95%E4%B8%8D%E4%B8%8A%E8%AE%8A%E5%8C%96-d33ca82f278f">貨車司機的美西公路旅行(一)-沒有什麼是不會變的&lt;/a>&lt;/p>&lt;/blockquote>
 &lt;p>前情提要一下:&lt;/p>
@@ -860,7 +1107,7 @@ Outlet，
 &lt;h3 id="day371">Day3(7/1)&lt;/h3>
 &lt;p>這天一早四點我就起床了，我必須要先開到黃石公園下方的Jackson鎮去拿我租的露營裝備，裝備店會在18:00打烊，我想說5點上路預計17:00會到，還有一些時間應該足夠，然後再前往黃石公園的營地。但事情有這麼簡單嗎?沒有我沒想到的是因為黃石公園在的位置是在中部時區，和太平洋夏令時間PDT差了一個小時，所以我其實是會在當地18:00才會到的，我當下真的是尖叫再尖叫，驚呼還好自己有提早出門，就開始了幾乎沒有休息的磨練心志之旅。&lt;/p>
 &lt;p>從Oregon到Idaho之間的84公路非常美，有山有河，整趟如果都是這樣的風景會很振奮精神，只是沒想到到了Idaho之後整條公路風景都變成了荒漠，真的是杳無人煙，然後天氣也開始熱起來，非常的曬，曬到連車內冷氣都不太涼，這段是整趟旅程我覺得最難熬的路段，放眼看過去也看不到山，當然也沒有山會越開越靠近的感覺。&lt;/p>
-&lt;p>&lt;img src="https://cdn-images-1.medium.com/max/800/1*zBs7JifT7kXLD8BiF6zCOg.jpeg" alt="">&lt;/p></description></item><item><title>長途司機的美西公路旅行-計畫趕不上變化</title><link>www.peihe07.uno/writings/2023-07-11-d33ca82f278f/</link><pubDate>Tue, 11 Jul 2023 00:00:00 +0000</pubDate><guid>www.peihe07.uno/writings/2023-07-11-d33ca82f278f/</guid><description>&lt;p>在10天的旅程裡，我橫跨了美西的9個州，所以稱自己為長途貨車司機也不為過吧。&lt;/p>
+&lt;p>&lt;img src="https://cdn-images-1.medium.com/max/800/1*zBs7JifT7kXLD8BiF6zCOg.jpeg" alt="">&lt;/p></description></item><item><title>長途司機的美西公路旅行-計畫趕不上變化</title><link>https://www.peihe07.uno/writings/2023-07-11-d33ca82f278f/</link><pubDate>Tue, 11 Jul 2023 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/writings/2023-07-11-d33ca82f278f/</guid><description>&lt;p>在10天的旅程裡，我橫跨了美西的9個州，所以稱自己為長途貨車司機也不為過吧。&lt;/p>
 &lt;hr>
 &lt;blockquote>
 &lt;p>看此篇遊記前的注意事項:&lt;/p>&lt;/blockquote>
@@ -917,7 +1164,7 @@ Outlet，
 &lt;h3 id="我幹你老師的帶到了過期的國際駕照正本">&lt;strong>我幹你老師的帶到了過期的國際駕照正本。&lt;/strong>&lt;/h3>
 &lt;p>出國前我在整理的時候，還特別將國際駕照翻出來確認，因為我曾經有過三本國際駕照，第一本是七年前去泰國的時候換的，第二本是五年前去紐西蘭前換的，第三本是年初去泰國前換的，這本才是目前正確的效期內的國際駕照。我還特別拿出其他兩本隔開來放，怕帶錯，靠腰的是我還真的帶錯帶到第二本。租車人員就表示我這樣不能租車。&lt;/p>
 &lt;p>我當下真的心都涼了，當然也可能是因為Seattle早晚溫差很大而冷，我就決定先回住宿的地方洗澡，整理好之後再來想接下來怎麼辦。中途還去7-11買了水和思樂冰來讓自己冷靜一下。&lt;/p>
-&lt;p>果然洗好澡後思路就比較清晰，我先請我媽幫我把國際駕照的封面和相片那頁拍起來傳給我，接下來為了避免有可能租不到車情況，我必須要先確定租車公司可以接受國際駕照正本是用照片的形式，因為租車有明訂說必須要有駕照正本，不可以只有國際駕照就租車，但在國際駕照這點沒有明說不能使用其他方式。租不到車是沒辦法去黃石公園玩的，如果租不到車必須要更改行程，當下甚至有念頭還是我改機票回台灣好了。&lt;/p></description></item><item><title>我是個性情大便的人 ก็ʕ•͡ᴥ•ʔ ก้-30歲前的整理</title><link>www.peihe07.uno/writings/2023-05-24-b2089779aecf/</link><pubDate>Wed, 24 May 2023 00:00:00 +0000</pubDate><guid>www.peihe07.uno/writings/2023-05-24-b2089779aecf/</guid><description>&lt;p>嗨，嘗試著要寫文章一陣子了，不知不覺就來到30歲了，但我還是沒生出半篇。總之就試著整理我30歲前的生活。&lt;/p>
+&lt;p>果然洗好澡後思路就比較清晰，我先請我媽幫我把國際駕照的封面和相片那頁拍起來傳給我，接下來為了避免有可能租不到車情況，我必須要先確定租車公司可以接受國際駕照正本是用照片的形式，因為租車有明訂說必須要有駕照正本，不可以只有國際駕照就租車，但在國際駕照這點沒有明說不能使用其他方式。租不到車是沒辦法去黃石公園玩的，如果租不到車必須要更改行程，當下甚至有念頭還是我改機票回台灣好了。&lt;/p></description></item><item><title>我是個性情大便的人 ก็ʕ•͡ᴥ•ʔ ก้-30歲前的整理</title><link>https://www.peihe07.uno/writings/2023-05-24-b2089779aecf/</link><pubDate>Wed, 24 May 2023 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/writings/2023-05-24-b2089779aecf/</guid><description>&lt;p>嗨，嘗試著要寫文章一陣子了，不知不覺就來到30歲了，但我還是沒生出半篇。總之就試著整理我30歲前的生活。&lt;/p>
 &lt;hr>
 &lt;blockquote>
 &lt;p>&lt;strong>2018-25歲&lt;/strong>&lt;/p>&lt;/blockquote>

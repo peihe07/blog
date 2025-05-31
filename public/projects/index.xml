@@ -1,4 +1,181 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Projects on Peihe's blog</title><link>www.peihe07.uno/projects/</link><description>Recent content in Projects on Peihe's blog</description><generator>Hugo</generator><language>en</language><copyright>Peihe</copyright><lastBuildDate>Mon, 21 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="www.peihe07.uno/projects/index.xml" rel="self" type="application/rss+xml"/><item><title>MakeAFont 上篇-從手寫到字體</title><link>www.peihe07.uno/projects/2025-04-21-makeafont-1/</link><pubDate>Mon, 21 Apr 2025 00:00:00 +0000</pubDate><guid>www.peihe07.uno/projects/2025-04-21-makeafont-1/</guid><description>&lt;h1 id="makeafont-上篇-從手寫到字體">MakeAFont 上篇-從手寫到字體&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Projects on Peihe's blog</title><link>https://www.peihe07.uno/projects/</link><description>Recent content in Projects on Peihe's blog</description><generator>Hugo</generator><language>en</language><copyright>Peihe</copyright><lastBuildDate>Fri, 30 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.peihe07.uno/projects/index.xml" rel="self" type="application/rss+xml"/><item><title>ChronoChem</title><link>https://www.peihe07.uno/projects/2025-05-30-chronochem/</link><pubDate>Fri, 30 May 2025 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/projects/2025-05-30-chronochem/</guid><description>&lt;h1 id="chronochem---化學時空之旅-">ChronoChem - 化學時空之旅 🌟&lt;/h1>
+&lt;p>&lt;img src="https://www.peihe07.uno/images/Chronochem/ChronoChem.jpg" alt="">&lt;/p>
+&lt;p>ChronoChem 是一個創新的教育平台，讓使用者能夠穿越時空，與歷史上著名的化學家進行互動對話，探索化學發展的精彩歷程。&lt;/p>
+&lt;h2 id="-主要功能">✨ 主要功能&lt;/h2>
+&lt;ul>
+&lt;li>🧪 3D 互動場景：探索不同時期的化學實驗室&lt;/li>
+&lt;li>👨‍🔬 化學家對話：與歷史上的化學家進行 AI 驅動的對話&lt;/li>
+&lt;li>📚 歷史事件：了解重要的化學發現和突破&lt;/li>
+&lt;li>🌍 時空旅行：體驗不同時期的化學發展&lt;/li>
+&lt;/ul>
+&lt;h2 id="-快速開始">🚀 快速開始&lt;/h2>
+&lt;h3 id="系統需求">系統需求&lt;/h3>
+&lt;ul>
+&lt;li>Node.js 18+&lt;/li>
+&lt;li>Python 3.8+&lt;/li>
+&lt;li>PostgreSQL 13+&lt;/li>
+&lt;li>Docker &amp;amp; Docker Compose (可選)&lt;/li>
+&lt;/ul>
+&lt;h3 id="使用-docker-運行推薦">使用 Docker 運行（推薦）&lt;/h3>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 克隆專案&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>git clone https://github.com/peihe07/chrono-chem.git
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>cd chrono-chem
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 使用 Docker Compose 啟動&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>docker-compose up -d
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="手動安裝">手動安裝&lt;/h3>
+&lt;ol>
+&lt;li>後端設置：&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>cd backend
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python -m venv .venv
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>source .venv/bin/activate &lt;span style="color:#75715e"># Windows: .venv\Scripts\activate&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pip install -r requirements.txt
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python manage.py migrate
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python manage.py runserver
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;ol start="2">
+&lt;li>前端設置：&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>cd frontend
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npm install
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>npm run dev
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h2 id="-技術棧">📚 技術棧&lt;/h2>
+&lt;h3 id="前端">前端&lt;/h3>
+&lt;ul>
+&lt;li>Vue 3&lt;/li>
+&lt;li>Three.js&lt;/li>
+&lt;li>TypeScript&lt;/li>
+&lt;li>Vite&lt;/li>
+&lt;li>Pinia&lt;/li>
+&lt;/ul>
+&lt;h3 id="後端">後端&lt;/h3>
+&lt;ul>
+&lt;li>Django&lt;/li>
+&lt;li>Django REST Framework&lt;/li>
+&lt;li>PostgreSQL&lt;/li>
+&lt;li>OpenAI API&lt;/li>
+&lt;/ul>
+&lt;h2 id="-開發指南">🔧 開發指南&lt;/h2>
+&lt;h3 id="目錄結構">目錄結構&lt;/h3>
+&lt;pre tabindex="0">&lt;code>chrono-chem/
+├── frontend/ # Vue 3 前端
+├── backend/ # Django 後端
+├── docs/ # 文檔
+└── docker/ # Docker 配置
+&lt;/code>&lt;/pre>&lt;h3 id="環境變數">環境變數&lt;/h3>
+&lt;p>複製 &lt;code>.env.example&lt;/code> 到 &lt;code>.env&lt;/code> 並設置必要的環境變數：&lt;/p></description></item><item><title>ProperScript（中規中矩體）</title><link>https://www.peihe07.uno/projects/2025-05-24-properscript/</link><pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/projects/2025-05-24-properscript/</guid><description>&lt;h1 id="properscript中規中矩體">ProperScript（中規中矩體）&lt;/h1>
+&lt;p>&lt;img src="https://github.com/user-attachments/assets/6ff75585-7356-426b-bbef-402a21f7dd99" alt="中規中矩體">&lt;/p>
+&lt;p>✍️ 一套自己製作的手寫字體。&lt;/p>
+&lt;h2 id="關於字體">關於字體&lt;/h2>
+&lt;p>我喜歡寫字，想了好幾年終於動手自己做。&lt;/p>
+&lt;p>會叫「中規中矩體」是因為我認為自己的字跡在沒有很好看也沒有很難看的範圍內，我想就真的是中規中矩吧。&lt;/p>
+&lt;p>第一次嘗試自己做字體，自己寫自己學會修字及如何利用工具處理大量的字體，還是有很多不太滿意的字，以及想要調整的地方，後續會慢慢調整更新，我相信會繼續更新版本吧XD。&lt;/p>
+&lt;h2 id="-下載--最新版本v1020250524-發布">📦 下載- 最新版本：v1.0（2025/05/24 發布）&lt;/h2>
+&lt;ul>
+&lt;li>字體檔案：&lt;a href="https://github.com/peihe07/ProperScript/blob/main/ProperScript-Regular.ttf">ProperScript-Regular.ttf&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="-製作輔助工具">🛠️ 製作輔助工具&lt;/h2>
+&lt;p>為了有效製作這套字體，我開發了一系列前端工具與腳本來進行字符排版與預覽，協助字型切割與字符對位。&lt;/p>
+&lt;h3 id="字集模板生成器通用分頁-html">字集模板生成器（通用分頁 HTML）&lt;/h3>
+&lt;ul>
+&lt;li>功能：將字集文字檔自動排版成 A4 字網格模板，可選擇每頁字數、分割檔案、位置樣式（左上 / 居中）&lt;/li>
+&lt;li>技術：JavaScript + HTML5 前端工具&lt;/li>
+&lt;li>特色程式碼：&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">getUnicodeFromName&lt;/span>(&lt;span style="color:#a6e22e">name&lt;/span>) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#a6e22e">name&lt;/span>.&lt;span style="color:#a6e22e">startsWith&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;uni&amp;#39;&lt;/span>)) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">hex&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">name&lt;/span>.&lt;span style="color:#a6e22e">substring&lt;/span>(&lt;span style="color:#ae81ff">3&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> String.&lt;span style="color:#a6e22e">fromCodePoint&lt;/span>(parseInt(&lt;span style="color:#a6e22e">hex&lt;/span>, &lt;span style="color:#ae81ff">16&lt;/span>));
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// ...
+&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>}
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="特殊符號模板生成器">特殊符號模板生成器&lt;/h3>
+&lt;ul>
+&lt;li>功能：支援手動輸入 U+XXXX 編碼或上傳 txt，快速生成特殊符號網格&lt;/li>
+&lt;li>用途：測試標點與符號集的對齊情形&lt;/li>
+&lt;/ul>
+&lt;h3 id="台語拼音模板生成器">台語拼音模板生成器&lt;/h3>
+&lt;ul>
+&lt;li>功能：針對台羅拼音常用字元提供快速預覽與排版下載功能&lt;/li>
+&lt;li>使用場景：台語拼音支援測試&lt;/li>
+&lt;/ul>
+&lt;h3 id="日文垂直變體模板生成器">日文垂直變體模板生成器&lt;/h3>
+&lt;ul>
+&lt;li>功能：比較日文字元在水平與垂直模式下的顯示差異，支援垂直模式切換&lt;/li>
+&lt;li>程式碼片段：&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>.&lt;span style="color:#a6e22e">writing&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#a6e22e">mode&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">vertical&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#a6e22e">rl&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>.&lt;span style="color:#a6e22e">text&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#a6e22e">orientation&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">upright&lt;/span>;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;h3 id="python-切割字符腳本">Python 切割字符腳本&lt;/h3>
+&lt;ul>
+&lt;li>功能：將命名後的 .png 字符圖自動對應為 Unicode 檔名&lt;/li>
+&lt;li>檔案：&lt;code>切割字符.py&lt;/code>&lt;/li>
+&lt;/ul>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> fontTools.pens.boundsPen &lt;span style="color:#f92672">import&lt;/span> ControlBoundsPen
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pen &lt;span style="color:#f92672">=&lt;/span> ControlBoundsPen(font&lt;span style="color:#f92672">.&lt;/span>getGlyphSet())
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>這些工具讓我能更有效率地規劃、臨摹與切割超過 7000 個字元，實現個人字體專案的自動化與結構化。&lt;/p></description></item><item><title>MakeAFont</title><link>https://www.peihe07.uno/projects/2025-04-21-makeafont-1/</link><pubDate>Mon, 21 Apr 2025 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/projects/2025-04-21-makeafont-1/</guid><description>&lt;h1 id="makeafont-上篇-從手寫到字體">MakeAFont 上篇-從手寫到字體&lt;/h1>
 &lt;p>本系列紀錄我開發一套完整中文字體的過程，從手寫到完成字型包。&lt;/p>
 &lt;p>分為上下兩篇：&lt;/p>
 &lt;p>上篇：字集規劃、模板設計、iPad 手寫流程、圖片裁切、向量化&lt;/p>
@@ -29,33 +206,116 @@
 &lt;/ul>
 &lt;p>一開始可是發起了豪情壯志想要寫繁體中文社群裡最大的BIG5字集的13060個漢字，但真的寫過之後才發現，喔~還好我沒有這樣做耶。&lt;/p>
 &lt;h1 id="製作手寫模板pdf">&lt;strong>製作手寫模板（PDF）&lt;/strong>&lt;/h1>
-&lt;p>&lt;img src="www.peihe07.uno/images/MakeAFont/1_XJHw208as8E5l8fU0OFRJw.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://www.peihe07.uno/images/MakeAFont/1_XJHw208as8E5l8fU0OFRJw.png" alt="">&lt;/p>
 &lt;p>製做手寫模板這裡我大概花了一天半的時間，模板就丟給AI去幫我生成html檔，他設計了一個 5×7 的格線模板，每頁 35 字，格線中含有：&lt;/p>
 &lt;ul>
 &lt;li>中心點（便於對齊筆劃）&lt;/li>
 &lt;li>邊界線（控制字寬與留白）&lt;/li>
 &lt;li>灰色提示字（對照填寫內容）&lt;/li>
 &lt;/ul>
-&lt;p>&lt;img src="www.peihe07.uno/images/MakeAFont/1_yho2990E-lbkYWrXi_-IAw.png" alt="">
+&lt;p>&lt;img src="https://www.peihe07.uno/images/MakeAFont/1_yho2990E-lbkYWrXi_-IAw.png" alt="">
 左邊是第一版（範例字置中）&lt;/p>
-&lt;p>&lt;img src="www.peihe07.uno/images/MakeAFont/1_KXXjfKIDeP4Bc72exGDFvw.png" alt="">
+&lt;p>&lt;img src="https://www.peihe07.uno/images/MakeAFont/1_KXXjfKIDeP4Bc72exGDFvw.png" alt="">
 右邊是第二版（範例字放在左上角）&lt;/p>
 &lt;p>其中我將基礎字切成7份，繁體字部分一份共1063個字體，符號的方面則獨立切出一份。&lt;/p>
 &lt;p>一開始我是請AI產出字集裡Unicode對應的字並顯示在格子正中央，大概寫了1000字之後發現一個問題，當開始大量書寫之後，會開始照著範例去描，而不是寫出自己的字形。因為整理的時候會覺得是有點像我的字，但寫的有點太好看又不像，應該要將範例字放在角落，遂又生成了第二個版本。&lt;/p>
 &lt;blockquote>
 &lt;p>🌐 Unicode 是什麼？&lt;/p>
 &lt;p>&lt;em>&lt;strong>Unicode&lt;/strong> 是一個國際字元編碼標準，目標是為全世界所有文字、符號與表情符號提供&lt;/em>&lt;em>唯一且一致的編碼&lt;/em>*。它用來解決「不同語言、系統間無法正確顯示文字」的問題。*&lt;/p>&lt;/blockquote>
-&lt;p>&lt;img src="www.peihe07.uno/images/MakeAFont/1_7VFS5Qfa1VTlJ0hh7MHlkw.png" alt="">&lt;/p>
-&lt;p>&lt;img src="www.peihe07.uno/images/MakeAFont/1_ZwBSIVs3nP02VYdayTJC_w.png" alt="">
+&lt;p>&lt;img src="https://www.peihe07.uno/images/MakeAFont/1_7VFS5Qfa1VTlJ0hh7MHlkw.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://www.peihe07.uno/images/MakeAFont/1_ZwBSIVs3nP02VYdayTJC_w.png" alt="">
 然後發現自己寫字真的是歪wwwww&lt;/p>
 &lt;p>然後若是符號和日文字，我還是採取範例字置中，才不會寫的真的很醜。&lt;/p>
-&lt;p>&lt;img src="www.peihe07.uno/images/MakeAFont/1_xjA4oTdQikEd3PgX6uJDpg.png" alt="">&lt;/p>
+&lt;p>&lt;img src="https://www.peihe07.uno/images/MakeAFont/1_xjA4oTdQikEd3PgX6uJDpg.png" alt="">&lt;/p>
 &lt;p>模版的部分除了繁體字有明確的Unicode生成範例字就沒什麼太大問題，麻煩的是擴充符號包那些，需要先請AI將該名稱找到Unicode生成對應，再去產出所以光是日文字、台語羅馬拼音、符號都需要各自生成對應的模版生成器，後續可能會在開源檔案裡提供。&lt;/p>
 &lt;h1 id="-step-2手寫輸入">&lt;strong>✏️ Step 2：手寫輸入&lt;/strong>&lt;/h1>
 &lt;h1 id="我是使用-ipad--goodnotes">&lt;strong>我是使用 iPad + GoodNotes&lt;/strong>&lt;/h1>
-&lt;p>原因是我都剛好有，也有購買GoodNotes，Goodnotes好處是可直接套用 PDF 模板，格線不會移位，之後輸出可以去掉背景方便後續切割，只輸出筆跡的部分，可以多頁匯出也可以單頁匯出。&lt;/p></description></item><item><title>Hugo Cactus主題配置</title><link>www.peihe07.uno/projects/2024-12-01-hugo-cactus-setup/</link><pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate><guid>www.peihe07.uno/projects/2024-12-01-hugo-cactus-setup/</guid><description>&lt;h2 id="專案描述--project-description">專案描述 / Project Description&lt;/h2>
-&lt;p>&lt;strong>中文&lt;/strong>: 這是一個 Hugo Cactus 主題的完整配置專案，包含多語言支援和自訂樣式。&lt;/p>
-&lt;p>&lt;strong>English&lt;/strong>: A complete Hugo Cactus theme configuration project with multilingual support and custom styling.&lt;/p>
+&lt;p>原因是我都剛好有，也有購買GoodNotes，Goodnotes好處是可直接套用 PDF 模板，格線不會移位，之後輸出可以去掉背景方便後續切割，只輸出筆跡的部分，可以多頁匯出也可以單頁匯出。&lt;/p></description></item><item><title>SonicVision</title><link>https://www.peihe07.uno/projects/2025-03-17-sonicvision/</link><pubDate>Mon, 17 Mar 2025 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/projects/2025-03-17-sonicvision/</guid><description>&lt;h1 id="sonicvision-專案介紹">SonicVision 專案介紹&lt;/h1>
+&lt;h2 id="專案概述">專案概述&lt;/h2>
+&lt;p>&lt;img src="https://www.peihe07.uno/images/SonicVision/SonicVision.jpg" alt="">&lt;/p>
+&lt;p>SonicVision 是一個創新的多媒體整合平台，將音樂和電影體驗完美結合。這個平台利用現代化的技術棧，為用戶提供一個無縫的娛樂體驗，讓用戶可以輕鬆探索、分享和享受音樂與電影內容。&lt;/p>
+&lt;h2 id="核心特色">核心特色&lt;/h2>
+&lt;h3 id="-音樂體驗">🎵 音樂體驗&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>Spotify 整合&lt;/strong>：直接訪問數百萬首歌曲&lt;/li>
+&lt;li>&lt;strong>智能播放列表&lt;/strong>：根據用戶喜好自動生成個性化播放列表&lt;/li>
+&lt;li>&lt;strong>音樂社交&lt;/strong>：與好友分享音樂品味和發現&lt;/li>
+&lt;li>&lt;strong>即時音樂預覽&lt;/strong>：無需離開平台即可試聽歌曲&lt;/li>
+&lt;/ul>
+&lt;h3 id="-電影體驗">🎬 電影體驗&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>TMDB 整合&lt;/strong>：訪問全球最大的電影數據庫&lt;/li>
+&lt;li>&lt;strong>智能推薦&lt;/strong>：基於用戶觀影歷史的個性化推薦&lt;/li>
+&lt;li>&lt;strong>觀看清單&lt;/strong>：輕鬆管理想看的電影&lt;/li>
+&lt;li>&lt;strong>社群互動&lt;/strong>：分享觀影心得和評分&lt;/li>
+&lt;/ul>
+&lt;h3 id="-社交功能">🤝 社交功能&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>用戶檔案&lt;/strong>：展示個人音樂和電影品味&lt;/li>
+&lt;li>&lt;strong>好友系統&lt;/strong>：連接志同道合的用戶&lt;/li>
+&lt;li>&lt;strong>即時通知&lt;/strong>：獲取好友動態和系統更新&lt;/li>
+&lt;li>&lt;strong>社群互動&lt;/strong>：評論、點讚和分享內容&lt;/li>
+&lt;/ul>
+&lt;h2 id="技術架構">技術架構&lt;/h2>
+&lt;h3 id="後端技術">後端技術&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>框架&lt;/strong>：Django 4.2 + Django REST Framework&lt;/li>
+&lt;li>&lt;strong>數據庫&lt;/strong>：PostgreSQL&lt;/li>
+&lt;li>&lt;strong>認證&lt;/strong>：JWT + Google OAuth2&lt;/li>
+&lt;li>&lt;strong>API 整合&lt;/strong>：
+&lt;ul>
+&lt;li>Spotify API&lt;/li>
+&lt;li>TMDB API&lt;/li>
+&lt;li>YouTube API&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>實時通訊&lt;/strong>：WebSocket&lt;/li>
+&lt;/ul>
+&lt;h3 id="前端技術">前端技術&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>框架&lt;/strong>：Vue.js 3 + TypeScript&lt;/li>
+&lt;li>&lt;strong>狀態管理&lt;/strong>：Pinia&lt;/li>
+&lt;li>&lt;strong>UI 框架&lt;/strong>：Vuetify 3&lt;/li>
+&lt;li>&lt;strong>樣式&lt;/strong>：TailwindCSS&lt;/li>
+&lt;li>&lt;strong>HTTP 客戶端&lt;/strong>：Axios&lt;/li>
+&lt;li>&lt;strong>路由&lt;/strong>：Vue Router&lt;/li>
+&lt;/ul>
+&lt;h3 id="開發工具">開發工具&lt;/h3>
+&lt;ul>
+&lt;li>&lt;strong>容器化&lt;/strong>：Docker + Docker Compose&lt;/li>
+&lt;li>&lt;strong>代碼質量&lt;/strong>：
+&lt;ul>
+&lt;li>Python：Black, Flake8, isort&lt;/li>
+&lt;li>TypeScript：ESLint, TypeScript ESLint&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>版本控制&lt;/strong>：Git&lt;/li>
+&lt;li>&lt;strong>包管理&lt;/strong>：
+&lt;ul>
+&lt;li>後端：pip&lt;/li>
+&lt;li>前端：npm&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;h2 id="系統架構">系統架構&lt;/h2>
+&lt;pre tabindex="0">&lt;code>SonicVision
+├── 前端 (Vue.js)
+│ ├── 用戶界面
+│ ├── 狀態管理
+│ └── API 整合
+├── 後端 (Django)
+│ ├── REST API
+│ ├── 數據庫
+│ └── 外部服務整合
+└── 基礎設施
+ ├── Docker 容器
+ ├── Nginx 反向代理
+ └── PostgreSQL 數據庫
+&lt;/code>&lt;/pre>&lt;h2 id="開發流程">開發流程&lt;/h2>
+&lt;ol>
+&lt;li>
+&lt;p>&lt;strong>環境設置&lt;/strong>&lt;/p></description></item><item><title>Hugo Cactus 主題設置</title><link>https://www.peihe07.uno/projects/2024-12-01-hugo-cactus-setup/</link><pubDate>Sun, 01 Dec 2024 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/projects/2024-12-01-hugo-cactus-setup/</guid><description>&lt;h2 id="專案描述--project-description">專案描述 / Project Description&lt;/h2>
+&lt;p>這是一個 Hugo Cactus 主題的完整配置專案，包含多語言支援和自訂樣式。&lt;/p>
 &lt;h2 id="功能特色--features">功能特色 / Features&lt;/h2>
 &lt;ul>
 &lt;li>✅ &lt;strong>混合語言支援&lt;/strong> / Mixed language support&lt;/li>
