@@ -56,9 +56,6 @@
 </head>
 <body>
   <header class="site-header">
-    <div class="site-title">
-      <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
-    </div>
     <nav class="main-menu">
       {{ range .Site.Menus.main }}
         <a href="{{ .URL }}">{{ .Name }}</a>
