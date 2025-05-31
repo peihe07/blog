@@ -28,6 +28,11 @@ copyright = "Peihe"
   icon = "mail"
   url = "mailto:y450376@gmail.com"
 
+[[params.social]]
+  name = "medium"
+  icon = "medium"
+  url = "https://medium.com/@peihe07"
+
 # 分類與標籤
 [taxonomies]
   tag = "tags"
