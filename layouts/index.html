@@ -5,10 +5,6 @@
   <body>
     <div class="content">
       <main class="list">
-        <div class="main">
-          <h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1>
-        </div>
-
         <div class="desc">
           {{- if isset .Site.Params "subtitle" -}}
           <p>{{ .Site.Params.Subtitle | markdownify }}</p>
