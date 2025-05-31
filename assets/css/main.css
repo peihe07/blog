@@ -127,9 +127,8 @@
     margin-bottom: 4em;
     margin-left: auto;
     margin-right: auto;
-    max-width: 1200px;
-    padding-left: 2vw;
-    padding-right: 2vw;
+    max-width: 800px;
+    padding: 0 1ch;
     word-wrap: break-word;
   }
   
@@ -400,50 +399,3 @@
     stroke-linejoin: round;
     fill: none;
   }
-  
-  .site-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.5rem 2vw 1rem 2vw;
-    background: #fff;
-    border-bottom: 1px solid #eee;
-    font-size: 1.1rem;
-    gap: 2.5rem;
-  }
-  
-  .site-title a {
-    color: var(--maincolor);
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-decoration: none;
-    margin-right: 2rem;
-  }
-  
-  .main-menu {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-    font-size: 1.1rem;
-  }
-  
-  .main-menu a {
-    color: var(--maincolor);
-    text-decoration: none;
-    font-weight: 500;
-    border-bottom: none;
-    transition: color 0.2s;
-  }
-  
-  .main-menu a:hover {
-    color: var(--hovercolor);
-    border-bottom: 2px solid var(--maincolor);
-  }
-  
-  @media (max-width: 600px) {
-    .site-header {
-      padding-left: 2vw;
-      padding-right: 2vw;
-    }
-  }
-  
