@@ -3,7 +3,7 @@
   --maincolor: red;
   --bordercl:rebeccapurple;
   --callouctcolor:dodgerblue;
-  --hovercolor:rgb(246, 249, 58);
+  --hovercolor:navy;
   --darkMaincolor: #50fa7b;
   }
   html {
@@ -399,5 +399,51 @@
     stroke-linecap: round;
     stroke-linejoin: round;
     fill: none;
+  }
+  
+  .site-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2vw 1rem 2vw;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    font-size: 1.1rem;
+    gap: 2.5rem;
+  }
+  
+  .site-title a {
+    color: var(--maincolor);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 2rem;
+  }
+  
+  .main-menu {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    font-size: 1.1rem;
+  }
+  
+  .main-menu a {
+    color: var(--maincolor);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: none;
+    transition: color 0.2s;
+  }
+  
+  .main-menu a:hover {
+    color: var(--hovercolor);
+    border-bottom: 2px solid var(--maincolor);
+  }
+  
+  @media (max-width: 600px) {
+    .site-header {
+      padding-left: 4vw;
+      padding-right: 4vw;
+    }
   }
   
