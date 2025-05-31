@@ -1,47 +1,295 @@
-<!doctype html><html><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><title>ChronoChem - Peihe's blog</title><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="一個化學元素週期表的互動式學習工具。"><meta property="og:image" content="https://hqasco.deta.dev/img?url=https://www.peihe07.uno/projects/2025-05-30-chronochem/"><meta property="twitter:image" content="https://hqasco.deta.dev/img?url=https://www.peihe07.uno/projects/2025-05-30-chronochem/"><meta property="twitter:card" content="summary_large_image"><meta property="og:url" content="https://www.peihe07.uno/projects/2025-05-30-chronochem/"><meta property="og:site_name" content="Peihe's blog"><meta property="og:title" content="ChronoChem"><meta property="og:description" content="一個化學元素週期表的互動式學習工具。"><meta property="og:locale" content="en"><meta property="og:type" content="article"><meta property="article:section" content="projects"><meta property="article:published_time" content="2025-05-30T00:00:00+00:00"><meta property="article:modified_time" content="2025-05-30T00:00:00+00:00"><meta property="article:tag" content="Chemistry"><meta property="article:tag" content="Education"><meta property="article:tag" content="專案"><meta name=twitter:card content="summary"><meta name=twitter:title content="ChronoChem"><meta name=twitter:description content="一個化學元素週期表的互動式學習工具。"><script src=https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js></script><link rel=stylesheet type=text/css media=screen href=/css/main.css><link rel=stylesheet type=text/css media=screen href=/css/projects.css><link rel=stylesheet type=text/css href=/css/light.css><link rel=stylesheet type=text/css href=/css/font.css><link rel=stylesheet type=text/css href=/css/main.css><link rel=stylesheet type=text/css href=/css/syntax.css><script src=//instant.page/5.1.0 type=module integrity=sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw></script></head><body><div class=content><main><article><div class=post-container><div class=post-content><div class=title><h1 class=title>ChronoChem</h1><div class=meta>Posted on May 30, 2025</div></div><section class=body><h1 id=chronochem---化學時空之旅->ChronoChem - 化學時空之旅 🌟</h1><p><img src=/images/Chronochem/ChronoChem.jpg alt></p><p>ChronoChem 是一個創新的教育平台，讓使用者能夠穿越時空，與歷史上著名的化學家進行互動對話，探索化學發展的精彩歷程。</p><h2 id=-主要功能>✨ 主要功能</h2><ul><li>🧪 3D 互動場景：探索不同時期的化學實驗室</li><li>👨‍🔬 化學家對話：與歷史上的化學家進行 AI 驅動的對話</li><li>📚 歷史事件：了解重要的化學發現和突破</li><li>🌍 時空旅行：體驗不同時期的化學發展</li></ul><h2 id=-快速開始>🚀 快速開始</h2><h3 id=系統需求>系統需求</h3><ul><li>Node.js 18+</li><li>Python 3.8+</li><li>PostgreSQL 13+</li><li>Docker & Docker Compose (可選)</li></ul><h3 id=使用-docker-運行推薦>使用 Docker 運行（推薦）</h3><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#75715e># 克隆專案</span>
-</span></span><span style=display:flex><span>git clone https://github.com/peihe07/chrono-chem.git
-</span></span><span style=display:flex><span>cd chrono-chem
-</span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e># 使用 Docker Compose 啟動</span>
-</span></span><span style=display:flex><span>docker-compose up -d
-</span></span></code></pre></td></tr></table></div></div><h3 id=手動安裝>手動安裝</h3><ol><li>後端設置：</li></ol><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">5
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">6
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>cd backend
-</span></span><span style=display:flex><span>python -m venv .venv
-</span></span><span style=display:flex><span>source .venv/bin/activate  <span style=color:#75715e># Windows: .venv\Scripts\activate</span>
-</span></span><span style=display:flex><span>pip install -r requirements.txt
-</span></span><span style=display:flex><span>python manage.py migrate
-</span></span><span style=display:flex><span>python manage.py runserver
-</span></span></code></pre></td></tr></table></div></div><ol start=2><li>前端設置：</li></ol><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">3
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>cd frontend
-</span></span><span style=display:flex><span>npm install
-</span></span><span style=display:flex><span>npm run dev
-</span></span></code></pre></td></tr></table></div></div><h2 id=-技術棧>📚 技術棧</h2><h3 id=前端>前端</h3><ul><li>Vue 3</li><li>Three.js</li><li>TypeScript</li><li>Vite</li><li>Pinia</li></ul><h3 id=後端>後端</h3><ul><li>Django</li><li>Django REST Framework</li><li>PostgreSQL</li><li>OpenAI API</li></ul><h2 id=-開發指南>🔧 開發指南</h2><h3 id=目錄結構>目錄結構</h3><pre tabindex=0><code>chrono-chem/
+<!DOCTYPE html>
+<html><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>ChronoChem - Peihe&#39;s blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="一個化學元素週期表的互動式學習工具。" />
+	<meta property="og:image" content="https://hqasco.deta.dev/img?url=http://localhost:1313/projects/2025-05-30-chronochem/"/>
+	<meta property="twitter:image" content="https://hqasco.deta.dev/img?url=http://localhost:1313/projects/2025-05-30-chronochem/"/>
+	<meta property="twitter:card" content="summary_large_image"/>
+	<meta property="og:url" content="http://localhost:1313/projects/2025-05-30-chronochem/">
+  <meta property="og:site_name" content="Peihe&#39;s blog">
+  <meta property="og:title" content="ChronoChem">
+  <meta property="og:description" content="一個化學元素週期表的互動式學習工具。">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="projects">
+    <meta property="article:published_time" content="2025-05-30T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-30T00:00:00+00:00">
+    <meta property="article:tag" content="Chemistry">
+    <meta property="article:tag" content="Education">
+    <meta property="article:tag" content="專案">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="ChronoChem">
+  <meta name="twitter:description" content="一個化學元素週期表的互動式學習工具。">
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/projects.css" />
+	
+	
+		
+		<link rel="stylesheet" type="text/css" href="/css/light.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/font.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/syntax.css">
+		
+	<script src="//instant.page/5.1.0" type="module" integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-title">
+      <a href="http://localhost:1313/">Peihe&#39;s blog</a>
+    </div>
+    <nav class="main-menu">
+      
+        <a href="/">Home</a>
+      
+        <a href="/writings">Writings</a>
+      
+        <a href="/projects">Projects</a>
+      
+        <a href="/notes">Notes</a>
+      
+        <a href="/about">About</a>
+      
+    </nav>
+  </header><body>
+        <div class="content">
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">ChronoChem</h1>
+          <div class="meta">Posted on May 30, 2025</div>
+        </div>
+        
+        <section class="body">
+          <h1 id="chronochem---化學時空之旅-">ChronoChem - 化學時空之旅 🌟</h1>
+<p><img src="/images/Chronochem/ChronoChem.jpg" alt=""></p>
+<p>ChronoChem 是一個創新的教育平台，讓使用者能夠穿越時空，與歷史上著名的化學家進行互動對話，探索化學發展的精彩歷程。</p>
+<h2 id="-主要功能">✨ 主要功能</h2>
+<ul>
+<li>🧪 3D 互動場景：探索不同時期的化學實驗室</li>
+<li>👨‍🔬 化學家對話：與歷史上的化學家進行 AI 驅動的對話</li>
+<li>📚 歷史事件：了解重要的化學發現和突破</li>
+<li>🌍 時空旅行：體驗不同時期的化學發展</li>
+</ul>
+<h2 id="-快速開始">🚀 快速開始</h2>
+<h3 id="系統需求">系統需求</h3>
+<ul>
+<li>Node.js 18+</li>
+<li>Python 3.8+</li>
+<li>PostgreSQL 13+</li>
+<li>Docker &amp; Docker Compose (可選)</li>
+</ul>
+<h3 id="使用-docker-運行推薦">使用 Docker 運行（推薦）</h3>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># 克隆專案</span>
+</span></span><span style="display:flex;"><span>git clone https://github.com/peihe07/chrono-chem.git
+</span></span><span style="display:flex;"><span>cd chrono-chem
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># 使用 Docker Compose 啟動</span>
+</span></span><span style="display:flex;"><span>docker-compose up -d
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="手動安裝">手動安裝</h3>
+<ol>
+<li>後端設置：</li>
+</ol>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd backend
+</span></span><span style="display:flex;"><span>python -m venv .venv
+</span></span><span style="display:flex;"><span>source .venv/bin/activate  <span style="color:#75715e"># Windows: .venv\Scripts\activate</span>
+</span></span><span style="display:flex;"><span>pip install -r requirements.txt
+</span></span><span style="display:flex;"><span>python manage.py migrate
+</span></span><span style="display:flex;"><span>python manage.py runserver
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>前端設置：</li>
+</ol>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cd frontend
+</span></span><span style="display:flex;"><span>npm install
+</span></span><span style="display:flex;"><span>npm run dev
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="-技術棧">📚 技術棧</h2>
+<h3 id="前端">前端</h3>
+<ul>
+<li>Vue 3</li>
+<li>Three.js</li>
+<li>TypeScript</li>
+<li>Vite</li>
+<li>Pinia</li>
+</ul>
+<h3 id="後端">後端</h3>
+<ul>
+<li>Django</li>
+<li>Django REST Framework</li>
+<li>PostgreSQL</li>
+<li>OpenAI API</li>
+</ul>
+<h2 id="-開發指南">🔧 開發指南</h2>
+<h3 id="目錄結構">目錄結構</h3>
+<pre tabindex="0"><code>chrono-chem/
 ├── frontend/          # Vue 3 前端
 ├── backend/           # Django 後端
 ├── docs/             # 文檔
 └── docker/           # Docker 配置
-</code></pre><h3 id=環境變數>環境變數</h3><p>複製 <code>.env.example</code> 到 <code>.env</code> 並設置必要的環境變數：</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">1
-</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>cp .env.example .env
-</span></span></code></pre></td></tr></table></div></div><h2 id=-版本歷史>📝 版本歷史</h2><h3 id=v100-當前版本>v1.0.0 (當前版本)</h3><ul><li>完成核心功能實現</li><li>支援化學家對話</li><li>3D 場景展示</li><li>歷史事件瀏覽</li></ul><h3 id=v110-規劃中>v1.1.0 (規劃中)</h3><ul><li>效能優化</li><li>事件動畫</li><li>使用者回饋系統</li><li>分享功能</li></ul><h2 id=-貢獻指南>🤝 貢獻指南</h2><ol><li>Fork 專案</li><li>創建功能分支 (<code>git checkout -b feature/AmazingFeature</code>)</li><li>提交更改 (<code>git commit -m 'Add some AmazingFeature'</code>)</li><li>推送到分支 (<code>git push origin feature/AmazingFeature</code>)</li><li>開啟 Pull Request</li></ol><h2 id=-授權>📄 授權</h2><p>本專案採用 MIT 授權 - 詳見 <a href=LICENSE>LICENSE</a> 文件</p><h2 id=-團隊>👥 團隊</h2><ul><li>開發者：[peihe]</li></ul><h2 id=-致謝>🙏 致謝</h2><ul><li><a href=https://openai.com/>OpenAI</a> - 提供 AI 對話能力</li><li><a href=https://threejs.org/>Three.js</a> - 3D 渲染引擎</li><li><a href=https://vuejs.org/>Vue.js</a> - 前端框架</li></ul><h2 id=-聯絡方式>📞 聯絡方式</h2><ul><li>專案連結：[https://github.com/peihe07/chrono-chem]</li><li>電子郵件：your.email@example.com</li></ul><h2 id=-已知限制>⚠️ 已知限制</h2><ul><li>部分效能優化功能將在 v1.1.0 中實現</li><li>使用者回饋系統正在開發中</li><li>分享功能將在後續版本加入</li></ul><h2 id=-未來規劃>🔮 未來規劃</h2><ul><li>支援更多化學家</li><li>加入實驗模擬功能</li><li>擴充互動動畫</li><li>優化載入時間</li><li>實作評分系統</li></ul></section><div class=post-tags><nav class="nav tags"><ul class=tags><li><a href=/tags/chemistry>Chemistry</a></li><li><a href=/tags/education>Education</a></li><li><a href=/tags/%E5%B0%88%E6%A1%88>專案</a></li></ul></nav></div></div></div></article></main><footer><div class=footer_nav><nav style=float:right><a href=/>Home</a> |
-<a href=/writings>Writings</a> |
-<a href=/projects>Projects</a> |
-<a href=/notes>Notes</a> |
-<a href=/about>About</a></nav></div><a class=soc href=https://github.com/peihe07 title=github><i data-feather=github></i>
-</a>|
-<a class=soc href=mailto:y450376@gmail.com title=email><i data-feather=mail></i>
-</a>⚡️ 2025
-Peihe |
-<a href=https://github.com/athul/archie>Archie Theme</a> | Built with <a href=https://gohugo.io>Hugo</a></footer><script>feather.replace()</script></div></body></html>
+</code></pre><h3 id="環境變數">環境變數</h3>
+<p>複製 <code>.env.example</code> 到 <code>.env</code> 並設置必要的環境變數：</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>cp .env.example .env
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="-版本歷史">📝 版本歷史</h2>
+<h3 id="v100-當前版本">v1.0.0 (當前版本)</h3>
+<ul>
+<li>完成核心功能實現</li>
+<li>支援化學家對話</li>
+<li>3D 場景展示</li>
+<li>歷史事件瀏覽</li>
+</ul>
+<h3 id="v110-規劃中">v1.1.0 (規劃中)</h3>
+<ul>
+<li>效能優化</li>
+<li>事件動畫</li>
+<li>使用者回饋系統</li>
+<li>分享功能</li>
+</ul>
+<h2 id="-貢獻指南">🤝 貢獻指南</h2>
+<ol>
+<li>Fork 專案</li>
+<li>創建功能分支 (<code>git checkout -b feature/AmazingFeature</code>)</li>
+<li>提交更改 (<code>git commit -m 'Add some AmazingFeature'</code>)</li>
+<li>推送到分支 (<code>git push origin feature/AmazingFeature</code>)</li>
+<li>開啟 Pull Request</li>
+</ol>
+<h2 id="-授權">📄 授權</h2>
+<p>本專案採用 MIT 授權 - 詳見 <a href="LICENSE">LICENSE</a> 文件</p>
+<h2 id="-團隊">👥 團隊</h2>
+<ul>
+<li>開發者：[peihe]</li>
+</ul>
+<h2 id="-致謝">🙏 致謝</h2>
+<ul>
+<li><a href="https://openai.com/">OpenAI</a> - 提供 AI 對話能力</li>
+<li><a href="https://threejs.org/">Three.js</a> - 3D 渲染引擎</li>
+<li><a href="https://vuejs.org/">Vue.js</a> - 前端框架</li>
+</ul>
+<h2 id="-聯絡方式">📞 聯絡方式</h2>
+<ul>
+<li>專案連結：[https://github.com/peihe07/chrono-chem]</li>
+<li>電子郵件：your.email@example.com</li>
+</ul>
+<h2 id="-已知限制">⚠️ 已知限制</h2>
+<ul>
+<li>部分效能優化功能將在 v1.1.0 中實現</li>
+<li>使用者回饋系統正在開發中</li>
+<li>分享功能將在後續版本加入</li>
+</ul>
+<h2 id="-未來規劃">🔮 未來規劃</h2>
+<ul>
+<li>支援更多化學家</li>
+<li>加入實驗模擬功能</li>
+<li>擴充互動動畫</li>
+<li>優化載入時間</li>
+<li>實作評分系統</li>
+</ul>
+
+        </section>
+        <div class="post-tags">
+          
+          
+          <nav class="nav tags">
+            <ul class="tags">
+              
+              <li><a href="/tags/chemistry">Chemistry</a></li>
+              
+              <li><a href="/tags/education">Education</a></li>
+              
+              <li><a href="/tags/%E5%B0%88%E6%A1%88">專案</a></li>
+              
+            </ul>
+          </nav>
+          
+          
+        </div>
+      </div>
+
+      
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div class="footer_nav">
+    
+  </div>
+
+  
+  
+    
+      <a class="soc" href="https://github.com/peihe07" title="github">
+        <i data-feather="github"></i>
+      </a> | 
+    
+      <a class="soc" href="mailto:y450376@gmail.com" title="email">
+        <i data-feather="mail"></i>
+      </a> | 
+    
+      <a class="soc" href="https://medium.com/@peihe07" title="medium">
+        <i data-feather="book-open"></i>
+      </a>
+    
+  
+
+  ⚡️ 2025
+   Peihe | 
+  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+  <script>
+    feather.replace();
+  </script>
+</div>
+    </body>
+</html>

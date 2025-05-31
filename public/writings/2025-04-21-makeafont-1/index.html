@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>MakeAFont - Peihe&#39;s blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="MakeAFont 上篇-從手寫到字體
+本系列紀錄我開發一套完整中文字體的過程，從手寫到完成字型包。
+分為上下兩篇：
+上篇：字集規劃、模板設計、iPad 手寫流程、圖片裁切、向量化
+下篇：Glyphs 編排與輸出(待完成)
+為什麼我要自己做一套字型？
+認識我的人應該都知道我很喜歡寫字，雖然字不醜，但也不覺得特別好看， 大概不像辰宇落雁體那種每一筆劃都清楚明瞭的那種，我的字有自己的特色但也很容易黏在一起。
+大概在幾年之前就有注意到JustFont有造字計畫，當時是給字帖自行印出之後，寫完寄給他們，但因為要印很多紙，我就放棄這個計畫(?)，也有因為我的字體是不慍不火的類型，要說特色也沒有很有特色，當時主流的字體還是娃娃體之類的並不流行手寫字體，這個念頭就先被擱置。
+後來看到壹加壹的一粒寫粒腺體的影片紀錄，想做自己手寫字體這個念頭又燃起，但後期大部份的造字工作室或是公司都暫時不接手寫字體製做服務了，所以又無限期擱置了這個念頭。
+直到上周看到JustFont字體特價的廣告，正處於手中專案的黑暗期(不想動不想做)，腦袋燃起了自己製做的想法，於是開始和Chatgpt及Claude討論自製字體的可能性，想當然而AI當然是給滿滿的期望和號稱超級完美的計畫，總之我就突然開始做了這個造字計畫。
+📝 字型開發流程
+整體開發流程我拆成了六個階段：
+
+字集規劃與模板設計
+手寫輸入（iPad &#43; GoodNotes）
+圖片裁切與向量化
+Glyphs 編排與命名
+測試與修正
+字型輸出與展示
+
+💻 Step 1：字集規劃與模板設計
+我直接使用了JustFont提供的開源 jf7000當務字集，其中涵蓋繁體中文中最常使用的 7000 字，除了主集也有擴充字元：
+
+基本
+本土語言常用包（根據教育部台語羅馬字推薦字表）
+台灣命名常用包
+日文常用包
+符號擴充包
+
+一開始可是發起了豪情壯志想要寫繁體中文社群裡最大的BIG5字集的13060個漢字，但真的寫過之後才發現，喔~還好我沒有這樣做耶。
+製作手寫模板（PDF）
+
+製做手寫模板這裡我大概花了一天半的時間，模板就丟給AI去幫我生成html檔，他設計了一個 5×7 的格線模板，每頁 35 字，格線中含有：
+
+中心點（便於對齊筆劃）
+邊界線（控制字寬與留白）
+灰色提示字（對照填寫內容）
+
+
+左邊是第一版（範例字置中）
+
+右邊是第二版（範例字放在左上角）
+其中我將基礎字切成7份，繁體字部分一份共1063個字體，符號的方面則獨立切出一份。
+一開始我是請AI產出字集裡Unicode對應的字並顯示在格子正中央，大概寫了1000字之後發現一個問題，當開始大量書寫之後，會開始照著範例去描，而不是寫出自己的字形。因為整理的時候會覺得是有點像我的字，但寫的有點太好看又不像，應該要將範例字放在角落，遂又生成了第二個版本。
+
+🌐 Unicode 是什麼？
+Unicode 是一個國際字元編碼標準，目標是為全世界所有文字、符號與表情符號提供唯一且一致的編碼*。它用來解決「不同語言、系統間無法正確顯示文字」的問題。*
+
+
+然後發現自己寫字真的是歪wwwww
+然後若是符號和日文字，我還是採取範例字置中，才不會寫的真的很醜。
+
+模版的部分除了繁體字有明確的Unicode生成範例字就沒什麼太大問題，麻煩的是擴充符號包那些，需要先請AI將該名稱找到Unicode生成對應，再去產出所以光是日文字、台語羅馬拼音、符號都需要各自生成對應的模版生成器，後續可能會在開源檔案裡提供。
+✏️ Step 2：手寫輸入
+我是使用 iPad &#43; GoodNotes
+原因是我都剛好有，也有購買GoodNotes，Goodnotes好處是可直接套用 PDF 模板，格線不會移位，之後輸出可以去掉背景方便後續切割，只輸出筆跡的部分，可以多頁匯出也可以單頁匯出。" />
+	<meta property="og:image" content="https://hqasco.deta.dev/img?url=http://localhost:1313/writings/2025-04-21-makeafont-1/"/>
+	<meta property="twitter:image" content="https://hqasco.deta.dev/img?url=http://localhost:1313/writings/2025-04-21-makeafont-1/"/>
+	<meta property="twitter:card" content="summary_large_image"/>
+	<meta property="og:url" content="http://localhost:1313/writings/2025-04-21-makeafont-1/">
+  <meta property="og:site_name" content="Peihe&#39;s blog">
+  <meta property="og:title" content="MakeAFont">
+  <meta property="og:description" content="MakeAFont 上篇-從手寫到字體 本系列紀錄我開發一套完整中文字體的過程，從手寫到完成字型包。
+分為上下兩篇：
+上篇：字集規劃、模板設計、iPad 手寫流程、圖片裁切、向量化
+下篇：Glyphs 編排與輸出(待完成)
+為什麼我要自己做一套字型？ 認識我的人應該都知道我很喜歡寫字，雖然字不醜，但也不覺得特別好看， 大概不像辰宇落雁體那種每一筆劃都清楚明瞭的那種，我的字有自己的特色但也很容易黏在一起。
+大概在幾年之前就有注意到JustFont有造字計畫，當時是給字帖自行印出之後，寫完寄給他們，但因為要印很多紙，我就放棄這個計畫(?)，也有因為我的字體是不慍不火的類型，要說特色也沒有很有特色，當時主流的字體還是娃娃體之類的並不流行手寫字體，這個念頭就先被擱置。
+後來看到壹加壹的一粒寫粒腺體的影片紀錄，想做自己手寫字體這個念頭又燃起，但後期大部份的造字工作室或是公司都暫時不接手寫字體製做服務了，所以又無限期擱置了這個念頭。
+直到上周看到JustFont字體特價的廣告，正處於手中專案的黑暗期(不想動不想做)，腦袋燃起了自己製做的想法，於是開始和Chatgpt及Claude討論自製字體的可能性，想當然而AI當然是給滿滿的期望和號稱超級完美的計畫，總之我就突然開始做了這個造字計畫。
+📝 字型開發流程 整體開發流程我拆成了六個階段：
+字集規劃與模板設計 手寫輸入（iPad &#43; GoodNotes） 圖片裁切與向量化 Glyphs 編排與命名 測試與修正 字型輸出與展示 💻 Step 1：字集規劃與模板設計 我直接使用了JustFont提供的開源 jf7000當務字集，其中涵蓋繁體中文中最常使用的 7000 字，除了主集也有擴充字元：
+基本 本土語言常用包（根據教育部台語羅馬字推薦字表） 台灣命名常用包 日文常用包 符號擴充包 一開始可是發起了豪情壯志想要寫繁體中文社群裡最大的BIG5字集的13060個漢字，但真的寫過之後才發現，喔~還好我沒有這樣做耶。
+製作手寫模板（PDF） 製做手寫模板這裡我大概花了一天半的時間，模板就丟給AI去幫我生成html檔，他設計了一個 5×7 的格線模板，每頁 35 字，格線中含有：
+中心點（便於對齊筆劃） 邊界線（控制字寬與留白） 灰色提示字（對照填寫內容） 左邊是第一版（範例字置中）
+右邊是第二版（範例字放在左上角）
+其中我將基礎字切成7份，繁體字部分一份共1063個字體，符號的方面則獨立切出一份。
+一開始我是請AI產出字集裡Unicode對應的字並顯示在格子正中央，大概寫了1000字之後發現一個問題，當開始大量書寫之後，會開始照著範例去描，而不是寫出自己的字形。因為整理的時候會覺得是有點像我的字，但寫的有點太好看又不像，應該要將範例字放在角落，遂又生成了第二個版本。
+🌐 Unicode 是什麼？
+Unicode 是一個國際字元編碼標準，目標是為全世界所有文字、符號與表情符號提供唯一且一致的編碼*。它用來解決「不同語言、系統間無法正確顯示文字」的問題。*
+然後發現自己寫字真的是歪wwwww
+然後若是符號和日文字，我還是採取範例字置中，才不會寫的真的很醜。
+模版的部分除了繁體字有明確的Unicode生成範例字就沒什麼太大問題，麻煩的是擴充符號包那些，需要先請AI將該名稱找到Unicode生成對應，再去產出所以光是日文字、台語羅馬拼音、符號都需要各自生成對應的模版生成器，後續可能會在開源檔案裡提供。
+✏️ Step 2：手寫輸入 我是使用 iPad &#43; GoodNotes 原因是我都剛好有，也有購買GoodNotes，Goodnotes好處是可直接套用 PDF 模板，格線不會移位，之後輸出可以去掉背景方便後續切割，只輸出筆跡的部分，可以多頁匯出也可以單頁匯出。">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="writings">
+    <meta property="article:published_time" content="2025-04-21T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-04-21T00:00:00+00:00">
+    <meta property="article:tag" content="Font">
+    <meta property="article:tag" content="Design">
+    <meta property="article:tag" content="專案">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="MakeAFont">
+  <meta name="twitter:description" content="MakeAFont 上篇-從手寫到字體 本系列紀錄我開發一套完整中文字體的過程，從手寫到完成字型包。
+分為上下兩篇：
+上篇：字集規劃、模板設計、iPad 手寫流程、圖片裁切、向量化
+下篇：Glyphs 編排與輸出(待完成)
+為什麼我要自己做一套字型？ 認識我的人應該都知道我很喜歡寫字，雖然字不醜，但也不覺得特別好看， 大概不像辰宇落雁體那種每一筆劃都清楚明瞭的那種，我的字有自己的特色但也很容易黏在一起。
+大概在幾年之前就有注意到JustFont有造字計畫，當時是給字帖自行印出之後，寫完寄給他們，但因為要印很多紙，我就放棄這個計畫(?)，也有因為我的字體是不慍不火的類型，要說特色也沒有很有特色，當時主流的字體還是娃娃體之類的並不流行手寫字體，這個念頭就先被擱置。
+後來看到壹加壹的一粒寫粒腺體的影片紀錄，想做自己手寫字體這個念頭又燃起，但後期大部份的造字工作室或是公司都暫時不接手寫字體製做服務了，所以又無限期擱置了這個念頭。
+直到上周看到JustFont字體特價的廣告，正處於手中專案的黑暗期(不想動不想做)，腦袋燃起了自己製做的想法，於是開始和Chatgpt及Claude討論自製字體的可能性，想當然而AI當然是給滿滿的期望和號稱超級完美的計畫，總之我就突然開始做了這個造字計畫。
+📝 字型開發流程 整體開發流程我拆成了六個階段：
+字集規劃與模板設計 手寫輸入（iPad &#43; GoodNotes） 圖片裁切與向量化 Glyphs 編排與命名 測試與修正 字型輸出與展示 💻 Step 1：字集規劃與模板設計 我直接使用了JustFont提供的開源 jf7000當務字集，其中涵蓋繁體中文中最常使用的 7000 字，除了主集也有擴充字元：
+基本 本土語言常用包（根據教育部台語羅馬字推薦字表） 台灣命名常用包 日文常用包 符號擴充包 一開始可是發起了豪情壯志想要寫繁體中文社群裡最大的BIG5字集的13060個漢字，但真的寫過之後才發現，喔~還好我沒有這樣做耶。
+製作手寫模板（PDF） 製做手寫模板這裡我大概花了一天半的時間，模板就丟給AI去幫我生成html檔，他設計了一個 5×7 的格線模板，每頁 35 字，格線中含有：
+中心點（便於對齊筆劃） 邊界線（控制字寬與留白） 灰色提示字（對照填寫內容） 左邊是第一版（範例字置中）
+右邊是第二版（範例字放在左上角）
+其中我將基礎字切成7份，繁體字部分一份共1063個字體，符號的方面則獨立切出一份。
+一開始我是請AI產出字集裡Unicode對應的字並顯示在格子正中央，大概寫了1000字之後發現一個問題，當開始大量書寫之後，會開始照著範例去描，而不是寫出自己的字形。因為整理的時候會覺得是有點像我的字，但寫的有點太好看又不像，應該要將範例字放在角落，遂又生成了第二個版本。
+🌐 Unicode 是什麼？
+Unicode 是一個國際字元編碼標準，目標是為全世界所有文字、符號與表情符號提供唯一且一致的編碼*。它用來解決「不同語言、系統間無法正確顯示文字」的問題。*
+然後發現自己寫字真的是歪wwwww
+然後若是符號和日文字，我還是採取範例字置中，才不會寫的真的很醜。
+模版的部分除了繁體字有明確的Unicode生成範例字就沒什麼太大問題，麻煩的是擴充符號包那些，需要先請AI將該名稱找到Unicode生成對應，再去產出所以光是日文字、台語羅馬拼音、符號都需要各自生成對應的模版生成器，後續可能會在開源檔案裡提供。
+✏️ Step 2：手寫輸入 我是使用 iPad &#43; GoodNotes 原因是我都剛好有，也有購買GoodNotes，Goodnotes好處是可直接套用 PDF 模板，格線不會移位，之後輸出可以去掉背景方便後續切割，只輸出筆跡的部分，可以多頁匯出也可以單頁匯出。">
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/projects.css" />
+	
+	
+		
+		<link rel="stylesheet" type="text/css" href="/css/light.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/font.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/syntax.css">
+		
+	<script src="//instant.page/5.1.0" type="module" integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-title">
+      <a href="http://localhost:1313/">Peihe&#39;s blog</a>
+    </div>
+    <nav class="main-menu">
+      
+        <a href="/">Home</a>
+      
+        <a href="/writings">Writings</a>
+      
+        <a href="/projects">Projects</a>
+      
+        <a href="/notes">Notes</a>
+      
+        <a href="/about">About</a>
+      
+    </nav>
+  </header><body>
+        <div class="content">
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">MakeAFont</h1>
+          <div class="meta">Posted on Apr 21, 2025</div>
+        </div>
+        
+        <section class="body">
+          <h1 id="makeafont-上篇-從手寫到字體">MakeAFont 上篇-從手寫到字體</h1>
+<p>本系列紀錄我開發一套完整中文字體的過程，從手寫到完成字型包。</p>
+<p>分為上下兩篇：</p>
+<p>上篇：字集規劃、模板設計、iPad 手寫流程、圖片裁切、向量化</p>
+<p>下篇：Glyphs 編排與輸出(待完成)</p>
+<h1 id="為什麼我要自己做一套字型"><strong>為什麼我要自己做一套字型？</strong></h1>
+<p>認識我的人應該都知道我很喜歡寫字，雖然字不醜，但也不覺得特別好看， 大概不像辰宇落雁體那種每一筆劃都清楚明瞭的那種，我的字有自己的特色但也很容易黏在一起。</p>
+<p>大概在幾年之前就有注意到JustFont有造字計畫，當時是給字帖自行印出之後，寫完寄給他們，但因為要印很多紙，我就放棄這個計畫(?)，也有因為我的字體是不慍不火的類型，要說特色也沒有很有特色，當時主流的字體還是娃娃體之類的並不流行手寫字體，這個念頭就先被擱置。</p>
+<p>後來看到壹加壹的一粒寫粒腺體的影片紀錄，想做自己手寫字體這個念頭又燃起，但後期大部份的造字工作室或是公司都暫時不接手寫字體製做服務了，所以又無限期擱置了這個念頭。</p>
+<p>直到上周看到JustFont字體特價的廣告，正處於手中專案的黑暗期(不想動不想做)，腦袋燃起了自己製做的想法，於是開始和Chatgpt及Claude討論自製字體的可能性，想當然而AI當然是給滿滿的期望和號稱超級完美的計畫，總之我就突然開始做了這個造字計畫。</p>
+<h1 id="-字型開發流程"><strong>📝 字型開發流程</strong></h1>
+<p>整體開發流程我拆成了六個階段：</p>
+<ol>
+<li>字集規劃與模板設計</li>
+<li>手寫輸入（iPad + GoodNotes）</li>
+<li>圖片裁切與向量化</li>
+<li>Glyphs 編排與命名</li>
+<li>測試與修正</li>
+<li>字型輸出與展示</li>
+</ol>
+<h1 id="-step-1字集規劃與模板設計"><strong>💻 Step 1：字集規劃與模板設計</strong></h1>
+<p>我直接使用了JustFont提供的開源 <a href="https://justfont.com/jf7000">jf7000當務字集</a>，其中涵蓋繁體中文中最常使用的 7000 字，除了主集也有擴充字元：</p>
+<ul>
+<li>基本</li>
+<li>本土語言常用包（根據教育部台語羅馬字推薦字表）</li>
+<li>台灣命名常用包</li>
+<li>日文常用包</li>
+<li>符號擴充包</li>
+</ul>
+<p>一開始可是發起了豪情壯志想要寫繁體中文社群裡最大的BIG5字集的13060個漢字，但真的寫過之後才發現，喔~還好我沒有這樣做耶。</p>
+<h1 id="製作手寫模板pdf"><strong>製作手寫模板（PDF）</strong></h1>
+<p><img src="/images/MakeAFont/1_XJHw208as8E5l8fU0OFRJw.png" alt=""></p>
+<p>製做手寫模板這裡我大概花了一天半的時間，模板就丟給AI去幫我生成html檔，他設計了一個 5×7 的格線模板，每頁 35 字，格線中含有：</p>
+<ul>
+<li>中心點（便於對齊筆劃）</li>
+<li>邊界線（控制字寬與留白）</li>
+<li>灰色提示字（對照填寫內容）</li>
+</ul>
+<p><img src="/images/MakeAFont/1_yho2990E-lbkYWrXi_-IAw.png" alt="">
+左邊是第一版（範例字置中）</p>
+<p><img src="/images/MakeAFont/1_KXXjfKIDeP4Bc72exGDFvw.png" alt="">
+右邊是第二版（範例字放在左上角）</p>
+<p>其中我將基礎字切成7份，繁體字部分一份共1063個字體，符號的方面則獨立切出一份。</p>
+<p>一開始我是請AI產出字集裡Unicode對應的字並顯示在格子正中央，大概寫了1000字之後發現一個問題，當開始大量書寫之後，會開始照著範例去描，而不是寫出自己的字形。因為整理的時候會覺得是有點像我的字，但寫的有點太好看又不像，應該要將範例字放在角落，遂又生成了第二個版本。</p>
+<blockquote>
+<p>🌐 Unicode 是什麼？</p>
+<p><em><strong>Unicode</strong> 是一個國際字元編碼標準，目標是為全世界所有文字、符號與表情符號提供</em><em>唯一且一致的編碼</em>*。它用來解決「不同語言、系統間無法正確顯示文字」的問題。*</p></blockquote>
+<p><img src="/images/MakeAFont/1_7VFS5Qfa1VTlJ0hh7MHlkw.png" alt=""></p>
+<p><img src="/images/MakeAFont/1_ZwBSIVs3nP02VYdayTJC_w.png" alt="">
+然後發現自己寫字真的是歪wwwww</p>
+<p>然後若是符號和日文字，我還是採取範例字置中，才不會寫的真的很醜。</p>
+<p><img src="/images/MakeAFont/1_xjA4oTdQikEd3PgX6uJDpg.png" alt=""></p>
+<p>模版的部分除了繁體字有明確的Unicode生成範例字就沒什麼太大問題，麻煩的是擴充符號包那些，需要先請AI將該名稱找到Unicode生成對應，再去產出所以光是日文字、台語羅馬拼音、符號都需要各自生成對應的模版生成器，後續可能會在開源檔案裡提供。</p>
+<h1 id="-step-2手寫輸入"><strong>✏️ Step 2：手寫輸入</strong></h1>
+<h1 id="我是使用-ipad--goodnotes"><strong>我是使用 iPad + GoodNotes</strong></h1>
+<p>原因是我都剛好有，也有購買GoodNotes，Goodnotes好處是可直接套用 PDF 模板，格線不會移位，之後輸出可以去掉背景方便後續切割，只輸出筆跡的部分，可以多頁匯出也可以單頁匯出。</p>
+<p>看無背景的時候，字的長相就會看的一清二楚，所以才會有發現對著描我的字太好看的問題不像我的字。</p>
+<p><img src="/images/MakeAFont/1_ZuOT65Ml4abZjQenWJNDSQ.png" alt="">
+左邊是第一版無背景輸出</p>
+<p><img src="/images/MakeAFont/1_bJses9Kfwh-W8BSEjoJktg.png" alt="">
+右邊是第二版無背景輸出，差很多吧</p>
+<p>至於Goodnotes的筆觸、筆畫粗度、靈敏度那些都是看自己所習慣的，我沒有特別推薦哪種，用其他筆記軟體應該也都可行。我是有用iPad類紙模，（OB大大推薦磁吸式的，非常好用感謝）。</p>
+<p>關於寫字我大概設定了7~8天寫完所有字體，其實大量寫完所有字體手會很疲勞，尤其是很多字都需要擦掉重複寫，肯定不只寫1000字所以非常疲勞，大約每天晚上7點多開始寫，到晚上12點前大概可以寫完，中間我如果覺得字怎麼寫都很怪很醜，就會休息。</p>
+<p>其實正確的造字方法不應該排的這麼密集，才可以輕鬆自然寫出原有的字形，後面會說我為什麼要趕著完成的原因，不過我寫字實在很用力對我來說，沒有輕鬆寫字這件事XDD，寫字的那一週我的大拇指都是麻掉的，大概寫1000字就沒辦法繼續寫，怎麼寫都不會好看。</p>
+<h1 id="-step-3圖片裁切與向量化"><strong>🔪 Step 3：圖片裁切與向量化</strong></h1>
+<h1 id="匯出圖片與自動裁切"><strong>匯出圖片與自動裁切</strong></h1>
+<p>完成寫字後，我會將 GoodNotes 輸出為PDF。寫了一個可以批次處理切割成單一字的python，將字體切割好後儲存成PNG檔。</p>
+<p>處理這部份就是切割的格線需要重複校對比較麻煩，由於一開始創模版時就有固定好位置，相較其他部分來說這裡算很好處理，對好之後就非常輕鬆的切成9000多個檔案。</p>
+<p><img src="/images/MakeAFont/1_KXXjfKIDeP4Bc72exGDFvw.png" alt=""></p>
+<h1 id="轉成-svg"><strong>轉成 SVG</strong></h1>
+<p>這裡是我處理比較久的部分，首先批次轉成SVG並不難，但檔案命名比較複雜，這裡基本上都會希望是直接用該字的Unicode去命名，如uni3A52.png或是uni3A52.svg去命名，方便之後輸入進字型編輯軟體Glyphs使用。</p>
+<p><img src="/images/MakeAFont/1_xjA4oTdQikEd3PgX6uJDpg.png" alt=""></p>
+<p>我本來還做了一個這個想要手動更換檔名，但我大概換了一百個我就不行了，本來很怕批次輸入要是有閃失就會放錯Unicode，但後來我還是選擇相信程式碼，我校對多次一點就好了，事實上最後編輯調整字型的時候也還可以再確認一次。</p>
+<p>最後是使用Python的pillow、potrace、svgpathtools和numpy去批次轉換成SVG。</p>
+<h1 id="-glyphs3"><strong>👷 Glyphs3</strong></h1>
+<p>最後階段就是放進去 <a href="https://glyphsapp.com/zh">Glyphs3</a> (該軟體只有 MacOS 版本)裡面去編輯字形，裡面的功能真的很多、很複雜，我會的就是把我的SVG放進去，然後調整大小位置，其他的功能可以去YouTube找教學影片，有位大大教得非常仔細。</p>
+<p><img src="/images/MakeAFont/1_cpUYNv9BBnyXqFCbn21mKQ.png" alt=""></p>
+<p>會使用Glyphs3的原因是JustFont提供的字集，就是適用在Glyphs的，我就不想另外找，看起來是非常完整的造字軟體。</p>
+<p>正版的Glyph3售價是 €299(台幣$10,791)，看到這個的時候我真的嚇傻，我要買嗎？當然沒有嘻嘻我這麼客，總之他是可以試用30天的，Glyphs 官方允許使用試用版所製作的字型商用或公開發佈，沒有任何限制，所以我才會做好要在一個月內完成的計畫，官方也可以申請延長試用，但這方面我只有稍微查了一下(通常會給15–30天)。</p>
+<p>至於另一個版本Glyphs mini2則是不適用我想要做的計畫，他會需要逐一輸入Unicode，沒辦法使用腳本或插件來自動對齊，匯出的字體功能也不完整。</p>
+<p>目前進行到了編輯階段，我的寶寶每個都要自己手動調整，因為我不放心www，加上我的字很歪實在沒辦法使用統一對齊或調整，太醜了也需要另外編輯，但我甘之如飴，都是我的寶寶。</p>
+<p><img src="/images/MakeAFont/0_FZ_MQ-IWPbw22qUF.png" alt=""></p>
+<p>下次見就是字體做完的時候囉，預祝我成功。</p>
+
+        </section>
+        <div class="post-tags">
+          
+          
+          <nav class="nav tags">
+            <ul class="tags">
+              
+              <li><a href="/tags/font">Font</a></li>
+              
+              <li><a href="/tags/design">Design</a></li>
+              
+              <li><a href="/tags/%E5%B0%88%E6%A1%88">專案</a></li>
+              
+            </ul>
+          </nav>
+          
+          
+        </div>
+      </div>
+
+      
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div class="footer_nav">
+    
+  </div>
+
+  
+  
+    
+      <a class="soc" href="https://github.com/peihe07" title="github">
+        <i data-feather="github"></i>
+      </a> | 
+    
+      <a class="soc" href="mailto:y450376@gmail.com" title="email">
+        <i data-feather="mail"></i>
+      </a> | 
+    
+      <a class="soc" href="https://medium.com/@peihe07" title="medium">
+        <i data-feather="book-open"></i>
+      </a>
+    
+  
+
+  ⚡️ 2025
+   Peihe | 
+  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+  <script>
+    feather.replace();
+  </script>
+</div>
+    </body>
+</html>

@@ -1,272 +1,34 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python on Peihe's blog</title><link>https://www.peihe07.uno/tags/python/</link><description>Recent content in Python on Peihe's blog</description><generator>Hugo</generator><language>en</language><copyright>Peihe</copyright><lastBuildDate>Sat, 24 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://www.peihe07.uno/tags/python/index.xml" rel="self" type="application/rss+xml"/><item><title>ProperScript（中規中矩體）</title><link>https://www.peihe07.uno/projects/2025-05-24-properscript/</link><pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/projects/2025-05-24-properscript/</guid><description>&lt;h1 id="properscript中規中矩體">ProperScript（中規中矩體）&lt;/h1>
-&lt;p>&lt;img src="https://github.com/user-attachments/assets/6ff75585-7356-426b-bbef-402a21f7dd99" alt="中規中矩體">&lt;/p>
-&lt;p>✍️ 一套自己製作的手寫字體。&lt;/p>
-&lt;h2 id="關於字體">關於字體&lt;/h2>
-&lt;p>我喜歡寫字，想了好幾年終於動手自己做。&lt;/p>
-&lt;p>會叫「中規中矩體」是因為我認為自己的字跡在沒有很好看也沒有很難看的範圍內，我想就真的是中規中矩吧。&lt;/p>
-&lt;p>第一次嘗試自己做字體，自己寫自己學會修字及如何利用工具處理大量的字體，還是有很多不太滿意的字，以及想要調整的地方，後續會慢慢調整更新，我相信會繼續更新版本吧XD。&lt;/p>
-&lt;h2 id="-下載--最新版本v1020250524-發布">📦 下載- 最新版本：v1.0（2025/05/24 發布）&lt;/h2>
-&lt;ul>
-&lt;li>字體檔案：&lt;a href="https://github.com/peihe07/ProperScript/blob/main/ProperScript-Regular.ttf">ProperScript-Regular.ttf&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h2 id="-製作輔助工具">🛠️ 製作輔助工具&lt;/h2>
-&lt;p>為了有效製作這套字體，我開發了一系列前端工具與腳本來進行字符排版與預覽，協助字型切割與字符對位。&lt;/p>
-&lt;h3 id="字集模板生成器通用分頁-html">字集模板生成器（通用分頁 HTML）&lt;/h3>
-&lt;ul>
-&lt;li>功能：將字集文字檔自動排版成 A4 字網格模板，可選擇每頁字數、分割檔案、位置樣式（左上 / 居中）&lt;/li>
-&lt;li>技術：JavaScript + HTML5 前端工具&lt;/li>
-&lt;li>特色程式碼：&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">function&lt;/span> &lt;span style="color:#a6e22e">getUnicodeFromName&lt;/span>(&lt;span style="color:#a6e22e">name&lt;/span>) {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">if&lt;/span> (&lt;span style="color:#a6e22e">name&lt;/span>.&lt;span style="color:#a6e22e">startsWith&lt;/span>(&lt;span style="color:#e6db74">&amp;#39;uni&amp;#39;&lt;/span>)) {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">hex&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">name&lt;/span>.&lt;span style="color:#a6e22e">substring&lt;/span>(&lt;span style="color:#ae81ff">3&lt;/span>);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">return&lt;/span> String.&lt;span style="color:#a6e22e">fromCodePoint&lt;/span>(parseInt(&lt;span style="color:#a6e22e">hex&lt;/span>, &lt;span style="color:#ae81ff">16&lt;/span>));
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#75715e">// ...
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e">&lt;/span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h3 id="特殊符號模板生成器">特殊符號模板生成器&lt;/h3>
-&lt;ul>
-&lt;li>功能：支援手動輸入 U+XXXX 編碼或上傳 txt，快速生成特殊符號網格&lt;/li>
-&lt;li>用途：測試標點與符號集的對齊情形&lt;/li>
-&lt;/ul>
-&lt;h3 id="台語拼音模板生成器">台語拼音模板生成器&lt;/h3>
-&lt;ul>
-&lt;li>功能：針對台羅拼音常用字元提供快速預覽與排版下載功能&lt;/li>
-&lt;li>使用場景：台語拼音支援測試&lt;/li>
-&lt;/ul>
-&lt;h3 id="日文垂直變體模板生成器">日文垂直變體模板生成器&lt;/h3>
-&lt;ul>
-&lt;li>功能：比較日文字元在水平與垂直模式下的顯示差異，支援垂直模式切換&lt;/li>
-&lt;li>程式碼片段：&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>.&lt;span style="color:#a6e22e">writing&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#a6e22e">mode&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">vertical&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#a6e22e">rl&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>.&lt;span style="color:#a6e22e">text&lt;/span>&lt;span style="color:#f92672">-&lt;/span>&lt;span style="color:#a6e22e">orientation&lt;/span>&lt;span style="color:#f92672">:&lt;/span> &lt;span style="color:#a6e22e">upright&lt;/span>;
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;h3 id="python-切割字符腳本">Python 切割字符腳本&lt;/h3>
-&lt;ul>
-&lt;li>功能：將命名後的 .png 字符圖自動對應為 Unicode 檔名&lt;/li>
-&lt;li>檔案：&lt;code>切割字符.py&lt;/code>&lt;/li>
-&lt;/ul>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> fontTools.pens.boundsPen &lt;span style="color:#f92672">import&lt;/span> ControlBoundsPen
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>pen &lt;span style="color:#f92672">=&lt;/span> ControlBoundsPen(font&lt;span style="color:#f92672">.&lt;/span>getGlyphSet())
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>這些工具讓我能更有效率地規劃、臨摹與切割超過 7000 個字元，實現個人字體專案的自動化與結構化。&lt;/p></description></item><item><title>Django筆記</title><link>https://www.peihe07.uno/notes/2025-01-24-django_notes_outline/</link><pubDate>Fri, 24 Jan 2025 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/notes/2025-01-24-django_notes_outline/</guid><description>&lt;h1 id="django-學習筆記">Django 學習筆記&lt;/h1>
-&lt;h2 id="1-django-基礎概念">1. Django 基礎概念&lt;/h2>
-&lt;h3 id="11-什麼是-django">1.1 什麼是 Django&lt;/h3>
-&lt;p>&lt;strong>Web 框架簡介&lt;/strong>
-Django 是一個高階的 Python Web 框架，鼓勵快速開發和乾淨、實用的設計。它由經驗豐富的開發者構建，解決了 Web 開發的許多麻煩，讓你可以專注於編寫應用程式而無需重新發明輪子。&lt;/p>
-&lt;p>&lt;strong>Django 的設計哲學&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>DRY（Don&amp;rsquo;t Repeat Yourself）&lt;/strong>：避免重複代碼，提高代碼重用性&lt;/li>
-&lt;li>&lt;strong>快速開發&lt;/strong>：從概念到完成儘可能快速&lt;/li>
-&lt;li>&lt;strong>Clean Design&lt;/strong>：鼓勵乾淨、實用的設計&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>MVT 架構模式（Model-View-Template）&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>&lt;strong>Model&lt;/strong>：資料層，定義資料結構和業務邏輯&lt;/li>
-&lt;li>&lt;strong>View&lt;/strong>：控制層，處理用戶請求並返回回應&lt;/li>
-&lt;li>&lt;strong>Template&lt;/strong>：展示層，負責用戶界面的呈現&lt;/li>
-&lt;/ul>
-&lt;p>&lt;strong>Django 的優勢與特色&lt;/strong>&lt;/p>
-&lt;ul>
-&lt;li>內建管理介面&lt;/li>
-&lt;li>強大的 ORM 系統&lt;/li>
-&lt;li>完善的安全機制&lt;/li>
-&lt;li>豐富的內建功能&lt;/li>
-&lt;li>活躍的社群支援&lt;/li>
-&lt;/ul>
-&lt;h3 id="12-環境建置">1.2 環境建置&lt;/h3>
-&lt;p>&lt;strong>Python 環境需求&lt;/strong>&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 檢查 Python 版本（建議 3.8+）&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python --version
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python3 --version
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>&lt;strong>虛擬環境設置&lt;/strong>&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 使用 venv 建立虛擬環境&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>python -m venv django_env
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 啟動虛擬環境&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># Windows&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>django_env&lt;span style="color:#ae81ff">\S&lt;/span>cripts&lt;span style="color:#ae81ff">\a&lt;/span>ctivate
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># macOS/Linux&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>source django_env/bin/activate
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># 停用虛擬環境&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>deactivate
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>&lt;p>&lt;strong>Django 安裝&lt;/strong>&lt;/p></description></item><item><title>Vue.js</title><link>https://www.peihe07.uno/notes/2024-12-30-vue_notes/</link><pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate><guid>https://www.peihe07.uno/notes/2024-12-30-vue_notes/</guid><description>&lt;h1 id="vuejs-專案結構與檔案詳細說明">Vue.js 專案結構與檔案詳細說明&lt;/h1>
-&lt;p>以下解析一個使用 Vue CLI 建立的典型前端 Vue.js 專案結構，並說明各個檔案與資料夾的作用與必要性。&lt;/p>
-&lt;h2 id="目錄">目錄&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="#1-%E5%B0%88%E6%A1%88%E6%A0%B9%E7%9B%AE%E9%8C%84%E6%AA%94%E6%A1%88">1. 專案根目錄檔案&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#2-public-%E8%B3%87%E6%96%99%E5%A4%BE">2. public 資料夾&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#3-src-%E8%B3%87%E6%96%99%E5%A4%BE">3. src 資料夾&lt;/a>&lt;/li>
-&lt;li>&lt;a href="#4-%E5%85%B6%E4%BB%96%E7%92%B0%E5%A2%83%E8%A8%AD%E5%AE%9A%E6%AA%94">4. 其他環境設定檔&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h2 id="1-專案根目錄檔案">1. 專案根目錄檔案&lt;/h2>
-&lt;h3 id="packagejson">package.json&lt;/h3>
-&lt;ul>
-&lt;li>&lt;strong>功能說明：&lt;/strong>&lt;br>
-記錄專案的元資料、依賴套件、開發與生產環境的指令（例如 &lt;code>serve&lt;/code>、&lt;code>build&lt;/code>、&lt;code>test&lt;/code>）等設定。&lt;/li>
-&lt;li>&lt;strong>為什麼需要：&lt;/strong>&lt;br>
-統一管理專案的相依套件與腳本，方便團隊成員建立與執行開發環境。&lt;/li>
-&lt;/ul>
-&lt;h3 id="package-lockjson--yarnlock">package-lock.json / yarn.lock&lt;/h3>
-&lt;ul>
-&lt;li>&lt;strong>功能說明：&lt;/strong>&lt;br>
-鎖定專案所使用的套件版本，確保在不同環境中安裝的版本一致。&lt;/li>
-&lt;li>&lt;strong>為什麼需要：&lt;/strong>&lt;br>
-避免因版本不一致而導致錯誤，保持團隊開發的一致性。&lt;/li>
-&lt;/ul>
-&lt;h3 id="readmemd">README.md&lt;/h3>
-&lt;ul>
-&lt;li>&lt;strong>功能說明：&lt;/strong>&lt;br>
-提供專案簡介、安裝步驟、使用說明以及其他相關資訊。&lt;/li>
-&lt;li>&lt;strong>為什麼需要：&lt;/strong>&lt;br>
-讓新進成員或使用者能夠快速了解並上手專案。&lt;/li>
-&lt;/ul>
-&lt;h3 id="vueconfigjs-可選">vue.config.js (可選)&lt;/h3>
-&lt;ul>
-&lt;li>&lt;strong>功能說明：&lt;/strong>&lt;br>
-用於覆寫 Vue CLI 預設的 Webpack 配置，例如設定代理、路徑別名、資源目錄等。&lt;/li>
-&lt;li>&lt;strong>為什麼需要：&lt;/strong>&lt;br>
-提供彈性，讓你能根據專案需求調整建置流程與設定。&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h2 id="2-public-資料夾">2. public 資料夾&lt;/h2>
-&lt;h3 id="indexhtml">index.html&lt;/h3>
-&lt;ul>
-&lt;li>&lt;strong>功能說明：&lt;/strong>&lt;br>
-專案的主要 HTML 模板，Vue.js 應用會注入到此文件中預先定義好的掛載點（通常是 &lt;code>&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&lt;/code>）。&lt;/li>
-&lt;li>&lt;strong>為什麼需要：&lt;/strong>&lt;br>
-作為單頁應用（SPA）的入口點，決定初始 HTML 結構與靜態內容。&lt;/li>
-&lt;/ul>
-&lt;h3 id="其他靜態資源">其他靜態資源&lt;/h3>
-&lt;ul>
-&lt;li>&lt;strong>功能說明：&lt;/strong>&lt;br>
-放置不需要經過 Webpack 處理的靜態檔案，如 favicon、外部庫文件或其他第三方資源。&lt;/li>
-&lt;li>&lt;strong>為什麼需要：&lt;/strong>&lt;br>
-確保這些檔案在最終建置時能夠原封不動地複製到輸出目錄，並正確載入。&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h2 id="3-src-資料夾">3. src 資料夾&lt;/h2>
-&lt;h3 id="mainjs">main.js&lt;/h3>
-&lt;ul>
-&lt;li>&lt;strong>功能說明：&lt;/strong>&lt;br>
-專案的主要進入點，初始化 Vue 實例，整合路由（Vue Router）、狀態管理（Vuex）等，並將根元件掛載到 DOM 中。&lt;/li>
-&lt;li>&lt;strong>為什麼需要：&lt;/strong>&lt;br>
-建立與啟動整個 Vue 應用，是專案運行的核心。&lt;/li>
-&lt;/ul>
-&lt;h3 id="appvue">App.vue&lt;/h3>
-&lt;ul>
-&lt;li>&lt;strong>功能說明：&lt;/strong>&lt;br>
-根元件，作為應用的主要容器，通常包含全局佈局與樣式，並嵌入其他子元件。&lt;/li>
-&lt;li>&lt;strong>為什麼需要：&lt;/strong>&lt;br>
-統一管理應用結構與佈局，作為其他元件的父容器。&lt;/li>
-&lt;/ul>
-&lt;h3 id="assets-資料夾">assets 資料夾&lt;/h3>
-&lt;ul>
-&lt;li>&lt;strong>功能說明：&lt;/strong>&lt;br>
-存放圖片、字體、CSS 檔案或其他需要經過 Webpack 處理的靜態資源。&lt;/li>
-&lt;li>&lt;strong>為什麼需要：&lt;/strong>&lt;br>
-讓這些資源能夠在編譯時進行優化、壓縮與管理，提升效能與可維護性。&lt;/li>
-&lt;/ul>
-&lt;h3 id="components-資料夾">components 資料夾&lt;/h3>
-&lt;ul>
-&lt;li>&lt;strong>功能說明：&lt;/strong>&lt;br>
-存放可重用的 Vue 元件，每個元件通常是一個 &lt;code>.vue&lt;/code> 檔案，包含模板、邏輯與樣式。&lt;/li>
-&lt;li>&lt;strong>為什麼需要：&lt;/strong>&lt;br>
-模組化應用開發，將 UI 與功能拆分成獨立且可重用的元件，增強維護性與開發效率。&lt;/li>
-&lt;/ul>
-&lt;h3 id="views-或-pages-資料夾">views (或 pages) 資料夾&lt;/h3>
-&lt;ul>
-&lt;li>&lt;strong>功能說明：&lt;/strong>&lt;br>
-當應用較大時，可以將不同的頁面（視圖）存放在此處，通常與路由配置相對應。&lt;/li>
-&lt;li>&lt;strong>為什麼需要：&lt;/strong>&lt;br>
-區分單頁應用（SPA）中的不同路由頁面，保持結構清晰。&lt;/li>
-&lt;/ul>
-&lt;h3 id="router-資料夾">router 資料夾&lt;/h3>
-&lt;ul>
-&lt;li>&lt;strong>功能說明：&lt;/strong>&lt;br>
-存放路由設定文件（通常是 &lt;code>index.js&lt;/code>），定義各個 URL 路徑與對應的元件。&lt;/li>
-&lt;li>&lt;strong>為什麼需要：&lt;/strong>&lt;br>
-管理前端路由，讓應用能夠根據 URL 變化載入不同頁面與元件。&lt;/li>
-&lt;/ul>
-&lt;h3 id="store-資料夾">store 資料夾&lt;/h3>
-&lt;ul>
-&lt;li>&lt;strong>功能說明：&lt;/strong>&lt;br>
-若使用 Vuex 管理應用狀態，則在此資料夾中定義 state、mutations、actions 與 getters 等。&lt;/li>
-&lt;li>&lt;strong>為什麼需要：&lt;/strong>&lt;br>
-集中管理應用狀態，方便元件之間的資料共享與同步。&lt;/li>
-&lt;/ul>
-&lt;h3 id="utils-或-services-資料夾-可選">utils 或 services 資料夾 (可選)&lt;/h3>
-&lt;ul>
-&lt;li>&lt;strong>功能說明：&lt;/strong>&lt;br>
-存放工具函數、API 請求封裝、數據處理邏輯等常用功能模組。&lt;/li>
-&lt;li>&lt;strong>為什麼需要：&lt;/strong>&lt;br>
-將常用功能模組化，減少重複程式碼，提升專案可維護性與擴展性。&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h2 id="4-其他環境設定檔">4. 其他環境設定檔&lt;/h2>
-&lt;h3 id="envenvdevelopmentenvproduction-等">.env、.env.development、.env.production 等&lt;/h3>
-&lt;ul>
-&lt;li>&lt;strong>功能說明：&lt;/strong>&lt;br>
-定義不同環境下的環境變數，例如 API 基本路徑、除錯模式等設定。&lt;/li>
-&lt;li>&lt;strong>為什麼需要：&lt;/strong>&lt;br>
-讓專案能夠根據部署環境輕鬆調整配置，而無需修改程式碼。&lt;/li>
-&lt;/ul>
-&lt;hr>
-&lt;h1 id="vuejs-進階應用與生態系統補充說明">Vue.js 進階應用與生態系統補充說明&lt;/h1>
-&lt;p>除了基礎的專案結構與檔案說明，Vue.js 生態系統提供了許多進階工具與最佳實踐，能協助你建立更高效、彈性及易於維護的前端應用。以下補充一些常見的延伸主題與應用情境：&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on Peihe&#39;s blog</title>
+    <link>http://localhost:1313/tags/python/</link>
+    <description>Recent content in Python on Peihe&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <copyright>Peihe</copyright>
+    <lastBuildDate>Sat, 24 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>ProperScript</title>
+      <link>http://localhost:1313/projects/2025-05-24-properscript/</link>
+      <pubDate>Sat, 24 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/2025-05-24-properscript/</guid>
+      <description>&lt;h1 id=&#34;properscript中規中矩體&#34;&gt;ProperScript（中規中矩體）&lt;/h1&gt;&#xA;&lt;p&gt;&lt;img src=&#34;https://github.com/user-attachments/assets/6ff75585-7356-426b-bbef-402a21f7dd99&#34; alt=&#34;中規中矩體&#34;&gt;&lt;/p&gt;&#xA;&lt;p&gt;✍️ 一套自己製作的手寫字體。&lt;/p&gt;&#xA;&lt;h2 id=&#34;關於字體&#34;&gt;關於字體&lt;/h2&gt;&#xA;&lt;p&gt;我喜歡寫字，想了好幾年終於動手自己做。&lt;/p&gt;&#xA;&lt;p&gt;會叫「中規中矩體」是因為我認為自己的字跡在沒有很好看也沒有很難看的範圍內，我想就真的是中規中矩吧。&lt;/p&gt;&#xA;&lt;p&gt;第一次嘗試自己做字體，自己寫自己學會修字及如何利用工具處理大量的字體，還是有很多不太滿意的字，以及想要調整的地方，後續會慢慢調整更新，我相信會繼續更新版本吧XD。&lt;/p&gt;&#xA;&lt;h2 id=&#34;-下載--最新版本v1020250524-發布&#34;&gt;📦 下載- 最新版本：v1.0（2025/05/24 發布）&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;字體檔案：&lt;a href=&#34;https://github.com/peihe07/ProperScript/blob/main/ProperScript-Regular.ttf&#34;&gt;ProperScript-Regular.ttf&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;-製作輔助工具&#34;&gt;🛠️ 製作輔助工具&lt;/h2&gt;&#xA;&lt;p&gt;為了有效製作這套字體，我開發了一系列前端工具與腳本來進行字符排版與預覽，協助字型切割與字符對位。&lt;/p&gt;&#xA;&lt;h3 id=&#34;字集模板生成器通用分頁-html&#34;&gt;字集模板生成器（通用分頁 HTML）&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;功能：將字集文字檔自動排版成 A4 字網格模板，可選擇每頁字數、分割檔案、位置樣式（左上 / 居中）&lt;/li&gt;&#xA;&lt;li&gt;技術：JavaScript + HTML5 前端工具&lt;/li&gt;&#xA;&lt;li&gt;特色程式碼：&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;6&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;7&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;function&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;getUnicodeFromName&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt;) {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;startsWith&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;uni&amp;#39;&lt;/span&gt;)) {&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;hex&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;substring&lt;/span&gt;(&lt;span style=&#34;color:#ae81ff&#34;&gt;3&lt;/span&gt;);&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; String.&lt;span style=&#34;color:#a6e22e&#34;&gt;fromCodePoint&lt;/span&gt;(parseInt(&lt;span style=&#34;color:#a6e22e&#34;&gt;hex&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;16&lt;/span&gt;));&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    }&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#75715e&#34;&gt;// ...&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;}&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;h3 id=&#34;特殊符號模板生成器&#34;&gt;特殊符號模板生成器&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;功能：支援手動輸入 U+XXXX 編碼或上傳 txt，快速生成特殊符號網格&lt;/li&gt;&#xA;&lt;li&gt;用途：測試標點與符號集的對齊情形&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;台語拼音模板生成器&#34;&gt;台語拼音模板生成器&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;功能：針對台羅拼音常用字元提供快速預覽與排版下載功能&lt;/li&gt;&#xA;&lt;li&gt;使用場景：台語拼音支援測試&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;日文垂直變體模板生成器&#34;&gt;日文垂直變體模板生成器&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;功能：比較日文字元在水平與垂直模式下的顯示差異，支援垂直模式切換&lt;/li&gt;&#xA;&lt;li&gt;程式碼片段：&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;writing&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;mode&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;vertical&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;rl&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;text&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;orientation&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;upright&lt;/span&gt;;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;h3 id=&#34;python-切割字符腳本&#34;&gt;Python 切割字符腳本&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;功能：將命名後的 .png 字符圖自動對應為 Unicode 檔名&lt;/li&gt;&#xA;&lt;li&gt;檔案：&lt;code&gt;切割字符.py&lt;/code&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;from&lt;/span&gt; fontTools.pens.boundsPen &lt;span style=&#34;color:#f92672&#34;&gt;import&lt;/span&gt; ControlBoundsPen&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;pen &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; ControlBoundsPen(font&lt;span style=&#34;color:#f92672&#34;&gt;.&lt;/span&gt;getGlyphSet())&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;這些工具讓我能更有效率地規劃、臨摹與切割超過 7000 個字元，實現個人字體專案的自動化與結構化。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Django筆記</title>
+      <link>http://localhost:1313/notes/2025-01-24-django_notes_outline/</link>
+      <pubDate>Fri, 24 Jan 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/2025-01-24-django_notes_outline/</guid>
+      <description>&lt;h1 id=&#34;django-學習筆記&#34;&gt;Django 學習筆記&lt;/h1&gt;&#xA;&lt;h2 id=&#34;1-django-基礎概念&#34;&gt;1. Django 基礎概念&lt;/h2&gt;&#xA;&lt;h3 id=&#34;11-什麼是-django&#34;&gt;1.1 什麼是 Django&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;Web 框架簡介&lt;/strong&gt;&#xA;Django 是一個高階的 Python Web 框架，鼓勵快速開發和乾淨、實用的設計。它由經驗豐富的開發者構建，解決了 Web 開發的許多麻煩，讓你可以專注於編寫應用程式而無需重新發明輪子。&lt;/p&gt;&#xA;&lt;p&gt;&lt;strong&gt;Django 的設計哲學&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;DRY（Don&amp;rsquo;t Repeat Yourself）&lt;/strong&gt;：避免重複代碼，提高代碼重用性&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;快速開發&lt;/strong&gt;：從概念到完成儘可能快速&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Clean Design&lt;/strong&gt;：鼓勵乾淨、實用的設計&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;MVT 架構模式（Model-View-Template）&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Model&lt;/strong&gt;：資料層，定義資料結構和業務邏輯&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;View&lt;/strong&gt;：控制層，處理用戶請求並返回回應&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Template&lt;/strong&gt;：展示層，負責用戶界面的呈現&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;&lt;strong&gt;Django 的優勢與特色&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;內建管理介面&lt;/li&gt;&#xA;&lt;li&gt;強大的 ORM 系統&lt;/li&gt;&#xA;&lt;li&gt;完善的安全機制&lt;/li&gt;&#xA;&lt;li&gt;豐富的內建功能&lt;/li&gt;&#xA;&lt;li&gt;活躍的社群支援&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;12-環境建置&#34;&gt;1.2 環境建置&lt;/h3&gt;&#xA;&lt;p&gt;&lt;strong&gt;Python 環境需求&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 檢查 Python 版本（建議 3.8+）&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python --version&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python3 --version&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;虛擬環境設置&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;div class=&#34;highlight&#34;&gt;&lt;div style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&#xA;&lt;table style=&#34;border-spacing:0;padding:0;margin:0;border:0;&#34;&gt;&lt;tr&gt;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 1&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 2&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 3&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 4&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 5&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 6&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 7&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 8&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt; 9&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;10&#xA;&lt;/span&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;11&#xA;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&#xA;&lt;td style=&#34;vertical-align:top;padding:0;margin:0;border:0;;width:100%&#34;&gt;&#xA;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 使用 venv 建立虛擬環境&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;python -m venv django_env&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 啟動虛擬環境&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# Windows&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;django_env&lt;span style=&#34;color:#ae81ff&#34;&gt;\S&lt;/span&gt;cripts&lt;span style=&#34;color:#ae81ff&#34;&gt;\a&lt;/span&gt;ctivate&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# macOS/Linux&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;source django_env/bin/activate&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# 停用虛擬環境&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;deactivate&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&#xA;&lt;/div&gt;&#xA;&lt;/div&gt;&lt;p&gt;&lt;strong&gt;Django 安裝&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Vue.js</title>
+      <link>http://localhost:1313/notes/2024-12-30-vue_notes/</link>
+      <pubDate>Mon, 30 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/notes/2024-12-30-vue_notes/</guid>
+      <description>&lt;h1 id=&#34;vuejs-專案結構與檔案詳細說明&#34;&gt;Vue.js 專案結構與檔案詳細說明&lt;/h1&gt;&#xA;&lt;p&gt;以下解析一個使用 Vue CLI 建立的典型前端 Vue.js 專案結構，並說明各個檔案與資料夾的作用與必要性。&lt;/p&gt;&#xA;&lt;h2 id=&#34;目錄&#34;&gt;目錄&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#1-%E5%B0%88%E6%A1%88%E6%A0%B9%E7%9B%AE%E9%8C%84%E6%AA%94%E6%A1%88&#34;&gt;1. 專案根目錄檔案&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#2-public-%E8%B3%87%E6%96%99%E5%A4%BE&#34;&gt;2. public 資料夾&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#3-src-%E8%B3%87%E6%96%99%E5%A4%BE&#34;&gt;3. src 資料夾&lt;/a&gt;&lt;/li&gt;&#xA;&lt;li&gt;&lt;a href=&#34;#4-%E5%85%B6%E4%BB%96%E7%92%B0%E5%A2%83%E8%A8%AD%E5%AE%9A%E6%AA%94&#34;&gt;4. 其他環境設定檔&lt;/a&gt;&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;1-專案根目錄檔案&#34;&gt;1. 專案根目錄檔案&lt;/h2&gt;&#xA;&lt;h3 id=&#34;packagejson&#34;&gt;package.json&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;功能說明：&lt;/strong&gt;&lt;br&gt;&#xA;記錄專案的元資料、依賴套件、開發與生產環境的指令（例如 &lt;code&gt;serve&lt;/code&gt;、&lt;code&gt;build&lt;/code&gt;、&lt;code&gt;test&lt;/code&gt;）等設定。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;為什麼需要：&lt;/strong&gt;&lt;br&gt;&#xA;統一管理專案的相依套件與腳本，方便團隊成員建立與執行開發環境。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;package-lockjson--yarnlock&#34;&gt;package-lock.json / yarn.lock&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;功能說明：&lt;/strong&gt;&lt;br&gt;&#xA;鎖定專案所使用的套件版本，確保在不同環境中安裝的版本一致。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;為什麼需要：&lt;/strong&gt;&lt;br&gt;&#xA;避免因版本不一致而導致錯誤，保持團隊開發的一致性。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;readmemd&#34;&gt;README.md&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;功能說明：&lt;/strong&gt;&lt;br&gt;&#xA;提供專案簡介、安裝步驟、使用說明以及其他相關資訊。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;為什麼需要：&lt;/strong&gt;&lt;br&gt;&#xA;讓新進成員或使用者能夠快速了解並上手專案。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;vueconfigjs-可選&#34;&gt;vue.config.js (可選)&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;功能說明：&lt;/strong&gt;&lt;br&gt;&#xA;用於覆寫 Vue CLI 預設的 Webpack 配置，例如設定代理、路徑別名、資源目錄等。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;為什麼需要：&lt;/strong&gt;&lt;br&gt;&#xA;提供彈性，讓你能根據專案需求調整建置流程與設定。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;2-public-資料夾&#34;&gt;2. public 資料夾&lt;/h2&gt;&#xA;&lt;h3 id=&#34;indexhtml&#34;&gt;index.html&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;功能說明：&lt;/strong&gt;&lt;br&gt;&#xA;專案的主要 HTML 模板，Vue.js 應用會注入到此文件中預先定義好的掛載點（通常是 &lt;code&gt;&amp;lt;div id=&amp;quot;app&amp;quot;&amp;gt;&amp;lt;/div&amp;gt;&lt;/code&gt;）。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;為什麼需要：&lt;/strong&gt;&lt;br&gt;&#xA;作為單頁應用（SPA）的入口點，決定初始 HTML 結構與靜態內容。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;其他靜態資源&#34;&gt;其他靜態資源&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;功能說明：&lt;/strong&gt;&lt;br&gt;&#xA;放置不需要經過 Webpack 處理的靜態檔案，如 favicon、外部庫文件或其他第三方資源。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;為什麼需要：&lt;/strong&gt;&lt;br&gt;&#xA;確保這些檔案在最終建置時能夠原封不動地複製到輸出目錄，並正確載入。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;3-src-資料夾&#34;&gt;3. src 資料夾&lt;/h2&gt;&#xA;&lt;h3 id=&#34;mainjs&#34;&gt;main.js&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;功能說明：&lt;/strong&gt;&lt;br&gt;&#xA;專案的主要進入點，初始化 Vue 實例，整合路由（Vue Router）、狀態管理（Vuex）等，並將根元件掛載到 DOM 中。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;為什麼需要：&lt;/strong&gt;&lt;br&gt;&#xA;建立與啟動整個 Vue 應用，是專案運行的核心。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;appvue&#34;&gt;App.vue&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;功能說明：&lt;/strong&gt;&lt;br&gt;&#xA;根元件，作為應用的主要容器，通常包含全局佈局與樣式，並嵌入其他子元件。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;為什麼需要：&lt;/strong&gt;&lt;br&gt;&#xA;統一管理應用結構與佈局，作為其他元件的父容器。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;assets-資料夾&#34;&gt;assets 資料夾&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;功能說明：&lt;/strong&gt;&lt;br&gt;&#xA;存放圖片、字體、CSS 檔案或其他需要經過 Webpack 處理的靜態資源。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;為什麼需要：&lt;/strong&gt;&lt;br&gt;&#xA;讓這些資源能夠在編譯時進行優化、壓縮與管理，提升效能與可維護性。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;components-資料夾&#34;&gt;components 資料夾&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;功能說明：&lt;/strong&gt;&lt;br&gt;&#xA;存放可重用的 Vue 元件，每個元件通常是一個 &lt;code&gt;.vue&lt;/code&gt; 檔案，包含模板、邏輯與樣式。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;為什麼需要：&lt;/strong&gt;&lt;br&gt;&#xA;模組化應用開發，將 UI 與功能拆分成獨立且可重用的元件，增強維護性與開發效率。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;views-或-pages-資料夾&#34;&gt;views (或 pages) 資料夾&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;功能說明：&lt;/strong&gt;&lt;br&gt;&#xA;當應用較大時，可以將不同的頁面（視圖）存放在此處，通常與路由配置相對應。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;為什麼需要：&lt;/strong&gt;&lt;br&gt;&#xA;區分單頁應用（SPA）中的不同路由頁面，保持結構清晰。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;router-資料夾&#34;&gt;router 資料夾&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;功能說明：&lt;/strong&gt;&lt;br&gt;&#xA;存放路由設定文件（通常是 &lt;code&gt;index.js&lt;/code&gt;），定義各個 URL 路徑與對應的元件。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;為什麼需要：&lt;/strong&gt;&lt;br&gt;&#xA;管理前端路由，讓應用能夠根據 URL 變化載入不同頁面與元件。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;store-資料夾&#34;&gt;store 資料夾&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;功能說明：&lt;/strong&gt;&lt;br&gt;&#xA;若使用 Vuex 管理應用狀態，則在此資料夾中定義 state、mutations、actions 與 getters 等。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;為什麼需要：&lt;/strong&gt;&lt;br&gt;&#xA;集中管理應用狀態，方便元件之間的資料共享與同步。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h3 id=&#34;utils-或-services-資料夾-可選&#34;&gt;utils 或 services 資料夾 (可選)&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;功能說明：&lt;/strong&gt;&lt;br&gt;&#xA;存放工具函數、API 請求封裝、數據處理邏輯等常用功能模組。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;為什麼需要：&lt;/strong&gt;&lt;br&gt;&#xA;將常用功能模組化，減少重複程式碼，提升專案可維護性與擴展性。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h2 id=&#34;4-其他環境設定檔&#34;&gt;4. 其他環境設定檔&lt;/h2&gt;&#xA;&lt;h3 id=&#34;envenvdevelopmentenvproduction-等&#34;&gt;.env、.env.development、.env.production 等&lt;/h3&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;功能說明：&lt;/strong&gt;&lt;br&gt;&#xA;定義不同環境下的環境變數，例如 API 基本路徑、除錯模式等設定。&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;為什麼需要：&lt;/strong&gt;&lt;br&gt;&#xA;讓專案能夠根據部署環境輕鬆調整配置，而無需修改程式碼。&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;hr&gt;&#xA;&lt;h1 id=&#34;vuejs-進階應用與生態系統補充說明&#34;&gt;Vue.js 進階應用與生態系統補充說明&lt;/h1&gt;&#xA;&lt;p&gt;除了基礎的專案結構與檔案說明，Vue.js 生態系統提供了許多進階工具與最佳實踐，能協助你建立更高效、彈性及易於維護的前端應用。以下補充一些常見的延伸主題與應用情境：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
