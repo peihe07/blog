@@ -21,14 +21,6 @@
   <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
 </footer>
 
-{{ if .Site.IsServer }}
-  <script
-    defer
-    src="https://static.cloudflareinsights.com/beacon.min.js"
-    data-cf-beacon='{"token": "ff36acfde6c448ada6d774c602189542"}'
-  ></script>
-{{ end }}
-
 {{ if (isset .Site.Params "social") }}
   <script>
     feather.replace();
