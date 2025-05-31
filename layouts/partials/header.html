@@ -29,20 +29,21 @@
 	{{- else if (isset .Site.Params "social") -}}
 		<script src="{{ .Site.BaseURL }}js/feather.min.js"></script>
 	{{ end }}
-	{{ $style := resources.Get "css/main.css" | fingerprint | resources.Minify }}
-	<link rel="stylesheet" type="text/css" media="screen" href="{{ $style.Permalink }}" />
+	
+	<!-- 主要 CSS 檔案 -->
+	<link rel="stylesheet" type="text/css" media="screen" href="{{ "css/main.css" | relURL }}" />
+	
 	{{- if or (eq .Site.Params.mode "auto") (eq .Site.Params.mode "dark") -}}
-		{{ $darkstyle := resources.Get "css/dark.css" | fingerprint | resources.Minify }}
-		<link rel="stylesheet" type="text/css" href="{{ $darkstyle.Permalink }}" {{ if eq .Site.Params.mode "auto" }}media="(prefers-color-scheme: dark)"{{ end }} />
+		<link rel="stylesheet" type="text/css" href="{{ "css/dark.css" | relURL }}" {{ if eq .Site.Params.mode "auto" }}media="(prefers-color-scheme: dark)"{{ end }} />
 	{{ end }}
 	
 	<!-- Custom CSS style get applied last -->
-	{{- if isset .Site.Params "customcss" }}
-		{{ range .Site.Params.customCSS }}
-		{{ $customstyle := resources.Get . | fingerprint }}
-		<link rel="stylesheet" type="text/css" href="{{ $customstyle.Permalink }}">
+	{{- if .Site.Params.customcss }}
+		{{ range .Site.Params.customcss }}
+		<link rel="stylesheet" type="text/css" href="{{ . | relURL }}">
 		{{ end }}
 	{{- end -}}
+	
 	{{- range .Site.Params.customJS }}
 	{{- if or (hasPrefix . "http://") (hasPrefix . "https://") }}
 	<script src="{{ . }}"></script>
