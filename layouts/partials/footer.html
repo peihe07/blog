@@ -1,10 +1,6 @@
 <footer>
   <div class="footer_nav">
-    <nav style="float: right">
-      {{ $root := . }} {{ range $index, $item := $root.Site.Menus.main }}
-        <a href="{{ $item.URL }}">{{ $item.Name }}</a>{{ if ne (add $index 1) (len $root.Site.Menus.main) }} | {{ end }}
-      {{ end }}
-    </nav>
+    <!-- menu 已移除 -->
   </div>
 
   {{ $social := .Site.Params.Social }}
