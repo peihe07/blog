@@ -3,7 +3,7 @@ title: "ChronoChem"
 date: 2025-05-30
 tags: ["Chemistry", "Education", "專案"]
 draft: false
-description: "一個化學元素週期表的互動式學習工具。"
+description: "一個探索化學發展的互動式平台。"
 github: "https://github.com/peihe07/chrono-chem"
 technologies: ["React", "TypeScript", "CSS"]
 ---

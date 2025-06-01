@@ -3,7 +3,7 @@ title: "ProperScript"
 date: 2025-05-24
 tags: ["Font", "python", "handwriting", "專案"]
 draft: false
-description: "一套自己製作的手寫字體，採用 OFL 1.1 授權開源釋出。"
+description: "一套自己製作的手寫字體。"
 github: "https://github.com/peihe07/ProperScript"
 technologies: ["Python", "JavaScript", "HTML5", "FontForge"]
 ---
