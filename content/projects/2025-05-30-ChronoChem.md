@@ -10,7 +10,7 @@ technologies: ["React", "TypeScript", "CSS"]
 
 # ChronoChem - 化學時空之旅 🌟
 
-[🌐 立即體驗 ChronoChem](https://chronochem.uno/)
+[🌐 ChronoChem](https://chronochem.uno/)
 
 ![](/images/Chronochem/ChronoChem.jpg)
 
@@ -24,9 +24,6 @@ ChronoChem 是一個創新的教育平台，讓使用者能夠穿越時空，與
 - 🌍 時空旅行：體驗不同時期的化學發展
 
 ## 🚀 快速開始
-
-### 直接訪問
-- 🌐 [ChronoChem](https://chronochem.uno/)
 
 ### 系統需求
 
