@@ -14,7 +14,7 @@ technologies: ["Python", "OpenGL", "Audio Processing"]
 
 ![](/images/SonicVision/SonicVision.jpg)
 
-SonicVision 是一個創新的多媒體整合平台，將音樂和電影體驗完美結合。這個平台利用現代化的技術棧，為用戶提供一個無縫的娛樂體驗，讓用戶可以輕鬆探索、分享和享受音樂與電影內容。
+[SonicVision](https://sonicvision.uno/) 是一個創新的多媒體整合平台，將音樂和電影體驗完美結合。這個平台利用現代化的技術棧，為用戶提供一個無縫的娛樂體驗，讓用戶可以輕鬆探索、分享和享受音樂與電影內容。
 
 ## 核心特色
 
