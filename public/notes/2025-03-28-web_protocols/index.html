@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Web協定 - Peihe&#39;s blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="訊息傳遞協定
+HTTP/HTTPS
+
+HTTP 方法：
+
+GET：獲取資源，不改變伺服器狀態
+POST：創建資源，提交資料
+PUT：完全替換資源
+PATCH：部分更新資源
+DELETE：刪除資源
+HEAD：僅獲取標頭資訊
+OPTIONS：查詢支援的方法
+
+
+狀態碼分類：
+
+1xx：資訊性回應 (100 Continue, 101 Switching Protocols)
+2xx：成功（200 OK, 201 Created, 204 No Content）
+3xx：重定向（301 Moved Permanently, 302 Found, 304 Not Modified）
+4xx：客戶端錯誤（400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found）
+5xx：伺服器錯誤（500 Internal Server Error, 502 Bad Gateway, 503 Service Unavailable）
+
+
+標頭分類：
+
+通用標頭：Date, Connection, Cache-Control
+請求標頭：Host, User-Agent, Accept, Authorization
+回應標頭：Server, Set-Cookie, Content-Type
+實體標頭：Content-Length, Content-Encoding
+
+
+常見 Content-Type：
+
+text/html：HTML 文檔
+application/json：JSON 資料
+application/xml：XML 資料
+multipart/form-data：檔案上傳
+application/x-www-form-urlencoded：表單資料
+
+
+HTTP 版本演進：
+
+HTTP/1.0：每次請求建立新連接
+HTTP/1.1：持久連接，管道化請求，Host 標頭
+HTTP/2：多路復用，標頭壓縮，伺服器推送，二進制分幀
+HTTP/3：基於 QUIC 協議，減少建立連接延遲，改善移動網路表現
+
+
+快取控制機制：
+
+ETag：資源版本標識，強驗證器
+Cache-Control：max-age, no-cache, no-store, public, private
+Last-Modified：資源最後修改時間，弱驗證器
+If-Modified-Since：條件請求，配合 Last-Modified
+If-None-Match：條件請求，配合 ETag
+
+
+HTTPS 安全機制：
+
+TLS/SSL 加密：保護資料傳輸
+證書驗證：確認伺服器身份
+HSTS：強制 HTTPS 連接
+混合內容政策：防止 HTTP 資源洩露
+
+
+安全與跨域：
+
+CORS (Cross-Origin Resource Sharing)：跨來源資源共享
+Cookie 安全屬性：Secure, HttpOnly, SameSite
+CSP (Content Security Policy)：內容安全政策
+CSRF 防護：跨站請求偽造防護
+
+
+
+WebSocket
+
+協議特性：
+
+URL 格式：ws:// (非加密) 和 wss:// (TLS 加密)
+預設端口：80 (ws://) 和 443 (wss://)
+基於 TCP：可靠的雙向通信
+
+
+建立連接 (WebSocket Handshake)：
+
+客戶端發送帶 Upgrade: websocket 和 Sec-WebSocket-Key 的 HTTP 請求
+伺服器回應 101 狀態碼和 Sec-WebSocket-Accept 標頭
+連接升級完成，切換到 WebSocket 協議
+
+
+全雙工通信：建立後可雙向即時傳輸資料，無需請求-回應模式
+訊息框架類型：
+
+文本框架：UTF-8 編碼的文本訊息
+二進制框架：原始二進制資料
+控制框架：Ping/Pong 心跳、連接關閉
+
+
+連接管理：
+
+心跳機制：Ping/Pong 檢測連接狀態
+正常關閉：Close 框架協商關閉
+異常斷開：網路中斷或應用錯誤
+重連機制：自動重新建立連接
+
+
+安全機制：
+
+Origin 檢查：防止跨站 WebSocket 劫持
+WSS 加密：TLS 保護資料傳輸
+認證機制：透過 Cookie 或 Token 驗證
+
+
+應用場景：
+
+即時聊天應用
+遊戲即時更新
+實時監控系統
+協作編輯工具
+股票價格推送
+直播彈幕系統
+
+
+子協議與擴展：
+
+Sec-WebSocket-Protocol：指定應用層子協議
+壓縮擴展：減少訊息大小
+自定義協議：應用特定的通信格式
+
+
+與其他技術比較：
+
+vs HTTP 長輪詢：更低延遲，減少伺服器負載
+vs Server-Sent Events：雙向 vs 單向通信
+vs Socket.IO：原生協議 vs 函式庫實作
+
+
+
+WebRTC (Web Real-Time Communication)
+
+核心 API 組件：
+
+MediaStream：獲取和管理音頻、視頻流
+RTCPeerConnection：建立點對點連接和媒體傳輸
+RTCDataChannel：傳輸任意資料（非媒體）
+
+
+瀏覽器支援：
+
+主流瀏覽器：Chrome, Firefox, Safari, Edge
+移動端支援：Android Chrome, iOS Safari
+API 標準化：W3C 和 IETF 共同標準
+
+
+NAT 穿透技術：
+
+STUN (Session Traversal Utilities for NAT)：發現公網 IP 和端口
+TURN (Traversal Using Relays around NAT)：當 P2P 連接失敗時作為中繼服務器
+ICE (Interactive Connectivity Establishment)：嘗試多種連接方式的框架
+
+
+信令流程 (Signaling)：
+
+Offer/Answer 模型：SDP (Session Description Protocol) 描述交換
+ICE Candidate 交換：網路路徑候選項協商
+建立 P2P 連接：直接點對點通信
+
+
+媒體協商與編解碼器：
+
+視頻編解碼器：VP8, VP9, AV1, H.264
+音頻編解碼器：Opus, G.711, G.722
+編解碼器協商：SDP 中指定支援的格式
+分辨率和頻寬：動態適應網路狀況
+
+
+安全機制：
+
+DTLS (Datagram Transport Layer Security)：資料通道加密
+SRTP (Secure Real-time Transport Protocol)：媒體流加密
+身份驗證：TURN 伺服器認證
+Origin 安全：同源政策保護
+
+
+網路適應性：
+
+頻寬偵測：動態調整媒體品質
+錯誤恢復：封包遺失重傳
+Jitter Buffer：平滑播放延遲
+回音消除：音頻處理
+
+
+實際應用場景：
+
+視訊會議：Zoom, Google Meet, Microsoft Teams
+即時串流：直播平台
+線上遊戲：低延遲多人遊戲
+遠端桌面：螢幕共享
+IoT 通信：設備間直接通信
+
+
+效能優化：
+
+硬體加速：GPU 編解碼支援
+Simulcast：同時傳送多種解析度
+SVC (Scalable Video Coding)：可擴展視頻編碼
+連接品質監控：統計資料分析
+
+
+" />
+	<meta property="og:image" content="https://hqasco.deta.dev/img?url=https://www.peihe07.uno/notes/2025-03-28-web_protocols/"/>
+	<meta property="twitter:image" content="https://hqasco.deta.dev/img?url=https://www.peihe07.uno/notes/2025-03-28-web_protocols/"/>
+	<meta property="twitter:card" content="summary_large_image"/>
+	<meta property="og:url" content="https://www.peihe07.uno/notes/2025-03-28-web_protocols/">
+  <meta property="og:site_name" content="Peihe&#39;s blog">
+  <meta property="og:title" content="Web協定">
+  <meta property="og:description" content="訊息傳遞協定 HTTP/HTTPS HTTP 方法： GET：獲取資源，不改變伺服器狀態 POST：創建資源，提交資料 PUT：完全替換資源 PATCH：部分更新資源 DELETE：刪除資源 HEAD：僅獲取標頭資訊 OPTIONS：查詢支援的方法 狀態碼分類： 1xx：資訊性回應 (100 Continue, 101 Switching Protocols) 2xx：成功（200 OK, 201 Created, 204 No Content） 3xx：重定向（301 Moved Permanently, 302 Found, 304 Not Modified） 4xx：客戶端錯誤（400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found） 5xx：伺服器錯誤（500 Internal Server Error, 502 Bad Gateway, 503 Service Unavailable） 標頭分類： 通用標頭：Date, Connection, Cache-Control 請求標頭：Host, User-Agent, Accept, Authorization 回應標頭：Server, Set-Cookie, Content-Type 實體標頭：Content-Length, Content-Encoding 常見 Content-Type： text/html：HTML 文檔 application/json：JSON 資料 application/xml：XML 資料 multipart/form-data：檔案上傳 application/x-www-form-urlencoded：表單資料 HTTP 版本演進： HTTP/1.0：每次請求建立新連接 HTTP/1.1：持久連接，管道化請求，Host 標頭 HTTP/2：多路復用，標頭壓縮，伺服器推送，二進制分幀 HTTP/3：基於 QUIC 協議，減少建立連接延遲，改善移動網路表現 快取控制機制： ETag：資源版本標識，強驗證器 Cache-Control：max-age, no-cache, no-store, public, private Last-Modified：資源最後修改時間，弱驗證器 If-Modified-Since：條件請求，配合 Last-Modified If-None-Match：條件請求，配合 ETag HTTPS 安全機制： TLS/SSL 加密：保護資料傳輸 證書驗證：確認伺服器身份 HSTS：強制 HTTPS 連接 混合內容政策：防止 HTTP 資源洩露 安全與跨域： CORS (Cross-Origin Resource Sharing)：跨來源資源共享 Cookie 安全屬性：Secure, HttpOnly, SameSite CSP (Content Security Policy)：內容安全政策 CSRF 防護：跨站請求偽造防護 WebSocket 協議特性： URL 格式：ws:// (非加密) 和 wss:// (TLS 加密) 預設端口：80 (ws://) 和 443 (wss://) 基於 TCP：可靠的雙向通信 建立連接 (WebSocket Handshake)： 客戶端發送帶 Upgrade: websocket 和 Sec-WebSocket-Key 的 HTTP 請求 伺服器回應 101 狀態碼和 Sec-WebSocket-Accept 標頭 連接升級完成，切換到 WebSocket 協議 全雙工通信：建立後可雙向即時傳輸資料，無需請求-回應模式 訊息框架類型： 文本框架：UTF-8 編碼的文本訊息 二進制框架：原始二進制資料 控制框架：Ping/Pong 心跳、連接關閉 連接管理： 心跳機制：Ping/Pong 檢測連接狀態 正常關閉：Close 框架協商關閉 異常斷開：網路中斷或應用錯誤 重連機制：自動重新建立連接 安全機制： Origin 檢查：防止跨站 WebSocket 劫持 WSS 加密：TLS 保護資料傳輸 認證機制：透過 Cookie 或 Token 驗證 應用場景： 即時聊天應用 遊戲即時更新 實時監控系統 協作編輯工具 股票價格推送 直播彈幕系統 子協議與擴展： Sec-WebSocket-Protocol：指定應用層子協議 壓縮擴展：減少訊息大小 自定義協議：應用特定的通信格式 與其他技術比較： vs HTTP 長輪詢：更低延遲，減少伺服器負載 vs Server-Sent Events：雙向 vs 單向通信 vs Socket.IO：原生協議 vs 函式庫實作 WebRTC (Web Real-Time Communication) 核心 API 組件： MediaStream：獲取和管理音頻、視頻流 RTCPeerConnection：建立點對點連接和媒體傳輸 RTCDataChannel：傳輸任意資料（非媒體） 瀏覽器支援： 主流瀏覽器：Chrome, Firefox, Safari, Edge 移動端支援：Android Chrome, iOS Safari API 標準化：W3C 和 IETF 共同標準 NAT 穿透技術： STUN (Session Traversal Utilities for NAT)：發現公網 IP 和端口 TURN (Traversal Using Relays around NAT)：當 P2P 連接失敗時作為中繼服務器 ICE (Interactive Connectivity Establishment)：嘗試多種連接方式的框架 信令流程 (Signaling)： Offer/Answer 模型：SDP (Session Description Protocol) 描述交換 ICE Candidate 交換：網路路徑候選項協商 建立 P2P 連接：直接點對點通信 媒體協商與編解碼器： 視頻編解碼器：VP8, VP9, AV1, H.264 音頻編解碼器：Opus, G.711, G.722 編解碼器協商：SDP 中指定支援的格式 分辨率和頻寬：動態適應網路狀況 安全機制： DTLS (Datagram Transport Layer Security)：資料通道加密 SRTP (Secure Real-time Transport Protocol)：媒體流加密 身份驗證：TURN 伺服器認證 Origin 安全：同源政策保護 網路適應性： 頻寬偵測：動態調整媒體品質 錯誤恢復：封包遺失重傳 Jitter Buffer：平滑播放延遲 回音消除：音頻處理 實際應用場景： 視訊會議：Zoom, Google Meet, Microsoft Teams 即時串流：直播平台 線上遊戲：低延遲多人遊戲 遠端桌面：螢幕共享 IoT 通信：設備間直接通信 效能優化： 硬體加速：GPU 編解碼支援 Simulcast：同時傳送多種解析度 SVC (Scalable Video Coding)：可擴展視頻編碼 連接品質監控：統計資料分析">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="notes">
+    <meta property="article:published_time" content="2025-03-28T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-28T00:00:00+00:00">
+    <meta property="article:tag" content="Protocol">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Web協定">
+  <meta name="twitter:description" content="訊息傳遞協定 HTTP/HTTPS HTTP 方法： GET：獲取資源，不改變伺服器狀態 POST：創建資源，提交資料 PUT：完全替換資源 PATCH：部分更新資源 DELETE：刪除資源 HEAD：僅獲取標頭資訊 OPTIONS：查詢支援的方法 狀態碼分類： 1xx：資訊性回應 (100 Continue, 101 Switching Protocols) 2xx：成功（200 OK, 201 Created, 204 No Content） 3xx：重定向（301 Moved Permanently, 302 Found, 304 Not Modified） 4xx：客戶端錯誤（400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found） 5xx：伺服器錯誤（500 Internal Server Error, 502 Bad Gateway, 503 Service Unavailable） 標頭分類： 通用標頭：Date, Connection, Cache-Control 請求標頭：Host, User-Agent, Accept, Authorization 回應標頭：Server, Set-Cookie, Content-Type 實體標頭：Content-Length, Content-Encoding 常見 Content-Type： text/html：HTML 文檔 application/json：JSON 資料 application/xml：XML 資料 multipart/form-data：檔案上傳 application/x-www-form-urlencoded：表單資料 HTTP 版本演進： HTTP/1.0：每次請求建立新連接 HTTP/1.1：持久連接，管道化請求，Host 標頭 HTTP/2：多路復用，標頭壓縮，伺服器推送，二進制分幀 HTTP/3：基於 QUIC 協議，減少建立連接延遲，改善移動網路表現 快取控制機制： ETag：資源版本標識，強驗證器 Cache-Control：max-age, no-cache, no-store, public, private Last-Modified：資源最後修改時間，弱驗證器 If-Modified-Since：條件請求，配合 Last-Modified If-None-Match：條件請求，配合 ETag HTTPS 安全機制： TLS/SSL 加密：保護資料傳輸 證書驗證：確認伺服器身份 HSTS：強制 HTTPS 連接 混合內容政策：防止 HTTP 資源洩露 安全與跨域： CORS (Cross-Origin Resource Sharing)：跨來源資源共享 Cookie 安全屬性：Secure, HttpOnly, SameSite CSP (Content Security Policy)：內容安全政策 CSRF 防護：跨站請求偽造防護 WebSocket 協議特性： URL 格式：ws:// (非加密) 和 wss:// (TLS 加密) 預設端口：80 (ws://) 和 443 (wss://) 基於 TCP：可靠的雙向通信 建立連接 (WebSocket Handshake)： 客戶端發送帶 Upgrade: websocket 和 Sec-WebSocket-Key 的 HTTP 請求 伺服器回應 101 狀態碼和 Sec-WebSocket-Accept 標頭 連接升級完成，切換到 WebSocket 協議 全雙工通信：建立後可雙向即時傳輸資料，無需請求-回應模式 訊息框架類型： 文本框架：UTF-8 編碼的文本訊息 二進制框架：原始二進制資料 控制框架：Ping/Pong 心跳、連接關閉 連接管理： 心跳機制：Ping/Pong 檢測連接狀態 正常關閉：Close 框架協商關閉 異常斷開：網路中斷或應用錯誤 重連機制：自動重新建立連接 安全機制： Origin 檢查：防止跨站 WebSocket 劫持 WSS 加密：TLS 保護資料傳輸 認證機制：透過 Cookie 或 Token 驗證 應用場景： 即時聊天應用 遊戲即時更新 實時監控系統 協作編輯工具 股票價格推送 直播彈幕系統 子協議與擴展： Sec-WebSocket-Protocol：指定應用層子協議 壓縮擴展：減少訊息大小 自定義協議：應用特定的通信格式 與其他技術比較： vs HTTP 長輪詢：更低延遲，減少伺服器負載 vs Server-Sent Events：雙向 vs 單向通信 vs Socket.IO：原生協議 vs 函式庫實作 WebRTC (Web Real-Time Communication) 核心 API 組件： MediaStream：獲取和管理音頻、視頻流 RTCPeerConnection：建立點對點連接和媒體傳輸 RTCDataChannel：傳輸任意資料（非媒體） 瀏覽器支援： 主流瀏覽器：Chrome, Firefox, Safari, Edge 移動端支援：Android Chrome, iOS Safari API 標準化：W3C 和 IETF 共同標準 NAT 穿透技術： STUN (Session Traversal Utilities for NAT)：發現公網 IP 和端口 TURN (Traversal Using Relays around NAT)：當 P2P 連接失敗時作為中繼服務器 ICE (Interactive Connectivity Establishment)：嘗試多種連接方式的框架 信令流程 (Signaling)： Offer/Answer 模型：SDP (Session Description Protocol) 描述交換 ICE Candidate 交換：網路路徑候選項協商 建立 P2P 連接：直接點對點通信 媒體協商與編解碼器： 視頻編解碼器：VP8, VP9, AV1, H.264 音頻編解碼器：Opus, G.711, G.722 編解碼器協商：SDP 中指定支援的格式 分辨率和頻寬：動態適應網路狀況 安全機制： DTLS (Datagram Transport Layer Security)：資料通道加密 SRTP (Secure Real-time Transport Protocol)：媒體流加密 身份驗證：TURN 伺服器認證 Origin 安全：同源政策保護 網路適應性： 頻寬偵測：動態調整媒體品質 錯誤恢復：封包遺失重傳 Jitter Buffer：平滑播放延遲 回音消除：音頻處理 實際應用場景： 視訊會議：Zoom, Google Meet, Microsoft Teams 即時串流：直播平台 線上遊戲：低延遲多人遊戲 遠端桌面：螢幕共享 IoT 通信：設備間直接通信 效能優化： 硬體加速：GPU 編解碼支援 Simulcast：同時傳送多種解析度 SVC (Scalable Video Coding)：可擴展視頻編碼 連接品質監控：統計資料分析">
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/projects.css" />
+	
+	
+		
+		<link rel="stylesheet" type="text/css" href="/css/light.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/font.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/syntax.css">
+		
+	<script src="//instant.page/5.1.0" type="module" integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-title">
+      <a href="https://www.peihe07.uno/">Peihe&#39;s blog</a>
+    </div>
+    <nav class="main-menu">
+      
+        <a href="/">Home</a>
+      
+        <a href="/writings">Writings</a>
+      
+        <a href="/projects">Projects</a>
+      
+        <a href="/notes">Notes</a>
+      
+        <a href="/about">About</a>
+      
+    </nav>
+  </header><body>
+        <div class="content">
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">Web協定</h1>
+          <div class="meta">Posted on Mar 28, 2025</div>
+        </div>
+        
+        <section class="body">
+          <h1 id="訊息傳遞協定">訊息傳遞協定</h1>
+<h1 id="httphttps">HTTP/HTTPS</h1>
+<ul>
+<li><strong>HTTP 方法</strong>：
+<ul>
+<li><strong>GET</strong>：獲取資源，不改變伺服器狀態</li>
+<li><strong>POST</strong>：創建資源，提交資料</li>
+<li><strong>PUT</strong>：完全替換資源</li>
+<li><strong>PATCH</strong>：部分更新資源</li>
+<li><strong>DELETE</strong>：刪除資源</li>
+<li><strong>HEAD</strong>：僅獲取標頭資訊</li>
+<li><strong>OPTIONS</strong>：查詢支援的方法</li>
+</ul>
+</li>
+<li><strong>狀態碼分類</strong>：
+<ul>
+<li><strong>1xx</strong>：資訊性回應 (100 Continue, 101 Switching Protocols)</li>
+<li><strong>2xx</strong>：成功（200 OK, 201 Created, 204 No Content）</li>
+<li><strong>3xx</strong>：重定向（301 Moved Permanently, 302 Found, 304 Not Modified）</li>
+<li><strong>4xx</strong>：客戶端錯誤（400 Bad Request, 401 Unauthorized, 403 Forbidden, 404 Not Found）</li>
+<li><strong>5xx</strong>：伺服器錯誤（500 Internal Server Error, 502 Bad Gateway, 503 Service Unavailable）</li>
+</ul>
+</li>
+<li><strong>標頭分類</strong>：
+<ul>
+<li><strong>通用標頭</strong>：Date, Connection, Cache-Control</li>
+<li><strong>請求標頭</strong>：Host, User-Agent, Accept, Authorization</li>
+<li><strong>回應標頭</strong>：Server, Set-Cookie, Content-Type</li>
+<li><strong>實體標頭</strong>：Content-Length, Content-Encoding</li>
+</ul>
+</li>
+<li><strong>常見 Content-Type</strong>：
+<ul>
+<li><strong>text/html</strong>：HTML 文檔</li>
+<li><strong>application/json</strong>：JSON 資料</li>
+<li><strong>application/xml</strong>：XML 資料</li>
+<li><strong>multipart/form-data</strong>：檔案上傳</li>
+<li><strong>application/x-www-form-urlencoded</strong>：表單資料</li>
+</ul>
+</li>
+<li><strong>HTTP 版本演進</strong>：
+<ul>
+<li><strong>HTTP/1.0</strong>：每次請求建立新連接</li>
+<li><strong>HTTP/1.1</strong>：持久連接，管道化請求，Host 標頭</li>
+<li><strong>HTTP/2</strong>：多路復用，標頭壓縮，伺服器推送，二進制分幀</li>
+<li><strong>HTTP/3</strong>：基於 QUIC 協議，減少建立連接延遲，改善移動網路表現</li>
+</ul>
+</li>
+<li><strong>快取控制機制</strong>：
+<ul>
+<li><strong>ETag</strong>：資源版本標識，強驗證器</li>
+<li><strong>Cache-Control</strong>：max-age, no-cache, no-store, public, private</li>
+<li><strong>Last-Modified</strong>：資源最後修改時間，弱驗證器</li>
+<li><strong>If-Modified-Since</strong>：條件請求，配合 Last-Modified</li>
+<li><strong>If-None-Match</strong>：條件請求，配合 ETag</li>
+</ul>
+</li>
+<li><strong>HTTPS 安全機制</strong>：
+<ul>
+<li><strong>TLS/SSL 加密</strong>：保護資料傳輸</li>
+<li><strong>證書驗證</strong>：確認伺服器身份</li>
+<li><strong>HSTS</strong>：強制 HTTPS 連接</li>
+<li><strong>混合內容政策</strong>：防止 HTTP 資源洩露</li>
+</ul>
+</li>
+<li><strong>安全與跨域</strong>：
+<ul>
+<li><strong>CORS (Cross-Origin Resource Sharing)</strong>：跨來源資源共享</li>
+<li><strong>Cookie 安全屬性</strong>：Secure, HttpOnly, SameSite</li>
+<li><strong>CSP (Content Security Policy)</strong>：內容安全政策</li>
+<li><strong>CSRF 防護</strong>：跨站請求偽造防護</li>
+</ul>
+</li>
+</ul>
+<h1 id="websocket">WebSocket</h1>
+<ul>
+<li><strong>協議特性</strong>：
+<ul>
+<li><strong>URL 格式</strong>：ws:// (非加密) 和 wss:// (TLS 加密)</li>
+<li><strong>預設端口</strong>：80 (ws://) 和 443 (wss://)</li>
+<li><strong>基於 TCP</strong>：可靠的雙向通信</li>
+</ul>
+</li>
+<li><strong>建立連接 (WebSocket Handshake)</strong>：
+<ol>
+<li>客戶端發送帶 <code>Upgrade: websocket</code> 和 <code>Sec-WebSocket-Key</code> 的 HTTP 請求</li>
+<li>伺服器回應 101 狀態碼和 <code>Sec-WebSocket-Accept</code> 標頭</li>
+<li>連接升級完成，切換到 WebSocket 協議</li>
+</ol>
+</li>
+<li><strong>全雙工通信</strong>：建立後可雙向即時傳輸資料，無需請求-回應模式</li>
+<li><strong>訊息框架類型</strong>：
+<ul>
+<li><strong>文本框架</strong>：UTF-8 編碼的文本訊息</li>
+<li><strong>二進制框架</strong>：原始二進制資料</li>
+<li><strong>控制框架</strong>：Ping/Pong 心跳、連接關閉</li>
+</ul>
+</li>
+<li><strong>連接管理</strong>：
+<ul>
+<li><strong>心跳機制</strong>：Ping/Pong 檢測連接狀態</li>
+<li><strong>正常關閉</strong>：Close 框架協商關閉</li>
+<li><strong>異常斷開</strong>：網路中斷或應用錯誤</li>
+<li><strong>重連機制</strong>：自動重新建立連接</li>
+</ul>
+</li>
+<li><strong>安全機制</strong>：
+<ul>
+<li><strong>Origin 檢查</strong>：防止跨站 WebSocket 劫持</li>
+<li><strong>WSS 加密</strong>：TLS 保護資料傳輸</li>
+<li><strong>認證機制</strong>：透過 Cookie 或 Token 驗證</li>
+</ul>
+</li>
+<li><strong>應用場景</strong>：
+<ul>
+<li>即時聊天應用</li>
+<li>遊戲即時更新</li>
+<li>實時監控系統</li>
+<li>協作編輯工具</li>
+<li>股票價格推送</li>
+<li>直播彈幕系統</li>
+</ul>
+</li>
+<li><strong>子協議與擴展</strong>：
+<ul>
+<li><strong>Sec-WebSocket-Protocol</strong>：指定應用層子協議</li>
+<li><strong>壓縮擴展</strong>：減少訊息大小</li>
+<li><strong>自定義協議</strong>：應用特定的通信格式</li>
+</ul>
+</li>
+<li><strong>與其他技術比較</strong>：
+<ul>
+<li><strong>vs HTTP 長輪詢</strong>：更低延遲，減少伺服器負載</li>
+<li><strong>vs Server-Sent Events</strong>：雙向 vs 單向通信</li>
+<li><strong>vs Socket.IO</strong>：原生協議 vs 函式庫實作</li>
+</ul>
+</li>
+</ul>
+<h1 id="webrtc-web-real-time-communication">WebRTC (Web Real-Time Communication)</h1>
+<ul>
+<li><strong>核心 API 組件</strong>：
+<ul>
+<li><strong>MediaStream</strong>：獲取和管理音頻、視頻流</li>
+<li><strong>RTCPeerConnection</strong>：建立點對點連接和媒體傳輸</li>
+<li><strong>RTCDataChannel</strong>：傳輸任意資料（非媒體）</li>
+</ul>
+</li>
+<li><strong>瀏覽器支援</strong>：
+<ul>
+<li><strong>主流瀏覽器</strong>：Chrome, Firefox, Safari, Edge</li>
+<li><strong>移動端支援</strong>：Android Chrome, iOS Safari</li>
+<li><strong>API 標準化</strong>：W3C 和 IETF 共同標準</li>
+</ul>
+</li>
+<li><strong>NAT 穿透技術</strong>：
+<ul>
+<li><strong>STUN (Session Traversal Utilities for NAT)</strong>：發現公網 IP 和端口</li>
+<li><strong>TURN (Traversal Using Relays around NAT)</strong>：當 P2P 連接失敗時作為中繼服務器</li>
+<li><strong>ICE (Interactive Connectivity Establishment)</strong>：嘗試多種連接方式的框架</li>
+</ul>
+</li>
+<li><strong>信令流程 (Signaling)</strong>：
+<ol>
+<li><strong>Offer/Answer 模型</strong>：SDP (Session Description Protocol) 描述交換</li>
+<li><strong>ICE Candidate 交換</strong>：網路路徑候選項協商</li>
+<li><strong>建立 P2P 連接</strong>：直接點對點通信</li>
+</ol>
+</li>
+<li><strong>媒體協商與編解碼器</strong>：
+<ul>
+<li><strong>視頻編解碼器</strong>：VP8, VP9, AV1, H.264</li>
+<li><strong>音頻編解碼器</strong>：Opus, G.711, G.722</li>
+<li><strong>編解碼器協商</strong>：SDP 中指定支援的格式</li>
+<li><strong>分辨率和頻寬</strong>：動態適應網路狀況</li>
+</ul>
+</li>
+<li><strong>安全機制</strong>：
+<ul>
+<li><strong>DTLS (Datagram Transport Layer Security)</strong>：資料通道加密</li>
+<li><strong>SRTP (Secure Real-time Transport Protocol)</strong>：媒體流加密</li>
+<li><strong>身份驗證</strong>：TURN 伺服器認證</li>
+<li><strong>Origin 安全</strong>：同源政策保護</li>
+</ul>
+</li>
+<li><strong>網路適應性</strong>：
+<ul>
+<li><strong>頻寬偵測</strong>：動態調整媒體品質</li>
+<li><strong>錯誤恢復</strong>：封包遺失重傳</li>
+<li><strong>Jitter Buffer</strong>：平滑播放延遲</li>
+<li><strong>回音消除</strong>：音頻處理</li>
+</ul>
+</li>
+<li><strong>實際應用場景</strong>：
+<ul>
+<li><strong>視訊會議</strong>：Zoom, Google Meet, Microsoft Teams</li>
+<li><strong>即時串流</strong>：直播平台</li>
+<li><strong>線上遊戲</strong>：低延遲多人遊戲</li>
+<li><strong>遠端桌面</strong>：螢幕共享</li>
+<li><strong>IoT 通信</strong>：設備間直接通信</li>
+</ul>
+</li>
+<li><strong>效能優化</strong>：
+<ul>
+<li><strong>硬體加速</strong>：GPU 編解碼支援</li>
+<li><strong>Simulcast</strong>：同時傳送多種解析度</li>
+<li><strong>SVC (Scalable Video Coding)</strong>：可擴展視頻編碼</li>
+<li><strong>連接品質監控</strong>：統計資料分析</li>
+</ul>
+</li>
+</ul>
+
+        </section>
+        <div class="post-tags">
+          
+          
+          <nav class="nav tags">
+            <ul class="tags">
+              
+              <li><a href="/tags/protocol">protocol</a></li>
+              
+            </ul>
+          </nav>
+          
+          
+        </div>
+      </div>
+
+      
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div class="footer_nav">
+    
+  </div>
+
+  
+  
+    
+      <a class="soc" href="https://github.com/peihe07" title="github">
+        <i data-feather="github"></i>
+      </a> | 
+    
+      <a class="soc" href="mailto:y450376@gmail.com" title="email">
+        <i data-feather="mail"></i>
+      </a> | 
+    
+      <a class="soc" href="https://medium.com/@peihe07" title="medium">
+        <i data-feather="book-open"></i>
+      </a>
+    
+  
+
+  ⚡️ 2025
+   Peihe | 
+  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+  <script>
+    feather.replace();
+  </script>
+</div>
+    </body>
+</html>

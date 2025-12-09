@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Web服務協定 - Peihe&#39;s blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="SOAP (Simple Object Access Protocol)
+
+基本結構：
+
+Envelope：根元素，定義 XML 文檔為 SOAP 消息
+Header：可選，包含應用特定信息（認證、路由等）
+Body：必須，包含實際的消息內容
+Fault：錯誤信息，類似 HTTP 狀態碼
+
+
+SOAP 版本差異：
+
+SOAP 1.1：較舊版本，廣泛支援
+SOAP 1.2：改進版本，更好的錯誤處理
+
+
+傳輸綁定：
+
+HTTP/HTTPS：最常見，POST 方法
+SMTP：電子郵件傳輸
+TCP：直接 TCP 連接
+JMS：Java 消息服務
+
+
+消息模式：
+
+請求-響應（Request-Response）：同步通信
+單向（One-Way）：異步通信，無回應
+
+
+安全特性：
+
+WS-Security：消息級安全標準
+XML 數位簽名：確保消息完整性和來源驗證
+XML 加密：保護敏感數據
+WS-Trust：安全令牌交換
+
+
+相關標準（WS- 堆疊）*：
+
+WSDL (Web Services Description Language)：服務介面描述
+UDDI (Universal Description, Discovery and Integration)：服務註冊和發現
+WS-Policy：服務策略表達
+WS-ReliableMessaging：可靠消息傳遞
+
+
+優勢：
+
+嚴格定義的結構和標準
+跨平台、跨語言支持
+豐富的企業級功能
+強大的安全機制
+
+
+劣勢：
+
+消息體積大（XML 開銷）
+處理複雜度高
+效能較低
+學習曲線陡峭
+
+
+
+XMPP (Extensible Messaging and Presence Protocol)
+
+核心功能：
+
+即時消息（Instant Messaging）：實時文本通信
+存在信息（Presence）：用戶在線狀態管理
+聯繫人列表（Roster）：好友管理和組織
+
+
+協定特性：
+
+基於 XML：所有通信使用結構化 XML 格式
+即時性：近乎實時的消息傳遞
+擴展性：模組化設計，支援豐富擴展
+
+
+分佈式架構：
+
+去中心化設計：類似電子郵件系統
+聯邦式網路：使用域名標識服務器
+伺服器間通信：S2S (Server-to-Server) 協定
+
+
+身份識別系統：
+
+JID (Jabber ID)：username@domain/resource
+資源識別：允許多點登錄（手機、電腦等）
+域名路由：基於域名的消息路由
+
+
+核心數據單元（XML Stanzas）：
+
+&lt;message&gt;：傳遞即時消息
+&lt;presence&gt;：傳遞用戶狀態信息
+&lt;iq&gt; (Info/Query)：請求-響應交互機制
+
+
+連接管理：
+
+XML 串流：持久的 XML 連接
+心跳機制：白空格 ping 保持連接
+重連機制：自動重新建立連接
+
+
+擴展性（XEP - XMPP Extension Protocols）：
+
+XEP-0045：多用戶聊天（群組聊天）
+XEP-0096：檔案傳輸
+XEP-0166：Jingle (語音/視頻通話)
+XEP-0060：發布-訂閱
+
+
+安全特性：
+
+TLS 加密：傳輸層安全
+SASL 認證：可插拔認證機制
+端到端加密：OTR、OMEMO 擴展
+
+
+應用場景：
+
+即時通訊系統（Jabber、Pidgin）
+物聯網設備通信
+實時協作平台
+遊戲內通信系統
+
+
+" />
+	<meta property="og:image" content="https://hqasco.deta.dev/img?url=https://www.peihe07.uno/notes/2025-03-31-web_service_protocols/"/>
+	<meta property="twitter:image" content="https://hqasco.deta.dev/img?url=https://www.peihe07.uno/notes/2025-03-31-web_service_protocols/"/>
+	<meta property="twitter:card" content="summary_large_image"/>
+	<meta property="og:url" content="https://www.peihe07.uno/notes/2025-03-31-web_service_protocols/">
+  <meta property="og:site_name" content="Peihe&#39;s blog">
+  <meta property="og:title" content="Web服務協定">
+  <meta property="og:description" content="SOAP (Simple Object Access Protocol) 基本結構： Envelope：根元素，定義 XML 文檔為 SOAP 消息 Header：可選，包含應用特定信息（認證、路由等） Body：必須，包含實際的消息內容 Fault：錯誤信息，類似 HTTP 狀態碼 SOAP 版本差異： SOAP 1.1：較舊版本，廣泛支援 SOAP 1.2：改進版本，更好的錯誤處理 傳輸綁定： HTTP/HTTPS：最常見，POST 方法 SMTP：電子郵件傳輸 TCP：直接 TCP 連接 JMS：Java 消息服務 消息模式： 請求-響應（Request-Response）：同步通信 單向（One-Way）：異步通信，無回應 安全特性： WS-Security：消息級安全標準 XML 數位簽名：確保消息完整性和來源驗證 XML 加密：保護敏感數據 WS-Trust：安全令牌交換 相關標準（WS- 堆疊）*： WSDL (Web Services Description Language)：服務介面描述 UDDI (Universal Description, Discovery and Integration)：服務註冊和發現 WS-Policy：服務策略表達 WS-ReliableMessaging：可靠消息傳遞 優勢： 嚴格定義的結構和標準 跨平台、跨語言支持 豐富的企業級功能 強大的安全機制 劣勢： 消息體積大（XML 開銷） 處理複雜度高 效能較低 學習曲線陡峭 XMPP (Extensible Messaging and Presence Protocol) 核心功能： 即時消息（Instant Messaging）：實時文本通信 存在信息（Presence）：用戶在線狀態管理 聯繫人列表（Roster）：好友管理和組織 協定特性： 基於 XML：所有通信使用結構化 XML 格式 即時性：近乎實時的消息傳遞 擴展性：模組化設計，支援豐富擴展 分佈式架構： 去中心化設計：類似電子郵件系統 聯邦式網路：使用域名標識服務器 伺服器間通信：S2S (Server-to-Server) 協定 身份識別系統： JID (Jabber ID)：username@domain/resource 資源識別：允許多點登錄（手機、電腦等） 域名路由：基於域名的消息路由 核心數據單元（XML Stanzas）： &lt;message&gt;：傳遞即時消息 &lt;presence&gt;：傳遞用戶狀態信息 &lt;iq&gt; (Info/Query)：請求-響應交互機制 連接管理： XML 串流：持久的 XML 連接 心跳機制：白空格 ping 保持連接 重連機制：自動重新建立連接 擴展性（XEP - XMPP Extension Protocols）： XEP-0045：多用戶聊天（群組聊天） XEP-0096：檔案傳輸 XEP-0166：Jingle (語音/視頻通話) XEP-0060：發布-訂閱 安全特性： TLS 加密：傳輸層安全 SASL 認證：可插拔認證機制 端到端加密：OTR、OMEMO 擴展 應用場景： 即時通訊系統（Jabber、Pidgin） 物聯網設備通信 實時協作平台 遊戲內通信系統">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="notes">
+    <meta property="article:published_time" content="2025-03-31T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-31T00:00:00+00:00">
+    <meta property="article:tag" content="Protocol">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Web服務協定">
+  <meta name="twitter:description" content="SOAP (Simple Object Access Protocol) 基本結構： Envelope：根元素，定義 XML 文檔為 SOAP 消息 Header：可選，包含應用特定信息（認證、路由等） Body：必須，包含實際的消息內容 Fault：錯誤信息，類似 HTTP 狀態碼 SOAP 版本差異： SOAP 1.1：較舊版本，廣泛支援 SOAP 1.2：改進版本，更好的錯誤處理 傳輸綁定： HTTP/HTTPS：最常見，POST 方法 SMTP：電子郵件傳輸 TCP：直接 TCP 連接 JMS：Java 消息服務 消息模式： 請求-響應（Request-Response）：同步通信 單向（One-Way）：異步通信，無回應 安全特性： WS-Security：消息級安全標準 XML 數位簽名：確保消息完整性和來源驗證 XML 加密：保護敏感數據 WS-Trust：安全令牌交換 相關標準（WS- 堆疊）*： WSDL (Web Services Description Language)：服務介面描述 UDDI (Universal Description, Discovery and Integration)：服務註冊和發現 WS-Policy：服務策略表達 WS-ReliableMessaging：可靠消息傳遞 優勢： 嚴格定義的結構和標準 跨平台、跨語言支持 豐富的企業級功能 強大的安全機制 劣勢： 消息體積大（XML 開銷） 處理複雜度高 效能較低 學習曲線陡峭 XMPP (Extensible Messaging and Presence Protocol) 核心功能： 即時消息（Instant Messaging）：實時文本通信 存在信息（Presence）：用戶在線狀態管理 聯繫人列表（Roster）：好友管理和組織 協定特性： 基於 XML：所有通信使用結構化 XML 格式 即時性：近乎實時的消息傳遞 擴展性：模組化設計，支援豐富擴展 分佈式架構： 去中心化設計：類似電子郵件系統 聯邦式網路：使用域名標識服務器 伺服器間通信：S2S (Server-to-Server) 協定 身份識別系統： JID (Jabber ID)：username@domain/resource 資源識別：允許多點登錄（手機、電腦等） 域名路由：基於域名的消息路由 核心數據單元（XML Stanzas）： &lt;message&gt;：傳遞即時消息 &lt;presence&gt;：傳遞用戶狀態信息 &lt;iq&gt; (Info/Query)：請求-響應交互機制 連接管理： XML 串流：持久的 XML 連接 心跳機制：白空格 ping 保持連接 重連機制：自動重新建立連接 擴展性（XEP - XMPP Extension Protocols）： XEP-0045：多用戶聊天（群組聊天） XEP-0096：檔案傳輸 XEP-0166：Jingle (語音/視頻通話) XEP-0060：發布-訂閱 安全特性： TLS 加密：傳輸層安全 SASL 認證：可插拔認證機制 端到端加密：OTR、OMEMO 擴展 應用場景： 即時通訊系統（Jabber、Pidgin） 物聯網設備通信 實時協作平台 遊戲內通信系統">
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/projects.css" />
+	
+	
+		
+		<link rel="stylesheet" type="text/css" href="/css/light.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/font.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/syntax.css">
+		
+	<script src="//instant.page/5.1.0" type="module" integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-title">
+      <a href="https://www.peihe07.uno/">Peihe&#39;s blog</a>
+    </div>
+    <nav class="main-menu">
+      
+        <a href="/">Home</a>
+      
+        <a href="/writings">Writings</a>
+      
+        <a href="/projects">Projects</a>
+      
+        <a href="/notes">Notes</a>
+      
+        <a href="/about">About</a>
+      
+    </nav>
+  </header><body>
+        <div class="content">
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">Web服務協定</h1>
+          <div class="meta">Posted on Mar 31, 2025</div>
+        </div>
+        
+        <section class="body">
+          <h1 id="soap-simple-object-access-protocol">SOAP (Simple Object Access Protocol)</h1>
+<ul>
+<li><strong>基本結構</strong>：
+<ul>
+<li><strong>Envelope</strong>：根元素，定義 XML 文檔為 SOAP 消息</li>
+<li><strong>Header</strong>：可選，包含應用特定信息（認證、路由等）</li>
+<li><strong>Body</strong>：必須，包含實際的消息內容</li>
+<li><strong>Fault</strong>：錯誤信息，類似 HTTP 狀態碼</li>
+</ul>
+</li>
+<li><strong>SOAP 版本差異</strong>：
+<ul>
+<li><strong>SOAP 1.1</strong>：較舊版本，廣泛支援</li>
+<li><strong>SOAP 1.2</strong>：改進版本，更好的錯誤處理</li>
+</ul>
+</li>
+<li><strong>傳輸綁定</strong>：
+<ul>
+<li><strong>HTTP/HTTPS</strong>：最常見，POST 方法</li>
+<li><strong>SMTP</strong>：電子郵件傳輸</li>
+<li><strong>TCP</strong>：直接 TCP 連接</li>
+<li><strong>JMS</strong>：Java 消息服務</li>
+</ul>
+</li>
+<li><strong>消息模式</strong>：
+<ul>
+<li><strong>請求-響應（Request-Response）</strong>：同步通信</li>
+<li><strong>單向（One-Way）</strong>：異步通信，無回應</li>
+</ul>
+</li>
+<li><strong>安全特性</strong>：
+<ul>
+<li><strong>WS-Security</strong>：消息級安全標準</li>
+<li><strong>XML 數位簽名</strong>：確保消息完整性和來源驗證</li>
+<li><strong>XML 加密</strong>：保護敏感數據</li>
+<li><strong>WS-Trust</strong>：安全令牌交換</li>
+</ul>
+</li>
+<li><em><em>相關標準（WS-</em> 堆疊）</em>*：
+<ul>
+<li><strong>WSDL (Web Services Description Language)</strong>：服務介面描述</li>
+<li><strong>UDDI (Universal Description, Discovery and Integration)</strong>：服務註冊和發現</li>
+<li><strong>WS-Policy</strong>：服務策略表達</li>
+<li><strong>WS-ReliableMessaging</strong>：可靠消息傳遞</li>
+</ul>
+</li>
+<li><strong>優勢</strong>：
+<ul>
+<li>嚴格定義的結構和標準</li>
+<li>跨平台、跨語言支持</li>
+<li>豐富的企業級功能</li>
+<li>強大的安全機制</li>
+</ul>
+</li>
+<li><strong>劣勢</strong>：
+<ul>
+<li>消息體積大（XML 開銷）</li>
+<li>處理複雜度高</li>
+<li>效能較低</li>
+<li>學習曲線陡峭</li>
+</ul>
+</li>
+</ul>
+<h1 id="xmpp-extensible-messaging-and-presence-protocol">XMPP (Extensible Messaging and Presence Protocol)</h1>
+<ul>
+<li><strong>核心功能</strong>：
+<ul>
+<li><strong>即時消息（Instant Messaging）</strong>：實時文本通信</li>
+<li><strong>存在信息（Presence）</strong>：用戶在線狀態管理</li>
+<li><strong>聯繫人列表（Roster）</strong>：好友管理和組織</li>
+</ul>
+</li>
+<li><strong>協定特性</strong>：
+<ul>
+<li><strong>基於 XML</strong>：所有通信使用結構化 XML 格式</li>
+<li><strong>即時性</strong>：近乎實時的消息傳遞</li>
+<li><strong>擴展性</strong>：模組化設計，支援豐富擴展</li>
+</ul>
+</li>
+<li><strong>分佈式架構</strong>：
+<ul>
+<li><strong>去中心化設計</strong>：類似電子郵件系統</li>
+<li><strong>聯邦式網路</strong>：使用域名標識服務器</li>
+<li><strong>伺服器間通信</strong>：S2S (Server-to-Server) 協定</li>
+</ul>
+</li>
+<li><strong>身份識別系統</strong>：
+<ul>
+<li><strong>JID (Jabber ID)</strong>：username@domain/resource</li>
+<li><strong>資源識別</strong>：允許多點登錄（手機、電腦等）</li>
+<li><strong>域名路由</strong>：基於域名的消息路由</li>
+</ul>
+</li>
+<li><strong>核心數據單元（XML Stanzas）</strong>：
+<ul>
+<li><strong>&lt;message&gt;</strong>：傳遞即時消息</li>
+<li><strong>&lt;presence&gt;</strong>：傳遞用戶狀態信息</li>
+<li><strong>&lt;iq&gt; (Info/Query)</strong>：請求-響應交互機制</li>
+</ul>
+</li>
+<li><strong>連接管理</strong>：
+<ul>
+<li><strong>XML 串流</strong>：持久的 XML 連接</li>
+<li><strong>心跳機制</strong>：白空格 ping 保持連接</li>
+<li><strong>重連機制</strong>：自動重新建立連接</li>
+</ul>
+</li>
+<li><strong>擴展性（XEP - XMPP Extension Protocols）</strong>：
+<ul>
+<li><strong>XEP-0045</strong>：多用戶聊天（群組聊天）</li>
+<li><strong>XEP-0096</strong>：檔案傳輸</li>
+<li><strong>XEP-0166</strong>：Jingle (語音/視頻通話)</li>
+<li><strong>XEP-0060</strong>：發布-訂閱</li>
+</ul>
+</li>
+<li><strong>安全特性</strong>：
+<ul>
+<li><strong>TLS 加密</strong>：傳輸層安全</li>
+<li><strong>SASL 認證</strong>：可插拔認證機制</li>
+<li><strong>端到端加密</strong>：OTR、OMEMO 擴展</li>
+</ul>
+</li>
+<li><strong>應用場景</strong>：
+<ul>
+<li>即時通訊系統（Jabber、Pidgin）</li>
+<li>物聯網設備通信</li>
+<li>實時協作平台</li>
+<li>遊戲內通信系統</li>
+</ul>
+</li>
+</ul>
+
+        </section>
+        <div class="post-tags">
+          
+          
+          <nav class="nav tags">
+            <ul class="tags">
+              
+              <li><a href="/tags/protocol">protocol</a></li>
+              
+            </ul>
+          </nav>
+          
+          
+        </div>
+      </div>
+
+      
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div class="footer_nav">
+    
+  </div>
+
+  
+  
+    
+      <a class="soc" href="https://github.com/peihe07" title="github">
+        <i data-feather="github"></i>
+      </a> | 
+    
+      <a class="soc" href="mailto:y450376@gmail.com" title="email">
+        <i data-feather="mail"></i>
+      </a> | 
+    
+      <a class="soc" href="https://medium.com/@peihe07" title="medium">
+        <i data-feather="book-open"></i>
+      </a>
+    
+  
+
+  ⚡️ 2025
+   Peihe | 
+  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+  <script>
+    feather.replace();
+  </script>
+</div>
+    </body>
+</html>

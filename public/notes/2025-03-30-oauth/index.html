@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>認證與授權協定 - Peihe&#39;s blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="OAuth 2.0 (Open Authorization 2.0)
+
+核心概念：
+
+授權框架：允許第三方應用有限訪問用戶資源
+分離認證與授權：不需要分享用戶憑證
+訪問令牌：使用令牌而非密碼訪問資源
+
+
+授權類型（Grant Types）：
+
+授權碼模式（Authorization Code）：最完整安全的流程，適合具有後端的網站
+隱式授權（Implicit）：簡化流程，適合純前端應用（已不推薦）
+密碼模式（Resource Owner Password Credentials）：直接使用用戶名密碼獲取令牌
+客戶端憑證模式（Client Credentials）：應用程序訪問自己的資源
+
+
+角色定義：
+
+資源擁有者（Resource Owner）：用戶
+客戶端（Client）：第三方應用
+授權服務器（Authorization Server）：驗證用戶並發放令牌
+資源服務器（Resource Server）：託管受保護資源
+
+
+令牌類型：
+
+訪問令牌（Access Token）：短期有效的資源訪問憑證
+刷新令牌（Refresh Token）：長期有效的令牌，用於獲取新訪問令牌
+ID 令牌（ID Token）：包含用戶身份信息（OpenID Connect）
+
+
+安全考量與最佳實踐：
+
+PKCE (Proof Key for Code Exchange)：防止授權碼攔截
+狀態參數（State Parameter）：防止 CSRF 攻擊
+令牌範圍（Scope）：限制訪問權限
+HTTPS 強制：所有通信必須加密
+
+
+JWT (JSON Web Token)：
+
+結構：Header.Payload.Signature
+自包含：包含所有必要資訊
+無狀態：不需要伺服器端會話存儲
+
+
+OpenID Connect：
+
+基於 OAuth 2.0：添加身份認證層
+ID Token：包含用戶身份資訊的 JWT
+UserInfo 端點：獲取額外用戶資訊
+Discovery：自動發現 OpenID Provider 配置
+
+
+" />
+	<meta property="og:image" content="https://hqasco.deta.dev/img?url=https://www.peihe07.uno/notes/2025-03-30-oauth/"/>
+	<meta property="twitter:image" content="https://hqasco.deta.dev/img?url=https://www.peihe07.uno/notes/2025-03-30-oauth/"/>
+	<meta property="twitter:card" content="summary_large_image"/>
+	<meta property="og:url" content="https://www.peihe07.uno/notes/2025-03-30-oauth/">
+  <meta property="og:site_name" content="Peihe&#39;s blog">
+  <meta property="og:title" content="認證與授權協定">
+  <meta property="og:description" content="OAuth 2.0 (Open Authorization 2.0) 核心概念： 授權框架：允許第三方應用有限訪問用戶資源 分離認證與授權：不需要分享用戶憑證 訪問令牌：使用令牌而非密碼訪問資源 授權類型（Grant Types）： 授權碼模式（Authorization Code）：最完整安全的流程，適合具有後端的網站 隱式授權（Implicit）：簡化流程，適合純前端應用（已不推薦） 密碼模式（Resource Owner Password Credentials）：直接使用用戶名密碼獲取令牌 客戶端憑證模式（Client Credentials）：應用程序訪問自己的資源 角色定義： 資源擁有者（Resource Owner）：用戶 客戶端（Client）：第三方應用 授權服務器（Authorization Server）：驗證用戶並發放令牌 資源服務器（Resource Server）：託管受保護資源 令牌類型： 訪問令牌（Access Token）：短期有效的資源訪問憑證 刷新令牌（Refresh Token）：長期有效的令牌，用於獲取新訪問令牌 ID 令牌（ID Token）：包含用戶身份信息（OpenID Connect） 安全考量與最佳實踐： PKCE (Proof Key for Code Exchange)：防止授權碼攔截 狀態參數（State Parameter）：防止 CSRF 攻擊 令牌範圍（Scope）：限制訪問權限 HTTPS 強制：所有通信必須加密 JWT (JSON Web Token)： 結構：Header.Payload.Signature 自包含：包含所有必要資訊 無狀態：不需要伺服器端會話存儲 OpenID Connect： 基於 OAuth 2.0：添加身份認證層 ID Token：包含用戶身份資訊的 JWT UserInfo 端點：獲取額外用戶資訊 Discovery：自動發現 OpenID Provider 配置">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="notes">
+    <meta property="article:published_time" content="2025-03-30T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-30T00:00:00+00:00">
+    <meta property="article:tag" content="Protocol">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="認證與授權協定">
+  <meta name="twitter:description" content="OAuth 2.0 (Open Authorization 2.0) 核心概念： 授權框架：允許第三方應用有限訪問用戶資源 分離認證與授權：不需要分享用戶憑證 訪問令牌：使用令牌而非密碼訪問資源 授權類型（Grant Types）： 授權碼模式（Authorization Code）：最完整安全的流程，適合具有後端的網站 隱式授權（Implicit）：簡化流程，適合純前端應用（已不推薦） 密碼模式（Resource Owner Password Credentials）：直接使用用戶名密碼獲取令牌 客戶端憑證模式（Client Credentials）：應用程序訪問自己的資源 角色定義： 資源擁有者（Resource Owner）：用戶 客戶端（Client）：第三方應用 授權服務器（Authorization Server）：驗證用戶並發放令牌 資源服務器（Resource Server）：託管受保護資源 令牌類型： 訪問令牌（Access Token）：短期有效的資源訪問憑證 刷新令牌（Refresh Token）：長期有效的令牌，用於獲取新訪問令牌 ID 令牌（ID Token）：包含用戶身份信息（OpenID Connect） 安全考量與最佳實踐： PKCE (Proof Key for Code Exchange)：防止授權碼攔截 狀態參數（State Parameter）：防止 CSRF 攻擊 令牌範圍（Scope）：限制訪問權限 HTTPS 強制：所有通信必須加密 JWT (JSON Web Token)： 結構：Header.Payload.Signature 自包含：包含所有必要資訊 無狀態：不需要伺服器端會話存儲 OpenID Connect： 基於 OAuth 2.0：添加身份認證層 ID Token：包含用戶身份資訊的 JWT UserInfo 端點：獲取額外用戶資訊 Discovery：自動發現 OpenID Provider 配置">
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/projects.css" />
+	
+	
+		
+		<link rel="stylesheet" type="text/css" href="/css/light.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/font.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/syntax.css">
+		
+	<script src="//instant.page/5.1.0" type="module" integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-title">
+      <a href="https://www.peihe07.uno/">Peihe&#39;s blog</a>
+    </div>
+    <nav class="main-menu">
+      
+        <a href="/">Home</a>
+      
+        <a href="/writings">Writings</a>
+      
+        <a href="/projects">Projects</a>
+      
+        <a href="/notes">Notes</a>
+      
+        <a href="/about">About</a>
+      
+    </nav>
+  </header><body>
+        <div class="content">
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">認證與授權協定</h1>
+          <div class="meta">Posted on Mar 30, 2025</div>
+        </div>
+        
+        <section class="body">
+          <h1 id="oauth-20-open-authorization-20">OAuth 2.0 (Open Authorization 2.0)</h1>
+<ul>
+<li><strong>核心概念</strong>：
+<ul>
+<li><strong>授權框架</strong>：允許第三方應用有限訪問用戶資源</li>
+<li><strong>分離認證與授權</strong>：不需要分享用戶憑證</li>
+<li><strong>訪問令牌</strong>：使用令牌而非密碼訪問資源</li>
+</ul>
+</li>
+<li><strong>授權類型（Grant Types）</strong>：
+<ul>
+<li><strong>授權碼模式（Authorization Code）</strong>：最完整安全的流程，適合具有後端的網站</li>
+<li><strong>隱式授權（Implicit）</strong>：簡化流程，適合純前端應用（已不推薦）</li>
+<li><strong>密碼模式（Resource Owner Password Credentials）</strong>：直接使用用戶名密碼獲取令牌</li>
+<li><strong>客戶端憑證模式（Client Credentials）</strong>：應用程序訪問自己的資源</li>
+</ul>
+</li>
+<li><strong>角色定義</strong>：
+<ul>
+<li><strong>資源擁有者（Resource Owner）</strong>：用戶</li>
+<li><strong>客戶端（Client）</strong>：第三方應用</li>
+<li><strong>授權服務器（Authorization Server）</strong>：驗證用戶並發放令牌</li>
+<li><strong>資源服務器（Resource Server）</strong>：託管受保護資源</li>
+</ul>
+</li>
+<li><strong>令牌類型</strong>：
+<ul>
+<li><strong>訪問令牌（Access Token）</strong>：短期有效的資源訪問憑證</li>
+<li><strong>刷新令牌（Refresh Token）</strong>：長期有效的令牌，用於獲取新訪問令牌</li>
+<li><strong>ID 令牌（ID Token）</strong>：包含用戶身份信息（OpenID Connect）</li>
+</ul>
+</li>
+<li><strong>安全考量與最佳實踐</strong>：
+<ul>
+<li><strong>PKCE (Proof Key for Code Exchange)</strong>：防止授權碼攔截</li>
+<li><strong>狀態參數（State Parameter）</strong>：防止 CSRF 攻擊</li>
+<li><strong>令牌範圍（Scope）</strong>：限制訪問權限</li>
+<li><strong>HTTPS 強制</strong>：所有通信必須加密</li>
+</ul>
+</li>
+<li><strong>JWT (JSON Web Token)</strong>：
+<ul>
+<li><strong>結構</strong>：Header.Payload.Signature</li>
+<li><strong>自包含</strong>：包含所有必要資訊</li>
+<li><strong>無狀態</strong>：不需要伺服器端會話存儲</li>
+</ul>
+</li>
+<li><strong>OpenID Connect</strong>：
+<ul>
+<li><strong>基於 OAuth 2.0</strong>：添加身份認證層</li>
+<li><strong>ID Token</strong>：包含用戶身份資訊的 JWT</li>
+<li><strong>UserInfo 端點</strong>：獲取額外用戶資訊</li>
+<li><strong>Discovery</strong>：自動發現 OpenID Provider 配置</li>
+</ul>
+</li>
+</ul>
+
+        </section>
+        <div class="post-tags">
+          
+          
+          <nav class="nav tags">
+            <ul class="tags">
+              
+              <li><a href="/tags/protocol">protocol</a></li>
+              
+            </ul>
+          </nav>
+          
+          
+        </div>
+      </div>
+
+      
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div class="footer_nav">
+    
+  </div>
+
+  
+  
+    
+      <a class="soc" href="https://github.com/peihe07" title="github">
+        <i data-feather="github"></i>
+      </a> | 
+    
+      <a class="soc" href="mailto:y450376@gmail.com" title="email">
+        <i data-feather="mail"></i>
+      </a> | 
+    
+      <a class="soc" href="https://medium.com/@peihe07" title="medium">
+        <i data-feather="book-open"></i>
+      </a>
+    
+  
+
+  ⚡️ 2025
+   Peihe | 
+  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+  <script>
+    feather.replace();
+  </script>
+</div>
+    </body>
+</html>

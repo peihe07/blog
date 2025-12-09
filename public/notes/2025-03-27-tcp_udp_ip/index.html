@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>基礎網路通訊協定 - Peihe&#39;s blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="TCP (Transmission Control Protocol)
+
+連接導向：在資料傳輸前需建立連接，保證資料的可靠傳輸
+三次握手流程：
+
+客戶端發送 SYN 封包 (序號=x)
+伺服器回應 SYN-ACK 封包 (序號=y, 確認號=x&#43;1)
+客戶端發送 ACK 封包 (確認號=y&#43;1)
+
+
+四次揮手流程：
+
+客戶端發送 FIN 封包
+伺服器回應 ACK 確認
+伺服器發送 FIN 封包
+客戶端回應 ACK 確認
+
+
+流量控制：利用滑動窗口機制（Sliding Window）調整傳輸速度
+擁塞控制算法：慢啟動、擁塞避免、快速重傳、快速恢復
+應用場景：需要可靠傳輸的應用，如網頁瀏覽、檔案傳輸、電子郵件
+標頭格式：20 bytes 固定標頭 &#43; 可選擇項，包含源端口、目的端口、序列號、確認號、窗口大小等
+
+UDP (User Datagram Protocol)
+
+無連接：不需要建立連接即可傳輸資料
+不可靠傳輸：無確認、無重傳、無流量控制機制
+標頭開銷小：僅 8 bytes，比 TCP 的 20&#43; bytes 小得多
+無阻塞：傳輸速度快，適合即時性要求高的應用
+應用場景：視訊串流、線上遊戲、VoIP 通話、DNS 查詢
+實作優勢：實作簡單，支援廣播和多播
+UDP 標頭格式：僅包含源端口、目的端口、長度和校驗和
+
+IP (Internet Protocol)
+
+IPv4 vs IPv6：
+
+IPv4：32位地址，約 42.9 億個 (2^32)，格式如 192.168.1.1
+IPv6：128位地址，格式如 2001:0db8:85a3:0000:0000:8a2e:0370:7334，可簡化為 2001:db8::1
+
+
+IPv4 位址分類：
+
+A 類：1.0.0.0 - 126.255.255.255 (大型網路，網路遮罩 255.0.0.0 或 /8)
+B 類：128.0.0.0 - 191.255.255.255 (中型網路，網路遮罩 255.255.0.0 或 /16)
+C 類：192.0.0.0 - 223.255.255.255 (小型網路，網路遮罩 255.255.255.0 或 /24)
+D 類：224.0.0.0 - 239.255.255.255 (多播)
+E 類：240.0.0.0 - 255.255.255.255 (實驗用)
+
+
+私有 IP 位址範圍：
+
+A 類私有：10.0.0.0/8 (10.0.0.0 - 10.255.255.255)
+B 類私有：172.16.0.0/12 (172.16.0.0 - 172.31.255.255)
+C 類私有：192.168.0.0/16 (192.168.0.0 - 192.168.255.255)
+
+
+特殊位址：
+
+環回地址：127.0.0.1 (localhost)
+APIPA：169.254.0.0/16 (自動私有 IP 位址)
+廣播地址：255.255.255.255
+
+
+子網遮罩：決定 IP 位址的網路部分和主機部分
+CIDR 表示法：如 192.168.1.0/24，表示前 24 位是網路部分
+分片與重組：大封包在傳輸過程中的分片處理
+TTL (Time To Live)：防止封包無限循環的機制，每經過一個路由器減 1
+" />
+	<meta property="og:image" content="https://hqasco.deta.dev/img?url=https://www.peihe07.uno/notes/2025-03-27-tcp_udp_ip/"/>
+	<meta property="twitter:image" content="https://hqasco.deta.dev/img?url=https://www.peihe07.uno/notes/2025-03-27-tcp_udp_ip/"/>
+	<meta property="twitter:card" content="summary_large_image"/>
+	<meta property="og:url" content="https://www.peihe07.uno/notes/2025-03-27-tcp_udp_ip/">
+  <meta property="og:site_name" content="Peihe&#39;s blog">
+  <meta property="og:title" content="基礎網路通訊協定">
+  <meta property="og:description" content="TCP (Transmission Control Protocol) 連接導向：在資料傳輸前需建立連接，保證資料的可靠傳輸 三次握手流程： 客戶端發送 SYN 封包 (序號=x) 伺服器回應 SYN-ACK 封包 (序號=y, 確認號=x&#43;1) 客戶端發送 ACK 封包 (確認號=y&#43;1) 四次揮手流程： 客戶端發送 FIN 封包 伺服器回應 ACK 確認 伺服器發送 FIN 封包 客戶端回應 ACK 確認 流量控制：利用滑動窗口機制（Sliding Window）調整傳輸速度 擁塞控制算法：慢啟動、擁塞避免、快速重傳、快速恢復 應用場景：需要可靠傳輸的應用，如網頁瀏覽、檔案傳輸、電子郵件 標頭格式：20 bytes 固定標頭 &#43; 可選擇項，包含源端口、目的端口、序列號、確認號、窗口大小等 UDP (User Datagram Protocol) 無連接：不需要建立連接即可傳輸資料 不可靠傳輸：無確認、無重傳、無流量控制機制 標頭開銷小：僅 8 bytes，比 TCP 的 20&#43; bytes 小得多 無阻塞：傳輸速度快，適合即時性要求高的應用 應用場景：視訊串流、線上遊戲、VoIP 通話、DNS 查詢 實作優勢：實作簡單，支援廣播和多播 UDP 標頭格式：僅包含源端口、目的端口、長度和校驗和 IP (Internet Protocol) IPv4 vs IPv6： IPv4：32位地址，約 42.9 億個 (2^32)，格式如 192.168.1.1 IPv6：128位地址，格式如 2001:0db8:85a3:0000:0000:8a2e:0370:7334，可簡化為 2001:db8::1 IPv4 位址分類： A 類：1.0.0.0 - 126.255.255.255 (大型網路，網路遮罩 255.0.0.0 或 /8) B 類：128.0.0.0 - 191.255.255.255 (中型網路，網路遮罩 255.255.0.0 或 /16) C 類：192.0.0.0 - 223.255.255.255 (小型網路，網路遮罩 255.255.255.0 或 /24) D 類：224.0.0.0 - 239.255.255.255 (多播) E 類：240.0.0.0 - 255.255.255.255 (實驗用) 私有 IP 位址範圍： A 類私有：10.0.0.0/8 (10.0.0.0 - 10.255.255.255) B 類私有：172.16.0.0/12 (172.16.0.0 - 172.31.255.255) C 類私有：192.168.0.0/16 (192.168.0.0 - 192.168.255.255) 特殊位址： 環回地址：127.0.0.1 (localhost) APIPA：169.254.0.0/16 (自動私有 IP 位址) 廣播地址：255.255.255.255 子網遮罩：決定 IP 位址的網路部分和主機部分 CIDR 表示法：如 192.168.1.0/24，表示前 24 位是網路部分 分片與重組：大封包在傳輸過程中的分片處理 TTL (Time To Live)：防止封包無限循環的機制，每經過一個路由器減 1">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="notes">
+    <meta property="article:published_time" content="2025-03-27T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-27T00:00:00+00:00">
+    <meta property="article:tag" content="Protocol">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="基礎網路通訊協定">
+  <meta name="twitter:description" content="TCP (Transmission Control Protocol) 連接導向：在資料傳輸前需建立連接，保證資料的可靠傳輸 三次握手流程： 客戶端發送 SYN 封包 (序號=x) 伺服器回應 SYN-ACK 封包 (序號=y, 確認號=x&#43;1) 客戶端發送 ACK 封包 (確認號=y&#43;1) 四次揮手流程： 客戶端發送 FIN 封包 伺服器回應 ACK 確認 伺服器發送 FIN 封包 客戶端回應 ACK 確認 流量控制：利用滑動窗口機制（Sliding Window）調整傳輸速度 擁塞控制算法：慢啟動、擁塞避免、快速重傳、快速恢復 應用場景：需要可靠傳輸的應用，如網頁瀏覽、檔案傳輸、電子郵件 標頭格式：20 bytes 固定標頭 &#43; 可選擇項，包含源端口、目的端口、序列號、確認號、窗口大小等 UDP (User Datagram Protocol) 無連接：不需要建立連接即可傳輸資料 不可靠傳輸：無確認、無重傳、無流量控制機制 標頭開銷小：僅 8 bytes，比 TCP 的 20&#43; bytes 小得多 無阻塞：傳輸速度快，適合即時性要求高的應用 應用場景：視訊串流、線上遊戲、VoIP 通話、DNS 查詢 實作優勢：實作簡單，支援廣播和多播 UDP 標頭格式：僅包含源端口、目的端口、長度和校驗和 IP (Internet Protocol) IPv4 vs IPv6： IPv4：32位地址，約 42.9 億個 (2^32)，格式如 192.168.1.1 IPv6：128位地址，格式如 2001:0db8:85a3:0000:0000:8a2e:0370:7334，可簡化為 2001:db8::1 IPv4 位址分類： A 類：1.0.0.0 - 126.255.255.255 (大型網路，網路遮罩 255.0.0.0 或 /8) B 類：128.0.0.0 - 191.255.255.255 (中型網路，網路遮罩 255.255.0.0 或 /16) C 類：192.0.0.0 - 223.255.255.255 (小型網路，網路遮罩 255.255.255.0 或 /24) D 類：224.0.0.0 - 239.255.255.255 (多播) E 類：240.0.0.0 - 255.255.255.255 (實驗用) 私有 IP 位址範圍： A 類私有：10.0.0.0/8 (10.0.0.0 - 10.255.255.255) B 類私有：172.16.0.0/12 (172.16.0.0 - 172.31.255.255) C 類私有：192.168.0.0/16 (192.168.0.0 - 192.168.255.255) 特殊位址： 環回地址：127.0.0.1 (localhost) APIPA：169.254.0.0/16 (自動私有 IP 位址) 廣播地址：255.255.255.255 子網遮罩：決定 IP 位址的網路部分和主機部分 CIDR 表示法：如 192.168.1.0/24，表示前 24 位是網路部分 分片與重組：大封包在傳輸過程中的分片處理 TTL (Time To Live)：防止封包無限循環的機制，每經過一個路由器減 1">
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/projects.css" />
+	
+	
+		
+		<link rel="stylesheet" type="text/css" href="/css/light.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/font.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/syntax.css">
+		
+	<script src="//instant.page/5.1.0" type="module" integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-title">
+      <a href="https://www.peihe07.uno/">Peihe&#39;s blog</a>
+    </div>
+    <nav class="main-menu">
+      
+        <a href="/">Home</a>
+      
+        <a href="/writings">Writings</a>
+      
+        <a href="/projects">Projects</a>
+      
+        <a href="/notes">Notes</a>
+      
+        <a href="/about">About</a>
+      
+    </nav>
+  </header><body>
+        <div class="content">
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">基礎網路通訊協定</h1>
+          <div class="meta">Posted on Mar 27, 2025</div>
+        </div>
+        
+        <section class="body">
+          <h1 id="tcp-transmission-control-protocol">TCP (Transmission Control Protocol)</h1>
+<ul>
+<li><strong>連接導向</strong>：在資料傳輸前需建立連接，保證資料的可靠傳輸</li>
+<li><strong>三次握手流程</strong>：
+<ol>
+<li>客戶端發送 SYN 封包 (序號=x)</li>
+<li>伺服器回應 SYN-ACK 封包 (序號=y, 確認號=x+1)</li>
+<li>客戶端發送 ACK 封包 (確認號=y+1)</li>
+</ol>
+</li>
+<li><strong>四次揮手流程</strong>：
+<ol>
+<li>客戶端發送 FIN 封包</li>
+<li>伺服器回應 ACK 確認</li>
+<li>伺服器發送 FIN 封包</li>
+<li>客戶端回應 ACK 確認</li>
+</ol>
+</li>
+<li><strong>流量控制</strong>：利用滑動窗口機制（Sliding Window）調整傳輸速度</li>
+<li><strong>擁塞控制算法</strong>：慢啟動、擁塞避免、快速重傳、快速恢復</li>
+<li><strong>應用場景</strong>：需要可靠傳輸的應用，如網頁瀏覽、檔案傳輸、電子郵件</li>
+<li><strong>標頭格式</strong>：20 bytes 固定標頭 + 可選擇項，包含源端口、目的端口、序列號、確認號、窗口大小等</li>
+</ul>
+<h1 id="udp-user-datagram-protocol">UDP (User Datagram Protocol)</h1>
+<ul>
+<li><strong>無連接</strong>：不需要建立連接即可傳輸資料</li>
+<li><strong>不可靠傳輸</strong>：無確認、無重傳、無流量控制機制</li>
+<li><strong>標頭開銷小</strong>：僅 8 bytes，比 TCP 的 20+ bytes 小得多</li>
+<li><strong>無阻塞</strong>：傳輸速度快，適合即時性要求高的應用</li>
+<li><strong>應用場景</strong>：視訊串流、線上遊戲、VoIP 通話、DNS 查詢</li>
+<li><strong>實作優勢</strong>：實作簡單，支援廣播和多播</li>
+<li><strong>UDP 標頭格式</strong>：僅包含源端口、目的端口、長度和校驗和</li>
+</ul>
+<h1 id="ip-internet-protocol">IP (Internet Protocol)</h1>
+<ul>
+<li><strong>IPv4 vs IPv6</strong>：
+<ul>
+<li>IPv4：32位地址，約 42.9 億個 (2^32)，格式如 192.168.1.1</li>
+<li>IPv6：128位地址，格式如 2001:0db8:85a3:0000:0000:8a2e:0370:7334，可簡化為 2001:db8::1</li>
+</ul>
+</li>
+<li><strong>IPv4 位址分類</strong>：
+<ul>
+<li>A 類：1.0.0.0 - 126.255.255.255 (大型網路，網路遮罩 255.0.0.0 或 /8)</li>
+<li>B 類：128.0.0.0 - 191.255.255.255 (中型網路，網路遮罩 255.255.0.0 或 /16)</li>
+<li>C 類：192.0.0.0 - 223.255.255.255 (小型網路，網路遮罩 255.255.255.0 或 /24)</li>
+<li>D 類：224.0.0.0 - 239.255.255.255 (多播)</li>
+<li>E 類：240.0.0.0 - 255.255.255.255 (實驗用)</li>
+</ul>
+</li>
+<li><strong>私有 IP 位址範圍</strong>：
+<ul>
+<li>A 類私有：10.0.0.0/8 (10.0.0.0 - 10.255.255.255)</li>
+<li>B 類私有：172.16.0.0/12 (172.16.0.0 - 172.31.255.255)</li>
+<li>C 類私有：192.168.0.0/16 (192.168.0.0 - 192.168.255.255)</li>
+</ul>
+</li>
+<li><strong>特殊位址</strong>：
+<ul>
+<li>環回地址：127.0.0.1 (localhost)</li>
+<li>APIPA：169.254.0.0/16 (自動私有 IP 位址)</li>
+<li>廣播地址：255.255.255.255</li>
+</ul>
+</li>
+<li><strong>子網遮罩</strong>：決定 IP 位址的網路部分和主機部分</li>
+<li><strong>CIDR 表示法</strong>：如 192.168.1.0/24，表示前 24 位是網路部分</li>
+<li><strong>分片與重組</strong>：大封包在傳輸過程中的分片處理</li>
+<li><strong>TTL (Time To Live)</strong>：防止封包無限循環的機制，每經過一個路由器減 1</li>
+</ul>
+
+        </section>
+        <div class="post-tags">
+          
+          
+          <nav class="nav tags">
+            <ul class="tags">
+              
+              <li><a href="/tags/protocol">protocol</a></li>
+              
+            </ul>
+          </nav>
+          
+          
+        </div>
+      </div>
+
+      
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div class="footer_nav">
+    
+  </div>
+
+  
+  
+    
+      <a class="soc" href="https://github.com/peihe07" title="github">
+        <i data-feather="github"></i>
+      </a> | 
+    
+      <a class="soc" href="mailto:y450376@gmail.com" title="email">
+        <i data-feather="mail"></i>
+      </a> | 
+    
+      <a class="soc" href="https://medium.com/@peihe07" title="medium">
+        <i data-feather="book-open"></i>
+      </a>
+    
+  
+
+  ⚡️ 2025
+   Peihe | 
+  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+  <script>
+    feather.replace();
+  </script>
+</div>
+    </body>
+</html>

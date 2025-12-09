@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>物聯網專用協定 - Peihe&#39;s blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="CoAP (Constrained Application Protocol)
+
+設計目標：
+
+專為資源受限設備設計（記憶體 &lt; 10KB，Flash &lt; 100KB）
+Web 友善的 IoT 協定，類似 HTTP 但更輕量
+支援 UDP 和低功耗網路環境
+
+
+協定特性：
+
+基於 UDP：減少連接開銷，適合間歇性通信
+預設端口：5683 (非加密)、5684 (DTLS 加密)
+RESTful 設計：支援 GET、POST、PUT、DELETE 方法
+二進制編碼：比 HTTP 文本格式更高效
+
+
+訊息類型：
+
+Confirmable (CON)：需要確認的可靠傳輸
+Non-confirmable (NON)：不需確認的非可靠傳輸
+Acknowledgement (ACK)：確認訊息
+Reset (RST)：拒絕訊息
+
+
+觀察機制 (Observe)：
+
+類似 HTTP 長輪詢，但更高效
+客戶端訂閱資源變化
+伺服器主動推送更新
+
+
+區塊傳輸 (Block Transfer)：
+
+將大型訊息分割為小塊
+適應 UDP 封包大小限制
+支援流式傳輸
+
+
+安全機制：
+
+DTLS (Datagram TLS)：UDP 上的 TLS
+PSK (Pre-Shared Key)：預共享金鑰
+證書認證：X.509 證書
+
+
+實際應用：
+
+智慧感測器網路
+低功耗監控系統
+智慧農業、環境監測
+與 HTTP 代理整合
+
+
+
+LoRaWAN (Long Range Wide Area Network)
+
+技術基礎：
+
+LoRa 調變：展頻調變技術，抗干擾能力強
+免執照頻段：Sub-GHz ISM 頻段（868MHz 歐洲、915MHz 美國、433MHz 亞洲）
+長距離傳輸：城市 2-5km，郊區 15km，視線可達 50km
+
+
+網路架構：
+
+終端設備 (End Device)：感測器、執行器
+閘道 (Gateway)：LoRa 到 IP 網路的橋接
+網路伺服器 (Network Server)：管理網路和設備
+應用伺服器 (Application Server)：處理業務邏輯
+
+
+設備分類：
+
+Class A：最省電，僅在傳輸後開啟接收窗口
+Class B：定期開啟接收窗口，支援下行排程
+Class C：持續監聽，功耗最高但延遲最低
+
+
+自適應資料速率 (ADR)：
+
+動態調整傳輸參數
+平衡功耗、距離和資料速率
+網路容量最佳化
+
+
+安全機制：
+
+AES-128 加密：應用層和網路層雙重加密
+設備認證：DevEUI、AppEUI、AppKey
+會話金鑰：動態生成網路和應用會話金鑰
+
+
+應用場景：
+
+智慧城市感測器網路
+農業物聯網
+資產追蹤
+智慧電表
+
+
+
+NB-IoT (Narrowband Internet of Things)
+
+技術特性：
+
+3GPP 標準：Release 13 引入，基於 LTE 技術
+窄頻設計：僅需 180kHz 頻寬
+深度覆蓋：比 LTE 增強 20dB，室內穿透力強
+
+
+部署模式：
+
+In-band：LTE 頻段內部署
+Guard-band：LTE 保護頻段部署
+Standalone：獨立頻段部署（如 GSM 重整頻段）
+
+
+技術優勢：
+
+超低功耗：電池壽命可達 10 年
+大規模連接：單基站支援 5 萬個設備
+低成本：模組成本 &lt; $5
+深度覆蓋：地下室、管道等環境
+
+
+協定堆疊：
+
+實體層：OFDMA (下行)、SC-FDMA (上行)
+MAC 層：簡化的 LTE MAC
+RRC 層：輕量化的無線資源控制
+應用層：CoAP、LwM2M、MQTT
+
+
+電源管理：
+
+PSM (Power Saving Mode)：深度睡眠模式
+eDRX (Extended DRX)：延長不連續接收週期
+早期資料傳輸：減少信令開銷
+
+
+實際應用：
+
+智慧電表、水表
+煙霧偵測器
+土壤濕度監測
+停車場管理
+垃圾桶滿載偵測
+
+
+
+Zigbee
+
+技術基礎：
+
+IEEE 802.15.4：實體層和 MAC 層標準
+2.4GHz 全球頻段：16 個通道，支援跳頻
+網狀網路拓撲：自組織、自修復網路
+
+
+Zigbee 3.0 統一標準：
+
+整合所有應用設定檔
+統一認證和加密機制
+跨廠商互通性
+
+
+網路角色：
+
+協調器 (Coordinator)：網路管理者，唯一
+路由器 (Router)：訊息轉發和網路擴展
+終端設備 (End Device)：僅通信，不轉發
+
+
+應用設定檔 (Application Profiles)：
+
+ZHA (Zigbee Home Automation)：家庭自動化
+ZLL (Zigbee Light Link)：智慧照明
+ZCL (Zigbee Cluster Library)：標準化設備類型
+
+
+安全機制：
+
+AES-128 加密：鏈路層和網路層
+信任中心：金鑰管理和設備認證
+安裝碼：設備加入網路的安全機制
+
+
+Green Power：
+
+超低功耗設備支援
+能量收集設備（太陽能、動能）
+免電池開關和感測器
+
+
+實際應用：
+
+智慧家居控制系統
+智慧照明網路
+工業自動化
+建築能源管理
+
+
+
+Thread
+深入學習筆記：" />
+	<meta property="og:image" content="https://hqasco.deta.dev/img?url=https://www.peihe07.uno/notes/2025-04-04-%E7%89%A9%E8%81%AF%E7%B6%B2%E5%B0%88%E7%94%A8%E5%8D%94%E5%AE%9A/"/>
+	<meta property="twitter:image" content="https://hqasco.deta.dev/img?url=https://www.peihe07.uno/notes/2025-04-04-%E7%89%A9%E8%81%AF%E7%B6%B2%E5%B0%88%E7%94%A8%E5%8D%94%E5%AE%9A/"/>
+	<meta property="twitter:card" content="summary_large_image"/>
+	<meta property="og:url" content="https://www.peihe07.uno/notes/2025-04-04-%E7%89%A9%E8%81%AF%E7%B6%B2%E5%B0%88%E7%94%A8%E5%8D%94%E5%AE%9A/">
+  <meta property="og:site_name" content="Peihe&#39;s blog">
+  <meta property="og:title" content="物聯網專用協定">
+  <meta property="og:description" content="CoAP (Constrained Application Protocol) 設計目標： 專為資源受限設備設計（記憶體 &lt; 10KB，Flash &lt; 100KB） Web 友善的 IoT 協定，類似 HTTP 但更輕量 支援 UDP 和低功耗網路環境 協定特性： 基於 UDP：減少連接開銷，適合間歇性通信 預設端口：5683 (非加密)、5684 (DTLS 加密) RESTful 設計：支援 GET、POST、PUT、DELETE 方法 二進制編碼：比 HTTP 文本格式更高效 訊息類型： Confirmable (CON)：需要確認的可靠傳輸 Non-confirmable (NON)：不需確認的非可靠傳輸 Acknowledgement (ACK)：確認訊息 Reset (RST)：拒絕訊息 觀察機制 (Observe)： 類似 HTTP 長輪詢，但更高效 客戶端訂閱資源變化 伺服器主動推送更新 區塊傳輸 (Block Transfer)： 將大型訊息分割為小塊 適應 UDP 封包大小限制 支援流式傳輸 安全機制： DTLS (Datagram TLS)：UDP 上的 TLS PSK (Pre-Shared Key)：預共享金鑰 證書認證：X.509 證書 實際應用： 智慧感測器網路 低功耗監控系統 智慧農業、環境監測 與 HTTP 代理整合 LoRaWAN (Long Range Wide Area Network) 技術基礎： LoRa 調變：展頻調變技術，抗干擾能力強 免執照頻段：Sub-GHz ISM 頻段（868MHz 歐洲、915MHz 美國、433MHz 亞洲） 長距離傳輸：城市 2-5km，郊區 15km，視線可達 50km 網路架構： 終端設備 (End Device)：感測器、執行器 閘道 (Gateway)：LoRa 到 IP 網路的橋接 網路伺服器 (Network Server)：管理網路和設備 應用伺服器 (Application Server)：處理業務邏輯 設備分類： Class A：最省電，僅在傳輸後開啟接收窗口 Class B：定期開啟接收窗口，支援下行排程 Class C：持續監聽，功耗最高但延遲最低 自適應資料速率 (ADR)： 動態調整傳輸參數 平衡功耗、距離和資料速率 網路容量最佳化 安全機制： AES-128 加密：應用層和網路層雙重加密 設備認證：DevEUI、AppEUI、AppKey 會話金鑰：動態生成網路和應用會話金鑰 應用場景： 智慧城市感測器網路 農業物聯網 資產追蹤 智慧電表 NB-IoT (Narrowband Internet of Things) 技術特性： 3GPP 標準：Release 13 引入，基於 LTE 技術 窄頻設計：僅需 180kHz 頻寬 深度覆蓋：比 LTE 增強 20dB，室內穿透力強 部署模式： In-band：LTE 頻段內部署 Guard-band：LTE 保護頻段部署 Standalone：獨立頻段部署（如 GSM 重整頻段） 技術優勢： 超低功耗：電池壽命可達 10 年 大規模連接：單基站支援 5 萬個設備 低成本：模組成本 &lt; $5 深度覆蓋：地下室、管道等環境 協定堆疊： 實體層：OFDMA (下行)、SC-FDMA (上行) MAC 層：簡化的 LTE MAC RRC 層：輕量化的無線資源控制 應用層：CoAP、LwM2M、MQTT 電源管理： PSM (Power Saving Mode)：深度睡眠模式 eDRX (Extended DRX)：延長不連續接收週期 早期資料傳輸：減少信令開銷 實際應用： 智慧電表、水表 煙霧偵測器 土壤濕度監測 停車場管理 垃圾桶滿載偵測 Zigbee 技術基礎： IEEE 802.15.4：實體層和 MAC 層標準 2.4GHz 全球頻段：16 個通道，支援跳頻 網狀網路拓撲：自組織、自修復網路 Zigbee 3.0 統一標準： 整合所有應用設定檔 統一認證和加密機制 跨廠商互通性 網路角色： 協調器 (Coordinator)：網路管理者，唯一 路由器 (Router)：訊息轉發和網路擴展 終端設備 (End Device)：僅通信，不轉發 應用設定檔 (Application Profiles)： ZHA (Zigbee Home Automation)：家庭自動化 ZLL (Zigbee Light Link)：智慧照明 ZCL (Zigbee Cluster Library)：標準化設備類型 安全機制： AES-128 加密：鏈路層和網路層 信任中心：金鑰管理和設備認證 安裝碼：設備加入網路的安全機制 Green Power： 超低功耗設備支援 能量收集設備（太陽能、動能） 免電池開關和感測器 實際應用： 智慧家居控制系統 智慧照明網路 工業自動化 建築能源管理 Thread 深入學習筆記：">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="notes">
+    <meta property="article:published_time" content="2025-04-04T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-04-04T00:00:00+00:00">
+    <meta property="article:tag" content="Protocol">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="物聯網專用協定">
+  <meta name="twitter:description" content="CoAP (Constrained Application Protocol) 設計目標： 專為資源受限設備設計（記憶體 &lt; 10KB，Flash &lt; 100KB） Web 友善的 IoT 協定，類似 HTTP 但更輕量 支援 UDP 和低功耗網路環境 協定特性： 基於 UDP：減少連接開銷，適合間歇性通信 預設端口：5683 (非加密)、5684 (DTLS 加密) RESTful 設計：支援 GET、POST、PUT、DELETE 方法 二進制編碼：比 HTTP 文本格式更高效 訊息類型： Confirmable (CON)：需要確認的可靠傳輸 Non-confirmable (NON)：不需確認的非可靠傳輸 Acknowledgement (ACK)：確認訊息 Reset (RST)：拒絕訊息 觀察機制 (Observe)： 類似 HTTP 長輪詢，但更高效 客戶端訂閱資源變化 伺服器主動推送更新 區塊傳輸 (Block Transfer)： 將大型訊息分割為小塊 適應 UDP 封包大小限制 支援流式傳輸 安全機制： DTLS (Datagram TLS)：UDP 上的 TLS PSK (Pre-Shared Key)：預共享金鑰 證書認證：X.509 證書 實際應用： 智慧感測器網路 低功耗監控系統 智慧農業、環境監測 與 HTTP 代理整合 LoRaWAN (Long Range Wide Area Network) 技術基礎： LoRa 調變：展頻調變技術，抗干擾能力強 免執照頻段：Sub-GHz ISM 頻段（868MHz 歐洲、915MHz 美國、433MHz 亞洲） 長距離傳輸：城市 2-5km，郊區 15km，視線可達 50km 網路架構： 終端設備 (End Device)：感測器、執行器 閘道 (Gateway)：LoRa 到 IP 網路的橋接 網路伺服器 (Network Server)：管理網路和設備 應用伺服器 (Application Server)：處理業務邏輯 設備分類： Class A：最省電，僅在傳輸後開啟接收窗口 Class B：定期開啟接收窗口，支援下行排程 Class C：持續監聽，功耗最高但延遲最低 自適應資料速率 (ADR)： 動態調整傳輸參數 平衡功耗、距離和資料速率 網路容量最佳化 安全機制： AES-128 加密：應用層和網路層雙重加密 設備認證：DevEUI、AppEUI、AppKey 會話金鑰：動態生成網路和應用會話金鑰 應用場景： 智慧城市感測器網路 農業物聯網 資產追蹤 智慧電表 NB-IoT (Narrowband Internet of Things) 技術特性： 3GPP 標準：Release 13 引入，基於 LTE 技術 窄頻設計：僅需 180kHz 頻寬 深度覆蓋：比 LTE 增強 20dB，室內穿透力強 部署模式： In-band：LTE 頻段內部署 Guard-band：LTE 保護頻段部署 Standalone：獨立頻段部署（如 GSM 重整頻段） 技術優勢： 超低功耗：電池壽命可達 10 年 大規模連接：單基站支援 5 萬個設備 低成本：模組成本 &lt; $5 深度覆蓋：地下室、管道等環境 協定堆疊： 實體層：OFDMA (下行)、SC-FDMA (上行) MAC 層：簡化的 LTE MAC RRC 層：輕量化的無線資源控制 應用層：CoAP、LwM2M、MQTT 電源管理： PSM (Power Saving Mode)：深度睡眠模式 eDRX (Extended DRX)：延長不連續接收週期 早期資料傳輸：減少信令開銷 實際應用： 智慧電表、水表 煙霧偵測器 土壤濕度監測 停車場管理 垃圾桶滿載偵測 Zigbee 技術基礎： IEEE 802.15.4：實體層和 MAC 層標準 2.4GHz 全球頻段：16 個通道，支援跳頻 網狀網路拓撲：自組織、自修復網路 Zigbee 3.0 統一標準： 整合所有應用設定檔 統一認證和加密機制 跨廠商互通性 網路角色： 協調器 (Coordinator)：網路管理者，唯一 路由器 (Router)：訊息轉發和網路擴展 終端設備 (End Device)：僅通信，不轉發 應用設定檔 (Application Profiles)： ZHA (Zigbee Home Automation)：家庭自動化 ZLL (Zigbee Light Link)：智慧照明 ZCL (Zigbee Cluster Library)：標準化設備類型 安全機制： AES-128 加密：鏈路層和網路層 信任中心：金鑰管理和設備認證 安裝碼：設備加入網路的安全機制 Green Power： 超低功耗設備支援 能量收集設備（太陽能、動能） 免電池開關和感測器 實際應用： 智慧家居控制系統 智慧照明網路 工業自動化 建築能源管理 Thread 深入學習筆記：">
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/projects.css" />
+	
+	
+		
+		<link rel="stylesheet" type="text/css" href="/css/light.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/font.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/syntax.css">
+		
+	<script src="//instant.page/5.1.0" type="module" integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-title">
+      <a href="https://www.peihe07.uno/">Peihe&#39;s blog</a>
+    </div>
+    <nav class="main-menu">
+      
+        <a href="/">Home</a>
+      
+        <a href="/writings">Writings</a>
+      
+        <a href="/projects">Projects</a>
+      
+        <a href="/notes">Notes</a>
+      
+        <a href="/about">About</a>
+      
+    </nav>
+  </header><body>
+        <div class="content">
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">物聯網專用協定</h1>
+          <div class="meta">Posted on Apr 4, 2025</div>
+        </div>
+        
+        <section class="body">
+          <h1 id="coap-constrained-application-protocol">CoAP (Constrained Application Protocol)</h1>
+<ul>
+<li><strong>設計目標</strong>：
+<ul>
+<li>專為資源受限設備設計（記憶體 &lt; 10KB，Flash &lt; 100KB）</li>
+<li>Web 友善的 IoT 協定，類似 HTTP 但更輕量</li>
+<li>支援 UDP 和低功耗網路環境</li>
+</ul>
+</li>
+<li><strong>協定特性</strong>：
+<ul>
+<li><strong>基於 UDP</strong>：減少連接開銷，適合間歇性通信</li>
+<li><strong>預設端口</strong>：5683 (非加密)、5684 (DTLS 加密)</li>
+<li><strong>RESTful 設計</strong>：支援 GET、POST、PUT、DELETE 方法</li>
+<li><strong>二進制編碼</strong>：比 HTTP 文本格式更高效</li>
+</ul>
+</li>
+<li><strong>訊息類型</strong>：
+<ul>
+<li><strong>Confirmable (CON)</strong>：需要確認的可靠傳輸</li>
+<li><strong>Non-confirmable (NON)</strong>：不需確認的非可靠傳輸</li>
+<li><strong>Acknowledgement (ACK)</strong>：確認訊息</li>
+<li><strong>Reset (RST)</strong>：拒絕訊息</li>
+</ul>
+</li>
+<li><strong>觀察機制 (Observe)</strong>：
+<ul>
+<li>類似 HTTP 長輪詢，但更高效</li>
+<li>客戶端訂閱資源變化</li>
+<li>伺服器主動推送更新</li>
+</ul>
+</li>
+<li><strong>區塊傳輸 (Block Transfer)</strong>：
+<ul>
+<li>將大型訊息分割為小塊</li>
+<li>適應 UDP 封包大小限制</li>
+<li>支援流式傳輸</li>
+</ul>
+</li>
+<li><strong>安全機制</strong>：
+<ul>
+<li><strong>DTLS (Datagram TLS)</strong>：UDP 上的 TLS</li>
+<li><strong>PSK (Pre-Shared Key)</strong>：預共享金鑰</li>
+<li><strong>證書認證</strong>：X.509 證書</li>
+</ul>
+</li>
+<li><strong>實際應用</strong>：
+<ul>
+<li>智慧感測器網路</li>
+<li>低功耗監控系統</li>
+<li>智慧農業、環境監測</li>
+<li>與 HTTP 代理整合</li>
+</ul>
+</li>
+</ul>
+<h1 id="lorawan-long-range-wide-area-network">LoRaWAN (Long Range Wide Area Network)</h1>
+<ul>
+<li><strong>技術基礎</strong>：
+<ul>
+<li><strong>LoRa 調變</strong>：展頻調變技術，抗干擾能力強</li>
+<li><strong>免執照頻段</strong>：Sub-GHz ISM 頻段（868MHz 歐洲、915MHz 美國、433MHz 亞洲）</li>
+<li><strong>長距離傳輸</strong>：城市 2-5km，郊區 15km，視線可達 50km</li>
+</ul>
+</li>
+<li><strong>網路架構</strong>：
+<ul>
+<li><strong>終端設備 (End Device)</strong>：感測器、執行器</li>
+<li><strong>閘道 (Gateway)</strong>：LoRa 到 IP 網路的橋接</li>
+<li><strong>網路伺服器 (Network Server)</strong>：管理網路和設備</li>
+<li><strong>應用伺服器 (Application Server)</strong>：處理業務邏輯</li>
+</ul>
+</li>
+<li><strong>設備分類</strong>：
+<ul>
+<li><strong>Class A</strong>：最省電，僅在傳輸後開啟接收窗口</li>
+<li><strong>Class B</strong>：定期開啟接收窗口，支援下行排程</li>
+<li><strong>Class C</strong>：持續監聽，功耗最高但延遲最低</li>
+</ul>
+</li>
+<li><strong>自適應資料速率 (ADR)</strong>：
+<ul>
+<li>動態調整傳輸參數</li>
+<li>平衡功耗、距離和資料速率</li>
+<li>網路容量最佳化</li>
+</ul>
+</li>
+<li><strong>安全機制</strong>：
+<ul>
+<li><strong>AES-128 加密</strong>：應用層和網路層雙重加密</li>
+<li><strong>設備認證</strong>：DevEUI、AppEUI、AppKey</li>
+<li><strong>會話金鑰</strong>：動態生成網路和應用會話金鑰</li>
+</ul>
+</li>
+<li><strong>應用場景</strong>：
+<ul>
+<li>智慧城市感測器網路</li>
+<li>農業物聯網</li>
+<li>資產追蹤</li>
+<li>智慧電表</li>
+</ul>
+</li>
+</ul>
+<h1 id="nb-iot-narrowband-internet-of-things">NB-IoT (Narrowband Internet of Things)</h1>
+<ul>
+<li><strong>技術特性</strong>：
+<ul>
+<li><strong>3GPP 標準</strong>：Release 13 引入，基於 LTE 技術</li>
+<li><strong>窄頻設計</strong>：僅需 180kHz 頻寬</li>
+<li><strong>深度覆蓋</strong>：比 LTE 增強 20dB，室內穿透力強</li>
+</ul>
+</li>
+<li><strong>部署模式</strong>：
+<ul>
+<li><strong>In-band</strong>：LTE 頻段內部署</li>
+<li><strong>Guard-band</strong>：LTE 保護頻段部署</li>
+<li><strong>Standalone</strong>：獨立頻段部署（如 GSM 重整頻段）</li>
+</ul>
+</li>
+<li><strong>技術優勢</strong>：
+<ul>
+<li><strong>超低功耗</strong>：電池壽命可達 10 年</li>
+<li><strong>大規模連接</strong>：單基站支援 5 萬個設備</li>
+<li><strong>低成本</strong>：模組成本 &lt; $5</li>
+<li><strong>深度覆蓋</strong>：地下室、管道等環境</li>
+</ul>
+</li>
+<li><strong>協定堆疊</strong>：
+<ul>
+<li><strong>實體層</strong>：OFDMA (下行)、SC-FDMA (上行)</li>
+<li><strong>MAC 層</strong>：簡化的 LTE MAC</li>
+<li><strong>RRC 層</strong>：輕量化的無線資源控制</li>
+<li><strong>應用層</strong>：CoAP、LwM2M、MQTT</li>
+</ul>
+</li>
+<li><strong>電源管理</strong>：
+<ul>
+<li><strong>PSM (Power Saving Mode)</strong>：深度睡眠模式</li>
+<li><strong>eDRX (Extended DRX)</strong>：延長不連續接收週期</li>
+<li><strong>早期資料傳輸</strong>：減少信令開銷</li>
+</ul>
+</li>
+<li><strong>實際應用</strong>：
+<ul>
+<li>智慧電表、水表</li>
+<li>煙霧偵測器</li>
+<li>土壤濕度監測</li>
+<li>停車場管理</li>
+<li>垃圾桶滿載偵測</li>
+</ul>
+</li>
+</ul>
+<h1 id="zigbee">Zigbee</h1>
+<ul>
+<li><strong>技術基礎</strong>：
+<ul>
+<li><strong>IEEE 802.15.4</strong>：實體層和 MAC 層標準</li>
+<li><strong>2.4GHz 全球頻段</strong>：16 個通道，支援跳頻</li>
+<li><strong>網狀網路拓撲</strong>：自組織、自修復網路</li>
+</ul>
+</li>
+<li><strong>Zigbee 3.0 統一標準</strong>：
+<ul>
+<li>整合所有應用設定檔</li>
+<li>統一認證和加密機制</li>
+<li>跨廠商互通性</li>
+</ul>
+</li>
+<li><strong>網路角色</strong>：
+<ul>
+<li><strong>協調器 (Coordinator)</strong>：網路管理者，唯一</li>
+<li><strong>路由器 (Router)</strong>：訊息轉發和網路擴展</li>
+<li><strong>終端設備 (End Device)</strong>：僅通信，不轉發</li>
+</ul>
+</li>
+<li><strong>應用設定檔 (Application Profiles)</strong>：
+<ul>
+<li><strong>ZHA (Zigbee Home Automation)</strong>：家庭自動化</li>
+<li><strong>ZLL (Zigbee Light Link)</strong>：智慧照明</li>
+<li><strong>ZCL (Zigbee Cluster Library)</strong>：標準化設備類型</li>
+</ul>
+</li>
+<li><strong>安全機制</strong>：
+<ul>
+<li><strong>AES-128 加密</strong>：鏈路層和網路層</li>
+<li><strong>信任中心</strong>：金鑰管理和設備認證</li>
+<li><strong>安裝碼</strong>：設備加入網路的安全機制</li>
+</ul>
+</li>
+<li><strong>Green Power</strong>：
+<ul>
+<li>超低功耗設備支援</li>
+<li>能量收集設備（太陽能、動能）</li>
+<li>免電池開關和感測器</li>
+</ul>
+</li>
+<li><strong>實際應用</strong>：
+<ul>
+<li>智慧家居控制系統</li>
+<li>智慧照明網路</li>
+<li>工業自動化</li>
+<li>建築能源管理</li>
+</ul>
+</li>
+</ul>
+<h1 id="thread">Thread</h1>
+<p><strong>深入學習筆記：</strong></p>
+<ul>
+<li><strong>設計理念</strong>：
+<ul>
+<li><strong>IPv6 原生支援</strong>：每個設備都有全球唯一 IP</li>
+<li><strong>網狀網路</strong>：基於 IEEE 802.15.4</li>
+<li><strong>互聯網等級安全</strong>：企業級安全機制</li>
+</ul>
+</li>
+<li><strong>網路架構</strong>：
+<ul>
+<li><strong>Thread 網路</strong>：本地網狀網路</li>
+<li><strong>邊界路由器</strong>：連接到更廣泛的 IP 網路</li>
+<li><strong>Thread 設備</strong>：直接參與網狀網路</li>
+</ul>
+</li>
+<li><strong>設備角色</strong>：
+<ul>
+<li><strong>Leader</strong>：管理網路配置和路由</li>
+<li><strong>Router</strong>：轉發訊息和擴展網路</li>
+<li><strong>Router Eligible End Device (REED)</strong>：可升級為路由器的終端設備</li>
+<li><strong>Sleepy End Device (SED)</strong>：低功耗睡眠設備</li>
+</ul>
+</li>
+<li><strong>網路形成和管理</strong>：
+<ul>
+<li><strong>自動網路形成</strong>：無需手動配置</li>
+<li><strong>自修復能力</strong>：設備離開時自動重建路由</li>
+<li><strong>分區恢復</strong>：網路分割後自動合併</li>
+</ul>
+</li>
+<li><strong>安全特性</strong>：
+<ul>
+<li><strong>AES-128 加密</strong>：所有通信加密</li>
+<li><strong>企業級認證</strong>：基於 IEEE 802.1X</li>
+<li><strong>安全委託</strong>：安全的設備加入機制</li>
+</ul>
+</li>
+<li><strong>IPv6 整合</strong>：
+<ul>
+<li><strong>6LoWPAN</strong>：IPv6 over Low-Power Wireless</li>
+<li><strong>全球 IPv6 位址</strong>：直接網際網路連接</li>
+<li><strong>標準 IP 協定</strong>：UDP、TCP、CoAP、HTTP</li>
+</ul>
+</li>
+<li><strong>實際應用</strong>：
+<ul>
+<li>智慧家居生態系統</li>
+<li>與 Matter 協定整合</li>
+<li>商業建築自動化</li>
+<li>工業 IoT 應用</li>
+</ul>
+</li>
+</ul>
+<h2 id="matter-前身為-project-chip">Matter (前身為 Project CHIP)</h2>
+<ul>
+<li>
+<p><strong>標準化聯盟</strong>：</p>
+<ul>
+<li><strong>CSA (Connectivity Standards Alliance)</strong>：主導組織</li>
+<li><strong>主要成員</strong>：Apple、Google、Amazon、Samsung、等</li>
+<li><strong>開源實作</strong>：GitHub 上的參考實作</li>
+</ul>
+</li>
+<li>
+<p><strong>互通性目標</strong>：</p>
+<ul>
+<li><strong>跨平台支援</strong>：iOS、Android、Alexa、Google Assistant</li>
+<li><strong>跨廠商相容</strong>：不同品牌設備互通</li>
+<li><strong>本地控制</strong>：不依賴雲端服務</li>
+</ul>
+</li>
+<li>
+<p><strong>技術架構</strong>：</p>
+<ul>
+<li><strong>應用層協定</strong>：統一的設備控制語言</li>
+<li><strong>多傳輸支援</strong>：WiFi、Thread、Bluetooth</li>
+<li><strong>IPv6 基礎</strong>：所有通信基於 IP 協定</li>
+</ul>
+</li>
+<li>
+<p><strong>設備類型支援</strong>：</p>
+<ul>
+<li><strong>照明</strong>：智慧燈泡、開關、調光器</li>
+<li><strong>HVAC</strong>：溫度控制、空調系統</li>
+<li><strong>安全</strong>：門鎖、感測器、攝影機</li>
+<li><strong>媒體</strong>：電視、音響、串流設備</li>
+</ul>
+</li>
+<li>
+<p><strong>網路架構</strong>：</p>
+<ul>
+<li><strong>Matter 網路</strong>：本地 IP 網路</li>
+<li><strong>邊界路由器</strong>：Thread 到 WiFi 橋接</li>
+<li><strong>Matter Hub</strong>：集中控制和管理</li>
+</ul>
+</li>
+<li>
+<p><strong>安全機制</strong>：</p>
+<ul>
+<li><strong>端到端加密</strong>：設備間直接加密</li>
+<li><strong>認證機制</strong>：設備身份驗證</li>
+<li><strong>安全委託</strong>：設備安全加入網路</li>
+</ul>
+</li>
+<li>
+<p><strong>委託流程 (Commissioning)</strong>：</p>
+<ul>
+<li><strong>QR 碼掃描</strong>：簡化設備加入</li>
+<li><strong>設備發現</strong>：自動發現附近設備</li>
+<li><strong>網路配置</strong>：自動連接到家庭網路</li>
+</ul>
+<h1 id="物聯網協定選擇矩陣">物聯網協定選擇矩陣</h1>
+</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>協定</th>
+          <th>功耗</th>
+          <th>距離</th>
+          <th>頻寬</th>
+          <th>成本</th>
+          <th>適用場景</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>CoAP</td>
+          <td>低</td>
+          <td>短</td>
+          <td>低</td>
+          <td>低</td>
+          <td>智慧感測器</td>
+      </tr>
+      <tr>
+          <td>LoRaWAN</td>
+          <td>極低</td>
+          <td>長</td>
+          <td>極低</td>
+          <td>中</td>
+          <td>廣域感測網路</td>
+      </tr>
+      <tr>
+          <td>NB-IoT</td>
+          <td>低</td>
+          <td>長</td>
+          <td>低</td>
+          <td>中</td>
+          <td>智慧電表</td>
+      </tr>
+      <tr>
+          <td>Zigbee</td>
+          <td>低</td>
+          <td>中</td>
+          <td>中</td>
+          <td>低</td>
+          <td>智慧家居</td>
+      </tr>
+      <tr>
+          <td>Thread</td>
+          <td>低</td>
+          <td>中</td>
+          <td>中</td>
+          <td>中</td>
+          <td>新一代智慧家居</td>
+      </tr>
+      <tr>
+          <td>Matter</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>-</td>
+          <td>跨平台智慧家居</td>
+      </tr>
+  </tbody>
+</table>
+
+        </section>
+        <div class="post-tags">
+          
+          
+          <nav class="nav tags">
+            <ul class="tags">
+              
+              <li><a href="/tags/protocol">protocol</a></li>
+              
+            </ul>
+          </nav>
+          
+          
+        </div>
+      </div>
+
+      
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div class="footer_nav">
+    
+  </div>
+
+  
+  
+    
+      <a class="soc" href="https://github.com/peihe07" title="github">
+        <i data-feather="github"></i>
+      </a> | 
+    
+      <a class="soc" href="mailto:y450376@gmail.com" title="email">
+        <i data-feather="mail"></i>
+      </a> | 
+    
+      <a class="soc" href="https://medium.com/@peihe07" title="medium">
+        <i data-feather="book-open"></i>
+      </a>
+    
+  
+
+  ⚡️ 2025
+   Peihe | 
+  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+  <script>
+    feather.replace();
+  </script>
+</div>
+    </body>
+</html>

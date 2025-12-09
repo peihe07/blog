@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>多媒體傳輸協定 - Peihe&#39;s blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="RTP (Real-time Transport Protocol)
+深入學習筆記：
+
+協定定位：
+
+應用層協定：運行在 UDP 之上
+即時傳輸：專為音視頻設計
+配對協定：通常與 RTCP 一起使用
+
+
+主要功能：
+
+實時傳輸音頻和視頻資料
+提供時間戳和序列號
+支持多種媒體格式和編碼器
+處理網路抖動和封包亂序
+
+
+協議結構：
+
+RTP 標頭：12 字節固定頭部 &#43; 可選擴展
+有效載荷（Payload）：實際的媒體數據
+
+
+關鍵標頭字段：
+
+版本號（V）：RTP 版本，通常為 2
+填充位（P）：指示是否有填充字節
+有效載荷類型（PT）：標識媒體編碼格式
+序列號（Sequence Number）：檢測丟包和重排序
+時間戳（Timestamp）：媒體同步和抖動計算
+SSRC：同步源標識符，唯一識別資料流
+
+
+RTCP (RTP Control Protocol)：
+
+功能：提供傳輸統計和控制信息
+QoS 回饋：報告封包遺失、延遲、抖動
+媒體同步：多媒體串流間的同步
+參與者資訊：會話參與者的描述資訊
+
+
+RTCP 封包類型：
+
+SR (Sender Report)：發送者統計和時間同步
+RR (Receiver Report)：接收者統計和 QoS 回饋
+SDES (Source Description)：源描述信息
+BYE：離開會話通知
+APP：應用特定功能擴展
+
+
+有效載荷格式：
+
+音頻：G.711、G.722、Opus、AAC
+視頻：H.264、H.265、VP8、VP9
+動態有效載荷：通過 SDP 協商
+
+
+擴展協議和相關技術：
+
+SRTP (Secure RTP)：加密版本，提供機密性和認證
+RTSP (Real Time Streaming Protocol)：控制串流媒體會話
+RTMP (Real-Time Messaging Protocol)：Adobe Flash 串流協定
+WebRTC：瀏覽器端即時通信，使用 RTP
+
+
+QoS 和網路適應：
+
+抖動緩衝：平滑播放延遲變化
+錯誤恢復：FEC (Forward Error Correction)
+適應性串流：根據網路狀況調整品質
+
+
+應用場景：
+
+VoIP 通話：Skype、WhatsApp 語音通話
+視頻會議：Zoom、Teams、Google Meet
+直播串流：YouTube Live、Twitch
+IPTV：數位電視服務
+
+
+" />
+	<meta property="og:image" content="https://hqasco.deta.dev/img?url=https://www.peihe07.uno/notes/2025-04-03-transport/"/>
+	<meta property="twitter:image" content="https://hqasco.deta.dev/img?url=https://www.peihe07.uno/notes/2025-04-03-transport/"/>
+	<meta property="twitter:card" content="summary_large_image"/>
+	<meta property="og:url" content="https://www.peihe07.uno/notes/2025-04-03-transport/">
+  <meta property="og:site_name" content="Peihe&#39;s blog">
+  <meta property="og:title" content="多媒體傳輸協定">
+  <meta property="og:description" content="RTP (Real-time Transport Protocol) 深入學習筆記：
+協定定位： 應用層協定：運行在 UDP 之上 即時傳輸：專為音視頻設計 配對協定：通常與 RTCP 一起使用 主要功能： 實時傳輸音頻和視頻資料 提供時間戳和序列號 支持多種媒體格式和編碼器 處理網路抖動和封包亂序 協議結構： RTP 標頭：12 字節固定頭部 &#43; 可選擴展 有效載荷（Payload）：實際的媒體數據 關鍵標頭字段： 版本號（V）：RTP 版本，通常為 2 填充位（P）：指示是否有填充字節 有效載荷類型（PT）：標識媒體編碼格式 序列號（Sequence Number）：檢測丟包和重排序 時間戳（Timestamp）：媒體同步和抖動計算 SSRC：同步源標識符，唯一識別資料流 RTCP (RTP Control Protocol)： 功能：提供傳輸統計和控制信息 QoS 回饋：報告封包遺失、延遲、抖動 媒體同步：多媒體串流間的同步 參與者資訊：會話參與者的描述資訊 RTCP 封包類型： SR (Sender Report)：發送者統計和時間同步 RR (Receiver Report)：接收者統計和 QoS 回饋 SDES (Source Description)：源描述信息 BYE：離開會話通知 APP：應用特定功能擴展 有效載荷格式： 音頻：G.711、G.722、Opus、AAC 視頻：H.264、H.265、VP8、VP9 動態有效載荷：通過 SDP 協商 擴展協議和相關技術： SRTP (Secure RTP)：加密版本，提供機密性和認證 RTSP (Real Time Streaming Protocol)：控制串流媒體會話 RTMP (Real-Time Messaging Protocol)：Adobe Flash 串流協定 WebRTC：瀏覽器端即時通信，使用 RTP QoS 和網路適應： 抖動緩衝：平滑播放延遲變化 錯誤恢復：FEC (Forward Error Correction) 適應性串流：根據網路狀況調整品質 應用場景： VoIP 通話：Skype、WhatsApp 語音通話 視頻會議：Zoom、Teams、Google Meet 直播串流：YouTube Live、Twitch IPTV：數位電視服務">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="notes">
+    <meta property="article:published_time" content="2025-04-03T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-04-03T00:00:00+00:00">
+    <meta property="article:tag" content="Protocol">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="多媒體傳輸協定">
+  <meta name="twitter:description" content="RTP (Real-time Transport Protocol) 深入學習筆記：
+協定定位： 應用層協定：運行在 UDP 之上 即時傳輸：專為音視頻設計 配對協定：通常與 RTCP 一起使用 主要功能： 實時傳輸音頻和視頻資料 提供時間戳和序列號 支持多種媒體格式和編碼器 處理網路抖動和封包亂序 協議結構： RTP 標頭：12 字節固定頭部 &#43; 可選擴展 有效載荷（Payload）：實際的媒體數據 關鍵標頭字段： 版本號（V）：RTP 版本，通常為 2 填充位（P）：指示是否有填充字節 有效載荷類型（PT）：標識媒體編碼格式 序列號（Sequence Number）：檢測丟包和重排序 時間戳（Timestamp）：媒體同步和抖動計算 SSRC：同步源標識符，唯一識別資料流 RTCP (RTP Control Protocol)： 功能：提供傳輸統計和控制信息 QoS 回饋：報告封包遺失、延遲、抖動 媒體同步：多媒體串流間的同步 參與者資訊：會話參與者的描述資訊 RTCP 封包類型： SR (Sender Report)：發送者統計和時間同步 RR (Receiver Report)：接收者統計和 QoS 回饋 SDES (Source Description)：源描述信息 BYE：離開會話通知 APP：應用特定功能擴展 有效載荷格式： 音頻：G.711、G.722、Opus、AAC 視頻：H.264、H.265、VP8、VP9 動態有效載荷：通過 SDP 協商 擴展協議和相關技術： SRTP (Secure RTP)：加密版本，提供機密性和認證 RTSP (Real Time Streaming Protocol)：控制串流媒體會話 RTMP (Real-Time Messaging Protocol)：Adobe Flash 串流協定 WebRTC：瀏覽器端即時通信，使用 RTP QoS 和網路適應： 抖動緩衝：平滑播放延遲變化 錯誤恢復：FEC (Forward Error Correction) 適應性串流：根據網路狀況調整品質 應用場景： VoIP 通話：Skype、WhatsApp 語音通話 視頻會議：Zoom、Teams、Google Meet 直播串流：YouTube Live、Twitch IPTV：數位電視服務">
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/projects.css" />
+	
+	
+		
+		<link rel="stylesheet" type="text/css" href="/css/light.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/font.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/syntax.css">
+		
+	<script src="//instant.page/5.1.0" type="module" integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-title">
+      <a href="https://www.peihe07.uno/">Peihe&#39;s blog</a>
+    </div>
+    <nav class="main-menu">
+      
+        <a href="/">Home</a>
+      
+        <a href="/writings">Writings</a>
+      
+        <a href="/projects">Projects</a>
+      
+        <a href="/notes">Notes</a>
+      
+        <a href="/about">About</a>
+      
+    </nav>
+  </header><body>
+        <div class="content">
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">多媒體傳輸協定</h1>
+          <div class="meta">Posted on Apr 3, 2025</div>
+        </div>
+        
+        <section class="body">
+          <h1 id="rtp-real-time-transport-protocol">RTP (Real-time Transport Protocol)</h1>
+<p><strong>深入學習筆記：</strong></p>
+<ul>
+<li><strong>協定定位</strong>：
+<ul>
+<li><strong>應用層協定</strong>：運行在 UDP 之上</li>
+<li><strong>即時傳輸</strong>：專為音視頻設計</li>
+<li><strong>配對協定</strong>：通常與 RTCP 一起使用</li>
+</ul>
+</li>
+<li><strong>主要功能</strong>：
+<ul>
+<li>實時傳輸音頻和視頻資料</li>
+<li>提供時間戳和序列號</li>
+<li>支持多種媒體格式和編碼器</li>
+<li>處理網路抖動和封包亂序</li>
+</ul>
+</li>
+<li><strong>協議結構</strong>：
+<ul>
+<li><strong>RTP 標頭</strong>：12 字節固定頭部 + 可選擴展</li>
+<li><strong>有效載荷（Payload）</strong>：實際的媒體數據</li>
+</ul>
+</li>
+<li><strong>關鍵標頭字段</strong>：
+<ul>
+<li><strong>版本號（V）</strong>：RTP 版本，通常為 2</li>
+<li><strong>填充位（P）</strong>：指示是否有填充字節</li>
+<li><strong>有效載荷類型（PT）</strong>：標識媒體編碼格式</li>
+<li><strong>序列號（Sequence Number）</strong>：檢測丟包和重排序</li>
+<li><strong>時間戳（Timestamp）</strong>：媒體同步和抖動計算</li>
+<li><strong>SSRC</strong>：同步源標識符，唯一識別資料流</li>
+</ul>
+</li>
+<li><strong>RTCP (RTP Control Protocol)</strong>：
+<ul>
+<li><strong>功能</strong>：提供傳輸統計和控制信息</li>
+<li><strong>QoS 回饋</strong>：報告封包遺失、延遲、抖動</li>
+<li><strong>媒體同步</strong>：多媒體串流間的同步</li>
+<li><strong>參與者資訊</strong>：會話參與者的描述資訊</li>
+</ul>
+</li>
+<li><strong>RTCP 封包類型</strong>：
+<ul>
+<li><strong>SR (Sender Report)</strong>：發送者統計和時間同步</li>
+<li><strong>RR (Receiver Report)</strong>：接收者統計和 QoS 回饋</li>
+<li><strong>SDES (Source Description)</strong>：源描述信息</li>
+<li><strong>BYE</strong>：離開會話通知</li>
+<li><strong>APP</strong>：應用特定功能擴展</li>
+</ul>
+</li>
+<li><strong>有效載荷格式</strong>：
+<ul>
+<li><strong>音頻</strong>：G.711、G.722、Opus、AAC</li>
+<li><strong>視頻</strong>：H.264、H.265、VP8、VP9</li>
+<li><strong>動態有效載荷</strong>：通過 SDP 協商</li>
+</ul>
+</li>
+<li><strong>擴展協議和相關技術</strong>：
+<ul>
+<li><strong>SRTP (Secure RTP)</strong>：加密版本，提供機密性和認證</li>
+<li><strong>RTSP (Real Time Streaming Protocol)</strong>：控制串流媒體會話</li>
+<li><strong>RTMP (Real-Time Messaging Protocol)</strong>：Adobe Flash 串流協定</li>
+<li><strong>WebRTC</strong>：瀏覽器端即時通信，使用 RTP</li>
+</ul>
+</li>
+<li><strong>QoS 和網路適應</strong>：
+<ul>
+<li><strong>抖動緩衝</strong>：平滑播放延遲變化</li>
+<li><strong>錯誤恢復</strong>：FEC (Forward Error Correction)</li>
+<li><strong>適應性串流</strong>：根據網路狀況調整品質</li>
+</ul>
+</li>
+<li><strong>應用場景</strong>：
+<ul>
+<li><strong>VoIP 通話</strong>：Skype、WhatsApp 語音通話</li>
+<li><strong>視頻會議</strong>：Zoom、Teams、Google Meet</li>
+<li><strong>直播串流</strong>：YouTube Live、Twitch</li>
+<li><strong>IPTV</strong>：數位電視服務</li>
+</ul>
+</li>
+</ul>
+
+        </section>
+        <div class="post-tags">
+          
+          
+          <nav class="nav tags">
+            <ul class="tags">
+              
+              <li><a href="/tags/protocol">protocol</a></li>
+              
+            </ul>
+          </nav>
+          
+          
+        </div>
+      </div>
+
+      
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div class="footer_nav">
+    
+  </div>
+
+  
+  
+    
+      <a class="soc" href="https://github.com/peihe07" title="github">
+        <i data-feather="github"></i>
+      </a> | 
+    
+      <a class="soc" href="mailto:y450376@gmail.com" title="email">
+        <i data-feather="mail"></i>
+      </a> | 
+    
+      <a class="soc" href="https://medium.com/@peihe07" title="medium">
+        <i data-feather="book-open"></i>
+      </a>
+    
+  
+
+  ⚡️ 2025
+   Peihe | 
+  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+  <script>
+    feather.replace();
+  </script>
+</div>
+    </body>
+</html>

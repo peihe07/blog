@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>訊息傳遞協定 - Peihe&#39;s blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="MQTT (Message Queuing Telemetry Transport)
+
+協定基本特性：
+
+輕量級協定：專為低頻寬、高延遲、不穩定網路設計
+預設端口：1883 (非加密)、8883 (TLS/SSL 加密)
+基於 TCP：確保可靠的訊息傳遞
+二進制協定：高效的網路使用
+
+
+發布/訂閱模式：
+
+透過主題（Topic）進行消息交換
+發布者和訂閱者解耦合
+支援一對多和多對多通信模式
+
+
+主題結構：
+
+層次化結構（如 home/livingroom/temperature）
+使用 / 作為層級分隔符
+支援萬用字元：&#43;（單層）、#（多層）
+
+
+QoS (Quality of Service) 等級：
+
+QoS 0：最多一次（消息可能丟失），Fire and Forget
+QoS 1：至少一次（確保送達，可能重複），需要 PUBACK 確認
+QoS 2：恰好一次（確保一次且僅一次送達），四次握手機制
+
+
+進階功能：
+
+保留消息（Retained Message）：伺服器保存最後一條消息，新訂閱者立即收到
+遺囑消息（Last Will and Testament）：客戶端異常斷開時發送預設消息
+會話持久化（Persistent Session）：客戶端離線時保存訂閱和未送達消息
+Keep Alive：心跳機制保持連接活躍
+
+
+MQTT 5.0 新特性：
+
+消息過期：Message Expiry Interval 設定消息生命週期
+主題別名：Topic Alias 減少頻寬使用
+用戶屬性：User Properties 自定義鍵值對
+共享訂閱：Shared Subscriptions 負載均衡
+原因碼：詳細的錯誤和狀態資訊
+
+
+安全機制：
+
+TLS/SSL 加密：保護資料傳輸
+用戶名/密碼認證：基本身份驗證
+用戶端憑證：雙向 TLS 認證
+存取控制清單：主題層級權限控制
+
+
+實際應用場景：
+
+IoT 設備通信：感測器資料收集
+智慧家居：設備控制和狀態監控
+工業物聯網：製造設備監控
+移動應用：推播通知、即時更新
+
+
+
+AMQP (Advanced Message Queuing Protocol)
+
+協定版本差異：
+
+AMQP 0.9.1：廣泛使用，RabbitMQ 預設版本
+AMQP 1.0：ISO 標準，與 0.9.1 不相容
+
+
+核心組件：
+
+Exchange：接收生產者消息並路由到佇列
+Queue：存儲消息直到被消費
+Binding：連接 Exchange 和 Queue 的規則
+Virtual Host：邏輯分組，提供隔離
+
+
+Exchange 類型：
+
+Direct：精確匹配路由鍵，一對一路由
+Topic：模式匹配路由鍵，支援 * 和 # 萬用字元
+Fanout：廣播到所有綁定佇列，忽略路由鍵
+Headers：基於消息頭部屬性匹配，靈活路由
+
+
+消息確認機制：
+
+自動確認（Auto ACK）：消息送達即確認，可能丟失
+手動確認（Manual ACK）：消費者處理後顯式確認
+拒絕機制：NACK 和 Reject 處理失敗消息
+
+
+可靠性保證：
+
+交易支持：可將多個操作作為一個原子單元
+發布者確認：Publisher Confirms 確保消息到達
+消費者確認：Consumer Acknowledgments 確保處理完成
+
+
+持久化機制：
+
+消息持久化：消息存儲到磁碟
+佇列持久化：佇列定義持久化
+Exchange 持久化：Exchange 定義持久化
+
+
+進階功能：
+
+TTL (Time To Live)：消息和佇列過期時間
+死信佇列（DLX）：處理失敗或過期消息
+延遲消息：定時發送消息
+優先佇列：基於優先級的消息處理
+
+
+主要實作產品：
+
+RabbitMQ：最受歡迎的 AMQP 實作
+Apache Qpid：Apache 軟體基金會項目
+Azure Service Bus：微軟雲端訊息服務
+
+
+
+QUIC (Quick UDP Internet Connections)
+
+基本特性：
+
+基於 UDP 的傳輸層協議，由 Google 開發
+HTTP/3 的基礎協議
+結合 TCP、TLS 和 HTTP/2 的功能
+IETF RFC 9000 標準化
+
+
+主要優勢：
+
+減少連接建立延遲：0-RTT 或 1-RTT 連接建立
+避免隊頭阻塞：多路複用無阻塞
+連接遷移：網絡切換時保持連接
+內建加密：集成 TLS 1.3 安全特性
+
+
+關鍵技術：
+
+連接 ID：允許客戶端 IP 變化時保持連接
+多路複用：單一連接上的獨立資料流
+流量控制：每個流和整個連接的控制
+擁塞控制：改進的控制算法
+
+
+安全特性：
+
+預設加密：所有 QUIC 連接都經過加密
+TLS 1.3 整合：最新的安全標準
+前向安全性：定期更新加密金鑰
+防重放攻擊：內建防護機制
+
+
+效能優化：
+
+頭部壓縮：QPACK 壓縮演算法
+早期資料傳輸：0-RTT 恢復機制
+適應性擁塞控制：根據網路狀況調整
+封包合併：減少系統呼叫開銷
+
+
+與 TCP 比較：
+
+更快的連接建立
+更好的錯誤恢復
+更靈活的協議演進
+減少對中間設備的依賴
+
+
+應用場景：
+
+移動設備網頁瀏覽
+高延遲網絡下的應用
+需要快速切換網絡的場景
+直播和視頻串流
+
+
+實作和支援：
+
+瀏覽器支援：Chrome、Firefox、Safari、Edge
+伺服器支援：nginx、Apache、Cloudflare
+程式庫：quiche (Cloudflare)、msquic (Microsoft)
+
+
+
+Apache Kafka Protocol
+
+Kafka 架構演進：
+
+早期版本：依賴 Apache ZooKeeper 進行中繼資料管理
+KRaft 模式：Kafka 2.8&#43; 內建共識機制，移除 ZooKeeper 依賴
+
+
+核心概念：
+
+Topic：消息類別，邏輯上的訊息分組
+Partition：Topic 的分片，實現並行處理和水平擴展
+Producer：發送消息到 Topic 的應用程式
+Consumer：從 Topic 消費消息的應用程式
+Consumer Group：多消費者共享消費負載，實現水平擴展
+Broker：Kafka 伺服器節點，處理讀寫請求
+
+
+分區機制：
+
+並行處理：每個分區可獨立處理
+水平擴展：增加分區數量提高吞吐量
+分區策略：Round-robin、Key-based、Custom partitioner
+分區重平衡：Consumer Group 成員變化時重新分配
+
+
+複製機制：
+
+分區副本：每個分區有多個副本提供容錯
+Leader 和 Follower：Leader 處理讀寫，Follower 同步資料
+ISR (In-Sync Replicas)：與 Leader 保持同步的副本集合
+最小 ISR：保證資料安全的最少同步副本數
+
+
+消息投遞語義：
+
+At most once：最多一次，可能丟失但不重複
+At least once：至少一次，可能重複但不丟失
+Exactly once：恰好一次，使用事務和冪等性保證
+
+
+偏移量管理：
+
+消費者責任：消費者負責跟踪已消費位置
+自動提交：定期自動提交偏移量
+手動提交：消費者顯式提交偏移量
+偏移量存儲：存儲在 __consumer_offsets 內部 Topic
+
+
+效能優化：
+
+批次處理：批量發送和接收消息
+壓縮：支援 GZIP、Snappy、LZ4、ZSTD
+零拷貝：sendfile() 系統呼叫減少 CPU 使用
+頁面快取：利用作業系統頁面快取
+
+
+進階功能：
+
+Kafka Streams：串流處理框架
+Kafka Connect：資料整合框架
+Schema Registry：Schema 管理和演進
+事務支援：跨多個 Topic 的 ACID 事務
+
+
+監控與管理：
+
+JMX 指標：豐富的效能和健康指標
+管理工具：Kafka Manager、Kafdrop、Confluent Control Center
+日誌壓縮：Log Compaction 保留最新狀態
+
+
+" />
+	<meta property="og:image" content="https://hqasco.deta.dev/img?url=https://www.peihe07.uno/notes/2025-03-29-messaging_protocols_corrected/"/>
+	<meta property="twitter:image" content="https://hqasco.deta.dev/img?url=https://www.peihe07.uno/notes/2025-03-29-messaging_protocols_corrected/"/>
+	<meta property="twitter:card" content="summary_large_image"/>
+	<meta property="og:url" content="https://www.peihe07.uno/notes/2025-03-29-messaging_protocols_corrected/">
+  <meta property="og:site_name" content="Peihe&#39;s blog">
+  <meta property="og:title" content="訊息傳遞協定">
+  <meta property="og:description" content="MQTT (Message Queuing Telemetry Transport) 協定基本特性： 輕量級協定：專為低頻寬、高延遲、不穩定網路設計 預設端口：1883 (非加密)、8883 (TLS/SSL 加密) 基於 TCP：確保可靠的訊息傳遞 二進制協定：高效的網路使用 發布/訂閱模式： 透過主題（Topic）進行消息交換 發布者和訂閱者解耦合 支援一對多和多對多通信模式 主題結構： 層次化結構（如 home/livingroom/temperature） 使用 / 作為層級分隔符 支援萬用字元：&#43;（單層）、#（多層） QoS (Quality of Service) 等級： QoS 0：最多一次（消息可能丟失），Fire and Forget QoS 1：至少一次（確保送達，可能重複），需要 PUBACK 確認 QoS 2：恰好一次（確保一次且僅一次送達），四次握手機制 進階功能： 保留消息（Retained Message）：伺服器保存最後一條消息，新訂閱者立即收到 遺囑消息（Last Will and Testament）：客戶端異常斷開時發送預設消息 會話持久化（Persistent Session）：客戶端離線時保存訂閱和未送達消息 Keep Alive：心跳機制保持連接活躍 MQTT 5.0 新特性： 消息過期：Message Expiry Interval 設定消息生命週期 主題別名：Topic Alias 減少頻寬使用 用戶屬性：User Properties 自定義鍵值對 共享訂閱：Shared Subscriptions 負載均衡 原因碼：詳細的錯誤和狀態資訊 安全機制： TLS/SSL 加密：保護資料傳輸 用戶名/密碼認證：基本身份驗證 用戶端憑證：雙向 TLS 認證 存取控制清單：主題層級權限控制 實際應用場景： IoT 設備通信：感測器資料收集 智慧家居：設備控制和狀態監控 工業物聯網：製造設備監控 移動應用：推播通知、即時更新 AMQP (Advanced Message Queuing Protocol) 協定版本差異： AMQP 0.9.1：廣泛使用，RabbitMQ 預設版本 AMQP 1.0：ISO 標準，與 0.9.1 不相容 核心組件： Exchange：接收生產者消息並路由到佇列 Queue：存儲消息直到被消費 Binding：連接 Exchange 和 Queue 的規則 Virtual Host：邏輯分組，提供隔離 Exchange 類型： Direct：精確匹配路由鍵，一對一路由 Topic：模式匹配路由鍵，支援 * 和 # 萬用字元 Fanout：廣播到所有綁定佇列，忽略路由鍵 Headers：基於消息頭部屬性匹配，靈活路由 消息確認機制： 自動確認（Auto ACK）：消息送達即確認，可能丟失 手動確認（Manual ACK）：消費者處理後顯式確認 拒絕機制：NACK 和 Reject 處理失敗消息 可靠性保證： 交易支持：可將多個操作作為一個原子單元 發布者確認：Publisher Confirms 確保消息到達 消費者確認：Consumer Acknowledgments 確保處理完成 持久化機制： 消息持久化：消息存儲到磁碟 佇列持久化：佇列定義持久化 Exchange 持久化：Exchange 定義持久化 進階功能： TTL (Time To Live)：消息和佇列過期時間 死信佇列（DLX）：處理失敗或過期消息 延遲消息：定時發送消息 優先佇列：基於優先級的消息處理 主要實作產品： RabbitMQ：最受歡迎的 AMQP 實作 Apache Qpid：Apache 軟體基金會項目 Azure Service Bus：微軟雲端訊息服務 QUIC (Quick UDP Internet Connections) 基本特性： 基於 UDP 的傳輸層協議，由 Google 開發 HTTP/3 的基礎協議 結合 TCP、TLS 和 HTTP/2 的功能 IETF RFC 9000 標準化 主要優勢： 減少連接建立延遲：0-RTT 或 1-RTT 連接建立 避免隊頭阻塞：多路複用無阻塞 連接遷移：網絡切換時保持連接 內建加密：集成 TLS 1.3 安全特性 關鍵技術： 連接 ID：允許客戶端 IP 變化時保持連接 多路複用：單一連接上的獨立資料流 流量控制：每個流和整個連接的控制 擁塞控制：改進的控制算法 安全特性： 預設加密：所有 QUIC 連接都經過加密 TLS 1.3 整合：最新的安全標準 前向安全性：定期更新加密金鑰 防重放攻擊：內建防護機制 效能優化： 頭部壓縮：QPACK 壓縮演算法 早期資料傳輸：0-RTT 恢復機制 適應性擁塞控制：根據網路狀況調整 封包合併：減少系統呼叫開銷 與 TCP 比較： 更快的連接建立 更好的錯誤恢復 更靈活的協議演進 減少對中間設備的依賴 應用場景： 移動設備網頁瀏覽 高延遲網絡下的應用 需要快速切換網絡的場景 直播和視頻串流 實作和支援： 瀏覽器支援：Chrome、Firefox、Safari、Edge 伺服器支援：nginx、Apache、Cloudflare 程式庫：quiche (Cloudflare)、msquic (Microsoft) Apache Kafka Protocol Kafka 架構演進： 早期版本：依賴 Apache ZooKeeper 進行中繼資料管理 KRaft 模式：Kafka 2.8&#43; 內建共識機制，移除 ZooKeeper 依賴 核心概念： Topic：消息類別，邏輯上的訊息分組 Partition：Topic 的分片，實現並行處理和水平擴展 Producer：發送消息到 Topic 的應用程式 Consumer：從 Topic 消費消息的應用程式 Consumer Group：多消費者共享消費負載，實現水平擴展 Broker：Kafka 伺服器節點，處理讀寫請求 分區機制： 並行處理：每個分區可獨立處理 水平擴展：增加分區數量提高吞吐量 分區策略：Round-robin、Key-based、Custom partitioner 分區重平衡：Consumer Group 成員變化時重新分配 複製機制： 分區副本：每個分區有多個副本提供容錯 Leader 和 Follower：Leader 處理讀寫，Follower 同步資料 ISR (In-Sync Replicas)：與 Leader 保持同步的副本集合 最小 ISR：保證資料安全的最少同步副本數 消息投遞語義： At most once：最多一次，可能丟失但不重複 At least once：至少一次，可能重複但不丟失 Exactly once：恰好一次，使用事務和冪等性保證 偏移量管理： 消費者責任：消費者負責跟踪已消費位置 自動提交：定期自動提交偏移量 手動提交：消費者顯式提交偏移量 偏移量存儲：存儲在 __consumer_offsets 內部 Topic 效能優化： 批次處理：批量發送和接收消息 壓縮：支援 GZIP、Snappy、LZ4、ZSTD 零拷貝：sendfile() 系統呼叫減少 CPU 使用 頁面快取：利用作業系統頁面快取 進階功能： Kafka Streams：串流處理框架 Kafka Connect：資料整合框架 Schema Registry：Schema 管理和演進 事務支援：跨多個 Topic 的 ACID 事務 監控與管理： JMX 指標：豐富的效能和健康指標 管理工具：Kafka Manager、Kafdrop、Confluent Control Center 日誌壓縮：Log Compaction 保留最新狀態">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="notes">
+    <meta property="article:published_time" content="2025-03-29T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-29T00:00:00+00:00">
+    <meta property="article:tag" content="Protocol">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="訊息傳遞協定">
+  <meta name="twitter:description" content="MQTT (Message Queuing Telemetry Transport) 協定基本特性： 輕量級協定：專為低頻寬、高延遲、不穩定網路設計 預設端口：1883 (非加密)、8883 (TLS/SSL 加密) 基於 TCP：確保可靠的訊息傳遞 二進制協定：高效的網路使用 發布/訂閱模式： 透過主題（Topic）進行消息交換 發布者和訂閱者解耦合 支援一對多和多對多通信模式 主題結構： 層次化結構（如 home/livingroom/temperature） 使用 / 作為層級分隔符 支援萬用字元：&#43;（單層）、#（多層） QoS (Quality of Service) 等級： QoS 0：最多一次（消息可能丟失），Fire and Forget QoS 1：至少一次（確保送達，可能重複），需要 PUBACK 確認 QoS 2：恰好一次（確保一次且僅一次送達），四次握手機制 進階功能： 保留消息（Retained Message）：伺服器保存最後一條消息，新訂閱者立即收到 遺囑消息（Last Will and Testament）：客戶端異常斷開時發送預設消息 會話持久化（Persistent Session）：客戶端離線時保存訂閱和未送達消息 Keep Alive：心跳機制保持連接活躍 MQTT 5.0 新特性： 消息過期：Message Expiry Interval 設定消息生命週期 主題別名：Topic Alias 減少頻寬使用 用戶屬性：User Properties 自定義鍵值對 共享訂閱：Shared Subscriptions 負載均衡 原因碼：詳細的錯誤和狀態資訊 安全機制： TLS/SSL 加密：保護資料傳輸 用戶名/密碼認證：基本身份驗證 用戶端憑證：雙向 TLS 認證 存取控制清單：主題層級權限控制 實際應用場景： IoT 設備通信：感測器資料收集 智慧家居：設備控制和狀態監控 工業物聯網：製造設備監控 移動應用：推播通知、即時更新 AMQP (Advanced Message Queuing Protocol) 協定版本差異： AMQP 0.9.1：廣泛使用，RabbitMQ 預設版本 AMQP 1.0：ISO 標準，與 0.9.1 不相容 核心組件： Exchange：接收生產者消息並路由到佇列 Queue：存儲消息直到被消費 Binding：連接 Exchange 和 Queue 的規則 Virtual Host：邏輯分組，提供隔離 Exchange 類型： Direct：精確匹配路由鍵，一對一路由 Topic：模式匹配路由鍵，支援 * 和 # 萬用字元 Fanout：廣播到所有綁定佇列，忽略路由鍵 Headers：基於消息頭部屬性匹配，靈活路由 消息確認機制： 自動確認（Auto ACK）：消息送達即確認，可能丟失 手動確認（Manual ACK）：消費者處理後顯式確認 拒絕機制：NACK 和 Reject 處理失敗消息 可靠性保證： 交易支持：可將多個操作作為一個原子單元 發布者確認：Publisher Confirms 確保消息到達 消費者確認：Consumer Acknowledgments 確保處理完成 持久化機制： 消息持久化：消息存儲到磁碟 佇列持久化：佇列定義持久化 Exchange 持久化：Exchange 定義持久化 進階功能： TTL (Time To Live)：消息和佇列過期時間 死信佇列（DLX）：處理失敗或過期消息 延遲消息：定時發送消息 優先佇列：基於優先級的消息處理 主要實作產品： RabbitMQ：最受歡迎的 AMQP 實作 Apache Qpid：Apache 軟體基金會項目 Azure Service Bus：微軟雲端訊息服務 QUIC (Quick UDP Internet Connections) 基本特性： 基於 UDP 的傳輸層協議，由 Google 開發 HTTP/3 的基礎協議 結合 TCP、TLS 和 HTTP/2 的功能 IETF RFC 9000 標準化 主要優勢： 減少連接建立延遲：0-RTT 或 1-RTT 連接建立 避免隊頭阻塞：多路複用無阻塞 連接遷移：網絡切換時保持連接 內建加密：集成 TLS 1.3 安全特性 關鍵技術： 連接 ID：允許客戶端 IP 變化時保持連接 多路複用：單一連接上的獨立資料流 流量控制：每個流和整個連接的控制 擁塞控制：改進的控制算法 安全特性： 預設加密：所有 QUIC 連接都經過加密 TLS 1.3 整合：最新的安全標準 前向安全性：定期更新加密金鑰 防重放攻擊：內建防護機制 效能優化： 頭部壓縮：QPACK 壓縮演算法 早期資料傳輸：0-RTT 恢復機制 適應性擁塞控制：根據網路狀況調整 封包合併：減少系統呼叫開銷 與 TCP 比較： 更快的連接建立 更好的錯誤恢復 更靈活的協議演進 減少對中間設備的依賴 應用場景： 移動設備網頁瀏覽 高延遲網絡下的應用 需要快速切換網絡的場景 直播和視頻串流 實作和支援： 瀏覽器支援：Chrome、Firefox、Safari、Edge 伺服器支援：nginx、Apache、Cloudflare 程式庫：quiche (Cloudflare)、msquic (Microsoft) Apache Kafka Protocol Kafka 架構演進： 早期版本：依賴 Apache ZooKeeper 進行中繼資料管理 KRaft 模式：Kafka 2.8&#43; 內建共識機制，移除 ZooKeeper 依賴 核心概念： Topic：消息類別，邏輯上的訊息分組 Partition：Topic 的分片，實現並行處理和水平擴展 Producer：發送消息到 Topic 的應用程式 Consumer：從 Topic 消費消息的應用程式 Consumer Group：多消費者共享消費負載，實現水平擴展 Broker：Kafka 伺服器節點，處理讀寫請求 分區機制： 並行處理：每個分區可獨立處理 水平擴展：增加分區數量提高吞吐量 分區策略：Round-robin、Key-based、Custom partitioner 分區重平衡：Consumer Group 成員變化時重新分配 複製機制： 分區副本：每個分區有多個副本提供容錯 Leader 和 Follower：Leader 處理讀寫，Follower 同步資料 ISR (In-Sync Replicas)：與 Leader 保持同步的副本集合 最小 ISR：保證資料安全的最少同步副本數 消息投遞語義： At most once：最多一次，可能丟失但不重複 At least once：至少一次，可能重複但不丟失 Exactly once：恰好一次，使用事務和冪等性保證 偏移量管理： 消費者責任：消費者負責跟踪已消費位置 自動提交：定期自動提交偏移量 手動提交：消費者顯式提交偏移量 偏移量存儲：存儲在 __consumer_offsets 內部 Topic 效能優化： 批次處理：批量發送和接收消息 壓縮：支援 GZIP、Snappy、LZ4、ZSTD 零拷貝：sendfile() 系統呼叫減少 CPU 使用 頁面快取：利用作業系統頁面快取 進階功能： Kafka Streams：串流處理框架 Kafka Connect：資料整合框架 Schema Registry：Schema 管理和演進 事務支援：跨多個 Topic 的 ACID 事務 監控與管理： JMX 指標：豐富的效能和健康指標 管理工具：Kafka Manager、Kafdrop、Confluent Control Center 日誌壓縮：Log Compaction 保留最新狀態">
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/projects.css" />
+	
+	
+		
+		<link rel="stylesheet" type="text/css" href="/css/light.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/font.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/syntax.css">
+		
+	<script src="//instant.page/5.1.0" type="module" integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-title">
+      <a href="https://www.peihe07.uno/">Peihe&#39;s blog</a>
+    </div>
+    <nav class="main-menu">
+      
+        <a href="/">Home</a>
+      
+        <a href="/writings">Writings</a>
+      
+        <a href="/projects">Projects</a>
+      
+        <a href="/notes">Notes</a>
+      
+        <a href="/about">About</a>
+      
+    </nav>
+  </header><body>
+        <div class="content">
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">訊息傳遞協定</h1>
+          <div class="meta">Posted on Mar 29, 2025</div>
+        </div>
+        
+        <section class="body">
+          <h1 id="mqtt-message-queuing-telemetry-transport">MQTT (Message Queuing Telemetry Transport)</h1>
+<ul>
+<li><strong>協定基本特性</strong>：
+<ul>
+<li><strong>輕量級協定</strong>：專為低頻寬、高延遲、不穩定網路設計</li>
+<li><strong>預設端口</strong>：1883 (非加密)、8883 (TLS/SSL 加密)</li>
+<li><strong>基於 TCP</strong>：確保可靠的訊息傳遞</li>
+<li><strong>二進制協定</strong>：高效的網路使用</li>
+</ul>
+</li>
+<li><strong>發布/訂閱模式</strong>：
+<ul>
+<li>透過主題（Topic）進行消息交換</li>
+<li>發布者和訂閱者解耦合</li>
+<li>支援一對多和多對多通信模式</li>
+</ul>
+</li>
+<li><strong>主題結構</strong>：
+<ul>
+<li>層次化結構（如 home/livingroom/temperature）</li>
+<li>使用 <code>/</code> 作為層級分隔符</li>
+<li>支援萬用字元：<code>+</code>（單層）、<code>#</code>（多層）</li>
+</ul>
+</li>
+<li><strong>QoS (Quality of Service) 等級</strong>：
+<ul>
+<li><strong>QoS 0</strong>：最多一次（消息可能丟失），Fire and Forget</li>
+<li><strong>QoS 1</strong>：至少一次（確保送達，可能重複），需要 PUBACK 確認</li>
+<li><strong>QoS 2</strong>：恰好一次（確保一次且僅一次送達），四次握手機制</li>
+</ul>
+</li>
+<li><strong>進階功能</strong>：
+<ul>
+<li><strong>保留消息（Retained Message）</strong>：伺服器保存最後一條消息，新訂閱者立即收到</li>
+<li><strong>遺囑消息（Last Will and Testament）</strong>：客戶端異常斷開時發送預設消息</li>
+<li><strong>會話持久化（Persistent Session）</strong>：客戶端離線時保存訂閱和未送達消息</li>
+<li><strong>Keep Alive</strong>：心跳機制保持連接活躍</li>
+</ul>
+</li>
+<li><strong>MQTT 5.0 新特性</strong>：
+<ul>
+<li><strong>消息過期</strong>：Message Expiry Interval 設定消息生命週期</li>
+<li><strong>主題別名</strong>：Topic Alias 減少頻寬使用</li>
+<li><strong>用戶屬性</strong>：User Properties 自定義鍵值對</li>
+<li><strong>共享訂閱</strong>：Shared Subscriptions 負載均衡</li>
+<li><strong>原因碼</strong>：詳細的錯誤和狀態資訊</li>
+</ul>
+</li>
+<li><strong>安全機制</strong>：
+<ul>
+<li><strong>TLS/SSL 加密</strong>：保護資料傳輸</li>
+<li><strong>用戶名/密碼認證</strong>：基本身份驗證</li>
+<li><strong>用戶端憑證</strong>：雙向 TLS 認證</li>
+<li><strong>存取控制清單</strong>：主題層級權限控制</li>
+</ul>
+</li>
+<li><strong>實際應用場景</strong>：
+<ul>
+<li><strong>IoT 設備通信</strong>：感測器資料收集</li>
+<li><strong>智慧家居</strong>：設備控制和狀態監控</li>
+<li><strong>工業物聯網</strong>：製造設備監控</li>
+<li><strong>移動應用</strong>：推播通知、即時更新</li>
+</ul>
+</li>
+</ul>
+<h1 id="amqp-advanced-message-queuing-protocol">AMQP (Advanced Message Queuing Protocol)</h1>
+<ul>
+<li><strong>協定版本差異</strong>：
+<ul>
+<li><strong>AMQP 0.9.1</strong>：廣泛使用，RabbitMQ 預設版本</li>
+<li><strong>AMQP 1.0</strong>：ISO 標準，與 0.9.1 不相容</li>
+</ul>
+</li>
+<li><strong>核心組件</strong>：
+<ul>
+<li><strong>Exchange</strong>：接收生產者消息並路由到佇列</li>
+<li><strong>Queue</strong>：存儲消息直到被消費</li>
+<li><strong>Binding</strong>：連接 Exchange 和 Queue 的規則</li>
+<li><strong>Virtual Host</strong>：邏輯分組，提供隔離</li>
+</ul>
+</li>
+<li><strong>Exchange 類型</strong>：
+<ul>
+<li><strong>Direct</strong>：精確匹配路由鍵，一對一路由</li>
+<li><strong>Topic</strong>：模式匹配路由鍵，支援 <code>*</code> 和 <code>#</code> 萬用字元</li>
+<li><strong>Fanout</strong>：廣播到所有綁定佇列，忽略路由鍵</li>
+<li><strong>Headers</strong>：基於消息頭部屬性匹配，靈活路由</li>
+</ul>
+</li>
+<li><strong>消息確認機制</strong>：
+<ul>
+<li><strong>自動確認（Auto ACK）</strong>：消息送達即確認，可能丟失</li>
+<li><strong>手動確認（Manual ACK）</strong>：消費者處理後顯式確認</li>
+<li><strong>拒絕機制</strong>：NACK 和 Reject 處理失敗消息</li>
+</ul>
+</li>
+<li><strong>可靠性保證</strong>：
+<ul>
+<li><strong>交易支持</strong>：可將多個操作作為一個原子單元</li>
+<li><strong>發布者確認</strong>：Publisher Confirms 確保消息到達</li>
+<li><strong>消費者確認</strong>：Consumer Acknowledgments 確保處理完成</li>
+</ul>
+</li>
+<li><strong>持久化機制</strong>：
+<ul>
+<li><strong>消息持久化</strong>：消息存儲到磁碟</li>
+<li><strong>佇列持久化</strong>：佇列定義持久化</li>
+<li><strong>Exchange 持久化</strong>：Exchange 定義持久化</li>
+</ul>
+</li>
+<li><strong>進階功能</strong>：
+<ul>
+<li><strong>TTL (Time To Live)</strong>：消息和佇列過期時間</li>
+<li><strong>死信佇列（DLX）</strong>：處理失敗或過期消息</li>
+<li><strong>延遲消息</strong>：定時發送消息</li>
+<li><strong>優先佇列</strong>：基於優先級的消息處理</li>
+</ul>
+</li>
+<li><strong>主要實作產品</strong>：
+<ul>
+<li><strong>RabbitMQ</strong>：最受歡迎的 AMQP 實作</li>
+<li><strong>Apache Qpid</strong>：Apache 軟體基金會項目</li>
+<li><strong>Azure Service Bus</strong>：微軟雲端訊息服務</li>
+</ul>
+</li>
+</ul>
+<h1 id="quic-quick-udp-internet-connections">QUIC (Quick UDP Internet Connections)</h1>
+<ul>
+<li><strong>基本特性</strong>：
+<ul>
+<li>基於 UDP 的傳輸層協議，由 Google 開發</li>
+<li>HTTP/3 的基礎協議</li>
+<li>結合 TCP、TLS 和 HTTP/2 的功能</li>
+<li>IETF RFC 9000 標準化</li>
+</ul>
+</li>
+<li><strong>主要優勢</strong>：
+<ul>
+<li><strong>減少連接建立延遲</strong>：0-RTT 或 1-RTT 連接建立</li>
+<li><strong>避免隊頭阻塞</strong>：多路複用無阻塞</li>
+<li><strong>連接遷移</strong>：網絡切換時保持連接</li>
+<li><strong>內建加密</strong>：集成 TLS 1.3 安全特性</li>
+</ul>
+</li>
+<li><strong>關鍵技術</strong>：
+<ul>
+<li><strong>連接 ID</strong>：允許客戶端 IP 變化時保持連接</li>
+<li><strong>多路複用</strong>：單一連接上的獨立資料流</li>
+<li><strong>流量控制</strong>：每個流和整個連接的控制</li>
+<li><strong>擁塞控制</strong>：改進的控制算法</li>
+</ul>
+</li>
+<li><strong>安全特性</strong>：
+<ul>
+<li><strong>預設加密</strong>：所有 QUIC 連接都經過加密</li>
+<li><strong>TLS 1.3 整合</strong>：最新的安全標準</li>
+<li><strong>前向安全性</strong>：定期更新加密金鑰</li>
+<li><strong>防重放攻擊</strong>：內建防護機制</li>
+</ul>
+</li>
+<li><strong>效能優化</strong>：
+<ul>
+<li><strong>頭部壓縮</strong>：QPACK 壓縮演算法</li>
+<li><strong>早期資料傳輸</strong>：0-RTT 恢復機制</li>
+<li><strong>適應性擁塞控制</strong>：根據網路狀況調整</li>
+<li><strong>封包合併</strong>：減少系統呼叫開銷</li>
+</ul>
+</li>
+<li><strong>與 TCP 比較</strong>：
+<ul>
+<li>更快的連接建立</li>
+<li>更好的錯誤恢復</li>
+<li>更靈活的協議演進</li>
+<li>減少對中間設備的依賴</li>
+</ul>
+</li>
+<li><strong>應用場景</strong>：
+<ul>
+<li>移動設備網頁瀏覽</li>
+<li>高延遲網絡下的應用</li>
+<li>需要快速切換網絡的場景</li>
+<li>直播和視頻串流</li>
+</ul>
+</li>
+<li><strong>實作和支援</strong>：
+<ul>
+<li><strong>瀏覽器支援</strong>：Chrome、Firefox、Safari、Edge</li>
+<li><strong>伺服器支援</strong>：nginx、Apache、Cloudflare</li>
+<li><strong>程式庫</strong>：quiche (Cloudflare)、msquic (Microsoft)</li>
+</ul>
+</li>
+</ul>
+<h1 id="apache-kafka-protocol">Apache Kafka Protocol</h1>
+<ul>
+<li><strong>Kafka 架構演進</strong>：
+<ul>
+<li><strong>早期版本</strong>：依賴 Apache ZooKeeper 進行中繼資料管理</li>
+<li><strong>KRaft 模式</strong>：Kafka 2.8+ 內建共識機制，移除 ZooKeeper 依賴</li>
+</ul>
+</li>
+<li><strong>核心概念</strong>：
+<ul>
+<li><strong>Topic</strong>：消息類別，邏輯上的訊息分組</li>
+<li><strong>Partition</strong>：Topic 的分片，實現並行處理和水平擴展</li>
+<li><strong>Producer</strong>：發送消息到 Topic 的應用程式</li>
+<li><strong>Consumer</strong>：從 Topic 消費消息的應用程式</li>
+<li><strong>Consumer Group</strong>：多消費者共享消費負載，實現水平擴展</li>
+<li><strong>Broker</strong>：Kafka 伺服器節點，處理讀寫請求</li>
+</ul>
+</li>
+<li><strong>分區機制</strong>：
+<ul>
+<li><strong>並行處理</strong>：每個分區可獨立處理</li>
+<li><strong>水平擴展</strong>：增加分區數量提高吞吐量</li>
+<li><strong>分區策略</strong>：Round-robin、Key-based、Custom partitioner</li>
+<li><strong>分區重平衡</strong>：Consumer Group 成員變化時重新分配</li>
+</ul>
+</li>
+<li><strong>複製機制</strong>：
+<ul>
+<li><strong>分區副本</strong>：每個分區有多個副本提供容錯</li>
+<li><strong>Leader 和 Follower</strong>：Leader 處理讀寫，Follower 同步資料</li>
+<li><strong>ISR (In-Sync Replicas)</strong>：與 Leader 保持同步的副本集合</li>
+<li><strong>最小 ISR</strong>：保證資料安全的最少同步副本數</li>
+</ul>
+</li>
+<li><strong>消息投遞語義</strong>：
+<ul>
+<li><strong>At most once</strong>：最多一次，可能丟失但不重複</li>
+<li><strong>At least once</strong>：至少一次，可能重複但不丟失</li>
+<li><strong>Exactly once</strong>：恰好一次，使用事務和冪等性保證</li>
+</ul>
+</li>
+<li><strong>偏移量管理</strong>：
+<ul>
+<li><strong>消費者責任</strong>：消費者負責跟踪已消費位置</li>
+<li><strong>自動提交</strong>：定期自動提交偏移量</li>
+<li><strong>手動提交</strong>：消費者顯式提交偏移量</li>
+<li><strong>偏移量存儲</strong>：存儲在 __consumer_offsets 內部 Topic</li>
+</ul>
+</li>
+<li><strong>效能優化</strong>：
+<ul>
+<li><strong>批次處理</strong>：批量發送和接收消息</li>
+<li><strong>壓縮</strong>：支援 GZIP、Snappy、LZ4、ZSTD</li>
+<li><strong>零拷貝</strong>：sendfile() 系統呼叫減少 CPU 使用</li>
+<li><strong>頁面快取</strong>：利用作業系統頁面快取</li>
+</ul>
+</li>
+<li><strong>進階功能</strong>：
+<ul>
+<li><strong>Kafka Streams</strong>：串流處理框架</li>
+<li><strong>Kafka Connect</strong>：資料整合框架</li>
+<li><strong>Schema Registry</strong>：Schema 管理和演進</li>
+<li><strong>事務支援</strong>：跨多個 Topic 的 ACID 事務</li>
+</ul>
+</li>
+<li><strong>監控與管理</strong>：
+<ul>
+<li><strong>JMX 指標</strong>：豐富的效能和健康指標</li>
+<li><strong>管理工具</strong>：Kafka Manager、Kafdrop、Confluent Control Center</li>
+<li><strong>日誌壓縮</strong>：Log Compaction 保留最新狀態</li>
+</ul>
+</li>
+</ul>
+
+        </section>
+        <div class="post-tags">
+          
+          
+          <nav class="nav tags">
+            <ul class="tags">
+              
+              <li><a href="/tags/protocol">protocol</a></li>
+              
+            </ul>
+          </nav>
+          
+          
+        </div>
+      </div>
+
+      
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div class="footer_nav">
+    
+  </div>
+
+  
+  
+    
+      <a class="soc" href="https://github.com/peihe07" title="github">
+        <i data-feather="github"></i>
+      </a> | 
+    
+      <a class="soc" href="mailto:y450376@gmail.com" title="email">
+        <i data-feather="mail"></i>
+      </a> | 
+    
+      <a class="soc" href="https://medium.com/@peihe07" title="medium">
+        <i data-feather="book-open"></i>
+      </a>
+    
+  
+
+  ⚡️ 2025
+   Peihe | 
+  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+  <script>
+    feather.replace();
+  </script>
+</div>
+    </body>
+</html>

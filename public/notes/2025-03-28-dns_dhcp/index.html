@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>網路管理協定 - Peihe&#39;s blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="DNS (Domain Name System)
+
+階層式結構：根域名 → 頂級域名 (.com, .org) → 二級域名 (example.com) → 子域名 (blog.example.com)
+查詢流程：
+
+遞迴查詢：客戶端請求 DNS 解析器完成整個解析過程
+迭代查詢：DNS 解析器逐級查詢不同的 DNS 伺服器
+
+
+記錄類型：
+
+A：域名對應 IPv4 位址
+AAAA：域名對應 IPv6 位址
+CNAME：域名別名
+MX：郵件交換記錄
+TXT：文字記錄，常用於 SPF、DKIM 驗證
+NS：指定域名的權威 DNS 伺服器
+SOA：起始授權記錄，包含區域傳輸資訊
+PTR：反向解析，IP 位址對應域名
+
+
+DNS 架構組件：
+
+根域名伺服器：全球 13 組根域名伺服器，DNS 查詢的起點
+權威 DNS 伺服器：擁有特定域名完整記錄的伺服器
+遞迴 DNS 解析器：代替客戶端執行 DNS 查詢的伺服器
+
+
+DNS 快取與 TTL：
+
+各級 DNS 伺服器和本地系統都會進行快取以提高效率
+TTL (Time To Live)：DNS 記錄的快取時間，控制記錄的有效期
+
+
+權威性與傳輸：
+
+權威回應：來自擁有該域名記錄的權威伺服器
+非權威回應：來自快取的記錄，可能不是最新資訊
+
+
+DNS 協定特性：
+
+預設端口：UDP 53 (小查詢)，TCP 53 (大查詢或區域傳輸)
+查詢大小限制：UDP 封包超過 512 bytes 時切換到 TCP
+
+
+安全機制：
+
+DNSSEC：DNS 安全擴展，通過數位簽名確保 DNS 記錄真實性
+DNS over HTTPS (DoH)：透過 HTTPS 加密 DNS 查詢
+DNS over TLS (DoT)：透過 TLS 加密 DNS 查詢，保護隱私
+
+
+
+DHCP (Dynamic Host Configuration Protocol)
+
+四步驟流程 (DORA)：
+
+DHCP Discover：客戶端廣播尋找 DHCP 伺服器
+DHCP Offer：伺服器回應提供可用 IP 位址
+DHCP Request：客戶端請求特定 IP 位址
+DHCP Acknowledge：伺服器確認分配該 IP 位址
+
+
+租約機制：
+
+IP 位址分配有時限，需定期更新
+租約續期：租約時間到達 50% 時自動嘗試續租
+租約重新綁定：87.5% 時間點嘗試向任何 DHCP 伺服器續租
+
+
+常見選項設定：
+
+Option 3：默認閘道（Default Gateway）
+Option 1：子網遮罩（Subnet Mask）
+Option 6：DNS 伺服器位址
+Option 51：租約時間（Lease Time）
+Option 15：域名（Domain Name）
+Option 42：NTP 時間伺服器
+
+
+進階功能：
+
+DHCP 中繼（DHCP Relay）：跨網段 DHCP 請求轉發，使用 Agent 轉發
+保留位址：為特定 MAC 位址保留固定 IP 位址
+IP 位址集區：可配置多個 IP 範圍供分配
+
+
+安全與管理：
+
+衝突檢測：分配前使用 ICMP Echo 或 ARP 確認 IP 未被使用
+DHCP 監聽（DHCP Snooping）：防止惡意 DHCP 伺服器
+故障轉移：主備 DHCP 伺服器機制確保高可用性
+
+
+協定特性：
+
+端口：伺服器使用 UDP 67，客戶端使用 UDP 68
+廣播通信：初始發現階段使用廣播封包
+
+
+" />
+	<meta property="og:image" content="https://hqasco.deta.dev/img?url=https://www.peihe07.uno/notes/2025-03-28-dns_dhcp/"/>
+	<meta property="twitter:image" content="https://hqasco.deta.dev/img?url=https://www.peihe07.uno/notes/2025-03-28-dns_dhcp/"/>
+	<meta property="twitter:card" content="summary_large_image"/>
+	<meta property="og:url" content="https://www.peihe07.uno/notes/2025-03-28-dns_dhcp/">
+  <meta property="og:site_name" content="Peihe&#39;s blog">
+  <meta property="og:title" content="網路管理協定">
+  <meta property="og:description" content="DNS (Domain Name System) 階層式結構：根域名 → 頂級域名 (.com, .org) → 二級域名 (example.com) → 子域名 (blog.example.com) 查詢流程： 遞迴查詢：客戶端請求 DNS 解析器完成整個解析過程 迭代查詢：DNS 解析器逐級查詢不同的 DNS 伺服器 記錄類型： A：域名對應 IPv4 位址 AAAA：域名對應 IPv6 位址 CNAME：域名別名 MX：郵件交換記錄 TXT：文字記錄，常用於 SPF、DKIM 驗證 NS：指定域名的權威 DNS 伺服器 SOA：起始授權記錄，包含區域傳輸資訊 PTR：反向解析，IP 位址對應域名 DNS 架構組件： 根域名伺服器：全球 13 組根域名伺服器，DNS 查詢的起點 權威 DNS 伺服器：擁有特定域名完整記錄的伺服器 遞迴 DNS 解析器：代替客戶端執行 DNS 查詢的伺服器 DNS 快取與 TTL： 各級 DNS 伺服器和本地系統都會進行快取以提高效率 TTL (Time To Live)：DNS 記錄的快取時間，控制記錄的有效期 權威性與傳輸： 權威回應：來自擁有該域名記錄的權威伺服器 非權威回應：來自快取的記錄，可能不是最新資訊 DNS 協定特性： 預設端口：UDP 53 (小查詢)，TCP 53 (大查詢或區域傳輸) 查詢大小限制：UDP 封包超過 512 bytes 時切換到 TCP 安全機制： DNSSEC：DNS 安全擴展，通過數位簽名確保 DNS 記錄真實性 DNS over HTTPS (DoH)：透過 HTTPS 加密 DNS 查詢 DNS over TLS (DoT)：透過 TLS 加密 DNS 查詢，保護隱私 DHCP (Dynamic Host Configuration Protocol) 四步驟流程 (DORA)： DHCP Discover：客戶端廣播尋找 DHCP 伺服器 DHCP Offer：伺服器回應提供可用 IP 位址 DHCP Request：客戶端請求特定 IP 位址 DHCP Acknowledge：伺服器確認分配該 IP 位址 租約機制： IP 位址分配有時限，需定期更新 租約續期：租約時間到達 50% 時自動嘗試續租 租約重新綁定：87.5% 時間點嘗試向任何 DHCP 伺服器續租 常見選項設定： Option 3：默認閘道（Default Gateway） Option 1：子網遮罩（Subnet Mask） Option 6：DNS 伺服器位址 Option 51：租約時間（Lease Time） Option 15：域名（Domain Name） Option 42：NTP 時間伺服器 進階功能： DHCP 中繼（DHCP Relay）：跨網段 DHCP 請求轉發，使用 Agent 轉發 保留位址：為特定 MAC 位址保留固定 IP 位址 IP 位址集區：可配置多個 IP 範圍供分配 安全與管理： 衝突檢測：分配前使用 ICMP Echo 或 ARP 確認 IP 未被使用 DHCP 監聽（DHCP Snooping）：防止惡意 DHCP 伺服器 故障轉移：主備 DHCP 伺服器機制確保高可用性 協定特性： 端口：伺服器使用 UDP 67，客戶端使用 UDP 68 廣播通信：初始發現階段使用廣播封包">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="notes">
+    <meta property="article:published_time" content="2025-03-28T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-28T00:00:00+00:00">
+    <meta property="article:tag" content="Protocol">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="網路管理協定">
+  <meta name="twitter:description" content="DNS (Domain Name System) 階層式結構：根域名 → 頂級域名 (.com, .org) → 二級域名 (example.com) → 子域名 (blog.example.com) 查詢流程： 遞迴查詢：客戶端請求 DNS 解析器完成整個解析過程 迭代查詢：DNS 解析器逐級查詢不同的 DNS 伺服器 記錄類型： A：域名對應 IPv4 位址 AAAA：域名對應 IPv6 位址 CNAME：域名別名 MX：郵件交換記錄 TXT：文字記錄，常用於 SPF、DKIM 驗證 NS：指定域名的權威 DNS 伺服器 SOA：起始授權記錄，包含區域傳輸資訊 PTR：反向解析，IP 位址對應域名 DNS 架構組件： 根域名伺服器：全球 13 組根域名伺服器，DNS 查詢的起點 權威 DNS 伺服器：擁有特定域名完整記錄的伺服器 遞迴 DNS 解析器：代替客戶端執行 DNS 查詢的伺服器 DNS 快取與 TTL： 各級 DNS 伺服器和本地系統都會進行快取以提高效率 TTL (Time To Live)：DNS 記錄的快取時間，控制記錄的有效期 權威性與傳輸： 權威回應：來自擁有該域名記錄的權威伺服器 非權威回應：來自快取的記錄，可能不是最新資訊 DNS 協定特性： 預設端口：UDP 53 (小查詢)，TCP 53 (大查詢或區域傳輸) 查詢大小限制：UDP 封包超過 512 bytes 時切換到 TCP 安全機制： DNSSEC：DNS 安全擴展，通過數位簽名確保 DNS 記錄真實性 DNS over HTTPS (DoH)：透過 HTTPS 加密 DNS 查詢 DNS over TLS (DoT)：透過 TLS 加密 DNS 查詢，保護隱私 DHCP (Dynamic Host Configuration Protocol) 四步驟流程 (DORA)： DHCP Discover：客戶端廣播尋找 DHCP 伺服器 DHCP Offer：伺服器回應提供可用 IP 位址 DHCP Request：客戶端請求特定 IP 位址 DHCP Acknowledge：伺服器確認分配該 IP 位址 租約機制： IP 位址分配有時限，需定期更新 租約續期：租約時間到達 50% 時自動嘗試續租 租約重新綁定：87.5% 時間點嘗試向任何 DHCP 伺服器續租 常見選項設定： Option 3：默認閘道（Default Gateway） Option 1：子網遮罩（Subnet Mask） Option 6：DNS 伺服器位址 Option 51：租約時間（Lease Time） Option 15：域名（Domain Name） Option 42：NTP 時間伺服器 進階功能： DHCP 中繼（DHCP Relay）：跨網段 DHCP 請求轉發，使用 Agent 轉發 保留位址：為特定 MAC 位址保留固定 IP 位址 IP 位址集區：可配置多個 IP 範圍供分配 安全與管理： 衝突檢測：分配前使用 ICMP Echo 或 ARP 確認 IP 未被使用 DHCP 監聽（DHCP Snooping）：防止惡意 DHCP 伺服器 故障轉移：主備 DHCP 伺服器機制確保高可用性 協定特性： 端口：伺服器使用 UDP 67，客戶端使用 UDP 68 廣播通信：初始發現階段使用廣播封包">
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/projects.css" />
+	
+	
+		
+		<link rel="stylesheet" type="text/css" href="/css/light.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/font.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/syntax.css">
+		
+	<script src="//instant.page/5.1.0" type="module" integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-title">
+      <a href="https://www.peihe07.uno/">Peihe&#39;s blog</a>
+    </div>
+    <nav class="main-menu">
+      
+        <a href="/">Home</a>
+      
+        <a href="/writings">Writings</a>
+      
+        <a href="/projects">Projects</a>
+      
+        <a href="/notes">Notes</a>
+      
+        <a href="/about">About</a>
+      
+    </nav>
+  </header><body>
+        <div class="content">
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">網路管理協定</h1>
+          <div class="meta">Posted on Mar 28, 2025</div>
+        </div>
+        
+        <section class="body">
+          <h1 id="dns-domain-name-system">DNS (Domain Name System)</h1>
+<ul>
+<li><strong>階層式結構</strong>：根域名 → 頂級域名 (.com, .org) → 二級域名 (example.com) → 子域名 (blog.example.com)</li>
+<li><strong>查詢流程</strong>：
+<ol>
+<li><strong>遞迴查詢</strong>：客戶端請求 DNS 解析器完成整個解析過程</li>
+<li><strong>迭代查詢</strong>：DNS 解析器逐級查詢不同的 DNS 伺服器</li>
+</ol>
+</li>
+<li><strong>記錄類型</strong>：
+<ul>
+<li><strong>A</strong>：域名對應 IPv4 位址</li>
+<li><strong>AAAA</strong>：域名對應 IPv6 位址</li>
+<li><strong>CNAME</strong>：域名別名</li>
+<li><strong>MX</strong>：郵件交換記錄</li>
+<li><strong>TXT</strong>：文字記錄，常用於 SPF、DKIM 驗證</li>
+<li><strong>NS</strong>：指定域名的權威 DNS 伺服器</li>
+<li><strong>SOA</strong>：起始授權記錄，包含區域傳輸資訊</li>
+<li><strong>PTR</strong>：反向解析，IP 位址對應域名</li>
+</ul>
+</li>
+<li><strong>DNS 架構組件</strong>：
+<ul>
+<li><strong>根域名伺服器</strong>：全球 13 組根域名伺服器，DNS 查詢的起點</li>
+<li><strong>權威 DNS 伺服器</strong>：擁有特定域名完整記錄的伺服器</li>
+<li><strong>遞迴 DNS 解析器</strong>：代替客戶端執行 DNS 查詢的伺服器</li>
+</ul>
+</li>
+<li><strong>DNS 快取與 TTL</strong>：
+<ul>
+<li>各級 DNS 伺服器和本地系統都會進行快取以提高效率</li>
+<li><strong>TTL (Time To Live)</strong>：DNS 記錄的快取時間，控制記錄的有效期</li>
+</ul>
+</li>
+<li><strong>權威性與傳輸</strong>：
+<ul>
+<li><strong>權威回應</strong>：來自擁有該域名記錄的權威伺服器</li>
+<li><strong>非權威回應</strong>：來自快取的記錄，可能不是最新資訊</li>
+</ul>
+</li>
+<li><strong>DNS 協定特性</strong>：
+<ul>
+<li><strong>預設端口</strong>：UDP 53 (小查詢)，TCP 53 (大查詢或區域傳輸)</li>
+<li><strong>查詢大小限制</strong>：UDP 封包超過 512 bytes 時切換到 TCP</li>
+</ul>
+</li>
+<li><strong>安全機制</strong>：
+<ul>
+<li><strong>DNSSEC</strong>：DNS 安全擴展，通過數位簽名確保 DNS 記錄真實性</li>
+<li><strong>DNS over HTTPS (DoH)</strong>：透過 HTTPS 加密 DNS 查詢</li>
+<li><strong>DNS over TLS (DoT)</strong>：透過 TLS 加密 DNS 查詢，保護隱私</li>
+</ul>
+</li>
+</ul>
+<h1 id="dhcp-dynamic-host-configuration-protocol">DHCP (Dynamic Host Configuration Protocol)</h1>
+<ul>
+<li><strong>四步驟流程 (DORA)</strong>：
+<ol>
+<li><strong>DHCP Discover</strong>：客戶端廣播尋找 DHCP 伺服器</li>
+<li><strong>DHCP Offer</strong>：伺服器回應提供可用 IP 位址</li>
+<li><strong>DHCP Request</strong>：客戶端請求特定 IP 位址</li>
+<li><strong>DHCP Acknowledge</strong>：伺服器確認分配該 IP 位址</li>
+</ol>
+</li>
+<li><strong>租約機制</strong>：
+<ul>
+<li>IP 位址分配有時限，需定期更新</li>
+<li><strong>租約續期</strong>：租約時間到達 50% 時自動嘗試續租</li>
+<li><strong>租約重新綁定</strong>：87.5% 時間點嘗試向任何 DHCP 伺服器續租</li>
+</ul>
+</li>
+<li><strong>常見選項設定</strong>：
+<ul>
+<li><strong>Option 3</strong>：默認閘道（Default Gateway）</li>
+<li><strong>Option 1</strong>：子網遮罩（Subnet Mask）</li>
+<li><strong>Option 6</strong>：DNS 伺服器位址</li>
+<li><strong>Option 51</strong>：租約時間（Lease Time）</li>
+<li><strong>Option 15</strong>：域名（Domain Name）</li>
+<li><strong>Option 42</strong>：NTP 時間伺服器</li>
+</ul>
+</li>
+<li><strong>進階功能</strong>：
+<ul>
+<li><strong>DHCP 中繼（DHCP Relay）</strong>：跨網段 DHCP 請求轉發，使用 Agent 轉發</li>
+<li><strong>保留位址</strong>：為特定 MAC 位址保留固定 IP 位址</li>
+<li><strong>IP 位址集區</strong>：可配置多個 IP 範圍供分配</li>
+</ul>
+</li>
+<li><strong>安全與管理</strong>：
+<ul>
+<li><strong>衝突檢測</strong>：分配前使用 ICMP Echo 或 ARP 確認 IP 未被使用</li>
+<li><strong>DHCP 監聽（DHCP Snooping）</strong>：防止惡意 DHCP 伺服器</li>
+<li><strong>故障轉移</strong>：主備 DHCP 伺服器機制確保高可用性</li>
+</ul>
+</li>
+<li><strong>協定特性</strong>：
+<ul>
+<li><strong>端口</strong>：伺服器使用 UDP 67，客戶端使用 UDP 68</li>
+<li><strong>廣播通信</strong>：初始發現階段使用廣播封包</li>
+</ul>
+</li>
+</ul>
+
+        </section>
+        <div class="post-tags">
+          
+          
+          <nav class="nav tags">
+            <ul class="tags">
+              
+              <li><a href="/tags/protocol">protocol</a></li>
+              
+            </ul>
+          </nav>
+          
+          
+        </div>
+      </div>
+
+      
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div class="footer_nav">
+    
+  </div>
+
+  
+  
+    
+      <a class="soc" href="https://github.com/peihe07" title="github">
+        <i data-feather="github"></i>
+      </a> | 
+    
+      <a class="soc" href="mailto:y450376@gmail.com" title="email">
+        <i data-feather="mail"></i>
+      </a> | 
+    
+      <a class="soc" href="https://medium.com/@peihe07" title="medium">
+        <i data-feather="book-open"></i>
+      </a>
+    
+  
+
+  ⚡️ 2025
+   Peihe | 
+  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+  <script>
+    feather.replace();
+  </script>
+</div>
+    </body>
+</html>

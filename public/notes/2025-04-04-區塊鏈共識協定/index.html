@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html><head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>區塊鏈共識協定 - Peihe&#39;s blog</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="PoW (Proof of Work)
+
+工作原理：
+
+雜湊運算：尋找符合難度要求的雜湊值
+隨機數 (Nonce)：調整參數直到找到正確解
+難度調整：根據全網算力動態調整
+
+
+安全模型：
+
+51% 攻擊門檻：需要控制超過一半算力
+誠實節點假設：多數節點是誠實的
+經濟激勵：挖礦獎勵 &gt; 攻擊成本
+
+
+比特幣實作：
+
+SHA-256 雜湊：雙重 SHA-256 運算
+區塊時間：平均 10 分鐘
+難度調整：每 2016 個區塊 (約 2 週)
+
+
+獎勵機制：
+
+區塊獎勵：新產生的加密貨幣
+交易費用：用戶支付的手續費
+減半機制：比特幣每 4 年減半
+
+
+能源消耗：
+
+高耗能：全球電力消耗量級
+專用硬體：ASIC 礦機
+環境爭議：碳排放和永續性問題
+
+
+優勢與劣勢：
+
+優勢：高安全性、去中心化、經過驗證
+劣勢：能源消耗大、交易速度慢、擴展性差
+
+
+
+PoS (Proof of Stake)
+
+基本概念：
+
+權益代替算力：持有代幣量決定驗證權重
+質押機制：鎖定代幣參與共識
+隨機選擇：基於權益的隨機驗證者選擇
+
+
+以太坊 2.0 實作：
+
+32 ETH 最低質押：成為驗證者的門檻
+獎勵分配：基於參與度和正確性
+罰沒機制：惡意行為或離線懲罰
+
+
+共識流程：
+
+提案階段：驗證者提出新區塊
+證明階段：其他驗證者投票確認
+最終確定：達到共識閾值
+
+
+Casper FFG：
+
+友好的最終性小工具：以太坊 PoS 實作
+檢查點：每 32 個區塊的最終確認
+罰沒條件：雙重投票、環繞投票
+
+
+代幣經濟學：
+
+通膨控制：新發行代幣獎勵驗證者
+費用燃燒：EIP-1559 燃燒機制
+質押收益：年化報酬率 4-6%
+
+
+優勢與挑戰：
+
+優勢：低能耗、快速最終確定、經濟安全
+挑戰：長程攻擊、初始分配、質押集中化
+
+
+
+DPoS (Delegated Proof of Stake)
+
+委託機制：
+
+投票選舉：代幣持有者投票選出代表
+代表節點：固定數量的驗證者（如 21 個）
+輪流出塊：代表按順序產生區塊
+
+
+EOS 實作：
+
+21 個 BP (Block Producers)：主要出塊節點
+備用 BP：候選節點，可隨時替換
+3 秒出塊：快速交易確認
+
+
+治理機制：
+
+持續投票：可隨時改變投票
+代表更替：表現不佳的代表被替換
+鏈上治理：協定參數投票決定
+
+
+獎勵分配：
+
+出塊獎勵：代表節點獲得主要獎勵
+投票者分紅：部分獎勵分配給投票者
+生態基金：支持開發和營運
+
+
+安全模型：
+
+2/3&#43;1 安全：需要超過 2/3 代表合作攻擊
+投票制衡：社群可投票移除惡意代表
+經濟懲罰：代表惡意行為的經濟損失
+
+
+優勢與爭議：
+
+優勢：高 TPS、低延遲、民主治理
+爭議：中心化風險、財閥政治、投票率低
+
+
+
+PBFT (Practical Byzantine Fault Tolerance)
+
+拜占庭問題：
+
+惡意節點容忍：可容忍 1/3 惡意節點
+一致性保證：確保所有誠實節點達成一致
+活性保證：系統最終會取得進展
+
+
+三階段共識：
+
+預準備 (Pre-prepare)：主節點提出提案
+準備 (Prepare)：節點廣播同意訊息
+提交 (Commit)：節點廣播承諾訊息
+
+
+視圖變更 (View Change)：
+
+主節點失效：偵測並替換失效主節點
+超時機制：設定階段超時時間
+新視圖：選舉新主節點並重新開始
+
+
+Hyperledger Fabric 應用：
+
+排序服務：使用 PBFT 進行交易排序
+聯盟鏈適用：已知參與者身份
+權限網路：需要授權才能加入
+
+
+效能特性：
+
+低延遲：通常 3 個訊息回合
+確定性最終確定：即時最終確認
+通信複雜度：O(n²) 訊息複雜度
+
+
+適用場景：
+
+聯盟鏈和私有鏈
+金融機構間清算
+供應鏈管理
+政府間協作
+
+
+
+區塊鏈共識協定比較
+
+  
+      
+          協定
+          TPS
+          能耗
+          去中心化
+          最終確定性
+          適用場景
+      
+  
+  
+      
+          PoW
+          低 (7)
+          極高
+          高
+          機率性
+          公有鏈
+      
+      
+          PoS
+          中 (1000)
+          低
+          中-高
+          快速
+          公有鏈 2.0
+      
+      
+          DPoS
+          高 (4000)
+          極低
+          中
+          快速
+          高性能公鏈
+      
+      
+          PBFT
+          中 (1000)
+          低
+          低
+          即時
+          聯盟鏈
+      
+  
+" />
+	<meta property="og:image" content="https://hqasco.deta.dev/img?url=https://www.peihe07.uno/notes/2025-04-04-%E5%8D%80%E5%A1%8A%E9%8F%88%E5%85%B1%E8%AD%98%E5%8D%94%E5%AE%9A/"/>
+	<meta property="twitter:image" content="https://hqasco.deta.dev/img?url=https://www.peihe07.uno/notes/2025-04-04-%E5%8D%80%E5%A1%8A%E9%8F%88%E5%85%B1%E8%AD%98%E5%8D%94%E5%AE%9A/"/>
+	<meta property="twitter:card" content="summary_large_image"/>
+	<meta property="og:url" content="https://www.peihe07.uno/notes/2025-04-04-%E5%8D%80%E5%A1%8A%E9%8F%88%E5%85%B1%E8%AD%98%E5%8D%94%E5%AE%9A/">
+  <meta property="og:site_name" content="Peihe&#39;s blog">
+  <meta property="og:title" content="區塊鏈共識協定">
+  <meta property="og:description" content="PoW (Proof of Work) 工作原理： 雜湊運算：尋找符合難度要求的雜湊值 隨機數 (Nonce)：調整參數直到找到正確解 難度調整：根據全網算力動態調整 安全模型： 51% 攻擊門檻：需要控制超過一半算力 誠實節點假設：多數節點是誠實的 經濟激勵：挖礦獎勵 &gt; 攻擊成本 比特幣實作： SHA-256 雜湊：雙重 SHA-256 運算 區塊時間：平均 10 分鐘 難度調整：每 2016 個區塊 (約 2 週) 獎勵機制： 區塊獎勵：新產生的加密貨幣 交易費用：用戶支付的手續費 減半機制：比特幣每 4 年減半 能源消耗： 高耗能：全球電力消耗量級 專用硬體：ASIC 礦機 環境爭議：碳排放和永續性問題 優勢與劣勢： 優勢：高安全性、去中心化、經過驗證 劣勢：能源消耗大、交易速度慢、擴展性差 PoS (Proof of Stake) 基本概念： 權益代替算力：持有代幣量決定驗證權重 質押機制：鎖定代幣參與共識 隨機選擇：基於權益的隨機驗證者選擇 以太坊 2.0 實作： 32 ETH 最低質押：成為驗證者的門檻 獎勵分配：基於參與度和正確性 罰沒機制：惡意行為或離線懲罰 共識流程： 提案階段：驗證者提出新區塊 證明階段：其他驗證者投票確認 最終確定：達到共識閾值 Casper FFG： 友好的最終性小工具：以太坊 PoS 實作 檢查點：每 32 個區塊的最終確認 罰沒條件：雙重投票、環繞投票 代幣經濟學： 通膨控制：新發行代幣獎勵驗證者 費用燃燒：EIP-1559 燃燒機制 質押收益：年化報酬率 4-6% 優勢與挑戰： 優勢：低能耗、快速最終確定、經濟安全 挑戰：長程攻擊、初始分配、質押集中化 DPoS (Delegated Proof of Stake) 委託機制： 投票選舉：代幣持有者投票選出代表 代表節點：固定數量的驗證者（如 21 個） 輪流出塊：代表按順序產生區塊 EOS 實作： 21 個 BP (Block Producers)：主要出塊節點 備用 BP：候選節點，可隨時替換 3 秒出塊：快速交易確認 治理機制： 持續投票：可隨時改變投票 代表更替：表現不佳的代表被替換 鏈上治理：協定參數投票決定 獎勵分配： 出塊獎勵：代表節點獲得主要獎勵 投票者分紅：部分獎勵分配給投票者 生態基金：支持開發和營運 安全模型： 2/3&#43;1 安全：需要超過 2/3 代表合作攻擊 投票制衡：社群可投票移除惡意代表 經濟懲罰：代表惡意行為的經濟損失 優勢與爭議： 優勢：高 TPS、低延遲、民主治理 爭議：中心化風險、財閥政治、投票率低 PBFT (Practical Byzantine Fault Tolerance) 拜占庭問題： 惡意節點容忍：可容忍 1/3 惡意節點 一致性保證：確保所有誠實節點達成一致 活性保證：系統最終會取得進展 三階段共識： 預準備 (Pre-prepare)：主節點提出提案 準備 (Prepare)：節點廣播同意訊息 提交 (Commit)：節點廣播承諾訊息 視圖變更 (View Change)： 主節點失效：偵測並替換失效主節點 超時機制：設定階段超時時間 新視圖：選舉新主節點並重新開始 Hyperledger Fabric 應用： 排序服務：使用 PBFT 進行交易排序 聯盟鏈適用：已知參與者身份 權限網路：需要授權才能加入 效能特性： 低延遲：通常 3 個訊息回合 確定性最終確定：即時最終確認 通信複雜度：O(n²) 訊息複雜度 適用場景： 聯盟鏈和私有鏈 金融機構間清算 供應鏈管理 政府間協作 區塊鏈共識協定比較 協定 TPS 能耗 去中心化 最終確定性 適用場景 PoW 低 (7) 極高 高 機率性 公有鏈 PoS 中 (1000) 低 中-高 快速 公有鏈 2.0 DPoS 高 (4000) 極低 中 快速 高性能公鏈 PBFT 中 (1000) 低 低 即時 聯盟鏈">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="notes">
+    <meta property="article:published_time" content="2025-04-04T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-04-04T00:00:00+00:00">
+    <meta property="article:tag" content="Protocol">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="區塊鏈共識協定">
+  <meta name="twitter:description" content="PoW (Proof of Work) 工作原理： 雜湊運算：尋找符合難度要求的雜湊值 隨機數 (Nonce)：調整參數直到找到正確解 難度調整：根據全網算力動態調整 安全模型： 51% 攻擊門檻：需要控制超過一半算力 誠實節點假設：多數節點是誠實的 經濟激勵：挖礦獎勵 &gt; 攻擊成本 比特幣實作： SHA-256 雜湊：雙重 SHA-256 運算 區塊時間：平均 10 分鐘 難度調整：每 2016 個區塊 (約 2 週) 獎勵機制： 區塊獎勵：新產生的加密貨幣 交易費用：用戶支付的手續費 減半機制：比特幣每 4 年減半 能源消耗： 高耗能：全球電力消耗量級 專用硬體：ASIC 礦機 環境爭議：碳排放和永續性問題 優勢與劣勢： 優勢：高安全性、去中心化、經過驗證 劣勢：能源消耗大、交易速度慢、擴展性差 PoS (Proof of Stake) 基本概念： 權益代替算力：持有代幣量決定驗證權重 質押機制：鎖定代幣參與共識 隨機選擇：基於權益的隨機驗證者選擇 以太坊 2.0 實作： 32 ETH 最低質押：成為驗證者的門檻 獎勵分配：基於參與度和正確性 罰沒機制：惡意行為或離線懲罰 共識流程： 提案階段：驗證者提出新區塊 證明階段：其他驗證者投票確認 最終確定：達到共識閾值 Casper FFG： 友好的最終性小工具：以太坊 PoS 實作 檢查點：每 32 個區塊的最終確認 罰沒條件：雙重投票、環繞投票 代幣經濟學： 通膨控制：新發行代幣獎勵驗證者 費用燃燒：EIP-1559 燃燒機制 質押收益：年化報酬率 4-6% 優勢與挑戰： 優勢：低能耗、快速最終確定、經濟安全 挑戰：長程攻擊、初始分配、質押集中化 DPoS (Delegated Proof of Stake) 委託機制： 投票選舉：代幣持有者投票選出代表 代表節點：固定數量的驗證者（如 21 個） 輪流出塊：代表按順序產生區塊 EOS 實作： 21 個 BP (Block Producers)：主要出塊節點 備用 BP：候選節點，可隨時替換 3 秒出塊：快速交易確認 治理機制： 持續投票：可隨時改變投票 代表更替：表現不佳的代表被替換 鏈上治理：協定參數投票決定 獎勵分配： 出塊獎勵：代表節點獲得主要獎勵 投票者分紅：部分獎勵分配給投票者 生態基金：支持開發和營運 安全模型： 2/3&#43;1 安全：需要超過 2/3 代表合作攻擊 投票制衡：社群可投票移除惡意代表 經濟懲罰：代表惡意行為的經濟損失 優勢與爭議： 優勢：高 TPS、低延遲、民主治理 爭議：中心化風險、財閥政治、投票率低 PBFT (Practical Byzantine Fault Tolerance) 拜占庭問題： 惡意節點容忍：可容忍 1/3 惡意節點 一致性保證：確保所有誠實節點達成一致 活性保證：系統最終會取得進展 三階段共識： 預準備 (Pre-prepare)：主節點提出提案 準備 (Prepare)：節點廣播同意訊息 提交 (Commit)：節點廣播承諾訊息 視圖變更 (View Change)： 主節點失效：偵測並替換失效主節點 超時機制：設定階段超時時間 新視圖：選舉新主節點並重新開始 Hyperledger Fabric 應用： 排序服務：使用 PBFT 進行交易排序 聯盟鏈適用：已知參與者身份 權限網路：需要授權才能加入 效能特性： 低延遲：通常 3 個訊息回合 確定性最終確定：即時最終確認 通信複雜度：O(n²) 訊息複雜度 適用場景： 聯盟鏈和私有鏈 金融機構間清算 供應鏈管理 政府間協作 區塊鏈共識協定比較 協定 TPS 能耗 去中心化 最終確定性 適用場景 PoW 低 (7) 極高 高 機率性 公有鏈 PoS 中 (1000) 低 中-高 快速 公有鏈 2.0 DPoS 高 (4000) 極低 中 快速 高性能公鏈 PBFT 中 (1000) 低 低 即時 聯盟鏈">
+<script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+	
+	
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/projects.css" />
+	
+	
+		
+		<link rel="stylesheet" type="text/css" href="/css/light.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/font.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+		
+		<link rel="stylesheet" type="text/css" href="/css/syntax.css">
+		
+	<script src="//instant.page/5.1.0" type="module" integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-title">
+      <a href="https://www.peihe07.uno/">Peihe&#39;s blog</a>
+    </div>
+    <nav class="main-menu">
+      
+        <a href="/">Home</a>
+      
+        <a href="/writings">Writings</a>
+      
+        <a href="/projects">Projects</a>
+      
+        <a href="/notes">Notes</a>
+      
+        <a href="/about">About</a>
+      
+    </nav>
+  </header><body>
+        <div class="content">
+<main>
+  <article>
+    <div class="post-container">
+      
+      <div class="post-content">
+        <div class="title">
+          <h1 class="title">區塊鏈共識協定</h1>
+          <div class="meta">Posted on Apr 4, 2025</div>
+        </div>
+        
+        <section class="body">
+          <h1 id="pow-proof-of-work">PoW (Proof of Work)</h1>
+<ul>
+<li><strong>工作原理</strong>：
+<ul>
+<li><strong>雜湊運算</strong>：尋找符合難度要求的雜湊值</li>
+<li><strong>隨機數 (Nonce)</strong>：調整參數直到找到正確解</li>
+<li><strong>難度調整</strong>：根據全網算力動態調整</li>
+</ul>
+</li>
+<li><strong>安全模型</strong>：
+<ul>
+<li><strong>51% 攻擊門檻</strong>：需要控制超過一半算力</li>
+<li><strong>誠實節點假設</strong>：多數節點是誠實的</li>
+<li><strong>經濟激勵</strong>：挖礦獎勵 &gt; 攻擊成本</li>
+</ul>
+</li>
+<li><strong>比特幣實作</strong>：
+<ul>
+<li><strong>SHA-256 雜湊</strong>：雙重 SHA-256 運算</li>
+<li><strong>區塊時間</strong>：平均 10 分鐘</li>
+<li><strong>難度調整</strong>：每 2016 個區塊 (約 2 週)</li>
+</ul>
+</li>
+<li><strong>獎勵機制</strong>：
+<ul>
+<li><strong>區塊獎勵</strong>：新產生的加密貨幣</li>
+<li><strong>交易費用</strong>：用戶支付的手續費</li>
+<li><strong>減半機制</strong>：比特幣每 4 年減半</li>
+</ul>
+</li>
+<li><strong>能源消耗</strong>：
+<ul>
+<li><strong>高耗能</strong>：全球電力消耗量級</li>
+<li><strong>專用硬體</strong>：ASIC 礦機</li>
+<li><strong>環境爭議</strong>：碳排放和永續性問題</li>
+</ul>
+</li>
+<li><strong>優勢與劣勢</strong>：
+<ul>
+<li><strong>優勢</strong>：高安全性、去中心化、經過驗證</li>
+<li><strong>劣勢</strong>：能源消耗大、交易速度慢、擴展性差</li>
+</ul>
+</li>
+</ul>
+<h1 id="pos-proof-of-stake">PoS (Proof of Stake)</h1>
+<ul>
+<li><strong>基本概念</strong>：
+<ul>
+<li><strong>權益代替算力</strong>：持有代幣量決定驗證權重</li>
+<li><strong>質押機制</strong>：鎖定代幣參與共識</li>
+<li><strong>隨機選擇</strong>：基於權益的隨機驗證者選擇</li>
+</ul>
+</li>
+<li><strong>以太坊 2.0 實作</strong>：
+<ul>
+<li><strong>32 ETH 最低質押</strong>：成為驗證者的門檻</li>
+<li><strong>獎勵分配</strong>：基於參與度和正確性</li>
+<li><strong>罰沒機制</strong>：惡意行為或離線懲罰</li>
+</ul>
+</li>
+<li><strong>共識流程</strong>：
+<ul>
+<li><strong>提案階段</strong>：驗證者提出新區塊</li>
+<li><strong>證明階段</strong>：其他驗證者投票確認</li>
+<li><strong>最終確定</strong>：達到共識閾值</li>
+</ul>
+</li>
+<li><strong>Casper FFG</strong>：
+<ul>
+<li><strong>友好的最終性小工具</strong>：以太坊 PoS 實作</li>
+<li><strong>檢查點</strong>：每 32 個區塊的最終確認</li>
+<li><strong>罰沒條件</strong>：雙重投票、環繞投票</li>
+</ul>
+</li>
+<li><strong>代幣經濟學</strong>：
+<ul>
+<li><strong>通膨控制</strong>：新發行代幣獎勵驗證者</li>
+<li><strong>費用燃燒</strong>：EIP-1559 燃燒機制</li>
+<li><strong>質押收益</strong>：年化報酬率 4-6%</li>
+</ul>
+</li>
+<li><strong>優勢與挑戰</strong>：
+<ul>
+<li><strong>優勢</strong>：低能耗、快速最終確定、經濟安全</li>
+<li><strong>挑戰</strong>：長程攻擊、初始分配、質押集中化</li>
+</ul>
+</li>
+</ul>
+<h1 id="dpos-delegated-proof-of-stake">DPoS (Delegated Proof of Stake)</h1>
+<ul>
+<li><strong>委託機制</strong>：
+<ul>
+<li><strong>投票選舉</strong>：代幣持有者投票選出代表</li>
+<li><strong>代表節點</strong>：固定數量的驗證者（如 21 個）</li>
+<li><strong>輪流出塊</strong>：代表按順序產生區塊</li>
+</ul>
+</li>
+<li><strong>EOS 實作</strong>：
+<ul>
+<li><strong>21 個 BP (Block Producers)</strong>：主要出塊節點</li>
+<li><strong>備用 BP</strong>：候選節點，可隨時替換</li>
+<li><strong>3 秒出塊</strong>：快速交易確認</li>
+</ul>
+</li>
+<li><strong>治理機制</strong>：
+<ul>
+<li><strong>持續投票</strong>：可隨時改變投票</li>
+<li><strong>代表更替</strong>：表現不佳的代表被替換</li>
+<li><strong>鏈上治理</strong>：協定參數投票決定</li>
+</ul>
+</li>
+<li><strong>獎勵分配</strong>：
+<ul>
+<li><strong>出塊獎勵</strong>：代表節點獲得主要獎勵</li>
+<li><strong>投票者分紅</strong>：部分獎勵分配給投票者</li>
+<li><strong>生態基金</strong>：支持開發和營運</li>
+</ul>
+</li>
+<li><strong>安全模型</strong>：
+<ul>
+<li><strong>2/3+1 安全</strong>：需要超過 2/3 代表合作攻擊</li>
+<li><strong>投票制衡</strong>：社群可投票移除惡意代表</li>
+<li><strong>經濟懲罰</strong>：代表惡意行為的經濟損失</li>
+</ul>
+</li>
+<li><strong>優勢與爭議</strong>：
+<ul>
+<li><strong>優勢</strong>：高 TPS、低延遲、民主治理</li>
+<li><strong>爭議</strong>：中心化風險、財閥政治、投票率低</li>
+</ul>
+</li>
+</ul>
+<h1 id="pbft-practical-byzantine-fault-tolerance">PBFT (Practical Byzantine Fault Tolerance)</h1>
+<ul>
+<li><strong>拜占庭問題</strong>：
+<ul>
+<li><strong>惡意節點容忍</strong>：可容忍 1/3 惡意節點</li>
+<li><strong>一致性保證</strong>：確保所有誠實節點達成一致</li>
+<li><strong>活性保證</strong>：系統最終會取得進展</li>
+</ul>
+</li>
+<li><strong>三階段共識</strong>：
+<ul>
+<li><strong>預準備 (Pre-prepare)</strong>：主節點提出提案</li>
+<li><strong>準備 (Prepare)</strong>：節點廣播同意訊息</li>
+<li><strong>提交 (Commit)</strong>：節點廣播承諾訊息</li>
+</ul>
+</li>
+<li><strong>視圖變更 (View Change)</strong>：
+<ul>
+<li><strong>主節點失效</strong>：偵測並替換失效主節點</li>
+<li><strong>超時機制</strong>：設定階段超時時間</li>
+<li><strong>新視圖</strong>：選舉新主節點並重新開始</li>
+</ul>
+</li>
+<li><strong>Hyperledger Fabric 應用</strong>：
+<ul>
+<li><strong>排序服務</strong>：使用 PBFT 進行交易排序</li>
+<li><strong>聯盟鏈適用</strong>：已知參與者身份</li>
+<li><strong>權限網路</strong>：需要授權才能加入</li>
+</ul>
+</li>
+<li><strong>效能特性</strong>：
+<ul>
+<li><strong>低延遲</strong>：通常 3 個訊息回合</li>
+<li><strong>確定性最終確定</strong>：即時最終確認</li>
+<li><strong>通信複雜度</strong>：O(n²) 訊息複雜度</li>
+</ul>
+</li>
+<li><strong>適用場景</strong>：
+<ul>
+<li>聯盟鏈和私有鏈</li>
+<li>金融機構間清算</li>
+<li>供應鏈管理</li>
+<li>政府間協作</li>
+</ul>
+</li>
+</ul>
+<h1 id="區塊鏈共識協定比較">區塊鏈共識協定比較</h1>
+<table>
+  <thead>
+      <tr>
+          <th>協定</th>
+          <th>TPS</th>
+          <th>能耗</th>
+          <th>去中心化</th>
+          <th>最終確定性</th>
+          <th>適用場景</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>PoW</td>
+          <td>低 (7)</td>
+          <td>極高</td>
+          <td>高</td>
+          <td>機率性</td>
+          <td>公有鏈</td>
+      </tr>
+      <tr>
+          <td>PoS</td>
+          <td>中 (1000)</td>
+          <td>低</td>
+          <td>中-高</td>
+          <td>快速</td>
+          <td>公有鏈 2.0</td>
+      </tr>
+      <tr>
+          <td>DPoS</td>
+          <td>高 (4000)</td>
+          <td>極低</td>
+          <td>中</td>
+          <td>快速</td>
+          <td>高性能公鏈</td>
+      </tr>
+      <tr>
+          <td>PBFT</td>
+          <td>中 (1000)</td>
+          <td>低</td>
+          <td>低</td>
+          <td>即時</td>
+          <td>聯盟鏈</td>
+      </tr>
+  </tbody>
+</table>
+
+        </section>
+        <div class="post-tags">
+          
+          
+          <nav class="nav tags">
+            <ul class="tags">
+              
+              <li><a href="/tags/protocol">protocol</a></li>
+              
+            </ul>
+          </nav>
+          
+          
+        </div>
+      </div>
+
+      
+      
+    </div>
+
+    </article>
+</main>
+<footer>
+  <div class="footer_nav">
+    
+  </div>
+
+  
+  
+    
+      <a class="soc" href="https://github.com/peihe07" title="github">
+        <i data-feather="github"></i>
+      </a> | 
+    
+      <a class="soc" href="mailto:y450376@gmail.com" title="email">
+        <i data-feather="mail"></i>
+      </a> | 
+    
+      <a class="soc" href="https://medium.com/@peihe07" title="medium">
+        <i data-feather="book-open"></i>
+      </a>
+    
+  
+
+  ⚡️ 2025
+   Peihe | 
+  <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+</footer>
+
+
+  <script>
+    feather.replace();
+  </script>
+</div>
+    </body>
+</html>
