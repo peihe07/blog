@@ -4,32 +4,10 @@ date = '2025-12-09'
 draft = false
 title = '我的神經系統比我更早認出他'
 tags = ['心理', '日常']
+layout = 'redirect'
+redirect_url = 'https://medium.com/@peihe07/%E6%88%91%E7%9A%84%E7%A5%9E%E7%B6%93%E7%B3%BB%E7%B5%B1%E6%AF%94%E6%88%91%E6%9B%B4%E6%97%A9%E8%AA%8D%E5%87%BA%E4%BB%96-d2c67dd6b911'
+og_image = 'https://www.peihe07.uno/images/Content/1_ihGu-9Tx4Zzma7tKhpfmHA.webp'
 +++
-
-<!DOCTYPE html>
-<html lang="zh-Hant">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="我的神經系統比我更早認出他">
-    <meta name="twitter:image" content="https://www.peihe07.uno/images/Content/1_ihGu-9Tx4Zzma7tKhpfmHA.webp">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="我的神經系統比我更早認出他">
-    <meta property="og:image" content="https://www.peihe07.uno/images/Content/1_ihGu-9Tx4Zzma7tKhpfmHA.webp">
-    <meta property="og:type" content="article">
-
-    <!-- 自動導向到 Medium -->
-    <meta http-equiv="refresh" content="0; url=https://medium.com/p/d2c67dd6b911">
-    <title>Redirecting…</title>
-</head>
-<body>
-    <p>Redirecting to Medium…</p>
-</body>
-</html>
 
 # 我的神經系統比我更早認出他
 

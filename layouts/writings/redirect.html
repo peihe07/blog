@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ .Title }}">
+    {{ with .Params.og_image }}
+    <meta name="twitter:image" content="{{ . }}">
+    {{ end }}
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="{{ .Title }}">
+    {{ with .Params.og_image }}
+    <meta property="og:image" content="{{ . }}">
+    {{ end }}
+    <meta property="og:type" content="article">
+
+    <!-- 自動導向到 Medium -->
+    {{ with .Params.redirect_url }}
+    <meta http-equiv="refresh" content="0; url={{ . }}">
+    {{ end }}
+    <title>Redirecting…</title>
+</head>
+<body>
+    <p>Redirecting to Medium…</p>
+</body>
+</html>
