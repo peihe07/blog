@@ -3,6 +3,7 @@
 date = '2025-12-09'
 draft = false
 title = '我的神經系統比我更早認出他'
+description = '探討身體如何比理智更快感受到某個人,以及這種生理層級的安全感匹配如何成為修復性經驗。'
 tags = ['心理', '日常']
 layout = 'redirect'
 redirect_url = 'https://medium.com/@peihe07/%E6%88%91%E7%9A%84%E7%A5%9E%E7%B6%93%E7%B3%BB%E7%B5%B1%E6%AF%94%E6%88%91%E6%9B%B4%E6%97%A9%E8%AA%8D%E5%87%BA%E4%BB%96-d2c67dd6b911'
